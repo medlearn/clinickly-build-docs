@@ -1,0 +1,62 @@
+# Clinickly Co-pilot — Developer Fix List (all three portals)
+
+Priority-ordered actions from the full screen-by-screen review.
+Detail + evidence: [BUILD-REVIEW.md](BUILD-REVIEW.md) (clinician §1–§11) · [BUILD-REVIEW-PANEL.md](BUILD-REVIEW-PANEL.md) (panel P1–P5) · [BUILD-REVIEW-ADMIN.md](BUILD-REVIEW-ADMIN.md) (admin A1–A8).
+Spec source of truth: [CLINICKLY-MASTER.md](CLINICKLY-MASTER.md).
+
+Legend: **P0** safety/governance (block real use) · **P1** correctness bugs · **P2** build gaps (specced, not built) · **P3** tidy-ups/UX.
+
+---
+
+## ✅ What's genuinely strong — DON'T break these
+- **Governance review workflow** (panel P2) — side-by-side recommendation ⟷ source, "Matches source", hard gate ("nothing publishes until all verified"). The keystone of the whole product.
+- **Two-step sign-off, end to end** (panel → admin) — named, dated, versioned; full audit trail (admin A2/A8). This is the defensibility backbone.
+- **Guideline detail page** (§6) — real governance state, named reviewer, "verify at source", clinician/patient toggle, BNF-defer, "no single first-line" honesty. The quality bar for all content.
+- **Positioning/framing everywhere** — "teaching/CPD, not advice on a live patient", advisory caveats, "decision support not a directive".
+- **Form structures** — MDT case dropdowns (Appendices B/C), consent gating, anonymisation banners, real computed metrics (dashboard, CPD minutes).
+
+---
+
+## P0 — Safety & governance (must fix first)
+- [ ] **Notes draft from the transcript ONLY** (§2/§3). Kill demo-scenario/context injection into `/api/notes`. Never invent content. *Also cleans up the fabricated MDT case (§10).*
+- [ ] **Never fabricate objective data / vitals** (§3). Not dictated → soft ⚠️ flag ("No vitals recorded"), never an invented value. Blank/flagged > fabricated.
+- [ ] **Anonymiser strips identifiers — text AND images** (§10, P1). "J.M." leaked into an "anonymised" case; pre-submit identifier check must catch initials/patient-refs; image PII check for photos (faces/badges).
+- [ ] **Governance-review source passages need a real deep link** (P2). Each passage links to the exact cited location so the reviewer confirms the quote is *real* — without it, "Matches source" checks AI against AI (quote could be hallucinated). Store retrieved text + URL + date; ideally gate the tick on opening it.
+- [ ] **Validate all codes** against a SNOMED/ICD terminology server (§3). Currently AI-guessed + mislabelled (cough code labelled "Fever"). Reject unmappable.
+- [ ] **Note sign-off = draft → review → attest → sign** (§3). Editable draft; attestation tick is the only hard gate; then lock + addenda-not-edits.
+- [ ] **Content licensing** (§5). Don't reproduce BNF/NICE text — own summaries that **cite + link**; **BNF = link-out only** until licensed.
+- [ ] **Separation of duties — risk-tiered** (A1, §8). Reviewer ≠ signer (block same user_id). **High** (prescribing/safety, regulated SOPs) = full two-person; **Medium** = single reviewer + sign-off; **Low** (typo) = light-touch/auto-approve + audit.
+- [ ] **Signer qualification matches content type** (A2). Clinical content → **clinically-qualified lead** signs; governance/admin content → admin/governance lead OK. System checks role/registration vs content type.
+
+## P1 — Correctness bugs
+- [ ] **Fix routing — cases AND content — by specialty/type** (§10, P1, P2, A1, A5). Route to the matching specialist (Appendix B); clinical → Clinical MDT, governance/SOP → Governance MDT. *Note: content review-specialty data is actually correct (A5); the bug is display defaulting everything to the Chair — ensure the right specialist also sees it.*
+- [ ] **Remove the demo scenario from the real product** (§2). Real inputs only; never inject hidden context into the AI.
+- [ ] **Age range → one standardised dropdown** (§2). Two schemes currently in data (30–39 vs 30–34).
+- [ ] **Tags / title / content follow actual content** (§1, §3). ADHD note tagged Autism; dashboard note title ≠ body.
+- [ ] **Surface per-statement citations on the published page** (§6, P2). The mapping already exists (used in governance review) — carry it through as inline chips.
+- [ ] **Two-tier tenancy + RLS isolation** (A7, §5.7). Clinic-scoped users (clinicians, clinic admins — see only their clinic) vs platform-scoped (MDT panel + Clinickly super-admin). Confirm with ≥2 clinics; enforce via RLS, not UI hiding.
+- [ ] **Wire reports to real data** (A8). "Consultations by clinical area" / "MDT questions by type" empty despite activity elsewhere — analytics not reading the same data.
+- [ ] **Reconcile case counts** (A1, A3, A8). "0 open cases" (admin) vs "1 awaiting" (panel) — different definitions or persistence gap.
+
+## P2 — Build gaps (specced, not built)
+- [ ] **⭐ Grounded, cited AI content generation** (§6, §7, A5) — THE big one. "Create draft" is a shell; the AI drafting from *retrieved source text* with *per-statement citations* isn't built. Underpins guideline citations, the SOP builder, and content drafts. Treat as one core capability, not three gaps.
+- [ ] **Wire the MDT answering loop to the DB** (§4, §10, P1). Cases + responses persist server-side and notify the submitter (currently 0 in DB; responses local/seeded).
+- [ ] **SOP "Build with AI" flow** (§7). Questions → AI draft → editable → compliance-check vs uploaded standards → sign-off → stored in the clinic's own (tenant-isolated) library.
+- [ ] **Case image upload + AI PII check** (§10, §5.4). 1–5 clinical photos (essential for dermatology) with AI identifiable-image flag, EXIF strip, consent, encrypted UK/EU storage, access-limited + audited + deletable.
+- [ ] **Training content + reflection + CPD log + PDF export** (§8). Modules are empty toggles; build embedded content + reflection capture + the accumulating CPD/revalidation record (auto-fed from modules + MDT participation) that exports as a reflective-account portfolio.
+- [ ] **Panel member = full credentialing record** (A3, §4). Add: professional registration/PIN (verify against register), CV, photo, signed contract + terms, DBS, indemnity, verified qualification tags. One profile = the vetting gate.
+- [ ] **Session library: Bunny video + real consent/PII-review/sign-off gate** (§11, P4, §5.10). Embedded signed-URL playback (no downloads); recordings go record → private → human PII review → redact → consent/anonymise → sign-off → publish.
+- [ ] **Search-gap analytics + CPD reporting** (A8). "Top missed searches → add to authoring backlog"; team CPD/training completion (inspection evidence).
+- [ ] **Audit trail: immutable/append-only + exportable** (A8). Tamper-evident; PDF/CSV export for inspection.
+
+## P3 — Tidy-ups & UX
+- [ ] **Delete "Saved records" page** + **remove "Release to patient"** (deferred patient feature) (§4).
+- [ ] **Note-template footer**: "standard · not customisable per clinic"; keep "customise → governance" only for SOPs/leaflets (§7).
+- [ ] **Nav badges = unread-count that clears on open** (My cases §11; Governance review P2/P3) — not total-count.
+- [ ] **"Recently published"** visually distinct from the actionable queue + clickable-to-view (A2).
+- [ ] **"Panel members" tile subtitle** overflows → "across 4 specialties" (A1).
+- [ ] **Soften "Auto-logged for revalidation"** → "CPD evidence for your portfolio" (§8).
+- [ ] **Govern clinical training modules** like guidelines — cited/signed (§8).
+- [ ] **MDT overview**: fill/remove empty shield card; show two panels (clinical vs governance) (§9); verified tags in panel directory (P5).
+- [ ] **Regulatory standards**: restrict Upload to central admin/governance; assign named currency owner + review cadence (A6).
+- [ ] **Teaching-slot free text**: add "general topic — no patient identifiers" hint + light PII check (A4). *(Free text itself is correct here.)*
