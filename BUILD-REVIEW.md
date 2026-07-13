@@ -5,6 +5,180 @@ Legend: **✅ confirmed working** · **🐛 fix** · **❓ confirm with develope
 
 ---
 
+## ROUND 2 — verification pass (developer's fixes, 9 Jul 2026)
+
+### R2.1 Dashboard — strong signals, P0s not yet verifiable here
+- ✅ **Discrepancy flagging appears IN** — the §1/§3 smoking-gun note ("ADHD medication review" with cough content) now shows *"Discrepancy noted: case context indicates adult patient on ADHD shared-care review; transcript describes…"* → flags the context/transcript mismatch instead of silently blending. Right behaviour; verify at note level.
+- ✅ **Safe hedged language in new notes** — "consistent with X or Y", "clinician to confirm"; **"Not recorded"** shown for missing patient ref (blank > fabricated, applied).
+- ✅ Metrics live (5 consults · 5 notes signed · 2.6 hrs · **2 open MDT cases "awaiting panel"** — open cases now surface; was 0-in-DB).
+- ✅ **Second named signer visible** — "Kazeem" signs a *clinic* SOP; Faheem signs central content (clinic-lead model + separation-of-duties signal).
+- 🆕 "Ask Clinickly" in nav (§5.11) — review when reached.
+- 🐛 **Duplicate audit entries** — Kazeem's "Signed off clinic SOP Private prescribing" logged twice (00:39 + 00:40). Double-log or double-sign allowed? Ask.
+- ⏳ P0 verification needs the note body — next: same cough-transcript test on Consultation/Clinical notes.
+
+### R2.2 Consultation — same cough-transcript test — ✅ **TOP TWO P0s VERIFIED FIXED**
+Same input as round 1: *"4-day history of cough, cold and headache. No allergies."*
+- ✅ **P0 transcript-only VERIFIED** — Subjective = cough · cold · headache · NKDA, **nothing else**. Zero ADHD/scenario content (round 1: 12 invented lines). UI states "THE NOTE IS DRAFTED FROM THIS — AND ONLY THIS."
+- ✅ **P0 no-invented-vitals VERIFIED** — Objective now: ⚠️ "No vital signs recorded — add if taken" + ⚠️ "No physical examination findings recorded" (round 1: fabricated "BP and pulse within normal range"). Plan flags "management plan not documented" / "no safety-netting recorded" instead of inventing. **Flag gaps, never fill = implemented.**
+- ✅ **Demo scenario removed; real inputs in** — Clinical area · Encounter type · **Age range dropdown with agreed bands (0–17)** · patient ref · reason "never analysed". ("Load demo consultation" remains as demo-mode affordance — acceptable.)
+- ✅ **Decision support repositioned to general + documentation prompts** (the device-risk fix) — "NICE/PHE guidance advises against routine antibiotics for uncomplicated viral URTI" (general, cited, medium-confidence, "requires clinician judgement"); no "in this patient" phrasing; footer "a documentation aid, not clinical instructions".
+- ✅ Assessment appropriately hedged inference ("likely viral aetiology", "consistent with").
+- ✅ **Attest & sign** button present — click through to verify attestation wording + lock (pending).
+### R2.3 Attest & sign dialog — ✅ **P0 attestation gate VERIFIED, word-perfect**
+- ✅ Attestation tick = exact spec wording: *"I have read this note and confirm it is an accurate record of this consultation."*
+- ✅ "Sign the note" **disabled until ticked** (hard gate); lock + addenda-never-edit stated in the dialog ("the signed note is never edited").
+- Chain complete: draft → review → attest → sign → lock.
+
+### R2.4 Signed note → Create MDT case — ✅ **ANONYMISER P0 VERIFIED (text)**
+- ✅ **"FS" stripped** — note carries patient ref FS; generated case summary = "Age 0–17 — anonymised; no identifiers", no initials anywhere (round 1: "J.M." leaked). Note→case anonymisation working for text.
+- ✅ **Image upload built** (max 2; spec said 1–5 — OK for pilot): crop-to-lesion guidance, **EXIF/GPS stripped on import**, consent gate. ⏳ **AI identifiable-image check + encrypted storage = stated production integration** ("photos stay in this browser in the prototype") — verify at launch.
+- ✅ **Tags/title follow content** (P1 verified) — "Consultation note", tags = General & acute prescribing · New/initial assessment; case title auto-generated from tags, no patient info; sensible routing default (Pharmacy & prescribing).
+- ✅ "Key question for panel" now **required** with sharper prompt; consent checkbox still gates Submit; note shows **"NOT IN CLINIC RECORD"** badge (Version A clarity).
+- 🐛 P3: case summary embeds the ⚠ documentation-prompt lines verbatim ("No vital signs recorded — add if taken.;") — strip prompts from case export.
+
+### R2.5 Case submission — ✅ honest failure state (big improvement); ❓ persistence inconclusive
+- ✅ **Silent fake success is GONE** — round 1 claimed "MDT case created" while DB showed 0. Now: red **"NOT SENT TO THE PANEL — the submission did not reach the clinic server"** + **Retry submission**; case ID correctly unassigned ("C–…"). App knows whether persistence succeeded and says so. Honest failure = safety feature.
+- ✅ Anonymised summary held through submit (age band, no "FS").
+- ❌ **CONFIRMED: case backend not working** — Retry gives the same "did not reach the clinic server" every time. Notes persist (notes API wired) but **cases never land**. Same gap as round 1 (0-in-DB), now surfaced honestly instead of faked. **The Pillar-2 case loop remains the single biggest outstanding build item.** Likely causes for dev: cases endpoint missing/erroring, Supabase RLS blocking insert, or wrong URL — notes API works, so compare against it.
+
+### R2.6 Guidelines library — ✅ BNF link-out + live state badges + specialist routing evidence
+- ✅ **BNF = link-out (licensing fix, BNF half VERIFIED)** — Lisdexamfetamine card button now **"Open at BNF ↗"** (external), not our content. (Own-summary cite+link still to verify on a detail page.)
+- ✅ **State badges live from the pipeline** — Rosacea update draft shows "draft · IN REVIEW", "check accuracy before it publishes", **no Open button** ("In the pipeline") → unpublished drafts unreadable in clinician library. Cards carry **versions** (NG87 v3). (NEEDS-UPDATE/stale badge still unseen.)
+- ✅ **Content-review routing to specialist (evidence)** — NG87 (ADHD) "AI-drafted · reviewed by **Dr L. Bright**" (psychiatry) — round 1 had clinical content reviewed by governance chair. Content half of routing P1 looks fixed; case half (panel inbox) still to verify.
+- 🐛 **Test junk published as GOVERNED v1** — "R3 sign test" (summary "s"), "Impetigo first-line — cross-machine E2E" (summary "e2e") live in the library. Delete before demos. Also a process note: junk passed sign-off (deliberate testing, but pilot needs a no-test-data-in-production rule). ("Cross-machine E2E" name suggests dev is testing persistence across machines — good sign.)
+
+### R2.7 Rosacea detail page — ✅ **per-statement citations VERIFIED; licensing complete**; 🐛 duplicate section
+- ✅ **Per-statement citation chips IN (P1 verified)** — statements carry source+section chips: `NICE CKS Rosacea – Diagnosis / Ocular involvement / General measures / Management`. "Which source said this exact line" now on the published page (round 1: one document-level bar only).
+- ✅ **Licensing model complete** — doses line: "come from the BNF — never from this summary" + **`BNF (link-out)` chip**; with the library's "Open at BNF ↗" both halves verified (own cite+link summaries; BNF = pointer).
+- ✅ Governance block intact (NICE CKS · BAD · Draft v1.0 · reviewed Dr R. Kaur → awaiting sign-off) + clinician/patient toggle + verify-at-source.
+- 🐛 **"Management approach" renders TWICE** — first instance malformed (repeats Assess-&-rule-out bullets under the wrong heading + empty half-rendered box), then the correct full section. Section duplication/content bleed — fix rendering.
+- ⚠️ **Chip coverage ~70%, not universal** — e.g. "Consider differentials…" (a recommendation) has no chip. Agree the rule: every recommendation chips; descriptive lines may inherit section source.
+
+### R2.8 NG112 detail (recurrent UTI) — two-tier library discovered; needs card signposting
+- **This is a POINTER/INDEX entry, not a full summary** — no clinical content, just scope + guardrails + verify-at-source. **Correction: this was NOT in the spec** — the spec had ONE format for our guidance (Rosacea layout); only BNF entries were pointers. The developer invented this tier unasked. **Faheem has now ADOPTED it as official (9 Jul)** with rules → spec §5.6: two tiers, **mandatory card badges** (`FULL SUMMARY` / `INDEX → SOURCE`), pointers = interim placeholders promoted by search demand, **starter-set topics (incl. NG112 recurrent UTI) must be authored in full before launch.**
+- ✅ Guardrails on-page are excellent: "read and apply, never a patient-specific directive"; doses-from-BNF; **"flag it if out of date → routed to the panel for review"**; **"version-tracked so you can evidence what guidance said at the time of your decision"** (core spec promise, stated).
+- 🐛 **UX: tiers are indistinguishable on the library cards** — clinicians click expecting Rosacea-depth and get a meta-page (Faheem's "why is this different?"). **Fix: badge the tier on the card** (`FULL SUMMARY` vs `INDEX → SOURCE`).
+- ❓ Confirm with dev: intentional tiering (which entries are full summaries — should match the ~12 starter set) vs never-authored.
+
+### R2.9 Templates & SOPs — ✅ SOP builder exists with correct governance split; 🐛 duplicate SOPs possible
+- ✅ **"Build for my clinic" on SOP cards** (§7 builder entry point) — and **NOT on note templates** (Open only) = the locked governance split implemented (SOPs clinic-customisable; note templates standard).
+- ✅ **"Your clinic's SOPs" section** evidences 4 spec requirements at once: per-clinic tenant scope ("visible only to your clinic") · **clinic-lead signing** (Kazeem) · **gap-checked vs GPhC, CQC, MHRA, NHS** (compliance check vs uploaded standards) · versioned (v1).
+- 🔍 **Dashboard duplicate-audit mystery SOLVED** — two literal copies of the same SOP exist (both v1; "RIverside Pharmacy Clinic" typo vs "Riverside pharmacy clinic"). Kazeem built + signed it twice; the audit was honest. Real bugs:
+  1. **No duplicate guard** — re-building an existing SOP should warn/update to **v2**, never a second v1.
+  2. **Clinic name typed free-text each time** (hence the typo) — pull from the **clinic profile**, don't retype.
+- ⏳ Click-throughs pending: "Build for my clinic" flow (questions → AI draft → edit → gap-check → sign) · note-template modal footer (must say standard/not customisable — round-1 §7 contradiction).
+
+### R2.10 SOP builder click-through — 🛑 output too thin (Faheem); DECISION: full best-practice by default
+- Builder form is right-minded (clinic name · named clinical lead · data/IG lead · premises · "how this process actually runs") and the grounding line is honest — but **"unfilled sections stay visibly unfinished" is the notes rule wrongly applied to SOPs**: minimal input → skeleton with empty headings → **inspection liability** ("kind of useless" — Faheem).
+- Template modal confirms the skeleton problem (Scope & competence `<conditions prescribed for>` etc.) and **retains the round-1 §7 footer contradiction** — "Your clinic customises this" is correct on SOPs, but note-template modals still need the standard/not-customisable wording (verify separately).
+- **DECISION (→ spec §5.7):** clinic FACTS never invented; process CONTENT always full best-practice default (pre-authored, MDT-validated); clinic DECISIONS default + `[CONFIRM: …]` flag; sign-off warns on unresolved placeholders; **output anatomy = real CQC policy** (version-control block · References · Scope · AIM→POLICY→PROCEDURE — exemplar: Faheem's C07f Prescribing Policy).
+
+### R2.11 Training — ✅ **BOTH round-1 gaps CLOSED (module content + CPD log/export)**
+- ✅ **Content behind cards** — module opens with "MDT-governed content" badge, covers-outline, guardrails ("approach-level teaching only… doses from the BNF"), and **reflective-account capture (CPD EVIDENCE) + Save** → "Completed · reflection saved". (Video = honest Bunny production integration; outline stands in.)
+- ✅ **CPD log EXISTS** — module completions (time/date/"reflective account recorded") + **auto-entries for MDT participation** (C-236/C-237, 15 min) = the MDT→CPD by-product, working.
+- ✅ **Export CPD portfolio EXISTS** — PDF "reflective record… structured for GPhC/GMC/NMC shared-core submission" with modules + reflections + MDT entries, honest prototype footer.
+- ✅ **Wording softened as asked** — "Auto-logged for revalidation" → "CPD evidence for your portfolio · reflections included in export".
+- Refinements: **(1) portfolio PDF lacks clinician identity** — add name · profession · registration number · period covered (appraiser needs whose record); **(2) reflection quality** — junk one-liner accepted; add "what will you do differently?" prompt + gentle minimum; (3) Bunny embed = production (tracked).
+
+### R2.12 MDT overview — ✅ **two-panel split implemented**; pharmacist added; 🐛 test members on roster
+- ✅ **Clinical MDT vs Governance MDT** — implemented with correct remits ("clinical content + anonymised case answers" / "SOPs, policies and regulatory content"). §4B structural flag closed.
+- ✅ **Pharmacist added** — Dr N. Newman · Pharmacy & prescribing (closes the round-1 routing-target gap for medication queries).
+- ✅ Empty shield card removed; framing/cycle/agenda all hold.
+- 🐛 **Test accounts on the public roster** — "Dr P. Word" (password) + "Ep Och" (epoch), both "Dermatology". Delete before demos; reinforces the no-test-data-in-production rule (with R2.6 test guidelines).
+- Known: "asynchronous case input → documented response" still depends on the broken case backend (R2.5).
+
+### R2.13 Session library — ✅ clean pass; per-recording signer now on the card
+- ✅ **New "June MDT — full session recording"** shows provenance on-card: "signed off by Faheem Ahmed · governance-signed · 87 min" — per-recording named sign-off surfaced (round 1: footer claim only).
+- ✅ Library grows with the live schedule (June recorded 30 Jun; July upcoming) — not static seed data.
+- Unchanged knowns: Bunny playback = production ("illustrative in this prototype"); consent-capture flow behind "governance-signed" = verify at production; tag filters still nice-to-have.
+
+### R2.14 Panel portal — My assigned cases (as Dr Kaur) — ✅ **routing VERIFIED; backend works (R2.5 = regression)**
+- ✅ **Routing by specialty WORKING** — dermatologist sees dermatology-tagged cases only (round 1: all funnelled to Chair). Badge "3" = awaiting-response count (correct semantics).
+- 🔄 **R2.5 reframed: the case backend WORKS** — real IDs (C-236…C-243), submissions 6–8 Jul, status transitions, **persisted timestamped responses** (7 Jul). Full loop submit→route→respond→persist has been functioning. **Today's "did not reach the clinic server" = a recent regression or clinician-session-specific failure** — tell dev: "cases landed 6–8 Jul; submission fails 9 Jul — what changed?"
+- ✅ **Photos flow to panel** — "Clinical photos · consented · metadata stripped" provenance on the urgent rash case; URGENT tag renders.
+- ✅ **Structured responses** — "Agree with the documented triage & plan" chip + free text.
+- ✅ New cases (C-238–243) properly anonymised (age band, no initials).
+- 🆕 **"Available tasks" nav item** — looks like the §4B claim-a-task marketplace; review next.
+- 🐛 **Legacy data NOT retro-scrubbed** — old C-236 still shows **"J.M."** (created pre-fix) → panel can still see a pre-fix identifier. **One-off scrub of existing records needed** (+ legacy mis-tag: C-236 still labelled Dermatology). 
+- 🐛 Test junk cases ("Case-loop E2E one/two", "R3 notif case") → cleanup pile; response quality ("ok") needs the same nudge as reflections; case summaries still embed ⚠ prompt lines (known P3).
+
+### R2.15 Available tasks (claim-a-task marketplace) — ✅ §4B model implemented near-verbatim
+- ✅ All five locked rules stated as product copy: **"Fixed fees, set by the admin — no bidding"** · tag-gated visibility ("only see tasks your verified qualification tags make you eligible for") · claim → named reviewer + moves to their Governance queue · **"One item → one owner → one sign-off gate"** · **risk-tiered separation of duties** ("high-risk items still require an independent clinical-lead sign-off after your review").
+- Honest empty state explaining when tasks appear.
+- ⏳ Remaining check (needs data): admin sends an item into review → task appears **with its fee** → claim → lands in Governance review queue with name recorded; tag-gating filters correctly.
+
+### R2.16 Governance review — ✅ **SOURCE-LINK P0 VERIFIED (Faheem's catch → product copy)**
+- ✅ **Every source passage carries "↗ Open the source to verify"** — and the instruction states the rationale verbatim: *"open the source link and confirm the passage is really there **(the quote alone is not evidence)**, then tick."* The AI-checking-AI flaw is now the workflow's stated rule.
+- ✅ **Content routing panel-side** — Dr Kaur sees dermatology content only (round 1: all with Chair). Both halves of routing confirmed.
+- ✅ **Claim/release integrated** — queue items show "claimed by you" + **Release** (unclaim); partially closes R2.15's marketplace check (claim → member's queue works; fee display still unverified).
+- ✅ Verification rigour uniform across content types — even the **note template** change is source-verified (history prompts ↔ CKS Assessment passage). Hard gate intact (0/3, disabled sign, named reviewer, per-item flag).
+- ✅ **Both click-checks PASSED (Faheem):** (1) the source link opens; (2) **the tick is ENFORCED-GATED** — "Matches source" is locked until that item's source has been opened (chip flips to "Source opened", then the tick unlocks; items 2/3 stay locked until their sources are opened). **Gold-standard implementation** — verification cannot be rubber-stamped. P0 closed at the highest bar.
+
+### R2.17 Panel Sessions — 🐛 scheduling bug (next session wrong, portals disagree)
+- 🐛 **Next session shows "August cycle · 15 Aug"** while today is 9 Jul: (1) **July (28 Jul) is missing** from the list entirely (June → August); (2) **portals disagree** — clinician dashboard says July 28 next, panel says Aug 15; (3) **15 Aug 2026 is a Saturday** — violates the last-Tuesday-monthly rule (should be 25 Aug).
+- Likely: dev tested the admin schedule **override** and a stray date consumed/hid July. Fixes: restore July as next; **override validates against the recurrence rule** (or warns "not a Tuesday"); both portals read the **same schedule source**.
+- Otherwise consistent (June/May recordings match clinician library; consent/governance footer intact).
+
+### R2.18 Panel directory — consistent; three known items confirmed still open
+- ✅ Roster matches MDT overview (incl. pharmacist); ACTIVE states; correct admin/recruitment footer; **subtle colour code** (purple = governance, blue = clinical).
+- Still open (all already listed): (1) flat list — apply the overview's **Clinical MDT / Governance MDT section headers** instead of colour-only; (2) **verified qualification tags still absent** — the field that gates Available-tasks eligibility isn't visible anywhere (part of the credentialing-record item); (3) test accounts ("Dr P. Word", "Ep Och") still on the roster.
+
+### R2.19 Admin overview — ✅ sign-off sequenced (review-first enforced); tile fix landed
+- ✅ **Sign-off gated on completed panel review** — only the panel-reviewed item (note template v2, reviewed by Dr Kaur) exposes a "Sign off" button; IN-REVIEW items show "Awaiting MDT review" with **no sign button**. Round 1 allowed signing at any stage. Two-step order now enforced; reviewer (Kaur) ≠ signer (Faheem) in practice. ❓ remaining: is reviewer=signer **blocked in code**, or just avoided?
+- ✅ **"Panel members" tile subtitle FIXED** — now "across 5 specialties" (the exact suggested wording). P3 ticked.
+- 🆕 **Urgent-case escalation banner** ("NEEDS YOUR ATTENTION") — good; ❓ but the case shows **"C-…" with no ID** — same unassigned-ID pattern as the failed submission (R2.5). Is the banner surfacing a case that never fully persisted?
+- ✅ Counts live and plausible (3 clinicians · 8 panel · 1 awaiting sign-off · 8 open cases) — round-1 reconcile issue resolved in spirit; spot-check tallies after test-data purge.
+- Footer consistent: "AI-drafted → MDT-reviewed → human-signed → versioned."
+
+### R2.20 Panel management — ✅ tags + credentialing structure + fee table BUILT; 🛑 credential gating missing
+- ✅ **Verified qualification tags BUILT** — per-member chips (kaur: dermatology/rosacea/acne; bright: psychiatry/adhd/risk-assessment; hale: governance/cqc/ig-gdpr/ipc; newman: pharmacy/prescribing). Test accounts have no tags (tag-gating would correctly starve them).
+- ✅ **Credentialing record structure BUILT** — per-member status chips: "Registration/PIN missing · Contract not signed · DBS pending · Indemnity pending" (4 of the specced fields tracked; CV/photo presumably under "Edit identity" — click-through to confirm).
+- 🛑 **Credential gating MISSING** — all members ACTIVE (reviewing + answering) with registration missing/DBS pending. Breaks "vetting gates access": incomplete credentials → cannot activate / claim / review. The chips exist; the enforcement doesn't.
+- ✅ **Fee-band table BUILT** — "ADMIN-SET · NO BIDDING", editable, audit-logged edits, footer gives the no-bidding rationale. Current fees (£25/60/120/45/90) = dev placeholders → Faheem to set real bands (anchored £150/hr per §4B).
+- ✅ Two-panel membership labelled per member (Clinical/Governance MDT); case assignment shows **urgency + waiting time** (URGENT·1d / SOON·5d).
+- 🔍 **Regression diagnostic:** the failed submissions appear in admin Case assignment **without IDs ("C-…", waiting 1d/2d)** — insert half-succeeds (admin-visible) but no server ID + never reaches panel. Pinpoints where the case-submission regression breaks.
+- 🐛 Test junk grows: case "ddd"; P. Word/Ep Och still active.
+- ➕ **P3 added (Faheem):** per-member **open-case count** (+ avg response time) in the Panel members list — rebalancing via the override is currently blind without workload visibility.
+
+### R2.21 Admin MDT schedule — ✅ recording PII pipeline BUILT; scheduling bug pinpointed
+- ✅ **§5.10 recording pipeline BUILT** — "Session recordings — review before publishing · PRIVATE UNTIL SIGNED OFF" with stage chips **HOLDING → PII REVIEWED → CONSENT CONFIRMED → PUBLISHED** + named accountability per step; footer carries the spec reasoning near-verbatim ("video leaks PII in ways you cannot auto-strip… prefer audio-only or slides+voiceover"). **"Promote to training module"** built (round-1 §11 remainder). ⚠️ minor: all 3 steps done by the same person — apply SoD to high-sensitivity recordings eventually.
+- 🔍 **Scheduling bug pinpointed (refines R2.17):** **admin schedule is CORRECT** (next = July · 28 Jul, last-Tuesday rule, auto-advancing) — the **panel Sessions page reads wrong/stale data** (showed Aug 15, dropped July). Fix = single schedule source for both portals.
+- ✅ Agenda auto-pulls 8 open cases — matches Overview tile (counts consistent).
+
+### R2.22 Admin Content libraries — ✅ risk tiers + claim attribution on the pipeline
+- ✅ **Risk tiers visible per item** ("high risk"/"low risk" chips on Rosacea, NG87, R3, Impetigo) — §8 risk-tiered decision landed on content; tier drives sign-off path.
+- ✅ **Claim attribution** ("claimed by Dr R. Kaur") — marketplace claiming wired through to the admin pipeline view.
+- ✅ "xxxx" test item cleaned; 🐛 "R3 sign test" + "Impetigo E2E" still PUBLISHED (purge half-done). Counts match Overview.
+
+### R2.23 Regulatory standards — ✅ A6 fixes verbatim; honest RAG-status disclosure
+- ✅ **Named currency owner + cadence** on every standard ("currency owner: Governance lead · review due ~3-monthly") and ✅ **"Upload restricted to central admin/governance"** — both round-1 A6 asks implemented.
+- 🔍 **Honest admission:** "REFERENCE ONLY — NOT YET RAG-INGESTED" + footer: gap-checks currently run on a **deterministic theme checklist**, not the uploaded documents' text (RAG ingestion = licensed-integration step). Consequences: (1) standards RAG-ingestion joins the **grounded-AI core P2**; (2) 🐛 labelling: clinic-facing "gap-checked vs GPhC/CQC/MHRA/NHS" oversells until RAG lands — say "checked against the compliance theme checklist" so claim matches mechanism.
+
+### R2.24 Users & clinics — 🛑 tenancy still conflated; 🛑 mystery self-registered accounts
+- 🛑 **Two mystery CLINICIAN accounts** — random-string names ("bksLQkfUfNDDhqBEmGMxn", "lfLDHKraqPRxXeBJW"), real **gmail** addresses, **no clinic attached**, full clinician role. Questions: (1) **is there open self-registration?** (clinician accounts must be clinic-admin-invite only); (2) **display name not enforced** — audit trail stamped "Signed by bksLQkf…" is worthless → require proper names; (3) unscoped users = the tenancy gap made live.
+- 🛑 **A7 tenancy conflation persists, now inconsistently** — some panel members filed under "Clinickly Demo Clinic", others (Newman/P.Word/Ep Och) have **no clinic**. Two-tier model (clinic-scoped vs platform-scoped) still unimplemented.
+- 🛑 **No clinics management** — page is "Users & clinics" but lists only users; no clinic entities, no way to add clinic #2 (needed to prove isolation).
+- ✅ Working: per-user emails, role badges, Deactivate, Invite user.
+
+### R2.25 Reports & audit — ✅ **all four A8 asks landed**; 🛑 patient refs leak into the audit trail
+- ✅ **Charts wired to real data** (consultations by area; MDT questions by type) — empty-charts bug gone.
+- 🟡 **"Top missed searches" box exists** (aggregate/PII-scrubbed, honest empty state) — but **logging UNVERIFIED** (box was empty; test: gibberish search → appears in report?). **Wider demand intelligence not built:** top successful searches / most-opened guidelines, pointer-entry opens, SOP demand, Ask-Clinickly themes. (Downgraded from ✅ — Faheem.)
+- ✅ **Audit trail: "server-side log is append-only" + Export CSV** — immutability + exportability done. **Team CPD** section honest (roll-up awaits tenancy).
+- ✅ Audit rows prove the failure paths: **"Flagged NEEDS UPDATE"** (stale flag exists); **"Flagged back to draft — 'Passage r2 does not match the live source'"** (flag-back with recorded reason); recording-pipeline steps; fee-band claims; account provisioning; **"Updated clinic setting — schedule"** (evidence for the R2.17 schedule bug).
+- 🛑 **NEW P1 — patient refs in the central audit log:** entries read "Signed clinical note — ADHD — **patient N.R**" / "— **patient JS**". Clinician's private patient codes are written into the platform audit trail visible to central admin — breaks the anonymisation boundary (same family as the J.M. leak). **Audit item descriptions must carry the item type only, never patient refs.**
+- Minor: "Not recorded — 5" tops the clinical-area chart (legacy pre-dropdown consultations) — tag/exclude in the retro-scrub.
+- 🛑 **Faheem's verdict: "really basic" — correct.** Round-1 bugs fixed ≠ a reporting suite. Current page = audit trail + two all-time counters. **Reports v2 added to P2**: date ranges/trends · per-clinician & per-clinic breakdowns · MDT service levels (time-to-answer, urgent SLA) · governance health (overdue reviews, throughput) · CPD compliance matrix · chart exports · one-click inspection pack (with Master Policy Index).
+
+### R2.26 Ask Clinickly (first review) — 🛑 **P0: breaks the product's positioning (device risk)**
+- 🛑 **Patient-specific diagnostic support, as built** — response titled "Differential Diagnosis Support"; solicits the patient's age/laterality/symptoms/duration/exam findings; "provide more clinical context so I can **refine this for you**." Software tailoring a diagnostic output to an individual patient = the function the product's positioning (and the **draft MHRA letter**: "expressly NOT intended to provide patient-specific diagnostic recommendations") explicitly disclaims. Disclaimers present but don't change function.
+- 🛑 **Zero citations — the only ungoverned AI surface in the product.** Answers from model memory; no source chips, no verify-at-source. Violates the product's own "from retrieved source text, never memory" rule.
+- **FIX — rescope to a guidance NAVIGATOR (P0):** answers only from the governed library + cited sources (with open-entry / verify-at-source links); stays GENERAL (frameworks, guidance summaries — never "for this patient"); **hands off** patient-specific questions → "submit an anonymised MDT case", documentation → co-pilot; logs question themes to demand analytics.
+- Minor: "LIVE MODEL" badge contradicts footer ("connect your API server-side to enable live replies"); clinical content itself sensible + red-flag-aware (malignant OE, mastoiditis, Ramsay Hunt, GCA).
+
+- ❌ **P0 codes STILL NOT FIXED** — `R05.9` again labelled **"Fever, unspecified"** (R05 = cough; fever = R50.9). "AI-suggested — verify before use" badge added = caveat, **not validation**. J00/J06.9 correct. Terminology-server validation still outstanding.
+
+---
+
 ## 1. Dashboard — ✅ strong
 
 **Working / matches spec**

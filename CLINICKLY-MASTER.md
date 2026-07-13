@@ -77,7 +77,7 @@ A web app with **two pillars**:
 - **Regulatory standards** — upload GPhC/CQC/MHRA/NHS (reference + AI gap-check).
 - **Users, clinics & permissions** — accounts, roles, and **locking each role to its own area**.
 - **Reporting & audit** — consultation types, MDT query types, CPD completion, full audit trails.
-- **Search & content-gap analytics** — logs every Guidelines search + Ask-Clinickly query with **hit/miss**, result-opened, and **frequency**; surfaces **"Top missed searches"** (zero/weak result = content gap) with a one-click **"Add to authoring backlog"** → feeds the §8 authoring pipeline. Aggregate + tag-based, **no patient data / scrub free-text PII**. *(This is the demand signal behind §5.6 "author by data.")*
+- **Search & content-gap analytics** — logs every Guidelines search + Ask-Clinickly query with **hit/miss**, result-opened, and **frequency**; surfaces **"Top missed searches"** (zero/weak result = content gap) with a one-click **"Add to authoring backlog"** → feeds the §8 authoring pipeline. Aggregate + tag-based, **no patient data / scrub free-text PII**. *(This is the demand signal behind §5.6 "author by data.")* **Also log opens of `INDEX → SOURCE` pointer entries** — a frequently-opened pointer is the §5.6 promotion signal to author that topic as a full summary.
 - **Billing** — later (Stripe), incl. the premium MDT-review add-on.
 
 ---
@@ -123,6 +123,22 @@ A web app with **two pillars**:
 3. Claimant reviews → signs off → **published vX**, audit-logged (name of reviewer/signer recorded).
 
 **Pricing — admin-set fixed bands, NO bidding.**
+
+**⭐ Panel remuneration model (locked 9 Jul 2026) — two halves:**
+1. **Fixed sessional cost** — the monthly MDT session is sessional, not a task: **£150/hr** (≈ **£225/member** per 90-min session). This is the retainer core: guarantees attendance + the teaching happens.
+2. **Fixed fee per deliverable** — everything outside the session is a claimable task priced at **(realistic time) × £150/hr**, the rate the panel already accepted.
+
+**Starter fee bands (indicative — Faheem confirms exact figures; admin-editable table):**
+| Deliverable | Time | Fee |
+|---|---|---|
+| MDT case response (async teaching answer) | 15–20 min | £40–50 |
+| Training module review | ~30 min | £75 |
+| SOP / policy review + sign-off | 30–45 min | £75–110 |
+| Guideline review (per-statement source check) | 45–60 min | £110–150 |
+| High-risk independent second sign-off | 20–30 min | £50–75 |
+| Monthly MDT session (sessional) | 90 min | £225 |
+
+**Rules that keep it working:** (a) **AI keeps tasks short — that's the economics**: members *verify*, never author; if a 30-min band keeps taking 90, the band or the draft quality is wrong — the platform's **claim→sign timestamps** say which; review bands quarterly against actual times. (b) **Small menu, no haggling** — fee shown on the task, take it or leave it (the "upfront fare"). (c) **Cost-of-goods**: a governed guideline ≈ £110–150 of expert time **once**, amortised across every clinic (write-once-publish-everywhere) — this number underpins Clinickly's own subscription pricing/margin.
 - **Pricing is set by Admin, banded by task type × complexity** (low/med/high). Members see the fixed fee and choose to claim — like an **upfront fixed fare**, not an auction.
 - **Bidding was considered and rejected** for anything that gets signed off: open bidding drives price *down* → quality/accountability down, and "cheapest clinician who'll sign a safeguarding SOP" is indefensible to a regulator. *(Light bidding/first-come may be allowed later for non-sign-off bulk **authoring** only.)*
 
@@ -186,6 +202,10 @@ Searchable guidance library; also feeds the guidance surfaced in the consultatio
 - *Reference format proven in the working sample: `clinically/app/guideline-sample.html` (Rosacea).*
 - **Per-statement citations are mandatory (build gap found):** a single document-level "Sources" bar is **not enough** — **every recommendation carries its own inline citation chip** (which source backs *this line*). That's the defensibility core.
 - **Library card = one fixed template for every entry** (consistency is the point): `[source·code] [state badge]` · title · one-line description · `Updated YYYY-MM` · `Open`. Variations live *inside* the template, not in its shape: **source-tag colour** (NICE/GPhC/GMC/BNF/MHRA); **state badge reflects the real pipeline state** — `GOVERNED` (signed/live) · `IN REVIEW` · `DRAFT` · **`NEEDS UPDATE`** (stale — source changed, from §8 change-detection); and **"Open" behaviour** — NICE/CKS/society open **our governed page** (Rosacea layout), **BNF opens OUT to the BNF** (link, not our content). Grid: 3-up desktop / 1-up mobile; search + source-filter tabs on top.
+- **⭐ DECISION (9 Jul 2026) — two entry tiers, clearly badged.** The library has exactly two kinds of entry, and the card must say which BEFORE the click:
+  - **`FULL SUMMARY`** — our own authored, per-statement-cited, governed content (the Rosacea layout). **The ~12 starter-set topics MUST be full summaries before launch** — no placeholders in the core.
+  - **`INDEX → SOURCE`** — an interim **placeholder**: scope + guardrails + "verify at source" link, NO clinical content of our own. Exists only for not-yet-authored topics; **promoted to a full summary when search/open demand justifies authoring it** (the §4 content-gap data decides what gets written next).
+  - Two identical-looking cards with wildly different depth behind them is a UX failure (found in build review R2.8) — the tier badge is mandatory, not decorative. *(BNF entries remain the third behaviour: card links OUT to the BNF, never our content.)*
 
 **Content strategy — which guidance to author + how sources are handled:**
 - **We do NOT replicate NICE or the BNF.** Your library is a **governed one-page synthesis that points to the source**, not a copy of it.
@@ -198,6 +218,12 @@ Searchable guidance library; also feeds the guidance surfaced in the consultatio
 ### 5.7 Templates & SOPs → **split**
 - **Note templates** (move next to note-writing): the SOAP+history skeletons the AI fills. **Central + STANDARD — the SAME for every clinic** (Clinickly-created → MDT-reviewed → signed off → published to all). **No per-clinic customisation of note templates** (that would fragment documentation — "the structure melts"). New ones/changes go through the governance pipeline centrally. *(Contrast with SOPs below, which ARE clinic-specific by design — don't confuse the two.)*
 - **SOPs / policies / governance docs** (own admin area): **hybrid model** — Clinickly provides **governed starter templates** → **AI helps the clinic populate** their specifics (named leads, processes, premises) → **AI checks the finished SOP against uploaded GPhC/CQC/MHRA/NHS standards** (gap-check, cites what it checked) → **clinic lead signs off (standard)** / **Governance MDT review (premium — the §4B admin/regulatory panel)** → versioned/audited. **"Request an SOP"** button → authoring backlog.
+  - **⭐ DECISION (9 Jul 2026) — builder output must be a COMPLETE best-practice SOP, never a skeleton.** The developer over-applied the notes anti-fabrication rule to SOPs ("unfilled sections stay visibly unfinished") → minimal input produced empty headings = an inspection liability. Correct rule splits two things:
+    - **Clinic FACTS** (names, premises, their choices): **never invent** — from the form / clinic profile, else a **flagged placeholder** `[CONFIRM: named safeguarding lead]`.
+    - **Process CONTENT** (the procedure itself): **always the full best-practice default** — this is pre-authored, MDT-validated governed template content, not an AI invention. With ZERO clinic input the build still yields a complete, adoptable SOP.
+    - **Clinic DECISIONS** (options within best practice): best-practice default + explicit flag, e.g. `[CONFIRM: does your clinic prescribe controlled drugs? Default: NO]`.
+    - **Sign-off warns while placeholders remain unresolved** (lead resolves them before signing).
+    - **Output anatomy = a real CQC policy** (exemplar: Faheem's C07f Prescribing Policy): version-control block (Policy No · Responsible Person · Author · Authorised by · Issue date · Review date/cycle · Version) · References · Scope (standard employ wording) · **AIM → POLICY → PROCEDURE** · cross-references to related SOPs · END. The version-control header is what inspectors scan first.
   - **Why starter + AI, not a finished handout:** an SOP must be true to the *actual* clinic (its real leads/processes) — a generic un-adapted SOP is an inspection liability. So the clinic makes it their own, with AI help + auto compliance-check.
   - **"Our AI" = grounded, not fine-tuned:** Claude API **RAG-grounded on** our SOP templates + the uploaded regulatory standards (checks against *real* standards, cites them) — not a bespoke trained model.
   - **Contrast:** SOPs are **clinic-specific by design** (meant to differ); **note templates are standard/central/same-for-all** (must not fork). Don't apply the note-template no-customise rule to SOPs.
@@ -208,7 +234,15 @@ Searchable guidance library; also feeds the guidance surfaced in the consultatio
 ### 5.8 Training
 Upskilling + CPD hub.
 - **Embedded learning:** video (host on **Bunny** — recommended) + text + optional quiz. Completion → logs CPD + prompts reflection. *(Keep v1 simple; quizzes/certs = Phase 2.)*
-- **CPD recording (standards-aligned):** *now* — structured record (what/date/hours/type + reflective account + standard link) → **export as CPD portfolio (PDF)** the clinician uploads to their body; works for **GPhC/GMC/NMC** (shared core). *Phase 2* — per-body exact formatting + any direct submission.
+- **⭐ CPD recording — GPhC-NATIVE record types (decision 9 Jul 2026; source: the real GPhC forms — planned/unplanned/peer-discussion/reflective-account, all sectors, in Faheem's ~/Downloads).** GPhC revalidation counts **RECORDS, not minutes** (minutes = old pre-2018 scheme; keep time as metadata only). Annual requirement: **6 records = 4 CPD (≥2 planned) + 1 peer discussion + 1 reflective account.** The log + export must produce **typed records matching the GPhC forms exactly**:
+  - **CPD planned learning:** Q1 what are you planning to learn (+relevance +effect on service users) · Q2 how · Q3 **example of how it benefited people using your services**.
+  - **CPD unplanned learning:** Q1 the unplanned event + what you learnt + how applied · Q2 **benefit example**.
+  - **Peer discussion:** Q1 **named peer** (name·role·organisation·contact; group = name one) · Q2 how it changed your practice for service users' benefit.
+  - **Reflective account:** how you met the **year's selected GPhC standards** — area of practice · typical service users · real examples.
+  - **Auto-mapping:** Training module → **planned learning** (Q1/Q2 pre-filled from module outline; Q3 = user reflection) · consultation/case learning → **unplanned learning** · **MDT case response → PEER DISCUSSION** (panel member = the named peer, with their standing consent to be named — Clinickly auto-generates the one peer-discussion record required annually; marketable: "your peer discussion, done") · reflective account scaffolded against the year's standards using the clinician's clinical-area tags.
+  - **Quality bar = the forms' own criteria** ("benefit to people using your services, with an example" recurs in every form). Reflection prompts mirror the criteria; **AI criteria pre-check before save** ("no concrete example of patient benefit yet") — same pattern as the SOP gap-check.
+  - **GMC-native too (grounded in the Academy of Medical Royal Colleges reflective template — in Faheem's ~/Downloads):** per-activity reflection = Title/date + **supporting-info category** (general info · keeping up to date · review of practice/QI/significant events · feedback/complaints) → **what have you learned** (tagged to the 4 **Good Medical Practice domains**: knowledge/skills/performance · safety & quality · communication/partnership/teamwork · maintaining trust) → **how has this influenced your practice** → **next steps with SMART objectives**. Rules: no one-word answers, beyond descriptive observation, **no patient-identifiable info**.
+  - **⭐ Capture once, render per regulator:** ONE reflection wizard with 4 questions serving both schemes — (1) what did you learn · (2) how has/will it change your practice · (3) **benefit to people using your services, with a real example** · (4) what next (SMART). Export engine renders the same entries as **GPhC record types** or **GMC Academy-template reflections** (auto-category: module→"keeping up to date", MDT case→"review of practice"; auto-GMP-domain tags). Clinician profile registration (GPhC/GMC) sets the default. **NMC = phase 2.**
 - **Content:** Clinickly-produced (your own educational content) + **MDT session recordings → modules**, all governance-signed.
 - **Data-driven curriculum:** commonest MDT query types + decision-support flags → new modules.
 - **Team training (admin):** assign modules to staff + track completion (inspection evidence).
@@ -240,9 +274,16 @@ Ask a clinical question → **guideline-backed answer**. **Grounded in the same 
 
 **C. MDT query type (for audit; AI auto-suggests):** Diagnostic uncertainty · Treatment/management choice · Medication query · Escalation/referral threshold · Safety/risk · Scope of practice · Shared-care · Second opinion/sense-check · Complex/multi-morbidity · Other (logged).
 
-**D. Templates & SOPs:**
-- *Category:* Note template · SOP · Policy & governance · Patient-facing · Regulatory standard/reference.
-- *SOP type:* Private prescribing · Consent & confidentiality · Safeguarding & escalation · Data protection/GDPR · Controlled drugs · Infection prevention & control · Complaints & incidents · Chaperoning · Record-keeping & audit · Business continuity · Premises & equipment · Other (request).
+**D. Templates & SOPs — ⭐ catalogue taxonomy adopted from a real CQC-registered clinic's master policy index (Ahmeys clinic, 9 Jul 2026).** Faheem's inspection-tested index is the target catalogue; the source doc lives at `~/Desktop/Aug 2022/Desktop/CQC/Extra information/CQC POLICIES/Ahmeys clinic Master Index Policies.doc`.
+- *Top-level category (mirrors the index):* **Clinical policy** · **Clinical template** · **Organisational (non-clinical) policy** · **Staff/HR template** · **Patient-facing template** · Note template · Regulatory standard/reference.
+- *Catalogue discipline (from the index):* every document carries a **policy number** (C07f-style), **version**, **review cycle** (e.g. 2-yearly), authorised-by, and cross-references (e.g. staff/clinician handbook inclusion).
+- *Clinical policies (target set, C-series):* chaperone · infection control · patient confidentiality/privacy/GDPR-Caldicott/IG · complaints · consent · clinical & non-clinical waste · medicines management (+ controlled drugs · safe storage · cold chain · safety alerts · **prescribing** · repeat scripts) · safeguarding adults (+ pocket guide) · safeguarding children · patient record keeping · unexpected patient death · assessment arrangements · sample-signature register · clinical supervision · operational · OOH · risk management & SUI reporting · completion of medical records · monitoring quality & treatment · patient feedback · duty of candour · supporting staff · minor surgery · clinical governance · staff recruitment · communicating after harm · customer service · patient access to records · document control · advance directives · risk assessment in clinic · clinical audit (+ strategy) · resuscitation (+ paediatric) · practising privileges & contracts · never events · fit & proper persons · health & safety · patient ID verification · remote consultations.
+- *Clinical templates (CT):* consent form + patient info · PSDs · SUI/incident report + risk assessment · audit template · CG agenda/minutes/prep · Caldicott guardian outline · DBS record + risk assessment · registration forms (adult/child) · ligature risk · doctors handbook · consultant annual review.
+- *Organisational (S):* equality & diversity · whistle-blowing · communication · stress · fire safety · staff training & development · occupational health · social media · lone worker · being open.
+- *HR templates:* application · induction · appraisal suite · training records/certificates · meetings · contract · staff handbook. *Patient-facing (P):* complaint leaflet/forms/holding letter/record/register · chaperone notice.
+- **Phasing:** the ~12-type starter set is authored first (pilot); the full index is the roadmap, **prioritised by demand data** ("Request an SOP" + builds-per-template). "Other (request)" always available.
+- **⭐ Feature — auto-generated Master Policy Index per clinic:** the first thing an inspector requests. A living page/export listing every SOP the clinic holds: number · title · version · signed-by · issue date · next review date. Clinics maintain this by hand today; Clinickly generates it for free from the clinic's SOP library.
+- **⭐ Protected field — "How this process actually runs in your clinic" stays in the builder (Faheem, 9 Jul).** CQC's core test is *policy reflects actual practice* — this field is what makes the SOP true, not generic. It complements the best-practice-default rule: **empty field → complete SOP from defaults; filled field → their real workflow woven in.** Never remove it.
 
 Rules: both facets required dropdowns; "Other" logged & reviewed; clinical content stays free text; forward-looking — map tags to **SNOMED**.
 
