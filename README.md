@@ -8,7 +8,7 @@ CLINICKLY-MASTER.md is the spec (updated with all decisions). BUILD-REVIEW*.md =
 
 ## 🆕 Governed policy library — COMPLETE (21 Jul 2026)
 
-**[`/starters/`](starters/) — 28 policies, all APPROVED v1.0.** This is the content a new clinic receives on day one. Build the onboarding questionnaire against these, not placeholders.
+**[`/starters/`](starters/) — 28 policies + [4 governed forms](starters/forms/), all APPROVED v1.0.** This is the content a new clinic receives on day one. Build the onboarding questionnaire against these, not placeholders.
 
 **[COMPLETENESS-CHECK-SPEC.md](COMPLETENESS-CHECK-SPEC.md) — new P1 feature.** Eleven rules, every one derived from a real defect found in a real 119-document corpus that had passed a CQC inspection. This is the check that runs before anything publishes to a clinic.
 
