@@ -237,3 +237,27 @@ C029 — the *Document Control* policy — had none of this, and its own header 
 The check does **not** assess whether clinical content is correct, and it must never claim to. It checks completeness, currency, consistency and provenance.
 
 **Clinical correctness comes from the governance pipeline** — MDT review, clinical-lead sign-off — not from software. Keep the language on this precise: it is a **completeness check**, not an approval, and not a compliance guarantee. See `RED-LINES.md`.
+
+---
+
+## Appendix — why the AI must retrieve, never recall
+
+**Evidence, not assertion.** The requirement-theme mapping in `REGULATOR-MAPPING.md` was originally written from model memory. It read fluently and confidently. When it was later checked against the published source texts, **four of the mappings were wrong**:
+
+| Error | Effect if shipped |
+|---|---|
+| GPhC Pharmacy Principles **1 and 5 swapped** (governance is 1, not 5) | 8 policies citing the wrong principle |
+| Professional Standard 7 labelled *"work in partnership"* (that is Standard 2; 7 is confidentiality) | The confidentiality policy citing the wrong standard, and omitting the right one |
+| **Duty of candour thresholds taken from Reg 20(8) — the NHS definition** | Every clinic applying the wrong notifiable-incident test. Reg 20(9) applies to non-NHS providers and uses **28-day duration** tests, not "moderate harm" — and catches incidents where harm was **prevented** by treatment |
+| Reg 20A | Correct — verified |
+
+**Nothing in the drafted text signalled which of the twenty-four mappings were the wrong ones.** The errors were indistinguishable from the correct entries by reading. They were only found by opening [legislation.gov.uk](https://www.legislation.gov.uk/uksi/2014/2936/part/3/made) and the GPhC standards and checking line by line.
+
+### What this means for the build
+
+- **Ask Clinickly must answer only from retrieved source text, with a citation per statement.** An uncited answer is not a lower-quality answer — it is an answer whose error rate is unknowable, which is worse.
+- **A confident tone carries no information about accuracy.** Any UI that renders model output as authoritative without a source link is misleading by construction.
+- **Where nothing relevant is retrieved, the honest output is "not in the library" plus a route to request it** — never a generated answer.
+- **Regulatory citations are the highest-risk content in the product.** They look verifiable, so nobody checks them. Reference data — statute names, standard numbers, guideline editions — should be a maintained table the system reads from, not something a model produces.
+
+This is already the decision in `CLINICKLY-MASTER.md` ("our AI = grounded, not fine-tuned") and is a P0 in `DEVELOPER-FIX-LIST.md`. This appendix records the measured evidence for it: **a 4-in-24 error rate on exactly the kind of content the tool will be asked to produce.**
