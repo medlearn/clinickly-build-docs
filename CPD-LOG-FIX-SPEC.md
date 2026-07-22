@@ -43,7 +43,7 @@ Reflective account   ○      0 of 1
 - **Delete "CPD minutes completed" and "≈ 0.8 h".** They teach the wrong model.
 - **Show the gap, not just the total.** "2 of 4, but you need at least 2 planned and have 1" is the useful statement.
 - **Show the year boundary.** `[CONFIRM: does the clinician's revalidation year run from their renewal date? It should — take it from profile.]`
-- **The "you have 8 eligible MDT cases" prompt is the product.** A clinician one click from their peer discussion is the thing worth paying for.
+- **The prompt should reflect real eligibility.** "You have 8 MDT cases — 2 can become a peer discussion" (i.e. only those where the panel member consented to be named). Do not count cases that cannot produce the record.
 
 `Modules completed 1/6` can stay — it is a training metric, not a CPD one. Keep them visually separate so they are not read as the same thing.
 
@@ -71,7 +71,7 @@ A record with no reflection **does not count toward the 6**. Show it as draft, a
 
 | Trigger | GPhC record type | Notes |
 |---|---|---|
-| **MDT case — panel responded** | **Peer discussion** | The responding panel member **is** the named peer |
+| **MDT case — panel responded** | **Peer discussion** *where the panel member consented to be named* — otherwise **unplanned learning**. See §4 | Consent is **not** automatic |
 | Attending an MDT session | **Unplanned learning** | Or peer discussion if the clinician contributed to the discussion — let them choose |
 | Training module completed | **Planned learning** | Q1/Q2 pre-fill from the module outline; Q3 is the user's reflection |
 | Something learned in a consultation | **Unplanned learning** | User-initiated |
@@ -81,13 +81,49 @@ A record with no reflection **does not count toward the 6**. Show it as draft, a
 
 ---
 
-## 4. The named peer
+## 4. The named peer — panel members do NOT consent by default
 
-GPhC peer discussion requires the peer's **name, role, organisation and contact**.
+**Decision (Faheem, 21 Jul 2026): panel members do not automatically agree to be named.** This is reasonable — being named in another clinician's revalidation portfolio attaches your name to a clinical opinion you gave, and a panel member should control that.
 
-- The panel member who responded is that peer.
-- **Their standing consent to be named must be captured at panel onboarding** — `[CONFIRM: is this in the panel member agreement? If not, add it. Without it we cannot auto-populate the field and the feature does not work.]`
-- Pre-fill from the panel member record. The clinician should never have to type it.
+It has a hard consequence:
+
+> **The GPhC peer discussion form requires the peer's name, role, organisation and contact.** No name means **no peer discussion record**. The system must not produce one anyway with the peer field blank or anonymised — that is an invalid record, and it fails at exactly the moment it matters, when GPhC calls it in for review.
+
+### How it works instead
+
+**The panel member decides, and the default is NO.**
+
+| Setting | Where | Default |
+|---|---|---|
+| **Standing preference** — "I am willing to be named as a peer for CPD purposes" | Panel member profile | **OFF** |
+| **Per-response override** | On the response form, when they answer a case | Inherits the standing preference; can be changed either way for that case |
+
+The per-response control needs to say plainly what it means:
+
+> ☐ **Allow this clinician to name me in their CPD record**
+> They can record this as a GPhC peer discussion, which means your name, role and organisation appear in their revalidation portfolio. It is not published, and GPhC may contact you if they review it.
+> *You can decline without giving a reason, and it will not be shown to them as a refusal.*
+
+**The clinician is never told the panel member declined.** They see what the record can be, not what was withheld. A visible "declined" would create pressure on panel members and awkwardness between colleagues.
+
+### What the clinician gets in each case
+
+| Peer consented | Record type | Counts toward |
+|---|---|---|
+| **Yes** | **Peer discussion** — peer pre-filled from the panel record | The 1 peer discussion required annually |
+| **No** | **Unplanned learning** — no peer field required | One of the 4 CPD records |
+
+**Both are genuine, countable GPhC records.** An MDT case is never wasted — it just lands in a different box.
+
+### What this changes commercially
+
+The claim **"your peer discussion, done"** can no longer be made unconditionally. Do not market it that way.
+
+**What can be said honestly:** *every MDT case becomes a CPD record automatically, and where the panel member agrees to be named, it becomes your peer discussion.*
+
+`[CONFIRM: whether to ask panel members to opt in at onboarding — explained properly, with the reasons — and to report the opt-in rate. If uptake is very low, the peer-discussion route is not a feature we can rely on, and the honest response is to build a separate peer-discussion pathway rather than to lean on the MDT one.]`
+
+`[CONFIRM: an alternative worth considering — allow a clinician to request naming after the fact. The panel member receives a request, and can say yes or ignore it. Ignoring is a silent no.]`
 
 ---
 
@@ -196,4 +232,10 @@ Spec §5.8: **capture once, render per regulator.** One reflection wizard, four 
 5. **§7 + §8 + §9** — duration, ID ordering, test data
 6. **§10** — regulator rendering and export
 
-**Acceptance test:** a clinician with 8 MDT cases and 1 completed module should be able to open this page, see they are short of a peer discussion, click once, add a reflection, and have a completed GPhC-shaped peer discussion record in their export. Today they cannot do any of that.
+**Acceptance test:** a clinician with 8 MDT cases and 1 completed module opens this page and sees:
+- how many of the 6 required records they hold
+- that their MDT cases have become **CPD records** (unplanned learning) automatically
+- **which of them can become a peer discussion** — only those where the panel member consented to be named
+- a one-click route to add the reflection that makes each one count
+
+Today none of that is possible. **And the system must never generate a peer discussion record without a real named peer** — an invalid record is worse than a missing one, because it fails at the point GPhC reviews it.
