@@ -24,51 +24,75 @@ Six specialist programmes. **Level 7 benchmark. Built for prescribers.**
 
 ---
 
-## ⚠️ A diploma is not a module
+## The model — short modules in Clinickly, diplomas on MEDLRN
 
-The current Training page treats everything as a flat list of 30–45 minute modules. **These are Level 7 diplomas — multi-unit programmes ending in certification.** Modelling one as a single "module" breaks two things:
-
-1. **CPD recording.** A clinician who completes Unit 3 of the ADHD diploma has done something worth a CPD record *now*. Waiting until the whole diploma completes to log one record wastes most of the learning and misrepresents when it happened.
-2. **Progress.** "Not started / Completed" is useless for a programme with eight units. The clinician needs to see where they are.
-
-### Required structure
+**Decision (Faheem, 21 Jul 2026).** Clinickly does **not** host the diplomas. It hosts **short, standalone modules** derived from the diploma material, which lead the clinician to the full Level 7 programme on MEDLRN.
 
 ```
-DIPLOMA  (programme — ADHD, Level 7)
-   └── UNIT  (the trainable, completable thing)
-          └── completion → CPD record (planned learning) + reflection prompt
-   └── UNIT
-   └── ...
-   └── ALL UNITS COMPLETE → certificate issued
+CLINICKLY                                    MEDLRN
+short module (30–45 min)     ─────────►      Level 7 Diploma
+included in subscription                     paid programme
+completion → CPD record                      certified on completion
 ```
 
-| Level | Behaviour |
+This resolves three problems at once:
+
+- **No two-level structure needed.** A module is a module. Clinickly stays simple
+- **No pricing conflict.** Clinickly modules are included; diplomas remain MEDLRN revenue
+- **The Training tab stops being a wall of locked doors** and becomes the top of the funnel
+
+### The rule that makes it work
+
+> **Each module must be genuinely useful and complete on its own.**
+
+A module that is obviously a truncated advert does three kinds of damage: it wastes the clinician's time, it produces a **CPD record with nothing real behind it**, and it makes the clinician trust the rest of the product less.
+
+Build each one as a proper standalone piece of learning that happens to open a door. *"Here is something you can use tomorrow — and here is where the full picture lives."*
+
+### Mapping
+
+Each Clinickly module maps to the diploma it leads to:
+
+| Clinickly module | Leads to |
 |---|---|
-| **Diploma** | Has a title, description, level, unit count, overall progress (`3 of 8 units`), and a certificate on completion |
-| **Unit** | Has content (video + text + optional quiz), a duration, and **generates its own CPD record on completion** |
+| ADHD in pharmacist-led clinics | **01 ADHD** |
+| `[CONFIRM: title]` | **02 Mental Health** |
+| `[CONFIRM: title]` | **03 Women's Health** |
+| `[CONFIRM: title]` | **04 TRT** |
+| `[CONFIRM: title]` — *Minor Illness pairs naturally with the clinical scope work* | **05 Minor Illness** |
+| `[CONFIRM: title]` | **06 Weight Management** |
+| Rosacea & common facial dermatoses | `[CONFIRM: which diploma, if any — not in the catalogue]` |
 
-**Each unit completion = one planned learning record.** Q1/Q2 pre-fill from the unit outline; Q3 (benefit to service users, with an example) is the clinician's own reflection. See `CPD-LOG-FIX-SPEC.md` §3.
+Modules with **no diploma behind them** are fine and should exist — *Documentation that stands up to inspection*, *Recognising the deteriorating patient*, *Reflective practice & revalidation*, *Foundations of independent prescribing*. Not everything needs to sell something.
 
-`[CONFIRM: unit list for each diploma. Faheem to supply — the ADHD diploma has units already defined; the others need their unit breakdown before they can be loaded.]`
+### The end of a module
 
----
+On completion, in this order:
 
-## Access and pricing
+1. **Reflection prompt** — the CPD record comes first. It is what the clinician came for
+2. **Then** the onward route:
 
-> `[CONFIRM: this is a commercial decision and it blocks the build.]`
+> **Go deeper**
+> This module covered assessment and titration basics.
+> The **ADHD Level 7 CPD Diploma** covers full assessment, prescribing and lifelong management, with live Q&A and certification.
+> `[ See the diploma → ]`
 
-These are **paid programmes sold by MEDLRN**. Putting them inside Clinickly's Training tab needs a model:
+**Never gate the reflection behind the promotion.** The CPD record is the product; the diploma is the offer.
 
-| Option | |
-|---|---|
-| **(a) Included** | Diplomas bundled into the Clinickly subscription. Simplest experience; gives away existing MEDLRN revenue |
-| **(b) Separate purchase** | Diplomas visible in Clinickly, purchased separately. Training tab shows locked/unlocked state and a route to buy |
-| **(c) Tiered** | A sample unit free to all Clinickly users; full diploma paid. Strongest conversion path |
-| **(d) Cross-credit** | Existing MEDLRN diploma holders get their completions recognised in Clinickly's CPD log |
+### Measure the funnel
 
-**Recommendation: (c), with (d).** A free first unit turns the Training tab into a shop window for MEDLRN rather than a list of things the user cannot open — and existing MEDLRN customers should not lose credit for work already done.
+This makes Clinickly a measurable acquisition channel for MEDLRN. Track:
 
-`[CONFIRM: how a Clinickly account is matched to an existing MEDLRN account for (d).]`
+- Module completions, by module
+- **Click-through to the diploma page**
+- **Diploma purchases attributed to a Clinickly module**
+- Which modules convert and which do not
+
+`[CONFIRM: how attribution works across the two systems — a tracked link with a source parameter at minimum.]`
+
+### Cross-credit
+
+`[CONFIRM: existing MEDLRN diploma holders should not have to sit the short module. Where a Clinickly account is matched to a MEDLRN one, show the diploma as already held and credit it in the CPD log. Requires a way to match accounts.]`
 
 ---
 
@@ -78,9 +102,11 @@ These are **paid programmes sold by MEDLRN**. Putting them inside Clinickly's Tr
 
 A module that links out to MEDLRN or YouTube loses completion tracking, which loses the reflection prompt, which loses the CPD record — the entire reason the page exists.
 
-`[CONFIRM: are the MEDLRN videos already on Bunny, or do they need migrating from their current host?]`
+`[CONFIRM: are the short-module videos already recorded, or do they need producing from the diploma material? These are new short-form assets, not the full diploma recordings.]`
 
-**Live Q&A** is part of the MEDLRN offer and has no equivalent in Clinickly today. `[CONFIRM: is live Q&A in scope for the Clinickly delivery, or does it stay on MEDLRN? If in scope, attendance should generate an **unplanned learning** or **peer discussion** record — see CPD-LOG-FIX-SPEC.md §4.]`
+`[CONFIRM: Bunny hosting — are the assets already there or do they need uploading?]`
+
+**Live Q&A stays on MEDLRN** as part of the diploma offer. It is one of the things the short module points to.
 
 ---
 
@@ -95,7 +121,7 @@ The placeholder modules currently shown include some that are **not** MEDLRN dip
 | Reflective practice & revalidation | **Keep** — PROFESSIONAL. Needed to make the CPD hub usable |
 | Foundations of independent prescribing | **Keep** — CORE |
 | Rosacea & common facial dermatoses | `[CONFIRM: is this MEDLRN content or a placeholder? Not in the diploma catalogue]` |
-| ADHD in pharmacist-led clinics | **Replace** — superseded by the ADHD diploma |
+| ADHD in pharmacist-led clinics | **Keep** — this is the short module that leads to the ADHD diploma |
 
 `[CONFIRM: the CORE / SAFETY / PROFESSIONAL modules above have no content behind them either. Are these to be built, or removed until they exist? A visible module that opens to nothing is worse than an absent one.]`
 

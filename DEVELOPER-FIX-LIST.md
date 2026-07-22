@@ -99,10 +99,10 @@ Legend: **P0** safety/governance (block real use) · **P1** correctness bugs · 
 
 | # | Item | Severity |
 |---|---|---|
-| T11 | **Load the six MEDLRN CPD Diplomas** — ADHD · Mental Health · Women's Health · TRT · Minor Illness · Weight Management. All Level 7. Replaces the placeholder specialty modules | **P1** |
-| T12 | **A diploma is a programme, not a module.** Two levels required: diploma → units. **Each unit completion generates its own CPD record**, not one record at the end of the whole diploma | **P1** |
-| T13 | **Progress display** — `3 of 8 units`, not `Not started / Completed`, for anything with units | **P1** |
-| T14 | **Certificate on completion of all units** | **P2** |
-| T15 | **Access model unresolved — blocks the build.** These are paid MEDLRN programmes. Included / separate purchase / free first unit / cross-credit for existing MEDLRN customers? Recommendation in the spec: free first unit + cross-credit | **P0 decision** |
+| T11 | **Short modules in Clinickly, diplomas on MEDLRN.** Clinickly hosts standalone 30–45 min modules that lead to the six Level 7 diplomas. It does **not** host the diplomas | **P1** |
+| T12 | **Each module must stand alone.** A module that is a truncated advert produces a CPD record with nothing behind it and damages trust in the rest of the product | **P1** |
+| T13 | **Module completion order: reflection first, promotion second.** Never gate the CPD reflection behind the diploma offer | **P1** |
+| T14 | **Onward link to the mapped diploma** on module completion, with tracked attribution | **P1** |
+| T15 | **Funnel measurement** — module completions → diploma click-through → attributed purchases. This makes Clinickly a measurable acquisition channel for MEDLRN | **P1** |
 | T16 | **Version and date every unit**, with an admin flag for overdue review. Clinical content ages — the corpus review found guidance twelve years out of date | **P1** |
 | T17 | **Modules with no content behind them should not be visible.** Several CORE/SAFETY/PROFESSIONAL modules are titles only. A module that opens to nothing is worse than an absent one | **P1** |
