@@ -324,7 +324,25 @@ Also right: the governance pipeline statement — *"All libraries are governed: 
 | PM5 | **Register defaults to GMC for every member**, including Dr N. Newman (Pharmacy & prescribing), who requires **GPhC**. The register must follow the member's profession | **P1** |
 | PM6 | **CV is a free-text filename field, not an upload** — *"e.g. cv-j-example.pdf"*. It records the name of a file held elsewhere, which is not a file record | **P1** |
 | PM7 | **No expiry dates on DBS or indemnity.** Both capture a "checked/confirmed" date with no renewal date, so **nothing ever triggers re-verification.** C025 requires annual registration and indemnity re-checks and DBS renewal | **P1** |
-| PM8 | `[CONFIRM: can "Add to panel" be pressed with the credentialing record empty? If yes, that is how all eight members reached ACTIVE-but-unvetted, and it is the fix that prevents recurrence]` | **P0 if yes** |
+| **PM8** | 🔴 **CONFIRMED (Faheem, 21 Jul): a member can be added with a name alone.** No credentialing required, and they land **ACTIVE** immediately. **This is the root cause of the entire credentialing failure** — the vetting block displays what is missing and then lets them straight through. **Adding a member and activating one are currently the same action.** They must be separated — see below | **P0 — root cause** |
+
+#### PM8 — the fix: adding ≠ activating
+
+Creating a member record before their DBS certificate arrives is normal and must stay possible. What must change is **where they land**.
+
+| | Added (name only) | Activated |
+|---|---|---|
+| Member record exists | ✅ | ✅ |
+| Status shown | **PENDING VETTING** | ACTIVE |
+| Can be assigned cases | ❌ | ✅ |
+| Can log in and answer cases | ❌ | ✅ |
+| Can claim tasks | ❌ | ✅ |
+| Appears ACTIVE in the panel directory | ❌ | ✅ |
+| Their review can reach the governance sign-off queue | ❌ | ✅ |
+
+**Activation is a separate, deliberate admin action**, available only once register, registration/PIN, signed contract, DBS and indemnity are all recorded — never a side effect of creating the record.
+
+`[CONFIRM: what happens to the 14 open cases currently held by unvetted members when this is enforced. They cannot simply vanish. Recommend: return to the unassigned pool, notify the submitting clinicians of the delay, and prioritise vetting the four real members who hold them.]`
 
 #### ✅ Fee bands are set — closes a round-3 open item
 
