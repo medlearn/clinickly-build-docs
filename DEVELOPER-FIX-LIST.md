@@ -70,3 +70,24 @@ Legend: **P0** safety/governance (block real use) · **P1** correctness bugs · 
 - [x] **MDT overview: shield card + two panels** — **VERIFIED FIXED (R2.12):** Clinical MDT vs Governance MDT shown with correct remits; shield card gone; pharmacist (Dr N. Newman) added. Remainders: **delete test members "Dr P. Word"/"Ep Och" from the roster**; verified qualification tags in the panel directory still to check (P5).
 - [x] **Regulatory standards: central upload restriction + named currency owner + review cadence** — **VERIFIED FIXED (R2.23)** verbatim ("currency owner: Governance lead · review due ~3-monthly"; "upload restricted to central admin/governance").
 - [ ] **Teaching-slot free text**: add "general topic — no patient identifiers" hint + light PII check (A4). *(Free text itself is correct here.)*
+
+---
+
+## 🆕 Round 4 — Training / CPD (21 Jul 2026)
+
+**Full spec: [CPD-LOG-FIX-SPEC.md](CPD-LOG-FIX-SPEC.md)**
+
+| # | Item | Severity |
+|---|---|---|
+| T1 | **CPD log records the wrong event.** Logs case *submission*; nothing is learned at submission. Log when the **panel responds and the submitter opens it** | **P0** |
+| T2 | **A record with no reflection is counted.** All 8 MDT entries have no reflection and none can count toward GPhC revalidation. Draft until reflected | **P0** |
+| T3 | **"MDT participation" is not a GPhC record type.** MDT case + panel response = **peer discussion**, with the responding panel member as the **named peer** | **P0** |
+| T4 | **Headline metric is minutes.** GPhC counts **records**. Replace with progress against 6 records (4 CPD ≥2 planned · 1 peer discussion · 1 reflective account). Delete "45 CPD minutes" and "≈0.8 h" | **P0** |
+| T5 | **Panel members' standing consent to be named** must be captured at onboarding, or the peer-discussion auto-fill cannot work | **P1** |
+| T6 | **Duration hardcoded to 15 min** on all 8 MDT entries. Measure it or remove it — prefer remove | **P1** |
+| T7 | **Case IDs not monotonic with time.** C-247 submitted before C-245; both numbered above cases from the following day. Possibly shares a root cause with the round-2 no-ID insert failure | **P1** |
+| T8 | **Log entries show system events, not clinical topics.** "Anonymised case submitted" tells the clinician nothing about what they learned | **P1** |
+| T9 | **No regulator toggle visible.** Spec requires capture-once / render-per-regulator (GPhC forms or GMC Academy template), defaulting from profile registration | **P1** |
+| T10 | Test data — module completed 02:42 | P2 |
+
+**Acceptance test:** a clinician with 8 MDT cases and 1 completed module opens the page, sees they are short a peer discussion, clicks once, adds a reflection, and has a GPhC-shaped peer discussion record in their export. **None of that is possible today.**
