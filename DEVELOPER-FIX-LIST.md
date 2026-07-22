@@ -182,3 +182,24 @@ Legend: **P0** safety/governance (block real use) · **P1** correctness bugs · 
 | X18 | 🔴 **No safety escalation route for panel members.** A panel member who reads a closed case and believes the patient came to harm currently has only the teaching box. Needs a separate, always-visible flag routed to the clinical lead — **not** to the submitting clinician in the first instance, and never handled as a discussion point | **P0** |
 | X19 | **Response SLA, reassignment and quality sampling.** Unanswered past SLA → reassign within specialty and tell the clinician. Sample responses for quality — a response that only says "agree" is a panel training need | **P1** |
 | X20 | **Every response must carry responder name, role and organisation** — required for accountability and for the GPhC peer discussion record | **P1** |
+
+### Round 4 — Session library (21 Jul 2026)
+
+| # | Item | Severity |
+|---|---|---|
+| S1 | **Only 1 of 5 sessions shows governance sign-off.** "June MDT" shows *signed off by Faheem Ahmed · governance-signed*; the other four show only presenter and tags. Round 2 verified the HOLDING → PII REVIEWED → CONSENT → PUBLISHED pipeline exists — **every published item must display its sign-off, and anything unsigned must not appear here** | **P0** |
+| S2 | **Consent scope for images in published sessions is undefined.** Library publication is a **broader consent than case discussion** — [F05](starters/forms/F05-photography-consent.md) treats them as separate (section B education vs section C publication). If a session shows patient photographs, section C consent is required. `[CONFIRM: default should be NO images in published sessions unless separately consented]` | **P0** |
+| S3 | **Watching a session generates no CPD record.** The Training page footer states *"MDT sessions you attend also generate reflective material"*, but nothing here does. Should create an **unplanned learning** draft record on completion, with a reflection prompt — same pattern as [CPD-LOG-FIX-SPEC.md](CPD-LOG-FIX-SPEC.md) §3 | **P1** |
+| S4 | **87-minute full session recording is unusable.** Higher PII risk than a prepared teaching slot (live discussion), and nobody watches it end to end. **Chapter it, or extract the teaching segments and publish those**, retaining the full recording for reference. `[CONFIRM: is a full live session published at all, or only extracted segments? A full session is also far harder to PII-review]` | **P1** |
+| S5 | **No filtering despite full tagging.** Every entry carries tags (adhd · psychiatry · dermatology · safety · governance · documentation) and the only route in is free-text search. Add tag and specialty filters | **P2** |
+| S6 | **Session date vs publish date ambiguous.** "June MDT" is dated **1 Jul 2026**. Show both, or label which is displayed | **P2** |
+| S7 | **No description, chapters, learning outcomes or watched-state.** Title, presenter, tags and duration only. `[CONFIRM: minimum metadata per session]` | **P2** |
+| S8 | **No PII reviewer attribution.** The pipeline requires a mandatory human PII review before publish (§5.10). Who did it, and when, should be visible alongside the governance sign-off | **P2** |
+| S9 | `[CONFIRM: retention and consent duration. Panel members consented to a recording being published — is that indefinite? Can a panel member withdraw consent for a published session later?]` | **P2** |
+
+#### What is right on this page
+
+- **The titles are genuinely good** — *"Writing notes for the inspection you hope never comes"*, *"Safety-netting that actually protects you"*. Most clinical CPD libraries read like a filing cabinet; these read like something a clinician would click
+- **"Facial rashes: rosacea, acne or something else"** is the correct form of that content — same clinician, same topic as the C-241 breach, but as **general teaching** rather than a diagnosis on a live patient. Worth keeping as the reference example of the boundary working
+- Footer states the consent, anonymisation and sign-off requirement clearly ✅
+- Named attribution and tagging present throughout ✅
