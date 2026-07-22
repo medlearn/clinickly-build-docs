@@ -445,3 +445,68 @@ Round 2 found tenancy and clinics management conflated. There is now a clinics l
 | **UC4** | **Clinic counts do not reconcile.** *"Clinickly Demo Clinic — 3 clinicians · 7 patients · 6 staff"*, but only one clinician in the user list is scoped to that clinic and **no staff users appear at all**. `[CONFIRM: what these counters count]` | **P1** |
 | UC5 | **Auto-generated test emails confirm seeded accounts** — `pw1783424985@clinickly.test` and `epoch1783429322@clinickly.test` are Unix timestamps. Removed with Word and Och in the Tier 1 purge | **P1 — see M1** |
 | UC6 | **`newdoc@clinickly.test` for Dr N. Newman**, a *Pharmacy & prescribing* panel member. Test artefact, and reinforces the doctor-centric naming found throughout the corpus | **P2** |
+
+### Round 4 — Admin console · Reports & audit (21 Jul 2026)
+
+#### ✅ Round-2 fix — demand analytics is fully built
+
+Round 2 found only the missed-searches box, with logging unverified. **All four signals now exist:** top successful searches · most-opened guidelines · **pointer-entry opens (promotion signal)** · **Ask Clinickly question themes** · plus **SOP demand as builds-vs-requests**.
+
+And **"Add to authoring backlog"** on each missed search — *"confirm the differential for ear ache"* routing straight into the content pipeline. **That is the demand loop working end to end.** Substantial fix.
+
+The audit trail itself is detailed and correctly shaped: actor, role, action, item and timestamp on every entry ✅
+
+| # | Item | Severity |
+|---|---|---|
+| **RA1** | 🔴 **The service-level metrics contradict the case data.** Reports show **"0 h avg time to first response"** and **"100% urgent answered within 48h"**. Panel management shows cases waiting **11–15 days**, with the urgent case **C-244 waiting 11 days**. **A report that states the opposite of the underlying data is worse than no report** — this is the artefact that would be produced to demonstrate the service works | **P0** |
+| **RA2** | 🔴 **Three further internal contradictions.** *"5 clinicians · 3 clinicians"* in one line · **Reviewer workload shows Dr R. Kaur at 0 in review** while Content libraries shows her holding the Dermatology note template awaiting sign-off · **Audit trail claims "newest first"** but runs 11:37 → 11:07 → 13:00 | **P0** |
+| **RA3** | 🔴 **Unknown clinician accounts hold SOP sign-off authority.** The audit trail records **"ddd (clinician)"** signing off *Private prescribing SOP v1*, and **"Kazoom (clinician)"** signing off SOPs for **Riverside Pharmacy Clinic** and **Demo pharmacy clinic**. **Neither clinic appears in Users & clinics**, which lists only Clinickly Demo Clinic. *"ddd"* is therefore not only a test case but a **user with sign-off rights**. Connects to UC1/UC2 (open signup) and the round-2 duplicate-Riverside-SOPs finding | **P0** |
+| **RA4** | 🔴 **Deactivation does not stick, and the audit trail has a silent state change.** Dr A. Okafor was **deactivated twice** (11:07 and 13:00) and still shows **ACTIVE** on every screen. Either the action fails, or something reactivated him **with no audit entry**. Also: **"Ep Och (panel) Changed own password"** — a test account with a live session | **P0** |
+| **RA5** | **"Activity trends" renders twice**, each with its own filters and Export CSV. Same class as the round-2 Rosacea duplicate-section render | **P1** |
+| RA6 | `[CONFIRM: "Governance health — 1 items published in range · 0d avg days since published", and a flagged item "R3 flag test pipeline · high risk · in review 14d · Unclaimed". A high-risk item unclaimed for 14 days should escalate, not sit in a report]` | **P1** |
+| RA7 | **Team CPD roll-up not built** — *"team roll-up reporting arrives with the CPD formats build"*. Honest labelling, and correctly sequenced behind [CPD-LOG-FIX-SPEC.md](CPD-LOG-FIX-SPEC.md) | **P2 — noted, not a defect** |
+
+#### The pattern on this screen
+
+**Every number that could be checked against another screen disagreed with it.** Service levels, clinician counts, reviewer workload, audit ordering, and activation state. The reporting layer is not reading from the same source as the operational screens — which is the same root cause as the schedule bug (MS1), where the admin rule was correct and two downstream views were not reading from it.
+
+`[CONFIRM: is there a single source of truth for these counters, or is each screen computing its own?]`
+
+---
+
+# Round 4 — complete
+
+**Twelve screens reviewed, 21 Jul 2026.** Clinician portal · panel portal · admin console.
+
+**Start here:** [FIX-SEQUENCE.md](FIX-SEQUENCE.md) — the items below sequenced into Tier 0 → Tier 4.
+
+## What was genuinely fixed since round 2
+
+| | |
+|---|---|
+| **Credential gating** | Built and well presented — though only applied to task claiming (see PM1) |
+| **Two-tier tenancy** | Clinics list, add-clinic route, per-user scope, isolation rule stated |
+| **Demand analytics** | All four signals, plus add-to-backlog routing |
+| **Honest RAG labelling** | *"REFERENCE ONLY — NOT YET RAG-INGESTED"* rather than overclaiming |
+| **Fee bands** | Five bands set, coherent with the §4B rate anchor |
+
+## What is excellent and should not be changed
+
+- **Governance review** — source passage beside every recommendation, working link-out, sign-off gated until all verified. *"The quote alone is not evidence."*
+- **Content libraries → New item** — *"We never draft clinical content from AI memory — only from retrieved source text, cited per statement."*
+- **The MDT schedule PII footer** — honest about what automation cannot strip, and recommends audio-only for sensitive content
+- **The framing on every screen** — positioning lines, disclaimers, anonymisation banner, §4B implemented near-verbatim
+
+**The grounded, cited, verify-before-publish pattern is already built twice.** The Ask Clinickly rescope is pointing an existing mechanism at a third feature, not building one.
+
+## The three root causes
+
+Most of the ~60 items trace back to three things:
+
+1. **Adding a panel member and activating one are the same action** → all eight members unvetted-but-ACTIVE, holding 14 cases; uncredentialed reviewers reaching the sign-off queue
+2. **"Other"/unassigned content routes to Governance/ethics** → clinical cases to governance, cases nobody can answer, an "ear ache" SOP in the governance queue
+3. **Downstream views do not read from the source of truth** → the Saturday session date, contradictory service levels, reviewer workload, clinician counts
+
+## The pattern
+
+**The framing is right everywhere. The enforcement is not.** Every screen says the correct thing; the structure does not yet make it true. That is a far better position than the reverse — but it is the whole of the remaining work.
