@@ -32,7 +32,8 @@ Correctness problems that need code but no new design.
 
 | | |
 |---|---|
-| **Finish credential gating** | Currently gates task claiming only. Must also gate **case answering**, the **ACTIVE badge** (should read PENDING VETTING), **case assignment**, and **reaching the governance sign-off queue** |
+| 🔴 **Finish credential gating** | **All eight members are unvetted and ACTIVE, holding 14 open cases.** Currently gates task claiming only. Must also gate **case answering**, the **ACTIVE badge** (should read PENDING VETTING), **case assignment**, and **reaching the governance sign-off queue**. Check whether "Add to panel" can be pressed with the credentialing record empty — that is how they all got here |
+| 🔴 **Fix "Other" routing** | *Other* cases route to **Governance/ethics (Chair)**, which is why C-248 has nobody able to answer it. Governance must not receive clinical cases (§4B) |
 | **Fix specialty tagging at source** | The ADHD case carries a DERMATOLOGY tag. **This is not a routing bug** — the tag is wrong before routing runs |
 | **Separate Clinical from Governance** | Merged in the panel directory; a dermatologist holds governance content; the governance chair has answered clinical cases. §4B says they do not cross |
 | **Anonymiser: strip precise ages from prose** | *"15-year-old male"*, *"30-year-old"*, *"22-year-old male"* — and reconcile age band against free text |

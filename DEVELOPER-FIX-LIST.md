@@ -310,3 +310,37 @@ Also right: the governance pipeline statement — *"All libraries are governed: 
 - **MEDIUM RISK · CLINICAL MDT** tags — §4B risk-tiering visible on the item, and a medium-risk item correctly took a single reviewer ✅ `[CONFIRM: do high-risk items actually enforce two-person sign-off? Not observable here]`
 - Version numbers throughout (v1, v2, v3) ✅
 - Pipeline statement accurate and well placed: *"Every step is audit-logged (AI draft, reviewer, signer, when). Signing is a named, dated clinical-lead action."* ✅
+
+### Round 4 — Admin console · Panel management (21 Jul 2026)
+
+**This screen explains the credentialing findings across the whole review.** It is not a Dr Kaur problem.
+
+| # | Item | Severity |
+|---|---|---|
+| **PM1** | 🔴 **All eight panel members are unvetted, all show ACTIVE, and they hold 14 open cases between them.** Every card carries *"Registration/PIN missing · Contract not signed · DBS pending · Indemnity pending · **Vetting incomplete — cannot claim/review**"* — and every card shows **ACTIVE**. Kaur, Newman, **Word** and **Och** hold **3 open cases each**; Mehta and Bright 1 each. **Six of those cases are held by two people who do not exist.** The badge prints *"cannot claim/review"* beside a member holding three cases: **the system detects the state and does not enforce it** | **P0 — root cause of A1, G1, AD1, GS3** |
+| **PM2** | 🔴 **Cases have been waiting 11–15 days.** `URGENT · 11D`, `SOON · 15D`, most others 13–15 days. Nobody can answer them because nobody is vetted — **the SLA badges are counting up against a structurally blocked panel** | **P0** |
+| **PM3** | 🔴 **"Other" cases route to Governance/ethics (Chair).** This is why C-248 reports *"No active panel member can see this case."* A clinical case is routed to a **governance** specialty, which under §4B must not receive clinical cases at all | **P0 — root cause of X13, X14, M5a** |
+| **PM4** | 🔴 **Duplicate case, two different specialties.** C-236 *"Stable adult ADHD on stimulant"* → **Dermatology**; C-237, the same case → **General practice**. Neither is correct. Confirms P2 (mis-tagging at source) and X15 | **P0** |
+| PM5 | **Register defaults to GMC for every member**, including Dr N. Newman (Pharmacy & prescribing), who requires **GPhC**. The register must follow the member's profession | **P1** |
+| PM6 | **CV is a free-text filename field, not an upload** — *"e.g. cv-j-example.pdf"*. It records the name of a file held elsewhere, which is not a file record | **P1** |
+| PM7 | **No expiry dates on DBS or indemnity.** Both capture a "checked/confirmed" date with no renewal date, so **nothing ever triggers re-verification.** C025 requires annual registration and indemnity re-checks and DBS renewal | **P1** |
+| PM8 | `[CONFIRM: can "Add to panel" be pressed with the credentialing record empty? If yes, that is how all eight members reached ACTIVE-but-unvetted, and it is the fix that prevents recurrence]` | **P0 if yes** |
+
+#### ✅ Fee bands are set — closes a round-3 open item
+
+| Task type | Complexity | Fixed fee |
+|---|---|---|
+| Content review — minor | Low | **£25** |
+| Content review — standard | Medium | **£60** |
+| Content review — high-risk clinical | High | **£120** |
+| Case answer (teaching/CPD) | Medium | **£45** |
+| SOP / governance review | High | **£90** |
+
+Coherent against the §4B £150/hr sessional anchor. **£45 for a case answer is generous for a 10-minute structured response** — which is the right direction, since it buys considered answers rather than *"agree with the plan"*.
+
+#### Also right
+
+- `ADMIN-SET · NO BIDDING` badge, and the rationale stated in full: *"an upfront fixed fare, never an auction. Bidding is rejected for anything that gets signed off (drives quality and accountability down). Edits are audit-logged."* — **§4B verbatim** ✅
+- Add-member form is well designed: §4B **one domain** enforced in the panel dropdown, verified tags explicitly gating claims, credentialing block labelled **"THE VETTING GATE"**, honest note that register lookup is a licensed integration recorded manually in the prototype ✅
+- Login email provisions a real account with a one-time password to hand over ✅
+- Case assignment correctly described as **overriding** specialty routing and audit-logged ✅
