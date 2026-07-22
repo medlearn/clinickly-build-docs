@@ -276,3 +276,20 @@ Round 2 found members ACTIVE with *"Registration/PIN missing / DBS pending"*. **
 - Sessions page footer restates the consent, anonymisation and governance-sign-off requirement ✅
 - Panel directory footer correctly points membership and login management at the admin console ✅
 - The escalation recommendation in the Rosacea draft reads *"Doses and cautions from the BNF, not this summary"* — **exactly the RED-LINES discipline, in the content itself** ✅
+
+### Round 4 — Admin console · Overview (21 Jul 2026)
+
+| # | Item | Severity |
+|---|---|---|
+| **AD1** | 🔴 **The item awaiting clinical-lead signature was reviewed by an uncredentialed panel member.** *"Dermatology note template v2 — AI-drafted · reviewed by Dr R. Kaur"* with a live **Sign off** button. Dr Kaur has no Registration/PIN, no signed contract, no DBS and **no indemnity**. **The credential gap has propagated into the governance chain** — the sign-off would rest on a review by someone the system itself flags as unvetted. Reviews by uncredentialed members must not reach the sign-off queue | **P0 — extends G1** |
+| **AD2** | 🔴 **The 28-policy library has no home.** Four content libraries exist: Guidelines · SOPs & templates · Training · Regulatory standards. **None is a policy library.** SOPs are clinic-specific by design; governed policies are a distinct content type with their own versioning, theme mapping and completeness check. `[CONFIRM: add a fifth library, or restructure. This blocks loading the starters]` | **P1 — structural** |
+| AD3 | **"8 Panel members" counts the two test entries** (Dr P. Word, Ep Och). Real figure is 6 | **P1 — see M1** |
+| AD4 | **"Training: 6 modules"** — should be **10** per [TRAINING-CATALOGUE.md](TRAINING-CATALOGUE.md): six leading to MEDLRN diplomas plus four standalone | **P1** |
+| AD5 | **"⚡ Urgent case C-244"** — urgency flag again, on the case with the age-band contradiction (banded 18-29, text says 30-year-old). See P3 and X4 | **P1** |
+| AD6 | `[CONFIRM: "3 Active clinicians across clinics" — has the round-2 finding on unscoped gmail clinician accounts and open signup been addressed? Not assessable from this screen — check Users & clinics]` | **P1** |
+
+#### ✅ Genuinely good
+
+**"C-248 — Other — has no active panel member — assign someone."** The system **detected a case nobody is able to answer and surfaced it to the admin**. That is the M5a problem catching itself, which is exactly the behaviour wanted. Keep it, and extend it: the same check should run at submission so the specialty cannot be selected in the first place.
+
+Also right: the governance pipeline statement — *"All libraries are governed: AI-drafted → MDT-reviewed → human-signed → versioned"* — matches §8 and is displayed where it matters ✅
