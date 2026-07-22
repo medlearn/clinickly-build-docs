@@ -124,3 +124,53 @@ Legend: **P0** safety/governance (block real use) · **P1** correctness bugs · 
 **Note on M1 and M2:** both were raised in round 2 and both are unchanged. Worth confirming with the developer whether the round-2 items were actioned and regressed, or never picked up — the answer changes how the rest of the round-2 list should be treated.
 
 **Good on this page:** the positioning line — *"Anonymised case-based teaching, discussion & CPD"* — is correct and consistent with RED-LINES. The four explainer cards and three-part agenda are clear and land well.
+
+### Round 4 — My MDT cases (21 Jul 2026)
+
+> ⚠️ **Read this section first.** Most items below were raised in **round 2** and are unchanged. Before further review rounds, please confirm whether the round-2 data-quality list was actioned at all.
+
+#### 🔴 The device-boundary breach
+
+| # | Item | Severity |
+|---|---|---|
+| **X1** | **Case C-241 "Rash photo case": question — *"Is this rosacea?"* Panel response — *"Consistent with rosacea."*** This is **patient-specific diagnosis**, not case-based education. It is the exact activity `RED-LINES.md` prohibits and the basis on which the MHRA position rests. **The per-card disclaimer does not cure it** — a regulator reads the question and the answer, not the footer | **P0 — device risk** |
+| X1a | **Fix at the design level, not by deleting the case.** Submission must prevent "what is this / what should I do for this patient" framing; the panel response form must prevent answering it. Same underlying problem as the Ask Clinickly rescope | **P0** |
+| X1b | **"Rash photo case" implies an image upload.** `[CONFIRM: can clinicians attach patient photographs? If so — consent basis, whether a clinical photograph can be anonymised at all, storage, and retention. A facial or distinctive-lesion image is not anonymisable by removing a name]` | **P0** |
+
+#### 🔴 Patient identifiers — all previously flagged
+
+| # | Item | Severity |
+|---|---|---|
+| X2 | **Patient initials "J.M." still present** in C-237 and C-238. Round 2 raised this exact case | **P0 — regression** |
+| X3 | **Precise ages still in prose** — "15-year-old male", "30-year-old", "22-year-old male" — despite the on-screen rule stating age range only. Round 2 raised the anonymiser gap | **P0 — regression** |
+| X4 | **Age band contradicts the prose** — C-244 banded **18-29**, text says **30-year-old**. Round 2 raised age-band vs transcript checks | **P0 — regression** |
+| X5 | **Reason field contradicts the content** — C-248 reason "Ear ache", history is headache and shortness of breath. Round 2 raised reason vs transcript checks | **P1 — regression** |
+| X6 | **Truncated reason fields** — "Reason: Head", "Reason: Pot" | **P2** |
+
+#### 🔴 Test data in the live case list — all previously flagged
+
+| # | Item | Severity |
+|---|---|---|
+| X7 | **"ddd"** (C-245) — summary "dddd", question "dddd" | **P0 — regression** |
+| X8 | **"please advise on xxxxx"** (C-246) | **P0 — regression** |
+| X9 | **"Case-loop E2E one" / "two"** (C-236, C-239) | **P0 — regression** |
+| X10 | **"R3 notif case"** (C-240) | **P0 — regression** |
+| X11 | **Two panel responses are keyboard mash** — *"djdjdjjsddjfhdfhndhdjdjdjjssjssjssjsdsss"* (C-237) and *"djdjdjsdkdsmkcmmcndsddsdsdsdsjdcmknkjqkcmkskcdcjkc/dsnkownieocdcdes"* (C-238). **Both are attributed to named panel members** — one to Faheem Ahmed, one to Dr R. Kaur | **P0 — regression** |
+
+#### 🔴 Routing failures
+
+| # | Item | Severity |
+|---|---|---|
+| X12 | **A dermatologist answered an ADHD stimulant monitoring query** (C-238, Dr R. Kaur) | **P0** |
+| X13 | **The Governance/ethics chair answered two clinical cases** (C-237 Faheem Ahmed, C-242 Dr A. Okafor). **Governance and clinical panels must not cross** — §4B separation of duties | **P0** |
+| X14 | **Two paediatric cases routed to adult panels** — C-247 banded 0-17, and C-248 describing a 15-year-old. `[CONFIRM: does the service accept under-18 cases at all? If yes, a paediatric-competent panel member is required. If no, submission must block it]` | **P0** |
+| X15 | **Duplicate case** — C-237 and C-238 are the same "Stable adult ADHD on stimulant" J.M. case submitted to two different panels | **P1** |
+
+#### What is right on this page
+
+- Positioning line: *"Submit and track anonymised cases — case-based education, not advice on a live patient"* ✅
+- Submission rule banner: *"Anonymised cases only — age range, presentation and your clinical question. Never include names, dates of birth, addresses or identifiers"* ✅
+- Per-response footer: *"Teaching/discussion points — advisory only. The treating clinician remains responsible for the decision."* ✅
+- Page footer disclaimer ✅
+
+**The framing is correct throughout. The content underneath it is not** — which is the more dangerous combination, because the page reads as compliant while the cases in it are not.
