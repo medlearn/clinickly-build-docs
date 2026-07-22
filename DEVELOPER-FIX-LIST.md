@@ -105,4 +105,6 @@ Legend: **P0** safety/governance (block real use) · **P1** correctness bugs · 
 | T14 | **Onward link to the mapped diploma** on module completion, with tracked attribution | **P1** |
 | T15 | **Funnel measurement** — module completions → diploma click-through → attributed purchases. This makes Clinickly a measurable acquisition channel for MEDLRN | **P1** |
 | T16 | **Version and date every unit**, with an admin flag for overdue review. Clinical content ages — the corpus review found guidance twelve years out of date | **P1** |
-| T17 | **Modules with no content behind them should not be visible.** Several CORE/SAFETY/PROFESSIONAL modules are titles only. A module that opens to nothing is worse than an absent one | **P1** |
+| T17 | **Modules with no content behind them should not be visible.** Several are titles only. A module that opens to nothing is worse than an absent one | **P1** |
+| T18 | **Remove *Rosacea & common facial dermatoses*.** Not a MEDLRN diploma, no onward route, no content | **P2** |
+| T19 | **Final module list = 10** — six leading to the MEDLRN diplomas (ADHD · Mental Health · Women's Health · TRT · Minor Illness · Weight Management) plus four standalone (Foundations of independent prescribing · Documentation that stands up to inspection · Recognising the deteriorating patient · Reflective practice & revalidation) | **P1** |

@@ -49,21 +49,28 @@ A module that is obviously a truncated advert does three kinds of damage: it was
 
 Build each one as a proper standalone piece of learning that happens to open a door. *"Here is something you can use tomorrow — and here is where the full picture lives."*
 
-### Mapping
+### The six modules to build
 
-Each Clinickly module maps to the diploma it leads to:
+One short module per diploma. Titles below are **proposed** — change freely, but each should describe something useful in its own right rather than name the diploma.
 
-| Clinickly module | Leads to |
-|---|---|
-| ADHD in pharmacist-led clinics | **01 ADHD** |
-| `[CONFIRM: title]` | **02 Mental Health** |
-| `[CONFIRM: title]` | **03 Women's Health** |
-| `[CONFIRM: title]` | **04 TRT** |
-| `[CONFIRM: title]` — *Minor Illness pairs naturally with the clinical scope work* | **05 Minor Illness** |
-| `[CONFIRM: title]` | **06 Weight Management** |
-| Rosacea & common facial dermatoses | `[CONFIRM: which diploma, if any — not in the catalogue]` |
+| Clinickly module | Tag | Leads to |
+|---|---|---|
+| **ADHD in pharmacist-led clinics** *(exists)* | SPECIALTY | **01 ADHD** |
+| **Anxiety and depression in primary care** | SPECIALTY | **02 Mental Health** |
+| **Perimenopause and HRT essentials** | SPECIALTY | **03 Women's Health** |
+| **Testosterone replacement — assessment and monitoring** | SPECIALTY | **04 TRT** |
+| **Acute presentations — assessment and safety-netting** | SPECIALTY | **05 Minor Illness** |
+| **GLP-1 prescribing — initiation and monitoring** | SPECIALTY | **06 Weight Management** |
 
-Modules with **no diploma behind them** are fine and should exist — *Documentation that stands up to inspection*, *Recognising the deteriorating patient*, *Reflective practice & revalidation*, *Foundations of independent prescribing*. Not everything needs to sell something.
+`[CONFIRM: titles and durations. 30–45 min each, consistent with the existing modules.]`
+
+**Rosacea & common facial dermatoses — remove.** Not a MEDLRN diploma, no onward route, no content behind it.
+
+Keep the four non-diploma modules already on the page — they serve the product rather than the funnel:
+
+*Foundations of independent prescribing* (CORE) · *Documentation that stands up to inspection* (CORE) · *Recognising the deteriorating patient* (SAFETY) · *Reflective practice & revalidation* (PROFESSIONAL)
+
+**That gives ten modules: six that lead somewhere, four that stand alone.**
 
 ### The end of a module
 
@@ -110,9 +117,9 @@ A module that links out to MEDLRN or YouTube loses completion tracking, which lo
 
 ---
 
-## Retain alongside the diplomas
+## The four non-diploma modules
 
-The placeholder modules currently shown include some that are **not** MEDLRN diplomas but are still needed:
+These serve the product rather than the funnel, and should stay:
 
 | Module | Keep? |
 |---|---|
@@ -120,7 +127,6 @@ The placeholder modules currently shown include some that are **not** MEDLRN dip
 | Recognising the deteriorating patient | **Keep** — SAFETY |
 | Reflective practice & revalidation | **Keep** — PROFESSIONAL. Needed to make the CPD hub usable |
 | Foundations of independent prescribing | **Keep** — CORE |
-| Rosacea & common facial dermatoses | `[CONFIRM: is this MEDLRN content or a placeholder? Not in the diploma catalogue]` |
 | ADHD in pharmacist-led clinics | **Keep** — this is the short module that leads to the ADHD diploma |
 
 `[CONFIRM: the CORE / SAFETY / PROFESSIONAL modules above have no content behind them either. Are these to be built, or removed until they exist? A visible module that opens to nothing is worse than an absent one.]`
