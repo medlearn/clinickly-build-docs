@@ -49,22 +49,75 @@ Progressive disclosure — one section at a time, not a wall of twenty fields. E
 
 ## PART 2 — THE REASONING (always, all mandatory)
 
-> **This is the part that makes it teaching rather than a referral.**
+> **This is the part that makes it teaching rather than a referral.** Everything above is context; this is the case.
+
+### 2a · Differentials — with reasoning for each
+
+**Not a list. A table. Minimum two rows.**
+
+| Differential | What made me consider it | What made me rule it in or out |
+|---|---|---|
+| *e.g. Rosacea* | Central facial erythema, telangiectasia, flushing history, age and sex fit | Papulopustular without comedones — argues against acne |
+| *e.g. Seborrhoeic dermatitis* | Facial involvement, scale | Distribution is malar rather than nasolabial and scalp; no greasy scale |
+| *e.g. SLE* | Malar distribution | No photosensitivity, no systemic features, no arthralgia — considered and discounted |
+
+**A bare list of names is not a differential.** *"Rosacea, acne, SLE"* shows recall. **The reasoning columns show thinking**, and thinking is the only thing the panel can usefully teach into.
+
+`[CONFIRM: minimum two rows enforced. Recommend prompting for three where the presentation is undifferentiated.]`
+
+### 2b · The decision
 
 | Field | Required | Notes |
 |---|---|---|
-| **Differentials** | ✅ **Minimum 2** | Free-text list. **Plural is enforced.** This is the single most valuable field in the form |
-| **Working diagnosis** | ✅ | What the clinician concluded |
-| **Rationale** | ✅ | **Why** — what pointed toward it, and what pointed away from the alternatives |
-| **Management** | ✅ | What was actually done. Prescribed, referred, safety-netted, reviewed |
-| **Outcome, if known** | Optional | |
-| **Learning question** | ✅ | Constrained — see submission spec §3 |
+| **Working diagnosis** | ✅ | What you concluded |
+| **Rationale** | ✅ | Why this one, over the others in your table |
+| **Confidence** | ✅ | Confident · reasonably confident · **uncertain** |
 
-**Why minimum two differentials:** a clinician who has generated a differential has done the reasoning. A clinician who has not is asking the panel to do it. The field is the boundary.
+> **"Uncertain" is a legitimate answer and must be offered.** A clinician who genuinely did not reach a diagnosis should say so — not invent one to satisfy a form. **What matters is what they did about the uncertainty:** safety-netted, investigated, reviewed, referred.
+>
+> Forcing a false diagnosis would teach exactly the wrong habit.
 
-**Rationale is where the teaching happens.** The panel's most useful contribution is rarely *"you were right"* — it is *"your reasoning was sound but you under-weighted X"*.
+### 2c · Management — what you actually did
+
+| Field | Required |
+|---|---|
+| **What you did** | ✅ Prescribed · advised · investigated · referred · reviewed · reassured · watchful waiting |
+| **Why that, rather than the alternatives** | ✅ |
+| **Safety-netting given** | ✅ What you told them to look out for and what to do |
+| **Follow-up arranged** | ✅ Or explicit *none, and why* |
+
+### 2d · Where you referred — the counterfactual
+
+> **Complete this whenever the management included a referral.**
+>
+> **A referral is not a substitute for a diagnosis.** The most common way to avoid clinical reasoning is to pass the case on — and a case submitted as *"I didn't know so I referred"* teaches nobody anything, including the person who submitted it.
+
+| Field | Required | Notes |
+|---|---|---|
+| **Why did you refer rather than manage this yourself?** | ✅ Outside my scope · outside my competence · needed investigation I can't arrange · needed a procedure I don't do · patient preference · uncertainty · red flag | **This distinguishes an appropriate referral from an avoided decision.** Both are legitimate answers — but they are different, and the panel will teach into them differently |
+| **What did you think it was?** | ✅ | Your impression, even though you referred. **Referring does not excuse you from having one** |
+| **If you could not have referred, what would you have done?** | ✅ | The counterfactual. **This is the most valuable field in the referral block** — it forces the reasoning the referral let you skip |
+| **What did you recommend to the receiving clinician, and why?** | ✅ | A referral with no working impression and no suggested direction is a weaker referral, and saying so is itself teaching |
+| **What do you expect them to do?** | ✅ | Investigate · confirm · treat · take over · advise and return |
+| **Urgency, and why** | ✅ | Routine · urgent · 2-week wait · same day |
+
+`[CONFIRM: show 2d conditionally when "referred" is selected in 2c, not always.]`
+
+### 2e · The learning question
+
+| Field | Required |
+|---|---|
+| **Learning question** | ✅ Constrained — see [submission spec §3](MDT-CASE-SUBMISSION-SPEC.md) |
+| **Outcome, if known** | Optional |
+| **What would you do differently?** | Optional — but prompt for it. A clinician who has already answered this gives the panel something to react to rather than start from |
 
 ---
+
+### Why this section carries the boundary
+
+A completed Part 2 shows: **differentials with reasoning · a stated conclusion · a rationale · an action taken · and, where referred, what they would otherwise have done.**
+
+There is no version of that which reads as a request for a decision on a live patient. **The clinician has demonstrably already decided** — the record of the decision is the form.
 
 ## PART 3 — SPECIALTY BLOCKS (conditional)
 
@@ -156,4 +209,4 @@ Red flag screen for the presentation · safety-netting given · follow-up arrang
 - **"Not applicable" is one click** on every optional field, and it is recorded — a deliberate N/A is information; a blank is not
 - **Do not let a clinician skip Part 2.** Everything else can be light; the reasoning cannot
 
-**Acceptance test:** *"dddd"* cannot be submitted. *"Age 30-39 rash. Is this rosacea?"* cannot be submitted. A clinician who completes the form has produced something a panel member can teach from — and has already done the thinking the panel would otherwise have done for them.
+**Acceptance test:** *"dddd"* cannot be submitted. *"Age 30-39 rash. Is this rosacea?"* cannot be submitted. A referral case cannot be submitted without a working impression and a counterfactual. A clinician who completes the form has produced something a panel member can teach from — and has already done the thinking the panel would otherwise have done for them.
