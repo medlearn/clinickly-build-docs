@@ -96,24 +96,16 @@ Where **"Has this episode concluded?" = No**:
 
 ---
 
-## 4. The panel response form — same treatment
+## 4. The panel response form
 
-The response box is currently free text. **Dr Kaur was able to type "Consistent with rosacea" into it, and nothing stopped her.** The panel side needs the same structure.
+**Superseded by [MDT-PANEL-RESPONSE-FORM.md](MDT-PANEL-RESPONSE-FORM.md).**
 
-| Field | Required |
-|---|---|
-| **Teaching points** | ✅ |
-| **What else to consider next time** | ✅ |
-| Further reading / guideline reference | Optional |
-| Points of disagreement or alternative approaches | Optional |
-
-**One rule, shown on the form:**
+The response mirrors the submission — the panel responds to the clinician's differential, reasoning, management and referral, section by section. Two rules carry it:
 
 > **Answer the clinician's reasoning, not the patient's problem.**
+> **Agreement alone is not a response.**
 
-Same soft check on the way out — flag *"this is…"*, *"consistent with…"*, *"I would prescribe…"*, *"the diagnosis is…"* with the same rewrite prompt.
-
-**No field on this form should be called *diagnosis*, *assessment* or *plan*.** Field names shape what people write.
+It also adds the missing **safety escalation route** (§7 of that spec) for a panel member who reads a closed case and believes the patient may have come to harm.
 
 ---
 
