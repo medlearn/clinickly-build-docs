@@ -409,3 +409,22 @@ Plus **risk tier drives the sign-off path** (*"Medium — reviewer + independent
 - *"'Request an SOP/template' submissions from clinics arrive here as drafts. Every transition is audit-logged"* — the §5.7 clinic request route, working ✅
 - *"Leave empty to create a bare shell (it will demand sources before review)"* — a bare shell is permitted but cannot progress without sources. Exactly the right compromise ✅
 - *"Nothing publishes until the MDT has verified every statement against its linked source and the clinical lead signs off (risk-tiered separation of duties)"* ✅
+
+### Round 4 — Admin console · Regulatory standards (21 Jul 2026)
+
+#### ✅ Round-2 fix — honest labelling of what the gap-check actually does
+
+Every entry carries **"REFERENCE ONLY — NOT YET RAG-INGESTED"**, and the footer states plainly: *"parsing/chunking the document text for AI gap-checks (RAG ingestion) is the licensed-integration step — until then **the gap-check runs on the deterministic theme checklist**."*
+
+Round 2 asked for the clinic-facing claim to be relabelled until the capability was real. **Done properly.** The product now describes what it actually does rather than implying analysis it is not performing.
+
+Also right: **GPhC is listed first** — appropriate for a product whose source corpus contained the GPhC in **0 of 119** documents. Upload correctly restricted to central admin/governance ✅
+
+| # | Item | Severity |
+|---|---|---|
+| **RS1** | **GPhC is only half loaded.** *Standards for Pharmacy Professionals* (the nine standards) is present; ***Standards for Registered Pharmacies*** (the five principles — governance, staff, premises, pharmacy services, equipment) **is not**. **Every starter policy maps to both** — e.g. *"GPhC Pharmacy Principle 1 (governance)"* — so the theme mapping cannot be verified against a source that is not loaded. See [REGULATOR-MAPPING.md](REGULATOR-MAPPING.md) | **P1** |
+| **RS2** | **"NHS — Information governance" is not a citable document.** Which one — the Data Security and Protection Toolkit, the Records Management Code of Practice, something else? **This is the exact defect Rule 8 of [COMPLETENESS-CHECK-SPEC.md](COMPLETENESS-CHECK-SPEC.md) exists to catch** (the corpus review flagged *"British Medical Association"* and *"NHS England"* for the same reason) — now present in the regulatory standards library itself | **P1** |
+| **RS3** | **No edition, version or date on any entry.** *"GPhC — Standards for pharmacy professionals"* — which edition? *"CQC — Fundamental standards"* — as amended when? **This is precisely how the source corpus reached twelve years out of date.** Each entry needs: title · publisher · **edition** · publication date · URL · date loaded · **date last checked**. Without them, *"review due ~3-monthly"* has nothing to review against | **P1** |
+| **RS4** | **The MHRA entry is the wrong MHRA material for the biggest regulatory risk.** *"Drug safety updates"* is the monthly prescribing bulletin — useful, but **the material `RED-LINES.md` depends on is the software / medical-device guidance**: the classification flowchart, *Crafting an intended purpose*, and the Medical Devices Regulations 2002. Given the device boundary is the largest regulatory exposure in the product, those belong here | **P1** |
+| RS5 | `[CONFIRM: which further standards are in scope. Candidates already cited across the 28 starters: GPhC guidance on providing pharmacy services at a distance (C039/C040) · NICE · GMC Good Medical Practice 2024 and Decision making and consent 2020 · UK GDPR / DPA 2018 · Resuscitation Council UK Guidelines 2021 · Records Management Code of Practice]` | **P2** |
+| RS6 | **"Review due ~3-monthly" with no last-reviewed date shown.** Same pattern as the manual "Flag stale" on published content (GS4) — a cadence with nothing recording when it last happened | **P2** |
