@@ -92,3 +92,17 @@ Legend: **P0** safety/governance (block real use) · **P1** correctness bugs · 
 | T10 | Test data — module completed 02:42 | P2 |
 
 **Acceptance test:** a clinician with 8 MDT cases and 1 completed module opens the page, sees they are short a peer discussion, clicks once, adds a reflection, and has a GPhC-shaped peer discussion record in their export. **None of that is possible today.**
+
+### Round 4 — Training catalogue
+
+**Full spec: [TRAINING-CATALOGUE.md](TRAINING-CATALOGUE.md)**
+
+| # | Item | Severity |
+|---|---|---|
+| T11 | **Load the six MEDLRN CPD Diplomas** — ADHD · Mental Health · Women's Health · TRT · Minor Illness · Weight Management. All Level 7. Replaces the placeholder specialty modules | **P1** |
+| T12 | **A diploma is a programme, not a module.** Two levels required: diploma → units. **Each unit completion generates its own CPD record**, not one record at the end of the whole diploma | **P1** |
+| T13 | **Progress display** — `3 of 8 units`, not `Not started / Completed`, for anything with units | **P1** |
+| T14 | **Certificate on completion of all units** | **P2** |
+| T15 | **Access model unresolved — blocks the build.** These are paid MEDLRN programmes. Included / separate purchase / free first unit / cross-credit for existing MEDLRN customers? Recommendation in the spec: free first unit + cross-credit | **P0 decision** |
+| T16 | **Version and date every unit**, with an admin flag for overdue review. Clinical content ages — the corpus review found guidance twelve years out of date | **P1** |
+| T17 | **Modules with no content behind them should not be visible.** Several CORE/SAFETY/PROFESSIONAL modules are titles only. A module that opens to nothing is worse than an absent one | **P1** |
