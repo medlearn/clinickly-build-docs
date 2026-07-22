@@ -115,6 +115,25 @@ The per-response control needs to say plainly what it means:
 
 **Both are genuine, countable GPhC records.** An MDT case is never wasted — it just lands in a different box.
 
+### Group discussions — GPhC says "name one"
+
+The GPhC peer discussion form asks for the peer's name, role, organisation and contact — **and where the discussion was with a group, it requires only that you name one of them.**
+
+This materially lowers the bar:
+
+- **A single panel member responds to a case** → that member is the peer, if they consented
+- **An MDT session or a multi-member panel response** → the clinician names **one** consenting member. Everyone else can remain unnamed
+
+**So the feature does not need broad opt-in. It needs at least one consenting member per session or per response.**
+
+Build accordingly:
+
+- Where more than one panel member was involved, present the clinician with the **consenting** members and let them choose one
+- Where **none** consented, the record becomes unplanned learning as above
+- Never surface the non-consenting members as a list of people who said no — show only who is available to name
+
+`[CONFIRM: how "one per session" is tracked where a panel rotates. The record needs the peer who was actually part of that discussion, not simply any consenting panel member.]`
+
 ### What this changes commercially
 
 The claim **"your peer discussion, done"** can no longer be made unconditionally. Do not market it that way.

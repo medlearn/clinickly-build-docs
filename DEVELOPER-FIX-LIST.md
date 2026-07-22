@@ -83,6 +83,7 @@ Legend: **P0** safety/governance (block real use) · **P1** correctness bugs · 
 | T2 | **A record with no reflection is counted.** All 8 MDT entries have no reflection and none can count toward GPhC revalidation. Draft until reflected | **P0** |
 | T3 | **"MDT participation" is not a GPhC record type.** MDT case + panel response = **peer discussion where the panel member consented to be named**, otherwise **unplanned learning**. Never emit a peer discussion record with a blank or anonymised peer | **P0** |
 | T4 | **Headline metric is minutes.** GPhC counts **records**. Replace with progress against 6 records (4 CPD ≥2 planned · 1 peer discussion · 1 reflective account). Delete "45 CPD minutes" and "≈0.8 h" | **P0** |
+| T5a | **Group discussions — GPhC requires only ONE named peer.** Where several panel members were involved, offer the clinician the consenting members and let them pick one. The bar is one consenting member per session, not broad opt-in | **P1** |
 | T5 | **Panel consent to be named is NOT automatic** (decision 21 Jul). Build a standing preference on the panel profile, default **OFF**, with a per-response override. Clinician is never shown that a peer declined | **P0** |
 | T6 | **Duration hardcoded to 15 min** on all 8 MDT entries. Measure it or remove it — prefer remove | **P1** |
 | T7 | **Case IDs not monotonic with time.** C-247 submitted before C-245; both numbered above cases from the following day. Possibly shares a root cause with the round-2 no-ID insert failure | **P1** |
