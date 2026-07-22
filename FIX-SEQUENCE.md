@@ -12,6 +12,8 @@
 |---|---|
 | Delete test panel members | **Dr P. Word**, **Ep Och** |
 | Delete test cases | **ddd** (C-245) · **Case-loop E2E one/two** (C-236, C-239) · **R3 notif case** (C-240) |
+| 🔴 **Unpublish test content from the clinician library** | **"R3 sign test"** and **"Impetigo first-line — cross-machine E2E"** — both signed and **live to clinicians**. Highest priority item in this tier |
+| 🔴 **Regenerate the 02:50 signature timestamps** | Three governed documents signed in the same minute. The audit trail is the evidence that governance is real; this pattern undermines it |
 | Delete gibberish panel responses | C-237, C-238 — both attributed to named members |
 | Remove patient initials | **"J.M."** in C-237 and C-238 |
 | Remove the canned response chip | *"Agree with the documented triage & plan"* |

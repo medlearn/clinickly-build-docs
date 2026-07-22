@@ -293,3 +293,20 @@ Round 2 found members ACTIVE with *"Registration/PIN missing / DBS pending"*. **
 **"C-248 — Other — has no active panel member — assign someone."** The system **detected a case nobody is able to answer and surfaced it to the admin**. That is the M5a problem catching itself, which is exactly the behaviour wanted. Keep it, and extend it: the same check should run at submission so the specialty cannot be selected in the first place.
 
 Also right: the governance pipeline statement — *"All libraries are governed: AI-drafted → MDT-reviewed → human-signed → versioned"* — matches §8 and is displayed where it matters ✅
+
+### Round 4 — Admin console · Governance sign-off (21 Jul 2026)
+
+| # | Item | Severity |
+|---|---|---|
+| **GS1** | 🔴 **Test content is PUBLISHED and live in the clinician library.** *"R3 sign test"* (v1) and *"Impetigo first-line — cross-machine E2E"* (v1), both **signed by Faheem Ahmed** on 7 Jul and listed under *Recently published — live in the clinician library*. Both were on the round-2 purge list. **This is not test data sitting in a queue — it passed the full governance pipeline, received a human signature, and is now clinician-facing.** The page footer states *"nothing reaches clinicians without it"*; these reached clinicians **with** it | **P0 — worst instance of the test-data regression** |
+| **GS2** | 🔴 **Three governed documents signed in the same minute, at 02:50.** ADHD titration note template · Consent & confidentiality SOP v2 · NICE NG87 (ADHD) update — all *"signed by Faheem Ahmed · 9 Jul 2026, 02:50"*. **The audit trail now records a pattern that reads as rubber-stamping**, on the exact artefact that would be produced to demonstrate the governance is real. If seeded, regenerate with plausible, spread timestamps. If real behaviour, **the flow must make bulk-signing impossible** — one item, one deliberate action | **P0 — evidential** |
+| **GS3** | 🔴 **Sign-off is available for content reviewed by an uncredentialed member.** Confirms AD1 and G1 — *"reviewed by Dr R. Kaur"*, who has no Registration/PIN, contract, DBS or indemnity. **Reviews by unvetted members must not reach this queue** | **P0** |
+| **GS4** | **"Flag stale" is manual, and no published item shows a review date.** Nothing expires automatically. This is the C029 document-control gap and Rule 11 of [COMPLETENESS-CHECK-SPEC.md](COMPLETENESS-CHECK-SPEC.md) — **the corpus review found guidance up to twelve years out of date precisely because nothing told anyone it had expired.** Every published item needs an issue date, a review date, and automatic flagging | **P1** |
+| **GS5** | **No "send back" or reject path from the sign-off queue** — only *Sign off*. Round 2 verified flag-back-with-reason exists elsewhere; it is absent here. `[CONFIRM: what happens when the clinical lead disagrees with the reviewer?]` | **P1** |
+| GS6 | **Reviewer role and registration not displayed** — *"reviewed by Dr R. Kaur"* with no role or registration number. Both matter for an audit trail and for the peer-discussion record | **P2** |
+
+#### What is right
+
+- **MEDIUM RISK · CLINICAL MDT** tags — §4B risk-tiering visible on the item, and a medium-risk item correctly took a single reviewer ✅ `[CONFIRM: do high-risk items actually enforce two-person sign-off? Not observable here]`
+- Version numbers throughout (v1, v2, v3) ✅
+- Pipeline statement accurate and well placed: *"Every step is audit-logged (AI draft, reviewer, signer, when). Signing is a named, dated clinical-lead action."* ✅
