@@ -17,8 +17,8 @@
 | Delete gibberish panel responses | C-237, C-238 — both attributed to named members |
 | Remove patient initials | **"J.M."** in C-237 and C-238 |
 | Remove the canned response chip | *"Agree with the documented triage & plan"* |
-| Fix the session date | **15 Aug 2026 is a Saturday**; May and June are both Tuesdays |
-| Single-source the schedule | June MDT shows as **1 Jul** (session library) and **30 Jun** (panel sessions) |
+| **Fix the session date — now diagnosed** | Admin is **correct**: 28 Jul 2026, rule *"last Tuesday monthly"*, auto-advancing. **Clinician and panel views show 15 Aug 2026, a Saturday** — they are not reading from the rule. A clinician would miss the July session |
+| **Label recording date vs session date** | The June recording is dated 1 Jul (published); the session was 30 Jun. Both correct, shown unlabelled — that is the whole session-library discrepancy |
 | Fix J. Hale's title | Currently a second Chair alongside Dr Okafor |
 | Fix Dr Kaur's role label | *"Dermatology"* on one case, *"Panel member"* on two others |
 

@@ -362,3 +362,22 @@ Coherent against the §4B £150/hr sessional anchor. **£45 for a case answer is
 - Add-member form is well designed: §4B **one domain** enforced in the panel dropdown, verified tags explicitly gating claims, credentialing block labelled **"THE VETTING GATE"**, honest note that register lookup is a licensed integration recorded manually in the prototype ✅
 - Login email provisions a real account with a one-time password to hand over ✅
 - Case assignment correctly described as **overriding** specialty routing and audit-logged ✅
+
+### Round 4 — Admin console · MDT schedule (21 Jul 2026)
+
+**This screen fully diagnoses the schedule bug reported since round 2.**
+
+| # | Item | Severity |
+|---|---|---|
+| **MS1** | 🔴 **The admin schedule is correct; the clinician and panel views are wrong.** Admin: **28 Jul 2026**, rule *"Last Tuesday monthly"*, auto-advancing — **verified: 28 Jul 2026 is a Tuesday and is the last Tuesday of July.** The clinician MDT overview and the panel Sessions page both show **15 Aug 2026, a Saturday**. **Practical effect: a clinician is told the next session is 15 August when it is actually 28 July — they miss it, then turn up on a Saturday.** The recurring rule works; the downstream views are not reading from it | **P0 — diagnosed, resolves M2/G2** |
+| **MS2** | 🔴 **All three recording gates signed by the same person.** *"PII review: Faheem Ahmed. Consent confirmed: Faheem Ahmed. Signed off: Faheem Ahmed."* The pipeline HOLDING → PII REVIEWED → CONSENT CONFIRMED → PUBLISHED is designed as a chain of **independent** checks; with one person doing all three it is **one check labelled three times**. An 87-minute recording of live discussion is the highest-PII-risk content in the product, and §4B requires two people on high-risk items | **P0** |
+| **MS3** | 🔴 **The agenda auto-pulls the test cases.** *"Case discussion — 9 open cases (auto-pulled)"* — those nine include **ddd**, **Case-loop E2E one/two** and **R3 notif case**. They would appear on a live MDT agenda | **P0 — resolved by the Tier 1 purge** |
+| **MS4** | **Recording date and session date are displayed identically and unlabelled.** The June recording is dated **1 Jul** (recorded/published); the session was **30 Jun** (last Tuesday). Both fields are correct for what they hold — but shown without labels, the same session appears to have two dates. **This is the source of the session-library discrepancy (G2a).** Label them: *session date* vs *published* | **P1 — resolves G2a** |
+
+#### ✅ Genuinely good on this screen
+
+- **The recurring-rule design is right:** date auto-advances on the rule, an override applies to the **next session only** and is **audit-logged**. That is the correct shape — the bug is downstream consumption, not the rule ✅
+- **Four-stage recording pipeline visible with named actors at each stage** — the structure is right even though one person currently fills all three roles ✅
+- `PRIVATE UNTIL SIGNED OFF` badge ✅
+- **The PII footer is the best-written warning in the build:** *"Video leaks PII in ways you cannot auto-strip — spoken names, shared screens, faces and badges. Published recordings play embedded with signed URLs (Bunny Stream — licensed integration); prefer audio-only or slides+voiceover for sensitive content."* Honest about the limits of automation, and the audio-only recommendation is real advice rather than reassurance ✅
+- **Promote to training module** present, connecting §5.10 to the training catalogue ✅
