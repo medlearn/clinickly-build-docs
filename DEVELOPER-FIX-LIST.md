@@ -108,3 +108,18 @@ Legend: **P0** safety/governance (block real use) · **P1** correctness bugs · 
 | T17 | **Modules with no content behind them should not be visible.** Several are titles only. A module that opens to nothing is worse than an absent one | **P1** |
 | T18 | **Remove *Rosacea & common facial dermatoses*.** Not a MEDLRN diploma, no onward route, no content | **P2** |
 | T19 | **Final module list = 10** — six leading to the MEDLRN diplomas (ADHD · Mental Health · Women's Health · TRT · Minor Illness · Weight Management) plus four standalone (Foundations of independent prescribing · Documentation that stands up to inspection · Recognising the deteriorating patient · Reflective practice & revalidation) | **P1** |
+
+### Round 4 — MDT overview (21 Jul 2026)
+
+| # | Item | Severity |
+|---|---|---|
+| M1 | **Test data still in the live panel list — "Dr P. Word" and "Ep Och".** Both were on the round-2 purge list. Still present, on the first page a clinician sees. "Ep Och" is not a plausible name and carries no title | **P0 — regression, previously flagged** |
+| M2 | **Session date is 15 Aug 2026, which is a Saturday.** Identical to the round-2 finding (admin 28 Jul vs panel 15 Aug). **The schedule is still not single-sourced.** A 19:00–20:30 monthly MDT on a Saturday evening is not plausible | **P0 — regression, previously flagged** |
+| M3 | **Two chairs in the Governance MDT.** Dr A. Okafor is "Chair / Clinical lead (Chair)" and J. Hale is "Panel member (Chair)". Hale is both a member and a chair, and there cannot be two | **P1** |
+| M4 | **"Panel member" is used where a role should be.** Mehta/Bright/Kaur show GP, Psychiatrist, Dermatologist; Newman/Word/Och show only "Panel member". **Role and organisation must be mandatory fields on the panel profile** — the GPhC peer discussion record requires peer name, role AND organisation, and cannot be populated from "Panel member" | **P1** |
+| M5 | **Panel composition does not match the product.** Six clinical members: 3 dermatology, 1 psychiatry, 1 GP, 1 pharmacy. Core market is pharmacist prescribers, and the diploma catalogue covers ADHD, mental health, women's health, TRT, minor illness and weight management — none of which are represented beyond psychiatry. `[CONFIRM: target panel composition]` | **P1 — commercial** |
+| M6 | Banner reads **"Live session"** for a date three weeks away. Should read *Next session* | **P2** |
+
+**Note on M1 and M2:** both were raised in round 2 and both are unchanged. Worth confirming with the developer whether the round-2 items were actioned and regressed, or never picked up — the answer changes how the rest of the round-2 list should be treated.
+
+**Good on this page:** the positioning line — *"Anonymised case-based teaching, discussion & CPD"* — is correct and consistent with RED-LINES. The four explainer cards and three-part agenda are clear and land well.
