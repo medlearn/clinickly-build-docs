@@ -33,18 +33,19 @@ Replace the single "Question" box.
 | Context / specialty | ✅ | Drives routing — see §5 |
 | Age **band** | ✅ | Band only. Never a precise age |
 | Presentation | ✅ | Anonymised |
-| **What did you think it was?** | ✅ **Mandatory** | The clinician's own assessment |
-| **What did you do?** | ✅ **Mandatory** | The action actually taken |
+| **Clerking proforma** | ✅ **Mandatory** | **Superseded by [MDT-CASE-FORMAT.md](MDT-CASE-FORMAT.md)** — a structured clerking with mandatory **Differentials (min 2) · Working diagnosis · Rationale · Management**. Does the same boundary work in clinically native language |
 | Learning question | ✅ | Constrained — see §3 |
 | Image | Optional | See §6 |
 
-### Why the two mandatory fields do the work
+### Why the clerking does the work
 
-**A clinician who must state their own assessment and their own action before submitting cannot be asking the panel to make the call — they have already made it.**
+**A clinician who must record differentials, a working diagnosis, a rationale and what they actually did cannot be asking the panel to make the call — they have already made it.**
 
-It also makes an open case impossible to submit: *"what did you do"* cannot be answered if nothing has been done yet. The gate and the field reinforce each other, and neither relies on good intentions.
+It also makes an open case impossible to submit: *Management* cannot be completed if nothing has been done yet. The gate and the proforma reinforce each other, and neither relies on good intentions.
 
-**These two fields are the single most important change in this spec.** Everything else is supporting work.
+**Minimum two differentials is the boundary.** A clinician who has generated a differential has done the reasoning; one who has not is asking the panel to do it.
+
+**This is the single most important change across both specs.** Everything else is supporting work. See **[MDT-CASE-FORMAT.md](MDT-CASE-FORMAT.md)** for the full field list.
 
 ---
 
