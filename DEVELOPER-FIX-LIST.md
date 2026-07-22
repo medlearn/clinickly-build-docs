@@ -233,3 +233,21 @@ The rosacea case displays **"CLINICAL PHOTOS · CONSENTED · METADATA STRIPPED."
 - The co-pilot's documentation-gap warnings (*"⚠️ No distribution, extent, or morphological detail of rash documented"*) are embedded in the case text sent to the panel. `[CONFIRM: intended? It is arguably useful teaching context, but it is noisy and it shows the panel member the submitting clinician's documentation deficiencies]`
 - Banner states **"Synthetic data only"**, yet the cases contain *"J.M."* initials and unfilled test strings. If genuinely synthetic this is presentational only — but the anonymiser gaps still need fixing before real use
 - *"Cases routed to you — advisory input only"* — `[CONFIRM: "advisory" is doing a lot of work here. "Teaching input only" is closer to the positioning and further from the device line]`
+
+### Round 4 — Panel portal · Available tasks (21 Jul 2026)
+
+#### ✅ Round-2 P0 FIXED — credential gating
+
+Round 2 found members ACTIVE with *"Registration/PIN missing / DBS pending"*. **Now properly gated:** tasks hidden, the four missing items named (Registration/PIN · signed contract · DBS · indemnity), with a clear statement of what unlocks. **Genuine fix, well implemented.**
+
+| # | Item | Severity |
+|---|---|---|
+| **A1** | 🔴 **The credential gate is applied to task claiming but NOT to case answering.** Dr Kaur is blocked from claiming tasks for missing Registration/PIN, contract, DBS and **indemnity** — yet holds **3 assigned cases and has answered 3 more**, including *"Consistent with rosacea."* The banner states case answering is gated. **It is not.** Answering a clinical case is the higher-risk activity, and an uncredentialed member without indemnity has given what reads as a diagnosis. **A partial fix that presents as a complete one** | **P0** |
+| A2 | **No self-serve route to complete credentialing.** *"Ask the admin to complete your record"* — no upload, no form, no progress indicator, no timescale. **DBS and indemnity certificates are the member's to supply** and should be uploadable, with the admin verifying rather than collecting. Otherwise onboarding stalls on email chasing | **P1** |
+| A3 | **Fee bands still unset?** Page promises *"claim at the fixed fee shown"* but no tasks exist to check. `[CONFIRM: have the five §4B fee-band figures been set? Outstanding since round 3]` | **P1 — decision** |
+
+#### What is right
+
+- Info banner is **§4B implemented near-verbatim** — fixed fees, admin-set, **no bidding**, tag-gated eligibility, claiming records the reviewer's name ✅
+- Footer states the separation-of-duties rule correctly: *"One item → one owner → one sign-off gate. High-risk items still require an independent clinical-lead sign-off after your review."* ✅
+- Honest empty state rather than fabricated content ✅
