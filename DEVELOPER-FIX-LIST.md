@@ -134,8 +134,8 @@ Legend: **P0** safety/governance (block real use) · **P1** correctness bugs · 
 | # | Item | Severity |
 |---|---|---|
 | **X1** | **Case C-241 "Rash photo case": question — *"Is this rosacea?"* Panel response — *"Consistent with rosacea."*** This is **patient-specific diagnosis**, not case-based education. It is the exact activity `RED-LINES.md` prohibits and the basis on which the MHRA position rests. **The per-card disclaimer does not cure it** — a regulator reads the question and the answer, not the footer | **P0 — device risk** |
-| X1a | **Fix at the design level, not by deleting the case.** Submission must prevent "what is this / what should I do for this patient" framing; the panel response form must prevent answering it. Same underlying problem as the Ask Clinickly rescope | **P0** |
-| X1b | **"Rash photo case" implies an image upload.** `[CONFIRM: can clinicians attach patient photographs? If so — consent basis, whether a clinical photograph can be anonymised at all, storage, and retention. A facial or distinctive-lesion image is not anonymisable by removing a name]` | **P0** |
+| X1a | **Fix at the design level, not by deleting the case.** **Full spec: [MDT-CASE-SUBMISSION-SPEC.md](MDT-CASE-SUBMISSION-SPEC.md).** Core change: a closed-episode gate plus two mandatory fields — *what did you think it was* and *what did you do* — which make it structurally impossible to ask the panel to decide | **P0** |
+| X1b | **Images: permitted, with controls.** Dermatology is not workable without them. Clinician **attests** to holding consent — the signed form ([F05](starters/forms/F05-photography-consent.md)) stays in the patient's record and is **never uploaded**. Platform must strip EXIF server-side (phone images carry GPS of the patient's home), block faces by detection, warn on in-frame identifiers, and support per-patient deletion on withdrawal. See spec §6 | **P0** |
 
 #### 🔴 Patient identifiers — all previously flagged
 

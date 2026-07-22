@@ -12,6 +12,8 @@ CLINICKLY-MASTER.md is the spec (updated with all decisions). BUILD-REVIEW*.md =
 
 **[COMPLETENESS-CHECK-SPEC.md](COMPLETENESS-CHECK-SPEC.md) — new P1 feature.** Eleven rules, every one derived from a real defect found in a real 119-document corpus that had passed a CQC inspection. This is the check that runs before anything publishes to a clinic.
 
+**[MDT-CASE-SUBMISSION-SPEC.md](MDT-CASE-SUBMISSION-SPEC.md) — P0.** How case submission and panel response stay outside the medical-device definition, structurally rather than by disclaimer.
+
 **[RED-LINES.md](RED-LINES.md) — read before building anything.** The medical-device boundary, following the MHRA's response. Non-negotiable.
 
 **Also here:** [REGULATOR-MAPPING.md](REGULATOR-MAPPING.md) (CQC × GPhC × the 24 requirement themes) · [MHRA-RESPONSE.md](MHRA-RESPONSE.md).
