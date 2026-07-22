@@ -4,7 +4,17 @@
 
 ---
 
-## Tier 1 — hours. Do this first.
+## Tier 0 — before anything else
+
+🔴 **Close open self-registration, and remove the two unknown clinician accounts.**
+
+`bksLQkfUfNDDhqBEmGMxn` / **i.ber.af.i.r.ura.761@gmail.com** and `lfLDHKraqPRxXeBJW` / **d.ot.og.oxira.0.3@gmail.com** — random display names, Gmail dot-injected addresses, both holding the **CLINICIAN** role. Raised in round 2, unchanged.
+
+**This is the only finding in the review where the system is exposed to people outside the project.** Deleting the accounts without closing signup simply means new ones appear. Invite-only, or admin approval plus a real display name.
+
+---
+
+## Tier 1 — hours. Do this next.
 
 **Almost all of it is deletion.** It is a day's work, it needs no design decisions, and it will make every subsequent review far cleaner — the real problems are currently buried under test data.
 

@@ -428,3 +428,20 @@ Also right: **GPhC is listed first** — appropriate for a product whose source 
 | **RS4** | **The MHRA entry is the wrong MHRA material for the biggest regulatory risk.** *"Drug safety updates"* is the monthly prescribing bulletin — useful, but **the material `RED-LINES.md` depends on is the software / medical-device guidance**: the classification flowchart, *Crafting an intended purpose*, and the Medical Devices Regulations 2002. Given the device boundary is the largest regulatory exposure in the product, those belong here | **P1** |
 | RS5 | `[CONFIRM: which further standards are in scope. Candidates already cited across the 28 starters: GPhC guidance on providing pharmacy services at a distance (C039/C040) · NICE · GMC Good Medical Practice 2024 and Decision making and consent 2020 · UK GDPR / DPA 2018 · Resuscitation Council UK Guidelines 2021 · Records Management Code of Practice]` | **P2** |
 | RS6 | **"Review due ~3-monthly" with no last-reviewed date shown.** Same pattern as the manual "Flag stale" on published content (GS4) — a cadence with nothing recording when it last happened | **P2** |
+
+### Round 4 — Admin console · Users & clinics (21 Jul 2026)
+
+#### ✅ Round-2 fix — two-tier tenancy is now built
+
+*"Each clinic is an isolated tenancy — its clinicians and patients see only their own clinic's data. Panel members and admins are platform (central) scope unless assigned to a clinic."*
+
+Round 2 found tenancy and clinics management conflated. There is now a clinics list, an add-clinic route, per-user scope selection and a clear statement of the isolation rule. **Proper fix, and the harder half of the problem.**
+
+| # | Item | Severity |
+|---|---|---|
+| **UC1** | 🔴 **Two unknown accounts still hold the CLINICIAN role.** `bksLQkfUfNDDhqBEmGMxn` / **i.ber.af.i.r.ura.761@gmail.com** and `lfLDHKraqPRxXeBJW` / **d.ot.og.oxira.0.3@gmail.com**. Raised in round 2; unchanged. **They look worse on inspection:** display names are random strings, and both addresses use **Gmail dot injection** (`i.ber.af.i.r.ura.761`, `d.ot.og.oxira.0.3`) — Gmail ignores dots, so that pattern makes one address present as many. **This is automated signup behaviour, not a mistyped name.** Two unknown parties currently hold a clinician role | **P0 — regression** |
+| **UC2** | 🔴 **Open signup is still open.** UC1 is the evidence. **Deleting the two accounts without closing self-registration only means new ones appear.** Require invite-only provisioning, or admin approval plus a real display name and a verified professional email domain. **This is the only finding in the entire review where the system is exposed to people outside the project** — recommend doing it before anything else on the list | **P0 — regression** |
+| **UC3** | **The scope display contradicts itself.** Dr A. Demo shows *"Clinickly Demo Clinic"* in the description line and **"No clinic — pick one"** in the scope dropdown. Two fields asserting different things about the same user. `[CONFIRM: which is authoritative, and what the description line is actually showing — creating clinic vs assigned scope?]` | **P1** |
+| **UC4** | **Clinic counts do not reconcile.** *"Clinickly Demo Clinic — 3 clinicians · 7 patients · 6 staff"*, but only one clinician in the user list is scoped to that clinic and **no staff users appear at all**. `[CONFIRM: what these counters count]` | **P1** |
+| UC5 | **Auto-generated test emails confirm seeded accounts** — `pw1783424985@clinickly.test` and `epoch1783429322@clinickly.test` are Unix timestamps. Removed with Word and Och in the Tier 1 purge | **P1 — see M1** |
+| UC6 | **`newdoc@clinickly.test` for Dr N. Newman**, a *Pharmacy & prescribing* panel member. Test artefact, and reinforces the doctor-centric naming found throughout the corpus | **P2** |
