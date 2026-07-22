@@ -251,3 +251,28 @@ Round 2 found members ACTIVE with *"Registration/PIN missing / DBS pending"*. **
 - Info banner is **§4B implemented near-verbatim** — fixed fees, admin-set, **no bidding**, tag-gated eligibility, claiming records the reviewer's name ✅
 - Footer states the separation-of-duties rule correctly: *"One item → one owner → one sign-off gate. High-risk items still require an independent clinical-lead sign-off after your review."* ✅
 - Honest empty state rather than fabricated content ✅
+
+### Round 4 — Panel portal · Governance review, Sessions, Panel directory (21 Jul 2026)
+
+#### ⭐ Governance review — the best screen in the build
+
+*"Open the source link and confirm the passage is really there (**the quote alone is not evidence**)"* — six recommendations paired with source passages, working link-outs, and sign-off gated until every item is verified. **The round-2 gold-standard item, still working.**
+
+**Two things follow from this:**
+
+1. **This is the pattern Ask Clinickly should use.** It is the strongest available evidence that grounded-and-cited output is buildable here — because it is already built, on this screen
+2. **It has something real to catch.** Recommendation 2 states *"daily SPF 30+"*; the quoted source says only *"advise sun protection."* **The SPF 30+ is an extrapolation beyond the source.** A useful live test of whether reviewers are reading or ticking. `[CONFIRM: keep this as a deliberate test case?]`
+
+| # | Item | Severity |
+|---|---|---|
+| **G1** | 🔴 **Panel directory shows all eight members ACTIVE — including Dr R. Kaur, who is uncredentialed** (missing Registration/PIN, contract, DBS, indemnity). **The round-2 credential-gating P0 is only one-third fixed:** claiming is gated ✅ · **case answering is not** ❌ · **ACTIVE status is not** ❌. The badge asserts something untrue. Should read **PENDING VETTING**, and her cases should not be assignable | **P0 — extends A1** |
+| **G2** | 🔴 **The Saturday session date is provably a bug.** The other two sessions are **30 Jun** and **26 May 2026** — **both Tuesdays**. August is **15 Aug — a Saturday**. Not a deliberate weekend session; an anomaly against an established pattern | **P0 — extends M2** |
+| **G2a** | 🔴 **Second date conflict for the same session.** Session library shows the June MDT as **1 Jul 2026**; panel Sessions shows it as **30 Jun 2026**. **Same session, two dates, two screens** — the schedule is still not single-sourced, on a third surface | **P0** |
+| **G3** | **Clinical and Governance panels are merged in the directory.** MDT overview presents them as two separate lists; the panel directory shows all eight under *"The panel"*, including Okafor and Hale from Governance. **Undercuts §4B separation of duties** and is likely related to P6 (a dermatologist holding governance content to review) | **P1** |
+| G4 | Confirmed for the third time: **Dr P. Word** and **Ep Och** (M1), and **J. Hale as a second Chair** (M3) | **P0 / P1 — see M1, M3** |
+
+#### Also right on these screens
+
+- Sessions page footer restates the consent, anonymisation and governance-sign-off requirement ✅
+- Panel directory footer correctly points membership and login management at the admin console ✅
+- The escalation recommendation in the Rosacea draft reads *"Doses and cautions from the BNF, not this summary"* — **exactly the RED-LINES discipline, in the content itself** ✅
