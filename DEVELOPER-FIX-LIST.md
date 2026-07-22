@@ -203,3 +203,33 @@ Legend: **P0** safety/governance (block real use) · **P1** correctness bugs · 
 - **"Facial rashes: rosacea, acne or something else"** is the correct form of that content — same clinician, same topic as the C-241 breach, but as **general teaching** rather than a diagnosis on a live patient. Worth keeping as the reference example of the boundary working
 - Footer states the consent, anonymisation and sign-off requirement clearly ✅
 - Named attribution and tagging present throughout ✅
+
+### Round 4 — Panel portal · My assigned cases (21 Jul 2026)
+
+Dr R. Kaur's view. Confirms several clinician-side findings from the panel end, and adds four new ones.
+
+| # | Item | Severity |
+|---|---|---|
+| **P1** | 🔴 **"Agree with the documented triage & plan" is a canned one-click chip**, not typed text. **The product is offering the useless response as the path of least resistance**, and two cases used it. Either remove it, or make it a starting point that still requires the *"what was sound, and why"* free text. See [MDT-PANEL-RESPONSE-FORM.md](MDT-PANEL-RESPONSE-FORM.md) §2 | **P0** |
+| **P2** | 🔴 **Mis-routing is actually mis-tagging at source.** *"Stable adult ADHD on stimulant — monitoring query"* carries a **DERMATOLOGY** tag, which is why a dermatologist received it. **Fixing the router will not fix this** — the tag is wrong before routing runs. Check how the specialty tag is assigned at submission | **P0 — changes where to look for X12** |
+| **P3** | **"URGENT" flag is inconsistent with the closed-case model.** If cases must be concluded episodes, nothing about them is clinically urgent — the patient has already been managed. An urgency flag implies someone is waiting on an answer to act, which is the wrong model. Remove it, or redefine as *"panel member is waiting"* not *"patient is waiting"* | **P1 — positioning** |
+| **P4** | **Response box is a single free-text field.** Confirms X16 from the clinician side. The placeholder text is well written — *"Teaching/discussion points… cite the guidance to verify against; no patient-specific directives, no doses"* — **but nothing enforces it**, which is exactly how *"Consistent with rosacea"* got typed | **P0** |
+| **P5** | **Same responder shows two different roles** — *"Dr R. Kaur · Dermatology"* on C-241, *"Dr R. Kaur · Panel member"* on C-240 and C-239. Confirms M4, and it breaks the GPhC peer discussion record, which needs a consistent role and organisation | **P1** |
+| **P6** | **A dermatologist has "2 content to review · governance."** Crosses the clinical/governance separation (§4B). `[CONFIRM: what governance content is assigned to clinical panel members, and why]` | **P1** |
+| **P7** | **No response SLA or deadline** on any assigned case. Submitted dates are shown; nothing indicates when a response is due. See [MDT-PANEL-RESPONSE-FORM.md](MDT-PANEL-RESPONSE-FORM.md) — Admin and quality | **P1** |
+| **P8** | **Stats card reads "4 Answered · last 3 months"** but three answered cases are visible. `[CONFIRM: counting logic]` | **P2** |
+
+#### ✅ Better than assumed — images are partly built
+
+The rosacea case displays **"CLINICAL PHOTOS · CONSENTED · METADATA STRIPPED."**
+
+**Consent flagging and EXIF stripping already exist** — that is most of [MDT-CASE-SUBMISSION-SPEC.md](MDT-CASE-SUBMISSION-SPEC.md) §6 already in place. Two gaps remain:
+
+- **Consented to what?** [F05](starters/forms/F05-photography-consent.md) separates section B (professional education) from section C (publication). The badge does not distinguish them, and the distinction determines whether the image may appear in the Session library
+- **Who attested, and when?** The attestation must be logged against the clinician's name, role, registration number and timestamp
+
+#### Also observed
+
+- The co-pilot's documentation-gap warnings (*"⚠️ No distribution, extent, or morphological detail of rash documented"*) are embedded in the case text sent to the panel. `[CONFIRM: intended? It is arguably useful teaching context, but it is noisy and it shows the panel member the submitting clinician's documentation deficiencies]`
+- Banner states **"Synthetic data only"**, yet the cases contain *"J.M."* initials and unfilled test strings. If genuinely synthetic this is presentational only — but the anonymiser gaps still need fixing before real use
+- *"Cases routed to you — advisory input only"* — `[CONFIRM: "advisory" is doing a lot of work here. "Teaching input only" is closer to the positioning and further from the device line]`
