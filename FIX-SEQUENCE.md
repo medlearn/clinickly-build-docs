@@ -65,7 +65,7 @@ Correctness problems that need code but no new design.
 | **A home for the 28-policy library** | No existing content library fits. Structural decision needed first |
 | **Training catalogue** | 10 modules — six leading to MEDLRN diplomas, four standalone |
 | **Completeness check** | [COMPLETENESS-CHECK-SPEC.md](COMPLETENESS-CHECK-SPEC.md) |
-| **Ask Clinickly rescope** | Still the biggest open P0 from round 2 |
+| **Ask Clinickly rescope** | Still the biggest open P0 from round 2 — **but much smaller than it sounds.** The grounded, cited, source-verified pattern is **already built twice**: the Content libraries *New item* form (*"never drafted from memory — only from retrieved source text, cited per statement"*) and the governance review verification screen. The work is pointing an existing mechanism at a third feature, not building one |
 
 ---
 

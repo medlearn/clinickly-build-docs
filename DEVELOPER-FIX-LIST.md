@@ -381,3 +381,31 @@ Coherent against the §4B £150/hr sessional anchor. **£45 for a case answer is
 - `PRIVATE UNTIL SIGNED OFF` badge ✅
 - **The PII footer is the best-written warning in the build:** *"Video leaks PII in ways you cannot auto-strip — spoken names, shared screens, faces and badges. Published recordings play embedded with signed URLs (Bunny Stream — licensed integration); prefer audio-only or slides+voiceover for sensitive content."* Honest about the limits of automation, and the audio-only recommendation is real advice rather than reassurance ✅
 - **Promote to training module** present, connecting §5.10 to the training catalogue ✅
+
+### Round 4 — Admin console · Content libraries (21 Jul 2026)
+
+#### ⭐⭐ The grounded-generation model is fully built
+
+The **New item** form implements the entire RED-LINES position as a form:
+
+> **DRAFT FROM SOURCE (GROUNDED — EVERY STATEMENT CARRIES ITS PASSAGE + LINK)** · Source reference · **Source URL (the reviewer verifies against this)** · Retrieved source text — *"Each paragraph becomes one draft statement bound to its passage — never drafted from memory."*
+>
+> *"**We never draft clinical content from AI memory — only from retrieved source text, cited per statement.**"*
+
+Plus **risk tier drives the sign-off path** (*"Medium — reviewer + independent sign-off"*) — §4B tiering wired into the workflow, not a label.
+
+**This is the second place the correct grounded pattern exists** — alongside the governance review verification screen. **It materially reframes the Ask Clinickly P0: the work is not "build grounded retrieval", it is "point the mechanism that already exists at a third feature."**
+
+| # | Item | Severity |
+|---|---|---|
+| **CL1** | **"ear ache" — SOP routed to Governance/ethics (Chair).** Clinical content sent to governance for review. **Same root cause as PM3.** Title also reads as test input | **P0 — see PM3** |
+| **CL2** | **"Dermatology note template v2 · claimed by Dr R. Kaur" — REVIEWED, AWAITING SIGN-OFF.** Third screen showing an unvetted reviewer one click from published | **P0 — see PM1** |
+| **CL3** | **"SOPs & templates" conflates two opposite content models.** Per `CLINICKLY-MASTER.md` §5.7: **SOPs are clinic-specific by design and are meant to differ; note templates are central, standard and must not fork.** They share one library and one GOVERNED badge. **Policies would be a third model** (governed, standard, same-for-all, theme-mapped). This is the real shape of AD2 — not simply "policies need a home", but that the library already carries incompatible rules. `[CONFIRM: restructure into Guidelines · Note templates (central) · SOP starters (clinic-specific) · Policies (governed) · Training · Regulatory standards]` | **P1 — structural** |
+| CL4 | **Training shows 6 modules** — should be 10 per [TRAINING-CATALOGUE.md](TRAINING-CATALOGUE.md) | **P1 — see AD4** |
+| CL5 | `[CONFIRM: "Consent & confidentiality SOP v2" is PUBLISHED at **high risk**. §4B requires two-person sign-off for high-risk items. Did it receive one, given governance sign-off shows a single signer throughout?]` | **P1** |
+
+#### Also right
+
+- *"'Request an SOP/template' submissions from clinics arrive here as drafts. Every transition is audit-logged"* — the §5.7 clinic request route, working ✅
+- *"Leave empty to create a bare shell (it will demand sources before review)"* — a bare shell is permitted but cannot progress without sources. Exactly the right compromise ✅
+- *"Nothing publishes until the MDT has verified every statement against its linked source and the clinical lead signs off (risk-tiered separation of duties)"* ✅
