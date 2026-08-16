@@ -215,3 +215,18 @@ The X1 breach (*"Is this rosacea?" → "Consistent with rosacea"*) is fixed at t
 - **A NEW structured panel response** — only the legacy "Agree…" response is visible (correctly marked historical). Confirm MDT-PANEL-RESPONSE-FORM is built for new cases and the "Agree" chip is gone from the current form.
 
 **This resolves X1 (device breach), X2/X3 (identifiers), X13/PM3 (routing), and the test-data concern (via quarantine). The single most important fix of the engagement, on the highest-risk screen.**
+
+
+---
+
+## §8b — Structured clerking: structure ✅ / population 🔴
+
+**Structure fully built (MDT-CASE-FORMAT complete):** core clerking (PC·HPC·PMH·DH·allergies·FH·surgical·occupation·social·ROS pos+neg·obs·exam·investigations, with honest "Not Recorded" states) · **differential reasoning table (Differential · Supporting · Opposing evidence)** · working decision **with Confidence: Uncertain** · completed management (actions·rationale·safety-netting·follow-up) · ADHD specialty block. The proforma is real and complete.
+
+**🔴 Field population broken — every long field holds the identical full-transcript dump** (PC, HPC, social, ROS pos, ROS neg, both differential-evidence columns, working diagnosis, rationale, management, safety-netting, follow-up all = the same paragraph). Stray artefacts (`xvReports…`, `,,,,Reports…`); a differential labelled `headche` on an ADHD case. **Same fallback as the consultation co-pilot** — no approved governed content → no intelligent field extraction → raw transcript dumped into every slot.
+
+**🔴 Worse than cosmetic here — it defeats the boundary the structure enforces.** The reasoning fields exist so the *clinician* produces the differential/reasoning — that is what makes it retrospective teaching, not live advice. Auto-stuffing them means no reasoning is elicited and a panel member sees the same wall of text 15×.
+
+**Design rule for the developer:** reasoning fields (differential · supporting/opposing · working diagnosis · rationale) are **clinician-entered, never auto-filled.** AI may pre-fill *descriptive* clerking (PC/HPC) as a convenience only. The fallback must be **empty fields + prompts**, not transcript-dumping.
+
+**Net: structure is a major win; the AI field-extraction is the same unresolved fallback, and here it must be gated so the reasoning stays human.**
