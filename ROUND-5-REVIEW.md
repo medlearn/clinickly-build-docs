@@ -194,3 +194,24 @@ The Tier 1 purge + schedule fix landed.
 **Verify:**
 - **Is pharmacy still represented?** Round 4 had Dr N. Newman (Pharmacy & prescribing) in the clinical list; only Derm/GP/Psych shown here. Removing Word/Och was right — confirm Newman wasn't removed too, or a pharmacist-led product has no pharmacy voice on its clinical panel.
 - **M6 not fixed** — banner still reads "Live session" for a future date (25 Aug); should be "Next session." P2.
+
+
+---
+
+## §8 — My MDT cases ⭐⭐⭐ (the device breach is fixed structurally — headline result)
+
+The X1 breach (*"Is this rosacea?" → "Consistent with rosacea"*) is fixed at the design level. The structured case format from MDT-CASE-FORMAT + MDT-CASE-SUBMISSION-SPEC is built.
+
+**Fixed & verified:**
+- **Closed-episode gate is a field:** *"EPISODE: Concluded before submission."* An open-episode diagnostic question is now unsubmittable. Positioning: *"Structured retrospective learning cases — never advice on a live patient."*
+- **Retrospective framing throughout** — title, *"RETROSPECTIVE QUERY: Diagnostic reasoning review,"* presentation text.
+- **Structured clerking** — Context and Boundary · Demographics · Core Clerking sections.
+- **Age band not precise age** (18–29); sex Not Stated.
+- **Routing fixed (PM3/X13):** *"Awaiting an eligible Psychiatry/mental health clinical panel member"* — routed by requested expertise, honest about why it waits.
+- **Legacy quarantine (elegant):** old cases tagged *"Legacy v0 — completeness not asserted … predates the structured contract. Missing evidence has not been inferred,"* *"Historical Read-Only."* Old *"Agree with the documented triage & plan"* response tagged historical/not-validated. Better than deletion — preserves audit trail, refuses to retrofit.
+
+**Verify (scroll down):**
+- **Full clerking sections** — the differential table (min 2 with reasoning per differential) and the referral counterfactual (MDT-CASE-FORMAT §2, the real teaching work). Header/demographics confirmed; reasoning block not yet seen.
+- **A NEW structured panel response** — only the legacy "Agree…" response is visible (correctly marked historical). Confirm MDT-PANEL-RESPONSE-FORM is built for new cases and the "Agree" chip is gone from the current form.
+
+**This resolves X1 (device breach), X2/X3 (identifiers), X13/PM3 (routing), and the test-data concern (via quarantine). The single most important fix of the engagement, on the highest-risk screen.**
