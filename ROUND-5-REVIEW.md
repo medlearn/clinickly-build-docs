@@ -94,3 +94,23 @@ Three drafting attempts, all **FALLBACK DRAFT / "AI drafting unavailable."** The
 - If **(b)** — reassuring: the system refuses to write a clinical impression without governed grounding and defaults to clinician-completes. Reframes the device question to: *when governed content exists, does it write an impression, or only surface cited support?* (Latter = safe.)
 
 **Nothing observable is over the device line. The unobservable part — a successful AI Assessment — is the one thing still blocking device-line sign-off, and it is now the top diagnostic for the developer.**
+
+
+---
+
+## §4 — Guidelines ✅✅ (strong governance; answers the §2 fallback question)
+
+Banner: **"No approved licensed source snapshots available. Ask Clinickly retrieves only current, licence-approved, human-approved snapshots. Curated sample cards are visible only in Local Preview."**
+
+**This resolves the §2 fallback question in favour of (b) — the design working.** The governed library has no approved content loaded, so grounding-gated features (the consultation Assessment) correctly decline. Not a bug — the absence of approved content is why it hands to the clinician.
+
+**Keep — this is excellent governance architecture:**
+- Content is triple-gated: **licence-approved + human-approved + current snapshot (versioned).**
+- **Directly de-risks the BNF licensing flag** — the gate is built; unlicensed/unapproved content cannot reach production.
+- **Sample content walled off to Local Preview** — nothing fake presented as real. Honest empty state.
+- Source taxonomy filters: NICE · GPhC · GMC · BNF · MHRA.
+
+**Fix / verify:**
+- **Inconsistency between the two AI features in preview:** Ask Clinickly serves the Local Preview sample cards (so it answers), but the Consultation path requires approved snapshots (so it falls back). **Consequence: the consultation Assessment cannot be evaluated in preview at all.** Ask developer to wire the sample cards into the consultation path so the Assessment behaviour is testable before real content exists.
+- **"Kept current" (subtitle) is vacuous with zero content.** When snapshots load, each needs a **review-date + verified-against-source stamp** (the layer-2 citation point from §1) to make the claim real.
+- Confirm the licence-approval + human-approval gate is enforced server-side, not just a display label.
