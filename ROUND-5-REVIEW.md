@@ -228,3 +228,21 @@ The X1 breach (*"Is this rosacea?" → "Consistent with rosacea"*) is fixed at t
 *(The transcript-dump fallback IS real on the Consultation co-pilot — that one is machine-generated with a FALLBACK DRAFT badge. Don't conflate the two.)*
 
 **Optional quality guard (not a bug):** because a clinician can paste the same text into every field, the completeness/quality check could flag low-quality cases — e.g. "differential duplicates the HPC" or "differential is not a distinct differential" — to nudge quality without blocking. Nice-to-have.
+
+
+---
+
+## §9 — Session library ✅ (raised bar, honest empty state)
+
+Round 4's five test recordings are gone; library empty and honest. Footer states the full contract: *"Only persisted, privacy-reviewed, consent-confirmed and **independently signed** recordings appear here. Playback URLs expire and access is audit-logged."*
+
+**Fixed:**
+- **"Independently signed"** — fixes MS2/S1 (round 4: 1 of 5 signed, and that one had the same person on all three gates). Contract now requires independent sign-off.
+- **Expiring playback URLs + audit-logged access** — §5.10 secure-playback requirement.
+- **Privacy-review + consent gates** stated.
+- Unsigned/legacy recordings removed rather than shown mislabelled (consistent with Guidelines + case legacy handling).
+
+**Deferred (empty library — needs one governed session to test):**
+- S3: does watching a session generate a CPD record?
+- S4: are long recordings chaptered / segment-extracted (vs one 87-min block)?
+- S2: image consent scope for published sessions (F05 §B vs §C).
