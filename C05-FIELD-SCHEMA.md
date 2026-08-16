@@ -1,113 +1,91 @@
-# Field schema — worked example: C05 Consent
+# Field schema — C05 Consent (VERIFIED against the source document)
 
 **The fix for "the fields are not proper copies of what needs to be there."**
+Every field below is checked against its actual line in `starters/C05-consent.md`. Nothing invented, nothing missed.
 
-The document has **28 raw `[CONFIRM]` / `[CLINIC NAME]` markers**. But that is NOT 28 fields. Cleaned up, it's **~19 real clinic fields**, because:
+## Count reality check
 
-- **`[CLINIC NAME]` appears 8 times but is ONE field** — filled once, applied everywhere. (The current UI likely shows it 8 times.)
-- **One marker is not a clinic field at all** — it's a governance/editorial note (*"DH Reference Guide is archived; GMC 2020 is operative"*). The clinic should never see it. It needs a different marker.
-- **Several fields are decisions with defaults** (the clinic accepts or changes the default), not blank text boxes.
-- **Several are conditional** — only shown if a gating question is answered "yes."
+- **28 raw markers** in the document, but that is **21 clean fields + 1 governance note**, because:
+  - `[CLINIC NAME]` = **1 field, inserted 8×** (fill once, apply everywhere).
+  - One marker (line 30) is a **governance note to the reviewer**, not a clinic field.
+  - The rest are real, but need clean labels + types + categories.
 
-This is why a flat auto-extracted "Fields" list is unusable: it de-duplicates nothing, types nothing, and turns prose into labels.
+## The label MUST come from document structure, not marker text
+
+This is why labels came out as fragments. Three label sources, and the extractor must use the right one:
+
+| Marker form | Where the label comes from | Example |
+|---|---|---|
+| **Bare** `[CONFIRM]` | the **table-row header** it sits in | line 14 → **"Authorised by"** |
+| **Generic** `[CONFIRM: role]` / `[CONFIRM: route]` | the **sentence** around it | line 158 → **"Who maintains the authorised-to-take-consent record"** |
+| **Descriptive** `[CONFIRM: named responsible person]` | the marker text (already clean) | line 13 → **"Responsible person"** |
+
+## Three field categories (different interactions)
+
+- **VALUE** — clinic types a specific value.
+- **DECISION** — yes/no gate; can hide/show conditional fields.
+- **CLAUSE** — a pre-written default paragraph the clinic **keeps or edits** (NOT a blank box — the default is the safe wording).
 
 ---
 
-## The three things every field needs
+## The 21 fields
 
-| | |
-|---|---|
-| **Clean label** | A short name, not a sentence fragment |
-| **Type** | clinic-name · person · role · date · text · list · decision · duration |
-| **Default + help** | What it means, and a sensible pre-filled answer where one exists |
+### Global
+| id | label | category | type | line | help |
+|---|---|---|---|---|---|
+| `clinic_name` | Clinic name | VALUE | clinic-name | 8× | Registered name. One field, applied throughout |
 
-Plus two flags: **decision vs fact**, and **conditional-on** (show only if a gate = yes).
-
----
-
-## C05 Consent — the clean field set
-
-### Global (fill once, applied everywhere)
-
-| id | label | type | required | help |
-|---|---|---|---|---|
-| `clinic_name` | Clinic name | clinic-name | ✅ | Registered name of the clinic. Used throughout. **One field, 8 insertions.** |
-
-### Document control
-
-| id | label | type | default | help |
-|---|---|---|---|---|
-| `responsible_person` | Responsible person | role | Registered Manager / Clinical Lead | Named person accountable for this policy |
-| `authorised_by` | Authorised by | person | — | Who signs it off |
-| `issue_date` | Issue date | date | — | — |
+### Document control (labels from table rows)
+| id | label | category | type | default | line |
+|---|---|---|---|---|---|
+| `responsible_person` | Responsible person | VALUE | role | Registered Manager / Clinical Lead | 13 |
+| `authorised_by` | Authorised by | VALUE | person | — | 14 (bare) |
+| `issue_date` | Issue date | VALUE | date | — | 15 (bare) |
 
 ### Governance note — NOT a clinic field
-
-| marker | treatment |
+| line | treatment |
 |---|---|
-| *"DH Reference Guide is archived; GMC 2020 is operative"* | **`[NOTE]`, not `[CONFIRM]`.** Editorial reminder for the governance reviewer. **Must not appear in the clinic's fill list.** |
+| 30 | `[NOTE]` — *"DH guide archived; GMC 2020 operative — confirm at review."* Reviewer only. **Never shown to the clinic.** |
 
-### Policy decisions & facts (the real fill work)
-
-| id | label | type | default | decision? | conditional on | help |
+### Policy fields
+| id | label | category | type | default | gated? | line |
 |---|---|---|---|---|---|---|
-| `cooling_off` | Cooling-off period (elective/aesthetic) | decision | Yes — min 14 days; never treat at first appointment | ✅ | — | Does any treatment need a gap between decision and procedure? |
-| `reconsent_interval` | Re-consent interval | duration | 3 months | ✅ | — | After this long, written consent is re-taken, not just reconfirmed |
-| `written_consent_procedures` | Procedures requiring written consent | list | — | — | — | The **real** list of procedures this clinic does — not generic |
-| `consent_delegated` | Is consent ever delegated? | decision (yes/no) | No | ✅ | — | Does anyone take consent for a procedure they don't perform? |
-| `delegated_consent_owner` | Who maintains the authorised-to-take-consent record | role | — | — | `consent_delegated = yes` | Hidden unless delegation happens |
-| `interpreter_service` | Interpreting service & booking route | text | — | — | — | Which professional service, and how to book |
-| `accessible_formats` | Accessible-format arrangements | text | — | — | — | BSL route, large print, easy read |
-| `info_between_appointments` | Access to information between appointments | text | — | — | — | How a patient gets more detail before deciding |
-| `imca_service` | IMCA service & how to instruct | text | — | — | — | Local IMCA; or state the clinic refers serious-medical-treatment decisions on |
-| `sees_under_18s` | Does the clinic see under-18s? | decision (yes/no) | — | ✅ | — | **Must match C032.** Gates the young-person fields |
-| `young_person_refusal` | Position on a competent young person refusing necessary treatment | decision | Escalate to clinical lead; legal advice if serious; never resolve by asking a parent to sign | ✅ | `sees_under_18s = yes` | — |
-| `marketing_images` | Are recordings/images used for marketing? | decision (yes/no) | No | ✅ | — | If yes: explicit, separately signed, freely given, never a condition of treatment/discount |
-| `consent_training_refresh` | Consent training refresh interval | duration | 3 years | ✅ | — | — |
-| `mca_training_refresh` | MCA training refresh interval | duration | 3 years | ✅ | — | — |
-| `training_matrix_owner` | Who holds the training matrix | role | — | — | — | — |
-| `audit_owner` | Audit owner & frequency | decision | Clinical Lead, annually | ✅ | — | — |
-| `governance_meeting` | Name of the governance meeting | text | — | — | — | Where audit findings are reported |
+| `cooling_off` | Cooling-off period (elective/aesthetic) | CLAUSE | paragraph | *Yes — min 14 days; never treat at first appointment* | — | 119 |
+| `reconsent_interval` | Re-consent interval | VALUE | duration | 3 months | — | 125 |
+| `written_consent_procedures` | Procedures requiring written consent | VALUE | list | — | — | 135 |
+| `consent_delegated` | Is consent ever delegated? | DECISION | yes/no | No | gates ↓ | 156 |
+| `delegated_consent_owner` | Who maintains the authorised-to-take-consent record | VALUE | role | — | if `consent_delegated=yes` | 158 |
+| `interpreter_service` | Interpreting service & booking route | VALUE | text | — | — | 166 |
+| `accessible_formats` | Accessible-format arrangements (hearing/sight) | VALUE | text | — | — | 167 |
+| `info_between_appointments` | Access to information between appointments | VALUE | text | — | — | 169 |
+| `imca_service` | IMCA service & how to instruct | CLAUSE | paragraph | *or: clinic refers serious-medical-treatment decisions on* | — | 235 |
+| `sees_under_18s` | Does the clinic see under-18s? | DECISION | yes/no | — | gates ↓ · **must match C032** | 246 |
+| `young_person_refusal` | Position on a competent young person refusing necessary treatment | CLAUSE | paragraph | *Escalate to clinical lead; legal advice if serious; never resolve by asking a parent to sign* | if `sees_under_18s=yes` | 252 |
+| `marketing_images` | Are recordings/images used for marketing? | DECISION | yes/no | No | if yes → requires explicit separate consent clause | 266 |
+| `consent_training_refresh` | Consent training refresh interval | VALUE | duration | 3 years | — | 302 |
+| `mca_training_refresh` | MCA training refresh interval | VALUE | duration | 3 years | — | 304 |
+| `training_matrix_owner` | Who holds the training matrix | VALUE | role | — | — | 306 |
+| `audit_owner` | Audit owner & frequency | VALUE | role+frequency | Clinical Lead, annually | — | 312 |
+| `governance_meeting` | Name of the governance meeting | VALUE | text | — | — | 323 |
 
-**Total: 1 global + 3 doc-control + 19 policy fields = 23 clean fields** (vs 28 raw markers, several of which were duplicates, a non-field, or prose).
-
----
-
-## The marker convention (so extraction is clean going forward)
-
-The reason labels came out as fragments: `[CONFIRM: a printed copy held off-site by a named person]` was written to read in a *document*, not to *be a field*. Fix the encoding:
-
-**Structured marker:**
-```
-{{field: id=off_site_copy_holder
-        label="Off-site copy holder"
-        type=person+location
-        help="Who keeps the off-site copy, and where"}}
-```
-or, minimally, `[CONFIRM: label | type | default | help]`.
-
-**And add a separate note marker for governance:**
-```
-[NOTE: DH Reference Guide is archived; GMC 2020 is operative — confirm at review]
-```
-→ shown to the reviewer, **never** to the adopting clinic.
-
-**Rule:** one `id` = one field. Repeated insertions of the same `id` (like `clinic_name`) fill once.
+**21 fields · 1 note. Breakdown: 14 VALUE · 3 DECISION · 3 CLAUSE (+ clinic_name).**
 
 ---
 
-## What this means for the UI (developer)
+## Requirements this puts on the fill UI
 
-1. **Fill inline, DocuSign-style** — the document with highlighted blanks, filled in context, live-rendered. Not a separate blind "Fields" tab.
-2. **De-duplicate** — `clinic_name` is one input, not eight.
-3. **Types drive the input** — a `date` picker, a `role` field, a `decision` showing its default + accept/change, a `list` builder.
-4. **Decisions show their default** — the clinic accepts or overrides; most defaults are already sensible.
-5. **Conditionals hide** — don't show `delegated_consent_owner` unless `consent_delegated = yes`.
-6. **`[NOTE]` markers never reach the clinic.**
-7. **Completeness gate stays** — but it checks *these* fields (Rule 1: no unfilled required field publishes), and it's the gate at the end, not a tab you manage.
+1. **Fill inline** in the document, DocuSign-style — not a separate blind Fields tab.
+2. **Label from structure** — table-row header for bare `[CONFIRM]`, sentence for generic, marker text where clean.
+3. **De-dup** — `clinic_name` is one input.
+4. **CLAUSE fields render their default paragraph** with "keep / edit" — never as an empty box.
+5. **DECISION fields show the default and gate their conditionals** — hide `delegated_consent_owner` unless delegation = yes; hide `young_person_refusal` unless under-18s = yes.
+6. **`[NOTE]` never reaches the clinic.**
+7. **Completeness gate (Rule 1)** blocks publish while any required field is unfilled — as the final gate, not a tab.
 
----
+## Marker convention for the remaining 27 (so extraction is clean)
 
-## Effort for the other 27
-
-Once the marker convention + field types are agreed, the schema for each policy is mechanical to produce — same as authoring the policies was. C05 is the hardest (most fields, most conditionals); the rest are lighter. Estimate: the full set of ~500 fields across 28 policies, cleanly typed, is a day's work once the convention is locked.
+```
+[CONFIRM: id=audit_owner | label="Audit owner & frequency" | cat=VALUE | type=role+frequency | default="Clinical Lead, annually"]
+[NOTE: reviewer-only text — never shown to the clinic]
+```
+Bare `[CONFIRM]` in a table row keeps deriving its label from the row. One `id` = one field.
