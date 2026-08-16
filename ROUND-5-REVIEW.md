@@ -246,3 +246,19 @@ Round 4's five test recordings are gone; library empty and honest. Footer states
 - S3: does watching a session generate a CPD record?
 - S4: are long recordings chaptered / segment-extracted (vs one 87-min block)?
 - S2: image consent scope for published sessions (F05 §B vs §C).
+
+
+---
+
+## §10 — Panel · My credentials ✅✅ (credentialing root cause addressed)
+
+Dr Kaur — the round-4 poster child for "unvetted but ACTIVE" — now shows a **full 14-item vetting record, all verified**, with expiry dates. This is the strongest evidence the PM1/PM8 root cause is fixed.
+
+**Fixed & verified:**
+- **Full Reg 19 / Schedule 3 set verified:** identity+photo · right to work · CV · **DBS** · **employment history + gap review** · **two genuine references** · fitness-to-work decision · recorded induction before independent work · **registration** · **role-scoped indemnity** · original qualifications · competence assessed · annual appraisal + revalidation. Several near-verbatim from the C025 v2 policy — the content shaped the credentialing model.
+- **PM7 fixed — expiry dates.** DBS, indemnity, registration, right-to-work, appraisal all *expires 29/07/2027*. Renewals now tracked (round 4 had none).
+- **Capabilities gated to verified credentials** (*Clinical Area / Clinical Case Dermatology*), not to a name.
+- **Privacy by design:** verifier notes + evidence not visible to the member; suspension messages don't expose DBS/health/provider detail.
+
+**Verify (needs admin Panel management):**
+- **PM8/PM1 close-out:** is a *new* member **PENDING (not ACTIVE)** until all 14 are verified, and **blocked from holding/answering cases** meanwhile? This member-view shows a fully-vetted member; the admin add-flow is where "add with a name → ACTIVE" lived, so that's the screen that proves the gate.
