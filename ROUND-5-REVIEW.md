@@ -157,3 +157,25 @@ Banner: **"No approved licensed source snapshots available. Ask Clinickly retrie
 **Keep:** the field *typing* (FACT/DECISION, POSTAL_ADDRESS/PERSON_NAME) is good — attach it to clean labels shown in context. The **Coverage panel** (governed fields · mapped regulator requirements · CQC-R10, GPhC-P6…) and the **commit/SHA-256/version** audit are genuinely valuable — keep as reference.
 
 **Deliverable produced:** [C05-FIELD-SCHEMA.md](C05-FIELD-SCHEMA.md) — the worked example. 28 raw markers → 23 clean typed fields (deduped clinic_name, removed the editorial note, defaults + conditionals surfaced). Includes the marker convention (`[CONFIRM: label|type|default|help]`, `[NOTE]` for governance-only) so extraction is clean, and the UI requirements (inline fill, dedup, type-driven inputs, decisions show defaults, conditionals hide, notes never reach the clinic). **If the shape is right, the other 27 follow — ~a day's work for the full ~500 fields.**
+
+
+---
+
+## §6 — Training / CPD ✅✅ (CPD-LOG-FIX-SPEC largely implemented)
+
+Near-complete implementation of the round-4 CPD fix spec. Every headline P0 addressed.
+
+**Fixed & verified:**
+- **T4 — minutes gone.** No "CPD minutes" metric anywhere. Now records/completions-based: *"Exact versions completed," "Evidence-eligible completions," "no prescribed numeric completion target."*
+- **T1 — logs the right event.** *"Case submission and response receipt create no CPD; first opening a response can create one draft."* Exactly §2.
+- **T2 — drafts don't count.** *"Drafts are not counted as complete."*
+- **T3 — records typed.** Record shown as *"unplanned"* learning (real GPhC type).
+- **Capture-once 4-question wizard** with the GPhC criterion wording verbatim: Q3 *"How will this benefit people using your services? Give a real, anonymised example…"*
+- **Privacy by design:** *"Administrators can see completion status, not these answers."* Owner-private reflections + identifier warnings.
+- **Portfolio export:** JSON / printable / PDF.
+- **Nice governance details:** *"Exact versions completed"* ties completion to the content version done (no silent version-drift); *"reflection portfolio with gaps, not a false numeric target"* shows gaps honestly.
+
+**Verify:**
+- **Regulator rendering (T9).** This is the **GMC** view (appraisal supporting information, domains, cycle). Spec = capture-once / render-per-regulator. **Is there a GPhC view** rendering the 6-record model (4 CPD ≥2 planned · 1 peer discussion · 1 reflective account) and the named-peer consent flow? No toggle visible — check a GPhC profile re-renders it.
+- **Peer-discussion + named-peer consent flow (T3/T5)** — not visible on this screen (needs an MDT-case-derived record). Confirm MDT case → peer discussion, with the panel-consent-to-be-named model (default off, group=name-one).
+- Test-data purge (T10) — page is clean/empty here.
