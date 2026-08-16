@@ -114,3 +114,29 @@ Banner: **"No approved licensed source snapshots available. Ask Clinickly retrie
 - **Inconsistency between the two AI features in preview:** Ask Clinickly serves the Local Preview sample cards (so it answers), but the Consultation path requires approved snapshots (so it falls back). **Consequence: the consultation Assessment cannot be evaluated in preview at all.** Ask developer to wire the sample cards into the consultation path so the Assessment behaviour is testable before real content exists.
 - **"Kept current" (subtitle) is vacuous with zero content.** When snapshots load, each needs a **review-date + verified-against-source stamp** (the layer-2 citation point from §1) to make the claim real.
 - Confirm the licence-approval + human-approval gate is enforced server-side, not just a display label.
+
+
+---
+
+## §5 — Templates & SOPs → Governed policies & forms ⭐⭐⭐ (the handover pack, implemented)
+
+**The biggest implementation win of the round. AD2 (round 4: "the 28 policies have no home") is fully resolved, and the whole handover pack is now the backbone of the governance product.**
+
+**Verified present and correct:**
+- **Dedicated policy library** — "Governed policies & forms," separate from SOPs. The structural fix.
+- **All 28 policies loaded** — every code confirmed (BCP, C01–C041, S01–S13).
+- **All 5 forms** (Forms tab).
+- **"33 approved sources · 11 rules"** — 28 + 5 = 33; **11 rules = COMPLETENESS-CHECK-SPEC Rules 1–11.** The check was built.
+- **24-theme taxonomy** ("All 24 themes" filter) with per-policy theme tags.
+- **Pipeline verbatim:** *Approved sources → clinic fields → completeness → review → sign → publish.*
+- **Theme mapping is correct** — spot-checked against source: C05→T2/T8/T18/T19 (exact), C08→T1/T2/T12/T15 (exact), C034→T5/T6/T13/T15 + **HIGH** (correct).
+- **Two-stage model right:** "Approved source · not adopted" (pristine starter) vs "Draft"/"Open workspace" (clinic completing [CONFIRM] fields).
+- Master Policy Index + Form Register tabs; audience + risk-tier + adoption-state filters.
+
+**Fix / verify:**
+- 🔴 **Risk tiers almost all "UNCLASSIFIED"** — only C034 is HIGH. **Risk tier drives the §4B sign-off path (high-risk = two-person).** C05, C07f, C08, C032, C021, C07, C04, C025, C017 should be classified. As-is, the two-person gate never fires for the highest-stakes policies. **Classify them.**
+- **Verify Rule 1 is enforced, not just counted:** click Review & adopt on a policy with [CONFIRM] fields present — it must BLOCK publish while placeholders remain. That's the completeness check earning its place vs being a label.
+- **Confirm the corrected GPhC mappings made it into the policy bodies** — the 4 regulator-mapping corrections (Principle 1 vs 5, Standard 7, Reg 20(9) non-NHS thresholds). T-codes are the requirement themes and look right; the GPhC principle/standard citations live in the body.
+- **Currency stamps** — each "approved source" needs the review-date / verified-against-source metadata (same layer-2 point as Guidelines §4).
+
+**This closes AD2 and CL3 from round 4, and puts COMPLETENESS-CHECK-SPEC, the 28 starters, the 5 forms and the 24-theme taxonomy into the live product. The single most substantial fix of the whole engagement.**
