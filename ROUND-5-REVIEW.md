@@ -140,3 +140,20 @@ Banner: **"No approved licensed source snapshots available. Ask Clinickly retrie
 - **Currency stamps** — each "approved source" needs the review-date / verified-against-source metadata (same layer-2 point as Guidelines §4).
 
 **This closes AD2 and CL3 from round 4, and puts COMPLETENESS-CHECK-SPEC, the 28 starters, the 5 forms and the 24-theme taxonomy into the live product. The single most substantial fix of the whole engagement.**
+
+
+---
+
+## §5b — Adoption workspace (fill-in UX) 🔴 Faheem's feedback — the fill flow is over-complicated
+
+**Faheem, 21 Jul:** *"You have the template, then the source, then a flat list of fields, and some fields are just a fragment with an asterisk — you have to keep flipping back to understand the question. It should be one form in front of you, fill in the blanks, like DocuSign."* **Correct on both counts.**
+
+**Two root causes:**
+
+1. **(Content — my fault) The `[CONFIRM]` markers were written as document prose, not field definitions.** So the extractor turns *"a printed copy held off-site by a named person"* into a field label. Labels come out as sentence fragments (*"- Are all"*, *"all locations. This is the first thing to get right."*). And nothing is de-duplicated: `[CLINIC NAME]` is ONE field but shows 8 times; one marker is an editorial note, not a clinic field at all.
+
+2. **(UX — developer) The fill happens on a separate blind "Fields" tab**, divorced from the document, so the clinic fills naked boxes then flips to Source/Preview to understand and check them. **Should be inline DocuSign-style fill in the document itself.**
+
+**Keep:** the field *typing* (FACT/DECISION, POSTAL_ADDRESS/PERSON_NAME) is good — attach it to clean labels shown in context. The **Coverage panel** (governed fields · mapped regulator requirements · CQC-R10, GPhC-P6…) and the **commit/SHA-256/version** audit are genuinely valuable — keep as reference.
+
+**Deliverable produced:** [C05-FIELD-SCHEMA.md](C05-FIELD-SCHEMA.md) — the worked example. 28 raw markers → 23 clean typed fields (deduped clinic_name, removed the editorial note, defaults + conditionals surfaced). Includes the marker convention (`[CONFIRM: label|type|default|help]`, `[NOTE]` for governance-only) so extraction is clean, and the UI requirements (inline fill, dedup, type-driven inputs, decisions show defaults, conditionals hide, notes never reach the clinic). **If the shape is right, the other 27 follow — ~a day's work for the full ~500 fields.**
