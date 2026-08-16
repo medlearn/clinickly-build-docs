@@ -1,0 +1,5340 @@
+{
+ "BCP": [
+  {
+   "line": 3,
+   "id": "clinic_name",
+   "label": "Clinic name",
+   "cat": "VALUE",
+   "type": "clinic-name",
+   "default": "",
+   "src": "global"
+  },
+  {
+   "line": 15,
+   "id": "named_responsible_person",
+   "label": "Named responsible person",
+   "cat": "VALUE",
+   "type": "role",
+   "default": "",
+   "src": "inline"
+  },
+  {
+   "line": 16,
+   "id": "authorised_by",
+   "label": "Authorised by",
+   "cat": "VALUE",
+   "type": "text",
+   "default": "",
+   "src": "table-row"
+  },
+  {
+   "line": 17,
+   "id": "issue_date",
+   "label": "Issue Date",
+   "cat": "VALUE",
+   "type": "date",
+   "default": "",
+   "src": "table-row"
+  },
+  {
+   "line": 37,
+   "id": "all_locations",
+   "label": "All locations",
+   "cat": "VALUE",
+   "type": "text",
+   "default": "",
+   "src": "inline"
+  },
+  {
+   "line": 43,
+   "id": "printed_copy_at_the_premises",
+   "label": "Printed copy at the premises",
+   "cat": "VALUE",
+   "type": "text",
+   "default": "",
+   "src": "inline"
+  },
+  {
+   "line": 44,
+   "id": "printed_copy_held_off_site_by_a_named_person",
+   "label": "Printed copy held off-site by a named person",
+   "cat": "VALUE",
+   "type": "role",
+   "default": "",
+   "src": "inline"
+  },
+  {
+   "line": 45,
+   "id": "electronic_copy_accessible_without_the_clinic_ne",
+   "label": "Electronic copy accessible without the clinic network",
+   "cat": "VALUE",
+   "type": "role",
+   "default": "",
+   "src": "inline"
+  },
+  {
+   "line": 47,
+   "id": "who_checks_quarterly_that_the_contact_numbers_st",
+   "label": "Who checks quarterly that the contact numbers still work",
+   "cat": "VALUE",
+   "type": "role",
+   "default": "",
+   "src": "inline"
+  },
+  {
+   "line": 59,
+   "id": "list_this_clinic_s_business_critical_processes_i",
+   "label": "List this clinic's business critical processes, in priority order",
+   "cat": "VALUE",
+   "type": "list",
+   "default": "",
+   "src": "inline"
+  },
+  {
+   "line": 85,
+   "id": "every_figure_below",
+   "label": "Every figure below",
+   "cat": "VALUE",
+   "type": "duration",
+   "default": "",
+   "src": "inline"
+  },
+  {
+   "line": 93,
+   "id": "field",
+   "label": "%",
+   "cat": "VALUE",
+   "type": "text",
+   "default": "",
+   "src": "inline"
+  },
+  {
+   "line": 94,
+   "id": "hours",
+   "label": "Hours",
+   "cat": "VALUE",
+   "type": "text",
+   "default": "",
+   "src": "inline"
+  },
+  {
+   "line": 95,
+   "id": "days",
+   "label": "Days",
+   "cat": "VALUE",
+   "type": "duration",
+   "default": "",
+   "src": "inline"
+  },
+  {
+   "line": 102,
+   "id": "where_the_clinic_uses_a_cloud_hosted_clinical_sy",
+   "label": "Where the clinic uses a cloud-hosted clinical system rather than its own server, replace the server assumptions with the supplier's published availability and recovery commitments",
+   "cat": "VALUE",
+   "type": "text",
+   "default": "",
+   "src": "inline"
+  },
+  {
+   "line": 132,
+   "id": "who_has_authority_to_invoke_the_plan_and_who_doe",
+   "label": "Who has authority to invoke the plan, and who does so in their absence",
+   "cat": "VALUE",
+   "type": "role",
+   "default": "",
+   "src": "inline"
+  },
+  {
+   "line": 138,
+   "id": "how_and_who_holds_the_list_if_the_system_is_down",
+   "label": "How, and who holds the list if the system is down",
+   "cat": "VALUE",
+   "type": "role",
+   "default": "",
+   "src": "inline"
+  },
+  {
+   "line": 151,
+   "id": "named_alternative_provider_s_who_have_agreed_in_",
+   "label": "Named alternative provider(s) who have agreed in advance to see patients on a temporary basis",
+   "cat": "VALUE",
+   "type": "role",
+   "default": "",
+   "src": "inline"
+  },
+  {
+   "line": 153,
+   "id": "is_there_an_actual_agreement_in_place_in_writing",
+   "label": "Is there an actual agreement in place, in writing, with a named provider? v01 refers to \"other independent doctors that have previously agreed\" without naming any",
+   "cat": "DECISION",
+   "type": "yes/no",
+   "default": "",
+   "src": "inline"
+  },
+  {
+   "line": 155,
+   "id": "how_the_clinic_identifies_those_patients_quickly",
+   "label": "How the clinic identifies those patients quickly when the system is unavailable",
+   "cat": "VALUE",
+   "type": "text",
+   "default": "",
+   "src": "inline"
+  },
+  {
+   "line": 161,
+   "id": "this_section_in_full",
+   "label": "This section in full",
+   "cat": "VALUE",
+   "type": "text",
+   "default": "",
+   "src": "inline"
+  },
+  {
+   "line": 165,
+   "id": "who_decides",
+   "label": "Who decides",
+   "cat": "VALUE",
+   "type": "role",
+   "default": "",
+   "src": "inline"
+  },
+  {
+   "line": 166,
+   "id": "who_authorises_any_decision",
+   "label": "Who authorises any decision",
+   "cat": "VALUE",
+   "type": "role",
+   "default": "",
+   "src": "inline"
+  },
+  {
+   "line": 167,
+   "id": "it_support_provider_and_their_out_of_hours_conta",
+   "label": "IT support provider, and their out-of-hours contact",
+   "cat": "VALUE",
+   "type": "text",
+   "default": "",
+   "src": "inline"
+  },
+  {
+   "line": 169,
+   "id": "cyber_insurer_and_the_policy_number",
+   "label": "Cyber insurer, and the policy number",
+   "cat": "VALUE",
+   "type": "text",
+   "default": "",
+   "src": "inline"
+  },
+  {
+   "line": 174,
+   "id": "paper_contingency",
+   "label": "Paper contingency",
+   "cat": "VALUE",
+   "type": "text",
+   "default": "",
+   "src": "inline"
+  },
+  {
+   "line": 176,
+   "id": "backup_arrangements",
+   "label": "Backup arrangements",
+   "cat": "VALUE",
+   "type": "duration",
+   "default": "",
+   "src": "inline"
+  },
+  {
+   "line": 182,
+   "id": "clinic_s_critical_suppliers_and_the_alternative_",
+   "label": "Clinic's critical suppliers and the alternative for each",
+   "cat": "VALUE",
+   "type": "text",
+   "default": "",
+   "src": "inline"
+  },
+  {
+   "line": 201,
+   "id": "default_quarterly",
+   "label": "Default quarterly",
+   "cat": "VALUE",
+   "type": "duration",
+   "default": "quarterly",
+   "src": "inline"
+  },
+  {
+   "line": 202,
+   "id": "default_annually",
+   "label": "Default annually",
+   "cat": "VALUE",
+   "type": "duration",
+   "default": "annually",
+   "src": "inline"
+  },
+  {
+   "line": 206,
+   "id": "governance_meeting",
+   "label": "Governance meeting",
+   "cat": "VALUE",
+   "type": "text",
+   "default": "",
+   "src": "inline"
+  },
+  {
+   "line": 208,
+   "id": "who_is_trained_on_the_plan_and_how_new_staff_lea",
+   "label": "Who is trained on the plan, and how new staff learn about it",
+   "cat": "VALUE",
+   "type": "role",
+   "default": "",
+   "src": "inline"
+  },
+  {
+   "line": 214,
+   "id": "audit_owner",
+   "label": "Audit owner",
+   "cat": "VALUE",
+   "type": "role",
+   "default": "Registered Manager, annually",
+   "src": "inline"
+  }
+ ],
+ "C01": [
+  {
+   "line": 3,
+   "id": "clinic_name",
+   "label": "Clinic name",
+   "cat": "VALUE",
+   "type": "clinic-name",
+   "default": "",
+   "src": "global"
+  },
+  {
+   "line": 11,
+   "id": "named_responsible_person",
+   "label": "Named responsible person",
+   "cat": "VALUE",
+   "type": "role",
+   "default": "",
+   "src": "inline"
+  },
+  {
+   "line": 12,
+   "id": "authorised_by",
+   "label": "Authorised by",
+   "cat": "VALUE",
+   "type": "text",
+   "default": "",
+   "src": "table-row"
+  },
+  {
+   "line": 13,
+   "id": "issue_date",
+   "label": "Issue Date",
+   "cat": "VALUE",
+   "type": "date",
+   "default": "",
+   "src": "table-row"
+  },
+  {
+   "line": 59,
+   "id": "what_happens_instead",
+   "label": "What happens instead",
+   "cat": "CLAUSE",
+   "type": "text",
+   "default": "the appointment is rescheduled, or the patient is referred, and the reason is recorded. Proceeding without a chaperone because none was available is not an acce",
+   "src": "inline"
+  },
+  {
+   "line": 77,
+   "id": "who_at_this_clinic_is_trained_to_act_as_a_chaper",
+   "label": "Who at this clinic is trained to act as a chaperone",
+   "cat": "VALUE",
+   "type": "role",
+   "default": "",
+   "src": "inline"
+  },
+  {
+   "line": 104,
+   "id": "clinic_s_position",
+   "label": "Clinic's position",
+   "cat": "VALUE",
+   "type": "text",
+   "default": "",
+   "src": "inline"
+  },
+  {
+   "line": 118,
+   "id": "what_the_training_covers_and_who_delivers_it",
+   "label": "What the training covers and who delivers it",
+   "cat": "VALUE",
+   "type": "role",
+   "default": "",
+   "src": "inline"
+  },
+  {
+   "line": 127,
+   "id": "chaperones_require_a_dbs_check",
+   "label": "Chaperones require a DBS check",
+   "cat": "DECISION",
+   "type": "yes/no",
+   "default": "",
+   "src": "inline"
+  },
+  {
+   "line": 129,
+   "id": "default_every_3_years",
+   "label": "Default every 3 years",
+   "cat": "VALUE",
+   "type": "duration",
+   "default": "every 3 years",
+   "src": "inline"
+  },
+  {
+   "line": 141,
+   "id": "audit_owner_and_frequency",
+   "label": "Audit owner and frequency",
+   "cat": "VALUE",
+   "type": "role",
+   "default": "clinical lead, annually",
+   "src": "inline"
+  }
+ ],
+ "C010": [
+  {
+   "line": 3,
+   "id": "clinic_name",
+   "label": "Clinic name",
+   "cat": "VALUE",
+   "type": "clinic-name",
+   "default": "",
+   "src": "global"
+  },
+  {
+   "line": 11,
+   "id": "named_responsible_person",
+   "label": "Named responsible person",
+   "cat": "VALUE",
+   "type": "role",
+   "default": "",
+   "src": "inline"
+  },
+  {
+   "line": 12,
+   "id": "authorised_by",
+   "label": "Authorised by",
+   "cat": "VALUE",
+   "type": "text",
+   "default": "",
+   "src": "table-row"
+  },
+  {
+   "line": 13,
+   "id": "issue_date",
+   "label": "Issue Date",
+   "cat": "VALUE",
+   "type": "date",
+   "default": "",
+   "src": "table-row"
+  },
+  {
+   "line": 50,
+   "id": "what_happens_where_mandatory_training_lapses",
+   "label": "What happens where mandatory training lapses",
+   "cat": "CLAUSE",
+   "type": "text",
+   "default": "the individual is removed from the relevant duties until it is completed",
+   "src": "inline"
+  },
+  {
+   "line": 58,
+   "id": "who_holds_and_maintains_the_matrix",
+   "label": "Who holds and maintains the matrix",
+   "cat": "VALUE",
+   "type": "role",
+   "default": "",
+   "src": "inline"
+  },
+  {
+   "line": 66,
+   "id": "clinic_s_mandatory_list_and_frequencies",
+   "label": "Clinic's mandatory list and frequencies",
+   "cat": "VALUE",
+   "type": "list",
+   "default": "",
+   "src": "inline"
+  },
+  {
+   "line": 70,
+   "id": "default_3_years_with_annual_updates_for_level_3",
+   "label": "Default 3 years, with annual updates for Level 3",
+   "cat": "VALUE",
+   "type": "duration",
+   "default": "3 years, with annual updates for Level 3",
+   "src": "inline"
+  },
+  {
+   "line": 71,
+   "id": "default_3_years",
+   "label": "Default 3 years",
+   "cat": "VALUE",
+   "type": "duration",
+   "default": "3 years",
+   "src": "inline"
+  },
+  {
+   "line": 74,
+   "id": "default_annually",
+   "label": "Default annually",
+   "cat": "VALUE",
+   "type": "duration",
+   "default": "annually",
+   "src": "inline"
+  },
+  {
+   "line": 78,
+   "id": "default_annually_for_fire",
+   "label": "Default annually for fire",
+   "cat": "VALUE",
+   "type": "duration",
+   "default": "annually for fire",
+   "src": "inline"
+  },
+  {
+   "line": 94,
+   "id": "service_specific_training",
+   "label": "Service-specific training",
+   "cat": "VALUE",
+   "type": "text",
+   "default": "",
+   "src": "inline"
+  },
+  {
+   "line": 100,
+   "id": "who_delivers_it_and_over_what_period",
+   "label": "Who delivers it and over what period",
+   "cat": "VALUE",
+   "type": "role",
+   "default": "",
+   "src": "inline"
+  },
+  {
+   "line": 108,
+   "id": "how_competence_is_assessed_for_each_clinical_rol",
+   "label": "How competence is assessed for each clinical role before independent practice, and who signs it off",
+   "cat": "VALUE",
+   "type": "role",
+   "default": "",
+   "src": "inline"
+  },
+  {
+   "line": 112,
+   "id": "supervision_arrangements",
+   "label": "Supervision arrangements",
+   "cat": "CLAUSE",
+   "type": "duration",
+   "default": "clinical supervision for all clinical staff at least quarterly, recorded; line management supervision at least quarterly",
+   "src": "inline"
+  },
+  {
+   "line": 122,
+   "id": "who_appraises_whom_including_who_appraises_the_r",
+   "label": "Who appraises whom, including who appraises the Registered Manager",
+   "cat": "VALUE",
+   "type": "role",
+   "default": "",
+   "src": "inline"
+  },
+  {
+   "line": 124,
+   "id": "audit_results_feed_individual_appraisal",
+   "label": "Audit results feed individual appraisal",
+   "cat": "DECISION",
+   "type": "yes/no",
+   "default": "",
+   "src": "inline"
+  },
+  {
+   "line": 137,
+   "id": "how_the_clinic_satisfies_itself_that_revalidatio",
+   "label": "How the clinic satisfies itself that revalidation is on track",
+   "cat": "VALUE",
+   "type": "role",
+   "default": "",
+   "src": "inline"
+  },
+  {
+   "line": 138,
+   "id": "who_checks",
+   "label": "Who checks",
+   "cat": "VALUE",
+   "type": "role",
+   "default": "",
+   "src": "inline"
+  },
+  {
+   "line": 144,
+   "id": "audit_owner_and_frequency",
+   "label": "Audit owner and frequency",
+   "cat": "CLAUSE",
+   "type": "role",
+   "default": "Registered Manager, quarterly for the matrix, annually for the full audit",
+   "src": "inline"
+  }
+ ],
+ "C015": [
+  {
+   "line": 3,
+   "id": "clinic_name",
+   "label": "Clinic name",
+   "cat": "VALUE",
+   "type": "clinic-name",
+   "default": "",
+   "src": "global"
+  },
+  {
+   "line": 13,
+   "id": "named_responsible_person",
+   "label": "Named responsible person",
+   "cat": "VALUE",
+   "type": "role",
+   "default": "",
+   "src": "inline"
+  },
+  {
+   "line": 14,
+   "id": "authorised_by",
+   "label": "Authorised by",
+   "cat": "VALUE",
+   "type": "text",
+   "default": "",
+   "src": "table-row"
+  },
+  {
+   "line": 15,
+   "id": "issue_date",
+   "label": "Issue Date",
+   "cat": "VALUE",
+   "type": "date",
+   "default": "",
+   "src": "table-row"
+  },
+  {
+   "line": 47,
+   "id": "this_section_in_full",
+   "label": "This section in full",
+   "cat": "VALUE",
+   "type": "text",
+   "default": "",
+   "src": "inline"
+  },
+  {
+   "line": 51,
+   "id": "registered_provider",
+   "label": "Registered provider",
+   "cat": "VALUE",
+   "type": "text",
+   "default": "",
+   "src": "table-row"
+  },
+  {
+   "line": 52,
+   "id": "registered_manager",
+   "label": "Registered manager",
+   "cat": "VALUE",
+   "type": "role",
+   "default": "",
+   "src": "table-row"
+  },
+  {
+   "line": 53,
+   "id": "registered_address_es",
+   "label": "Registered address(es)",
+   "cat": "VALUE",
+   "type": "address",
+   "default": "",
+   "src": "table-row"
+  },
+  {
+   "line": 54,
+   "id": "regulated_activities_registered_for",
+   "label": "Regulated activities registered for",
+   "cat": "VALUE",
+   "type": "text",
+   "default": "",
+   "src": "table-row"
+  },
+  {
+   "line": 55,
+   "id": "e_g",
+   "label": "E.g",
+   "cat": "VALUE",
+   "type": "text",
+   "default": "",
+   "src": "inline"
+  },
+  {
+   "line": 59,
+   "id": "list_every_service_actually_offered",
+   "label": "List every service actually offered",
+   "cat": "VALUE",
+   "type": "duration",
+   "default": "",
+   "src": "inline"
+  },
+  {
+   "line": 67,
+   "id": "and_make_this_consistent_with_c032_which_contrad",
+   "label": "And make this consistent with C032, which contradicted itself on whether under-18s are seen",
+   "cat": "VALUE",
+   "type": "text",
+   "default": "",
+   "src": "inline"
+  },
+  {
+   "line": 73,
+   "id": "days_and_hours_for_each_service",
+   "label": "Days and hours for each service",
+   "cat": "VALUE",
+   "type": "duration",
+   "default": "",
+   "src": "inline"
+  },
+  {
+   "line": 75,
+   "id": "nhs_111_their_gp_a_e_as_appropriate",
+   "label": "NHS 111 / their GP / A&E as appropriate",
+   "cat": "VALUE",
+   "type": "text",
+   "default": "",
+   "src": "inline"
+  },
+  {
+   "line": 75,
+   "id": "what_the_answerphone_and_website_say_and_whether",
+   "label": "What the answerphone and website say, and whether they are consistent with each other",
+   "cat": "VALUE",
+   "type": "text",
+   "default": "",
+   "src": "inline"
+  },
+  {
+   "line": 77,
+   "id": "the_clinic_provides_any_out_of_hours_cover_for_p",
+   "label": "The clinic provides any out-of-hours cover for patients under active treatment",
+   "cat": "DECISION",
+   "type": "yes/no",
+   "default": "",
+   "src": "inline"
+  },
+  {
+   "line": 85,
+   "id": "complete_against_the_organisational_chart",
+   "label": "Complete against the organisational chart",
+   "cat": "VALUE",
+   "type": "role",
+   "default": "",
+   "src": "inline"
+  },
+  {
+   "line": 90,
+   "id": "clinical_lead",
+   "label": "Clinical Lead",
+   "cat": "VALUE",
+   "type": "role",
+   "default": "",
+   "src": "table-row"
+  },
+  {
+   "line": 91,
+   "id": "safeguarding_lead",
+   "label": "Safeguarding Lead",
+   "cat": "VALUE",
+   "type": "role",
+   "default": "",
+   "src": "table-row"
+  },
+  {
+   "line": 92,
+   "id": "ipc_lead",
+   "label": "IPC Lead",
+   "cat": "VALUE",
+   "type": "role",
+   "default": "",
+   "src": "table-row"
+  },
+  {
+   "line": 93,
+   "id": "medicines_lead",
+   "label": "Medicines Lead",
+   "cat": "VALUE",
+   "type": "role",
+   "default": "",
+   "src": "table-row"
+  },
+  {
+   "line": 94,
+   "id": "risk_management_lead",
+   "label": "Risk Management Lead",
+   "cat": "VALUE",
+   "type": "role",
+   "default": "",
+   "src": "table-row"
+  },
+  {
+   "line": 95,
+   "id": "complaints_manager",
+   "label": "Complaints Manager",
+   "cat": "VALUE",
+   "type": "role",
+   "default": "",
+   "src": "table-row"
+  },
+  {
+   "line": 96,
+   "id": "information_governance_caldicott_lead",
+   "label": "Information Governance / Caldicott Lead",
+   "cat": "VALUE",
+   "type": "role",
+   "default": "",
+   "src": "table-row"
+  },
+  {
+   "line": 98,
+   "id": "where_one_person_holds_several_of_these_roles",
+   "label": "Where one person holds several of these roles",
+   "cat": "VALUE",
+   "type": "role",
+   "default": "",
+   "src": "inline"
+  },
+  {
+   "line": 108,
+   "id": "what_meetings_exist_who_attends_how_often_and_wh",
+   "label": "What meetings exist, who attends, how often, and who takes minutes",
+   "cat": "VALUE",
+   "type": "role",
+   "default": "",
+   "src": "inline"
+  },
+  {
+   "line": 114,
+   "id": "where_minutes_are_held",
+   "label": "Where minutes are held",
+   "cat": "VALUE",
+   "type": "text",
+   "default": "",
+   "src": "inline"
+  },
+  {
+   "line": 120,
+   "id": "how_this_is_recorded_and_who_checks_it",
+   "label": "How this is recorded and who checks it",
+   "cat": "VALUE",
+   "type": "role",
+   "default": "",
+   "src": "inline"
+  },
+  {
+   "line": 130,
+   "id": "who_makes_the_suitability_decision_for_each_serv",
+   "label": "Who makes the suitability decision for each service, and against what criteria",
+   "cat": "VALUE",
+   "type": "role",
+   "default": "",
+   "src": "inline"
+  },
+  {
+   "line": 138,
+   "id": "audit_owner_and_frequency",
+   "label": "Audit owner and frequency",
+   "cat": "VALUE",
+   "type": "role",
+   "default": "Registered Manager, annually",
+   "src": "inline"
+  }
+ ],
+ "C017": [
+  {
+   "line": 3,
+   "id": "clinic_name",
+   "label": "Clinic name",
+   "cat": "VALUE",
+   "type": "clinic-name",
+   "default": "",
+   "src": "global"
+  },
+  {
+   "line": 11,
+   "id": "named_responsible_person",
+   "label": "Named responsible person",
+   "cat": "VALUE",
+   "type": "role",
+   "default": "",
+   "src": "inline"
+  },
+  {
+   "line": 12,
+   "id": "authorised_by",
+   "label": "Authorised by",
+   "cat": "VALUE",
+   "type": "text",
+   "default": "",
+   "src": "table-row"
+  },
+  {
+   "line": 13,
+   "id": "issue_date",
+   "label": "Issue Date",
+   "cat": "VALUE",
+   "type": "date",
+   "default": "",
+   "src": "table-row"
+  },
+  {
+   "line": 26,
+   "id": "current_version",
+   "label": "Current version",
+   "cat": "VALUE",
+   "type": "text",
+   "default": "",
+   "src": "inline"
+  },
+  {
+   "line": 73,
+   "id": "named_individual",
+   "label": "NAMED individual",
+   "cat": "VALUE",
+   "type": "role",
+   "default": "",
+   "src": "inline"
+  },
+  {
+   "line": 80,
+   "id": "who_receives_an_incident_report_concerning_the_r",
+   "label": "Who receives an incident report concerning the Risk Management Lead or Registered Manager",
+   "cat": "VALUE",
+   "type": "role",
+   "default": "",
+   "src": "inline"
+  },
+  {
+   "line": 91,
+   "id": "role",
+   "label": "Role",
+   "cat": "VALUE",
+   "type": "role",
+   "default": "",
+   "src": "inline"
+  },
+  {
+   "line": 130,
+   "id": "named_person",
+   "label": "Named person",
+   "cat": "VALUE",
+   "type": "role",
+   "default": "",
+   "src": "inline"
+  },
+  {
+   "line": 130,
+   "id": "default_timescales_specified_injuries_and_danger",
+   "label": "Default timescales \u2014 specified injuries and dangerous occurr",
+   "cat": "CLAUSE",
+   "type": "duration",
+   "default": "timescales \u2014 specified injuries and dangerous occurrences within 10 days; over-seven-day injuries within 15 days",
+   "src": "inline"
+  },
+  {
+   "line": 141,
+   "id": "who_is_responsible_for_yellow_card_reporting_and",
+   "label": "Who is responsible for Yellow Card reporting, and how the clinic satisfies itself it is happening",
+   "cat": "VALUE",
+   "type": "role",
+   "default": "",
+   "src": "inline"
+  },
+  {
+   "line": 145,
+   "id": "named_person_and_their_deputy",
+   "label": "Named person, and their deputy",
+   "cat": "VALUE",
+   "type": "role",
+   "default": "",
+   "src": "inline"
+  },
+  {
+   "line": 147,
+   "id": "the_clinic_reports_patient_safety_events_to_the_",
+   "label": "The clinic reports patient safety events to the national patient safety system",
+   "cat": "DECISION",
+   "type": "yes/no",
+   "default": "",
+   "src": "inline"
+  },
+  {
+   "line": 159,
+   "id": "who_reviews_aggregate_incident_data_and_how_ofte",
+   "label": "Who reviews aggregate incident data, and how often",
+   "cat": "VALUE",
+   "type": "role",
+   "default": "Risk Management Lead, monthly",
+   "src": "inline"
+  },
+  {
+   "line": 161,
+   "id": "investigation_timescales",
+   "label": "Investigation timescales",
+   "cat": "CLAUSE",
+   "type": "duration",
+   "default": "low \u2014 10 working days; moderate \u2014 20 working days; severe \u2014 40 working days, with the patient kept updated throughout under C021",
+   "src": "inline"
+  },
+  {
+   "line": 169,
+   "id": "how_completed_actions_are_verified_as_effective_",
+   "label": "How completed actions are verified as effective, not merely marked done",
+   "cat": "VALUE",
+   "type": "duration",
+   "default": "",
+   "src": "inline"
+  },
+  {
+   "line": 173,
+   "id": "this_section",
+   "label": "This section",
+   "cat": "VALUE",
+   "type": "text",
+   "default": "",
+   "src": "inline"
+  },
+  {
+   "line": 177,
+   "id": "who_holds_the_register_and_how_often_it_is_revie",
+   "label": "Who holds the register and how often it is reviewed",
+   "cat": "VALUE",
+   "type": "role",
+   "default": "Risk Management Lead, reviewed at every governance meeting",
+   "src": "inline"
+  },
+  {
+   "line": 192,
+   "id": "what_support_is_available",
+   "label": "What support is available",
+   "cat": "VALUE",
+   "type": "text",
+   "default": "",
+   "src": "inline"
+  },
+  {
+   "line": 238,
+   "id": "default_annually",
+   "label": "Default annually",
+   "cat": "VALUE",
+   "type": "duration",
+   "default": "annually",
+   "src": "inline"
+  },
+  {
+   "line": 244,
+   "id": "audit_owner_and_frequency",
+   "label": "Audit owner and frequency",
+   "cat": "VALUE",
+   "type": "role",
+   "default": "Risk Management Lead, annually",
+   "src": "inline"
+  }
+ ],
+ "C02": [
+  {
+   "line": 3,
+   "id": "clinic_name",
+   "label": "Clinic name",
+   "cat": "VALUE",
+   "type": "clinic-name",
+   "default": "",
+   "src": "global"
+  },
+  {
+   "line": 11,
+   "id": "named_responsible_person",
+   "label": "Named responsible person",
+   "cat": "VALUE",
+   "type": "role",
+   "default": "",
+   "src": "inline"
+  },
+  {
+   "line": 12,
+   "id": "authorised_by",
+   "label": "Authorised by",
+   "cat": "VALUE",
+   "type": "text",
+   "default": "",
+   "src": "table-row"
+  },
+  {
+   "line": 13,
+   "id": "issue_date",
+   "label": "Issue Date",
+   "cat": "VALUE",
+   "type": "date",
+   "default": "",
+   "src": "table-row"
+  },
+  {
+   "line": 22,
+   "id": "cite_the_current_edition",
+   "label": "Cite the current edition",
+   "cat": "VALUE",
+   "type": "text",
+   "default": "",
+   "src": "inline"
+  },
+  {
+   "line": 27,
+   "id": "relevant_only_where_reusable_instruments_are_dec",
+   "label": "Relevant only where reusable instruments are decontaminated on site",
+   "cat": "VALUE",
+   "type": "text",
+   "default": "",
+   "src": "inline"
+  },
+  {
+   "line": 28,
+   "id": "current_title_and_version",
+   "label": "Current title and version",
+   "cat": "VALUE",
+   "type": "text",
+   "default": "",
+   "src": "inline"
+  },
+  {
+   "line": 59,
+   "id": "named_individual",
+   "label": "NAMED individual",
+   "cat": "VALUE",
+   "type": "role",
+   "default": "",
+   "src": "inline"
+  },
+  {
+   "line": 62,
+   "id": "governance_meeting",
+   "label": "Governance meeting",
+   "cat": "VALUE",
+   "type": "text",
+   "default": "",
+   "src": "inline"
+  },
+  {
+   "line": 75,
+   "id": "see_the_assurance_requirements_below",
+   "label": "See the assurance requirements below",
+   "cat": "VALUE",
+   "type": "text",
+   "default": "",
+   "src": "inline"
+  },
+  {
+   "line": 85,
+   "id": "default_annually",
+   "label": "Default annually",
+   "cat": "VALUE",
+   "type": "duration",
+   "default": "annually",
+   "src": "inline"
+  },
+  {
+   "line": 98,
+   "id": "bare_below_the_elbows_policy_in_clinical_areas",
+   "label": "Bare below the elbows policy in clinical areas",
+   "cat": "VALUE",
+   "type": "text",
+   "default": "",
+   "src": "inline"
+  },
+  {
+   "line": 109,
+   "id": "what_is_held_and_when_it_is_used",
+   "label": "What is held, and when it is used",
+   "cat": "VALUE",
+   "type": "text",
+   "default": "",
+   "src": "inline"
+  },
+  {
+   "line": 113,
+   "id": "who_checks_ppe_stock_levels_and_how_often",
+   "label": "Who checks PPE stock levels and how often",
+   "cat": "CLAUSE",
+   "type": "role",
+   "default": "IPC Lead, monthly \u2014 a policy requiring PPE that is not in the cupboard is not a control",
+   "src": "inline"
+  },
+  {
+   "line": 119,
+   "id": "clinic_s_approach",
+   "label": "Clinic's approach",
+   "cat": "VALUE",
+   "type": "text",
+   "default": "",
+   "src": "inline"
+  },
+  {
+   "line": 124,
+   "id": "what",
+   "label": "What",
+   "cat": "VALUE",
+   "type": "text",
+   "default": "",
+   "src": "inline"
+  },
+  {
+   "line": 126,
+   "id": "exclusion_periods",
+   "label": "Exclusion periods",
+   "cat": "VALUE",
+   "type": "text",
+   "default": "",
+   "src": "inline"
+  },
+  {
+   "line": 127,
+   "id": "ventilation_arrangements_in_clinical_rooms",
+   "label": "Ventilation arrangements in clinical rooms",
+   "cat": "VALUE",
+   "type": "text",
+   "default": "",
+   "src": "inline"
+  },
+  {
+   "line": 150,
+   "id": "role",
+   "label": "Role",
+   "cat": "VALUE",
+   "type": "role",
+   "default": "",
+   "src": "inline"
+  },
+  {
+   "line": 152,
+   "id": "named_route_and_out_of_hours_arrangement",
+   "label": "Named route and out-of-hours arrangement",
+   "cat": "VALUE",
+   "type": "role",
+   "default": "",
+   "src": "inline"
+  },
+  {
+   "line": 154,
+   "id": "who_makes_riddor_reports",
+   "label": "Who makes RIDDOR reports",
+   "cat": "VALUE",
+   "type": "role",
+   "default": "",
+   "src": "inline"
+  },
+  {
+   "line": 161,
+   "id": "who_holds_immunisation_records_and_how_the_clini",
+   "label": "Who holds immunisation records and how the clinic satisfies itself they are current",
+   "cat": "VALUE",
+   "type": "role",
+   "default": "",
+   "src": "inline"
+  },
+  {
+   "line": 163,
+   "id": "other_immunisations_required_by_role_against_the",
+   "label": "Other immunisations required by role, against the Green Book",
+   "cat": "VALUE",
+   "type": "role",
+   "default": "",
+   "src": "inline"
+  },
+  {
+   "line": 165,
+   "id": "which_roles_have_clinical_contact_with_patients",
+   "label": "Which roles have clinical contact with patients",
+   "cat": "VALUE",
+   "type": "role",
+   "default": "",
+   "src": "inline"
+  },
+  {
+   "line": 172,
+   "id": "waste_contractor_collection_frequency_and_where_",
+   "label": "Waste contractor, collection frequency, and where consignment notes are held",
+   "cat": "VALUE",
+   "type": "duration",
+   "default": "",
+   "src": "inline"
+  },
+  {
+   "line": 178,
+   "id": "where_it_is_kept_and_who_checks_it",
+   "label": "Where it is kept and who checks it",
+   "cat": "VALUE",
+   "type": "role",
+   "default": "",
+   "src": "inline"
+  },
+  {
+   "line": 182,
+   "id": "applicable_only_where_the_clinic_uses_reusable_l",
+   "label": "Applicable only where the clinic uses reusable linen",
+   "cat": "VALUE",
+   "type": "duration",
+   "default": "",
+   "src": "inline"
+  },
+  {
+   "line": 188,
+   "id": "who_tracks_this_and_where_it_is_recorded",
+   "label": "Who tracks this and where it is recorded",
+   "cat": "VALUE",
+   "type": "role",
+   "default": "",
+   "src": "inline"
+  },
+  {
+   "line": 196,
+   "id": "any_reusable_instruments_are_decontaminated_on_t",
+   "label": "Any reusable instruments are decontaminated on the premises",
+   "cat": "DECISION",
+   "type": "yes/no",
+   "default": "NO. Where YES, a full decontamination procedure, validated equipment, and HTM-compliant records are required, and that is a substantially larger undertaking tha",
+   "src": "inline"
+  },
+  {
+   "line": 205,
+   "id": "who_cleans",
+   "label": "Who cleans",
+   "cat": "VALUE",
+   "type": "role",
+   "default": "",
+   "src": "inline"
+  },
+  {
+   "line": 217,
+   "id": "named_contact_at_the_landlord_contractor_and_the",
+   "label": "Named contact at the landlord/contractor, and the frequency of joint review",
+   "cat": "VALUE",
+   "type": "role",
+   "default": "quarterly, recorded",
+   "src": "inline"
+  },
+  {
+   "line": 219,
+   "id": "water_safety",
+   "label": "Water safety",
+   "cat": "VALUE",
+   "type": "role",
+   "default": "",
+   "src": "inline"
+  },
+  {
+   "line": 245,
+   "id": "audit_owner",
+   "label": "Audit owner",
+   "cat": "VALUE",
+   "type": "role",
+   "default": "IPC Lead",
+   "src": "inline"
+  },
+  {
+   "line": 249,
+   "id": "default_six_monthly",
+   "label": "Default six-monthly",
+   "cat": "VALUE",
+   "type": "duration",
+   "default": "six-monthly",
+   "src": "inline"
+  },
+  {
+   "line": 250,
+   "id": "default_quarterly",
+   "label": "Default quarterly",
+   "cat": "VALUE",
+   "type": "duration",
+   "default": "quarterly",
+   "src": "inline"
+  }
+ ],
+ "C021": [
+  {
+   "line": 3,
+   "id": "clinic_name",
+   "label": "Clinic name",
+   "cat": "VALUE",
+   "type": "clinic-name",
+   "default": "",
+   "src": "global"
+  },
+  {
+   "line": 11,
+   "id": "named_responsible_person",
+   "label": "Named responsible person",
+   "cat": "VALUE",
+   "type": "role",
+   "default": "",
+   "src": "inline"
+  },
+  {
+   "line": 12,
+   "id": "authorised_by",
+   "label": "Authorised by",
+   "cat": "VALUE",
+   "type": "text",
+   "default": "",
+   "src": "table-row"
+  },
+  {
+   "line": 13,
+   "id": "issue_date",
+   "label": "Issue Date",
+   "cat": "VALUE",
+   "type": "date",
+   "default": "",
+   "src": "table-row"
+  },
+  {
+   "line": 93,
+   "id": "verify_against_the_current_tex",
+   "label": "[reviewer note]",
+   "cat": "NOTE",
+   "type": "note",
+   "default": "",
+   "note": "verify against the current text of Regulation 20(9) and CQC's guidance before adopting.",
+   "src": "note"
+  },
+  {
+   "line": 119,
+   "id": "who_decides_and_who_is_the",
+   "label": "Who decides, and who is the",
+   "cat": "VALUE",
+   "type": "role",
+   "default": "",
+   "src": "inline"
+  },
+  {
+   "line": 123,
+   "id": "what_support_is_available",
+   "label": "What support is available",
+   "cat": "VALUE",
+   "type": "text",
+   "default": "",
+   "src": "inline"
+  },
+  {
+   "line": 141,
+   "id": "role",
+   "label": "Role",
+   "cat": "VALUE",
+   "type": "role",
+   "default": "",
+   "src": "inline"
+  },
+  {
+   "line": 166,
+   "id": "default_within_10_working_days_of_the_notificati",
+   "label": "Default within 10 working days of the notification",
+   "cat": "VALUE",
+   "type": "duration",
+   "default": "within 10 working days of the notification",
+   "src": "inline"
+  },
+  {
+   "line": 176,
+   "id": "default_near_misses_the_patient_did_not_notice_a",
+   "label": "Default \u2014 near misses the patient did not notice are not rou",
+   "cat": "CLAUSE",
+   "type": "text",
+   "default": "\u2014 near misses the patient did not notice are not routinely disclosed, but are always recorded and reviewed",
+   "src": "inline"
+  },
+  {
+   "line": 195,
+   "id": "governance_meeting",
+   "label": "Governance meeting",
+   "cat": "VALUE",
+   "type": "text",
+   "default": "",
+   "src": "inline"
+  },
+  {
+   "line": 215,
+   "id": "default_annually",
+   "label": "Default annually",
+   "cat": "VALUE",
+   "type": "duration",
+   "default": "annually",
+   "src": "inline"
+  },
+  {
+   "line": 221,
+   "id": "audit_owner_and_frequency",
+   "label": "Audit owner and frequency",
+   "cat": "VALUE",
+   "type": "role",
+   "default": "Clinical Lead, six-monthly",
+   "src": "inline"
+  }
+ ],
+ "C024": [
+  {
+   "line": 3,
+   "id": "clinic_name",
+   "label": "Clinic name",
+   "cat": "VALUE",
+   "type": "clinic-name",
+   "default": "",
+   "src": "global"
+  },
+  {
+   "line": 11,
+   "id": "named_responsible_person",
+   "label": "Named responsible person",
+   "cat": "VALUE",
+   "type": "role",
+   "default": "",
+   "src": "inline"
+  },
+  {
+   "line": 12,
+   "id": "authorised_by",
+   "label": "Authorised by",
+   "cat": "VALUE",
+   "type": "text",
+   "default": "",
+   "src": "table-row"
+  },
+  {
+   "line": 13,
+   "id": "issue_date",
+   "label": "Issue Date",
+   "cat": "VALUE",
+   "type": "date",
+   "default": "",
+   "src": "table-row"
+  },
+  {
+   "line": 74,
+   "id": "this_whole_section",
+   "label": "This whole section",
+   "cat": "VALUE",
+   "type": "duration",
+   "default": "",
+   "src": "inline"
+  },
+  {
+   "line": 78,
+   "id": "e_g",
+   "label": "E.g",
+   "cat": "VALUE",
+   "type": "text",
+   "default": "",
+   "src": "inline"
+  },
+  {
+   "line": 79,
+   "id": "named_individual",
+   "label": "Named individual",
+   "cat": "VALUE",
+   "type": "role",
+   "default": "",
+   "src": "inline"
+  },
+  {
+   "line": 80,
+   "id": "who_attends",
+   "label": "Who attends",
+   "cat": "VALUE",
+   "type": "role",
+   "default": "",
+   "src": "inline"
+  },
+  {
+   "line": 81,
+   "id": "default_quarterly_minimum",
+   "label": "Default quarterly, minimum",
+   "cat": "VALUE",
+   "type": "duration",
+   "default": "quarterly, minimum",
+   "src": "inline"
+  },
+  {
+   "line": 82,
+   "id": "minimum_attendance_for_decisions_to_be_valid",
+   "label": "Minimum attendance for decisions to be valid",
+   "cat": "VALUE",
+   "type": "text",
+   "default": "",
+   "src": "inline"
+  },
+  {
+   "line": 83,
+   "id": "minutes_taken_by",
+   "label": "Minutes taken by",
+   "cat": "VALUE",
+   "type": "text",
+   "default": "",
+   "src": "table-row"
+  },
+  {
+   "line": 84,
+   "id": "where_and_for_how_long",
+   "label": "Where, and for how long",
+   "cat": "VALUE",
+   "type": "text",
+   "default": "",
+   "src": "inline"
+  },
+  {
+   "line": 117,
+   "id": "adjust_to_the_clinic_s_own_year",
+   "label": "Adjust to the clinic's own year",
+   "cat": "VALUE",
+   "type": "duration",
+   "default": "",
+   "src": "inline"
+  },
+  {
+   "line": 125,
+   "id": "who_owns_the_governance_calendar_and_ensures_eac",
+   "label": "Who owns the governance calendar and ensures each item happens",
+   "cat": "VALUE",
+   "type": "role",
+   "default": "",
+   "src": "inline"
+  },
+  {
+   "line": 141,
+   "id": "the_clinic_maintains_an_assurance_framework_or_d",
+   "label": "The clinic maintains an assurance framework or dashboard bringing these together",
+   "cat": "DECISION",
+   "type": "yes/no",
+   "default": "",
+   "src": "inline"
+  },
+  {
+   "line": 158,
+   "id": "audit_owner_and_frequency",
+   "label": "Audit owner and frequency",
+   "cat": "VALUE",
+   "type": "role",
+   "default": "Registered Manager, annually",
+   "src": "inline"
+  }
+ ],
+ "C025": [
+  {
+   "line": 3,
+   "id": "clinic_name",
+   "label": "Clinic name",
+   "cat": "VALUE",
+   "type": "clinic-name",
+   "default": "",
+   "src": "global"
+  },
+  {
+   "line": 13,
+   "id": "named_responsible_person",
+   "label": "Named responsible person",
+   "cat": "VALUE",
+   "type": "role",
+   "default": "",
+   "src": "inline"
+  },
+  {
+   "line": 14,
+   "id": "authorised_by",
+   "label": "Authorised by",
+   "cat": "VALUE",
+   "type": "text",
+   "default": "",
+   "src": "table-row"
+  },
+  {
+   "line": 15,
+   "id": "issue_date",
+   "label": "Issue Date",
+   "cat": "VALUE",
+   "type": "date",
+   "default": "",
+   "src": "table-row"
+  },
+  {
+   "line": 66,
+   "id": "any_conditional_start_is_permitted_while_a_dbs_c",
+   "label": "Any conditional start is permitted while a DBS check is outstanding, and if so with what supervision",
+   "cat": "DECISION",
+   "type": "yes/no",
+   "default": "no unsupervised patient contact until DBS is returned and satisfactory",
+   "src": "inline"
+  },
+  {
+   "line": 83,
+   "id": "which_method",
+   "label": "Which method",
+   "cat": "VALUE",
+   "type": "text",
+   "default": "",
+   "src": "inline"
+  },
+  {
+   "line": 84,
+   "id": "level_for_each_role",
+   "label": "Level for each role",
+   "cat": "VALUE",
+   "type": "role",
+   "default": "",
+   "src": "inline"
+  },
+  {
+   "line": 86,
+   "id": "minimum_level_required",
+   "label": "Minimum level required",
+   "cat": "VALUE",
+   "type": "text",
+   "default": "",
+   "src": "inline"
+  },
+  {
+   "line": 90,
+   "id": "arrangements",
+   "label": "Arrangements",
+   "cat": "VALUE",
+   "type": "text",
+   "default": "",
+   "src": "inline"
+  },
+  {
+   "line": 93,
+   "id": "who_is_responsible_for_completing_the_checklists",
+   "label": "Who is responsible for completing the checklists (Appendices 1 and 2), and who countersigns to confirm all checks are complete before a start date is agreed",
+   "cat": "VALUE",
+   "type": "role",
+   "default": "",
+   "src": "inline"
+  },
+  {
+   "line": 108,
+   "id": "standard_channels",
+   "label": "Standard channels",
+   "cat": "VALUE",
+   "type": "text",
+   "default": "",
+   "src": "inline"
+  },
+  {
+   "line": 114,
+   "id": "role",
+   "label": "Role",
+   "cat": "VALUE",
+   "type": "role",
+   "default": "",
+   "src": "inline"
+  },
+  {
+   "line": 118,
+   "id": "minimum_6_months",
+   "label": "Minimum 6 months",
+   "cat": "VALUE",
+   "type": "duration",
+   "default": "",
+   "src": "inline"
+  },
+  {
+   "line": 126,
+   "id": "how",
+   "label": "How",
+   "cat": "VALUE",
+   "type": "role",
+   "default": "",
+   "src": "inline"
+  },
+  {
+   "line": 131,
+   "id": "the_clinic_holds_a_sponsor_licence_and_who_manag",
+   "label": "The clinic holds a sponsor licence, and who manages sponsor duties",
+   "cat": "DECISION",
+   "type": "yes/no",
+   "default": "",
+   "src": "inline"
+  },
+  {
+   "line": 139,
+   "id": "default_annually",
+   "label": "Default annually",
+   "cat": "VALUE",
+   "type": "duration",
+   "default": "annually",
+   "src": "inline"
+  },
+  {
+   "line": 141,
+   "id": "renewal_interval",
+   "label": "Renewal interval,",
+   "cat": "VALUE",
+   "type": "duration",
+   "default": "every 3 years, or subscription to the DBS Update Service",
+   "src": "inline"
+  },
+  {
+   "line": 142,
+   "id": "this_duty_must_be_in_the_contract_and_the_staff_",
+   "label": "This duty must be in the contract and the staff handbook, not only in this policy",
+   "cat": "VALUE",
+   "type": "text",
+   "default": "",
+   "src": "inline"
+  },
+  {
+   "line": 149,
+   "id": "audit_owner_and_frequency",
+   "label": "Audit owner and frequency",
+   "cat": "VALUE",
+   "type": "role",
+   "default": "Registered Manager, annually",
+   "src": "inline"
+  },
+  {
+   "line": 188,
+   "id": "has_any_appointment_decision_been_made_in_relian",
+   "label": "Has any appointment decision been made in reliance on this paragraph? If so, take employment law advice",
+   "cat": "VALUE",
+   "type": "text",
+   "default": "",
+   "src": "inline"
+  },
+  {
+   "line": 189,
+   "id": "has_this_policy_been_shared_with_anyone_else",
+   "label": "Has this policy been shared with anyone else",
+   "cat": "VALUE",
+   "type": "text",
+   "default": "",
+   "src": "inline"
+  }
+ ],
+ "C029": [
+  {
+   "line": 3,
+   "id": "clinic_name",
+   "label": "Clinic name",
+   "cat": "VALUE",
+   "type": "clinic-name",
+   "default": "",
+   "src": "global"
+  },
+  {
+   "line": 11,
+   "id": "named_responsible_person",
+   "label": "Named responsible person",
+   "cat": "VALUE",
+   "type": "role",
+   "default": "",
+   "src": "inline"
+  },
+  {
+   "line": 12,
+   "id": "authorised_by",
+   "label": "Authorised by",
+   "cat": "VALUE",
+   "type": "text",
+   "default": "",
+   "src": "table-row"
+  },
+  {
+   "line": 13,
+   "id": "issue_date",
+   "label": "Issue Date",
+   "cat": "VALUE",
+   "type": "date",
+   "default": "",
+   "src": "table-row"
+  },
+  {
+   "line": 24,
+   "id": "current_edition",
+   "label": "Current edition",
+   "cat": "VALUE",
+   "type": "text",
+   "default": "",
+   "src": "inline"
+  },
+  {
+   "line": 52,
+   "id": "this_whole_section",
+   "label": "This whole section",
+   "cat": "VALUE",
+   "type": "role",
+   "default": "",
+   "src": "inline"
+  },
+  {
+   "line": 70,
+   "id": "who_maintains_the_policy_register_and_where_it_i",
+   "label": "Who maintains the policy register and where it is held",
+   "cat": "VALUE",
+   "type": "role",
+   "default": "",
+   "src": "inline"
+  },
+  {
+   "line": 78,
+   "id": "who_runs_the_review_schedule_and_how_overdue_rev",
+   "label": "Who runs the review schedule and how overdue reviews are escalated",
+   "cat": "CLAUSE",
+   "type": "role",
+   "default": "reviews due in the next quarter are a standing item at the governance meeting",
+   "src": "inline"
+  },
+  {
+   "line": 84,
+   "id": "role",
+   "label": "Role",
+   "cat": "VALUE",
+   "type": "role",
+   "default": "",
+   "src": "inline"
+  },
+  {
+   "line": 92,
+   "id": "who_holds_the_signature_record_and_checks_comple",
+   "label": "Who holds the signature record and checks completeness",
+   "cat": "VALUE",
+   "type": "role",
+   "default": "",
+   "src": "inline"
+  },
+  {
+   "line": 93,
+   "id": "where_the_current_policy_set_i",
+   "label": "[reviewer note]",
+   "cat": "NOTE",
+   "type": "note",
+   "default": "",
+   "note": "where the current policy set is held so staff can find it \u2014 one location only. Multiple copies in multiple places is how superseded versions",
+   "src": "note"
+  },
+  {
+   "line": 99,
+   "id": "where_the_archive_is_and_who_h",
+   "label": "[reviewer note]",
+   "cat": "NOTE",
+   "type": "note",
+   "default": "",
+   "note": "where the archive is and who has access. An archived copy must be clearly marked SUPERSEDED and dated.",
+   "src": "note"
+  },
+  {
+   "line": 101,
+   "id": "governance_meeting",
+   "label": "Governance meeting",
+   "cat": "VALUE",
+   "type": "text",
+   "default": "",
+   "src": "inline"
+  },
+  {
+   "line": 134,
+   "id": "retention_periods",
+   "label": "Retention periods",
+   "cat": "VALUE",
+   "type": "text",
+   "default": "",
+   "src": "inline"
+  },
+  {
+   "line": 136,
+   "id": "who_reviews_records_reaching_the_end_of_their_re",
+   "label": "Who reviews records reaching the end of their retention period, and how often",
+   "cat": "VALUE",
+   "type": "role",
+   "default": "",
+   "src": "inline"
+  },
+  {
+   "line": 142,
+   "id": "who_places_and_lifts_a_legal_hold_and_how_it_is_",
+   "label": "Who places and lifts a legal hold, and how it is recorded",
+   "cat": "VALUE",
+   "type": "role",
+   "default": "",
+   "src": "inline"
+  },
+  {
+   "line": 156,
+   "id": "audit_owner_and_frequency",
+   "label": "Audit owner and frequency",
+   "cat": "VALUE",
+   "type": "role",
+   "default": "Registered Manager, annually",
+   "src": "inline"
+  }
+ ],
+ "C03": [
+  {
+   "line": 3,
+   "id": "clinic_name",
+   "label": "Clinic name",
+   "cat": "VALUE",
+   "type": "clinic-name",
+   "default": "",
+   "src": "global"
+  },
+  {
+   "line": 11,
+   "id": "named_responsible_person",
+   "label": "Named responsible person",
+   "cat": "VALUE",
+   "type": "role",
+   "default": "",
+   "src": "inline"
+  },
+  {
+   "line": 12,
+   "id": "authorised_by",
+   "label": "Authorised by",
+   "cat": "VALUE",
+   "type": "text",
+   "default": "",
+   "src": "table-row"
+  },
+  {
+   "line": 13,
+   "id": "issue_date",
+   "label": "Issue Date",
+   "cat": "VALUE",
+   "type": "date",
+   "default": "",
+   "src": "table-row"
+  },
+  {
+   "line": 69,
+   "id": "how_patient_preferences_about_who_may_be_told_wh",
+   "label": "How patient preferences about who may be told what are recorded at registration",
+   "cat": "VALUE",
+   "type": "role",
+   "default": "",
+   "src": "inline"
+  },
+  {
+   "line": 90,
+   "id": "default_annually",
+   "label": "Default annually",
+   "cat": "VALUE",
+   "type": "duration",
+   "default": "annually",
+   "src": "inline"
+  },
+  {
+   "line": 101,
+   "id": "the_clinical_system_logs_access_and_who_reviews_",
+   "label": "The clinical system logs access and who reviews the log",
+   "cat": "DECISION",
+   "type": "yes/no",
+   "default": "",
+   "src": "inline"
+  },
+  {
+   "line": 117,
+   "id": "approved_text_templates",
+   "label": "Approved text templates",
+   "cat": "VALUE",
+   "type": "text",
+   "default": "",
+   "src": "inline"
+  },
+  {
+   "line": 118,
+   "id": "route",
+   "label": "Route",
+   "cat": "CLAUSE",
+   "type": "text",
+   "default": "NHSmail to NHSmail, or password-protected attachment. Standard unencrypted email is not acceptable for identifiable clinical information",
+   "src": "inline"
+  },
+  {
+   "line": 129,
+   "id": "who_decides",
+   "label": "Who decides",
+   "cat": "CLAUSE",
+   "type": "role",
+   "default": "the Registered Manager or clinical lead, never the person who took the call",
+   "src": "inline"
+  },
+  {
+   "line": 133,
+   "id": "role",
+   "label": "Role",
+   "cat": "VALUE",
+   "type": "role",
+   "default": "",
+   "src": "inline"
+  },
+  {
+   "line": 134,
+   "id": "who_handles_these",
+   "label": "Who handles these",
+   "cat": "VALUE",
+   "type": "role",
+   "default": "",
+   "src": "inline"
+  },
+  {
+   "line": 141,
+   "id": "automatic_screen_lock_timeout",
+   "label": "Automatic screen lock timeout",
+   "cat": "VALUE",
+   "type": "text",
+   "default": "5 minutes",
+   "src": "inline"
+  },
+  {
+   "line": 145,
+   "id": "staff_may_access_clinical_systems_remotely_or_on",
+   "label": "Staff may access clinical systems remotely or on personal devices, and under what controls",
+   "cat": "DECISION",
+   "type": "yes/no",
+   "default": "NO personal devices; remote access only on clinic-managed equipment",
+   "src": "inline"
+  },
+  {
+   "line": 163,
+   "id": "governance_meeting",
+   "label": "Governance meeting",
+   "cat": "VALUE",
+   "type": "text",
+   "default": "",
+   "src": "inline"
+  },
+  {
+   "line": 173,
+   "id": "audit_owner_and_frequency",
+   "label": "Audit owner and frequency",
+   "cat": "VALUE",
+   "type": "role",
+   "default": "Registered Manager, annually",
+   "src": "inline"
+  }
+ ],
+ "C032": [
+  {
+   "line": 3,
+   "id": "clinic_name",
+   "label": "Clinic name",
+   "cat": "VALUE",
+   "type": "clinic-name",
+   "default": "",
+   "src": "global"
+  },
+  {
+   "line": 15,
+   "id": "named_responsible_person",
+   "label": "Named responsible person",
+   "cat": "VALUE",
+   "type": "role",
+   "default": "",
+   "src": "inline"
+  },
+  {
+   "line": 16,
+   "id": "authorised_by",
+   "label": "Authorised by",
+   "cat": "VALUE",
+   "type": "text",
+   "default": "",
+   "src": "table-row"
+  },
+  {
+   "line": 17,
+   "id": "issue_date",
+   "label": "Issue Date",
+   "cat": "VALUE",
+   "type": "date",
+   "default": "",
+   "src": "table-row"
+  },
+  {
+   "line": 29,
+   "id": "cite_the_current_edition_the",
+   "label": "[reviewer note]",
+   "cat": "NOTE",
+   "type": "note",
+   "default": "",
+   "note": "cite the current edition. The 2010 edition cited in v01 has been superseded several times; check the current version before adopting.",
+   "src": "note"
+  },
+  {
+   "line": 30,
+   "id": "cite_the_edition_the_clinic_ho",
+   "label": "[reviewer note]",
+   "cat": "NOTE",
+   "type": "note",
+   "default": "",
+   "note": "cite the edition the clinic holds. The 2014 edition cited in v01 has been superseded.",
+   "src": "note"
+  },
+  {
+   "line": 131,
+   "id": "how_the_clinic_verifies_parental_responsibility_",
+   "label": "How the clinic verifies parental responsibility before treating a child or releasing records",
+   "cat": "CLAUSE",
+   "type": "role",
+   "default": "sight of the birth certificate or court order; recorded in the clinical record. \"The person who brought them in\" is not evidence of PR",
+   "src": "inline"
+  },
+  {
+   "line": 139,
+   "id": "named_individual",
+   "label": "NAMED individual",
+   "cat": "VALUE",
+   "type": "role",
+   "default": "",
+   "src": "inline"
+  },
+  {
+   "line": 139,
+   "id": "3_minimum",
+   "label": "3 minimum",
+   "cat": "VALUE",
+   "type": "text",
+   "default": "",
+   "src": "inline"
+  },
+  {
+   "line": 144,
+   "id": "where_the_safeguarding_lead_and_registered_manag",
+   "label": "Where the Safeguarding Lead and Registered Manager are the same person, name an external safeguarding contact for concerns involving that person",
+   "cat": "VALUE",
+   "type": "role",
+   "default": "",
+   "src": "inline"
+  },
+  {
+   "line": 179,
+   "id": "default_5_working_days",
+   "label": "Default 5 working days",
+   "cat": "VALUE",
+   "type": "duration",
+   "default": "5 working days",
+   "src": "inline"
+  },
+  {
+   "line": 186,
+   "id": "name_of_local_authority",
+   "label": "Name of local authority",
+   "cat": "VALUE",
+   "type": "text",
+   "default": "",
+   "src": "inline"
+  },
+  {
+   "line": 186,
+   "id": "daytime_phone",
+   "label": "Daytime phone",
+   "cat": "VALUE",
+   "type": "text",
+   "default": "",
+   "src": "inline"
+  },
+  {
+   "line": 186,
+   "id": "out_of_hours_emergency_duty_team",
+   "label": "Out-of-hours / emergency duty team",
+   "cat": "VALUE",
+   "type": "text",
+   "default": "",
+   "src": "inline"
+  },
+  {
+   "line": 188,
+   "id": "local_safeguarding_children_partnership",
+   "label": "Local Safeguarding Children Partnership",
+   "cat": "VALUE",
+   "type": "text",
+   "default": "",
+   "src": "table-row"
+  },
+  {
+   "line": 189,
+   "id": "prevent_channel",
+   "label": "Prevent / Channel",
+   "cat": "VALUE",
+   "type": "text",
+   "default": "",
+   "src": "table-row"
+  },
+  {
+   "line": 193,
+   "id": "local_multi_agency_safeguarding_arrangements_and",
+   "label": "Local multi-agency safeguarding arrangements and their published thresholds document",
+   "cat": "VALUE",
+   "type": "text",
+   "default": "",
+   "src": "inline"
+  },
+  {
+   "line": 206,
+   "id": "which_staff_at_this_clinic_hold_the_personal_dut",
+   "label": "Which staff at this clinic hold the personal duty",
+   "cat": "VALUE",
+   "type": "role",
+   "default": "",
+   "src": "inline"
+  },
+  {
+   "line": 218,
+   "id": "complete_this_section_only_where_the_service_see",
+   "label": "Complete this section only where the service sees under-18s",
+   "cat": "VALUE",
+   "type": "text",
+   "default": "",
+   "src": "inline"
+  },
+  {
+   "line": 296,
+   "id": "level_definitions_against_the_current_edition_of",
+   "label": "Level definitions against the current edition of the Intercollegiate Document",
+   "cat": "VALUE",
+   "type": "text",
+   "default": "",
+   "src": "inline"
+  },
+  {
+   "line": 298,
+   "id": "who_holds_it_and_reviews_completion",
+   "label": "Who holds it and reviews completion",
+   "cat": "VALUE",
+   "type": "role",
+   "default": "",
+   "src": "inline"
+  },
+  {
+   "line": 304,
+   "id": "governance_meeting",
+   "label": "Governance meeting",
+   "cat": "VALUE",
+   "type": "text",
+   "default": "",
+   "src": "inline"
+  },
+  {
+   "line": 310,
+   "id": "audit_owner_and_frequency",
+   "label": "Audit owner and frequency",
+   "cat": "VALUE",
+   "type": "role",
+   "default": "Safeguarding Lead, annually",
+   "src": "inline"
+  },
+  {
+   "line": 342,
+   "id": "name",
+   "label": "Name",
+   "cat": "VALUE",
+   "type": "text",
+   "default": "",
+   "src": "inline"
+  },
+  {
+   "line": 342,
+   "id": "contact",
+   "label": "Contact",
+   "cat": "VALUE",
+   "type": "text",
+   "default": "",
+   "src": "inline"
+  }
+ ],
+ "C033": [
+  {
+   "line": 3,
+   "id": "clinic_name",
+   "label": "Clinic name",
+   "cat": "VALUE",
+   "type": "clinic-name",
+   "default": "",
+   "src": "global"
+  },
+  {
+   "line": 11,
+   "id": "named_responsible_person",
+   "label": "Named responsible person",
+   "cat": "VALUE",
+   "type": "role",
+   "default": "",
+   "src": "inline"
+  },
+  {
+   "line": 12,
+   "id": "authorised_by",
+   "label": "Authorised by",
+   "cat": "VALUE",
+   "type": "text",
+   "default": "",
+   "src": "table-row"
+  },
+  {
+   "line": 13,
+   "id": "issue_date",
+   "label": "Issue Date",
+   "cat": "VALUE",
+   "type": "date",
+   "default": "",
+   "src": "table-row"
+  },
+  {
+   "line": 55,
+   "id": "caldicott_guardian_or_information_governance_lea",
+   "label": "Caldicott Guardian or information governance lead",
+   "cat": "VALUE",
+   "type": "role",
+   "default": "",
+   "src": "inline"
+  },
+  {
+   "line": 65,
+   "id": "role",
+   "label": "Role",
+   "cat": "VALUE",
+   "type": "role",
+   "default": "",
+   "src": "inline"
+  },
+  {
+   "line": 65,
+   "id": "governance_meeting",
+   "label": "Governance meeting",
+   "cat": "VALUE",
+   "type": "text",
+   "default": "",
+   "src": "inline"
+  },
+  {
+   "line": 73,
+   "id": "other_regulators",
+   "label": "Other regulators",
+   "cat": "VALUE",
+   "type": "text",
+   "default": "",
+   "src": "inline"
+  },
+  {
+   "line": 78,
+   "id": "minimum_annual_audit_set",
+   "label": "Minimum annual audit set",
+   "cat": "VALUE",
+   "type": "text",
+   "default": "",
+   "src": "inline"
+  },
+  {
+   "line": 89,
+   "id": "and_to_gphc_standards_where_the_clinic_is_dual_r",
+   "label": "And to GPhC standards where the clinic is dual-regulated",
+   "cat": "VALUE",
+   "type": "text",
+   "default": "",
+   "src": "inline"
+  },
+  {
+   "line": 104,
+   "id": "default_re_audit_interval_6_months_or_3_months_w",
+   "label": "Default re-audit interval \u2014 6 months, or 3 months where the ",
+   "cat": "CLAUSE",
+   "type": "duration",
+   "default": "re-audit interval \u2014 6 months, or 3 months where the finding was significant",
+   "src": "inline"
+  },
+  {
+   "line": 117,
+   "id": "retention_period_for_audit_data",
+   "label": "Retention period for audit data",
+   "cat": "VALUE",
+   "type": "text",
+   "default": "",
+   "src": "inline"
+  },
+  {
+   "line": 125,
+   "id": "how_patient_feedback_is_gathered_and_how_it_feed",
+   "label": "How patient feedback is gathered and how it feeds the audit programme",
+   "cat": "VALUE",
+   "type": "text",
+   "default": "",
+   "src": "inline"
+  },
+  {
+   "line": 131,
+   "id": "audit_owner_and_frequency",
+   "label": "Audit owner and frequency",
+   "cat": "VALUE",
+   "type": "role",
+   "default": "clinical lead, annually",
+   "src": "inline"
+  }
+ ],
+ "C034": [
+  {
+   "line": 3,
+   "id": "clinic_name",
+   "label": "Clinic name",
+   "cat": "VALUE",
+   "type": "clinic-name",
+   "default": "",
+   "src": "global"
+  },
+  {
+   "line": 13,
+   "id": "named_responsible_person",
+   "label": "Named responsible person",
+   "cat": "VALUE",
+   "type": "role",
+   "default": "",
+   "src": "inline"
+  },
+  {
+   "line": 14,
+   "id": "authorised_by",
+   "label": "Authorised by",
+   "cat": "VALUE",
+   "type": "text",
+   "default": "",
+   "src": "table-row"
+  },
+  {
+   "line": 15,
+   "id": "issue_date",
+   "label": "Issue Date",
+   "cat": "VALUE",
+   "type": "date",
+   "default": "",
+   "src": "table-row"
+  },
+  {
+   "line": 24,
+   "id": "cite_the_current_edition_of_each",
+   "label": "Cite the current edition of each",
+   "cat": "VALUE",
+   "type": "duration",
+   "default": "",
+   "src": "inline"
+  },
+  {
+   "line": 30,
+   "id": "the_clinic_uses_respect_forms_or_recognises_them",
+   "label": "The clinic uses ReSPECT forms or recognises them",
+   "cat": "DECISION",
+   "type": "yes/no",
+   "default": "",
+   "src": "inline"
+  },
+  {
+   "line": 65,
+   "id": "location_and_the_internal_emergency_call_procedu",
+   "label": "Location, and the internal emergency call procedure",
+   "cat": "VALUE",
+   "type": "text",
+   "default": "",
+   "src": "inline"
+  },
+  {
+   "line": 71,
+   "id": "default_weekly_see_c07",
+   "label": "Default weekly \u2014 see C07",
+   "cat": "VALUE",
+   "type": "duration",
+   "default": "weekly \u2014 see C07",
+   "src": "inline"
+  },
+  {
+   "line": 73,
+   "id": "governance_meeting",
+   "label": "Governance meeting",
+   "cat": "VALUE",
+   "type": "text",
+   "default": "",
+   "src": "inline"
+  },
+  {
+   "line": 81,
+   "id": "clinic_s_own_emergency_call_procedure",
+   "label": "Clinic's own emergency call procedure",
+   "cat": "VALUE",
+   "type": "role",
+   "default": "",
+   "src": "inline"
+  },
+  {
+   "line": 91,
+   "id": "compression_rate_depth_and_ratio_against_the_cur",
+   "label": "Compression rate, depth and ratio against the current Resuscitation Council UK guidelines rather than reproducing figures from a template",
+   "cat": "VALUE",
+   "type": "text",
+   "default": "",
+   "src": "inline"
+  },
+  {
+   "line": 108,
+   "id": "adrenaline_dose_table_by_age_verified_against_cu",
+   "label": "Adrenaline dose table by age, verified against current Resuscitation Council UK guidance",
+   "cat": "VALUE",
+   "type": "text",
+   "default": "",
+   "src": "inline"
+  },
+  {
+   "line": 110,
+   "id": "what_the_clinic_does_about_refractory_anaphylaxi",
+   "label": "What the clinic does about refractory anaphylaxis",
+   "cat": "VALUE",
+   "type": "duration",
+   "default": "",
+   "src": "inline"
+  },
+  {
+   "line": 116,
+   "id": "which_of_these_the_clinic_holds_a_procedure_for_",
+   "label": "Which of these the clinic holds a procedure for, based on the services it provides and the medicines it uses",
+   "cat": "VALUE",
+   "type": "text",
+   "default": "",
+   "src": "inline"
+  },
+  {
+   "line": 123,
+   "id": "relevant_where_the_clinic_treats_diabetes_or_use",
+   "label": "Relevant where the clinic treats diabetes or uses medicines affecting glucose",
+   "cat": "VALUE",
+   "type": "text",
+   "default": "",
+   "src": "inline"
+  },
+  {
+   "line": 124,
+   "id": "the_clinic_holds_any_and_under_what_direction",
+   "label": "The clinic holds any, and under what direction",
+   "cat": "DECISION",
+   "type": "yes/no",
+   "default": "",
+   "src": "inline"
+  },
+  {
+   "line": 125,
+   "id": "relevant_where_the_clinic_prescribes_opioids",
+   "label": "Relevant where the clinic prescribes opioids",
+   "cat": "VALUE",
+   "type": "text",
+   "default": "",
+   "src": "inline"
+  },
+  {
+   "line": 126,
+   "id": "severe_asthma_exacerbation",
+   "label": "Severe asthma exacerbation",
+   "cat": "VALUE",
+   "type": "text",
+   "default": "",
+   "src": "table-row"
+  },
+  {
+   "line": 130,
+   "id": "what_is_held_and_where",
+   "label": "What is held, and where",
+   "cat": "VALUE",
+   "type": "duration",
+   "default": "",
+   "src": "inline"
+  },
+  {
+   "line": 134,
+   "id": "location_pad_expiry_battery_status_and_who_check",
+   "label": "Location, pad expiry, battery status, and who checks",
+   "cat": "VALUE",
+   "type": "role",
+   "default": "",
+   "src": "inline"
+  },
+  {
+   "line": 135,
+   "id": "required_if_under_18s_attend",
+   "label": "Required if under-18s attend",
+   "cat": "VALUE",
+   "type": "text",
+   "default": "",
+   "src": "inline"
+  },
+  {
+   "line": 136,
+   "id": "cylinder_contents_checked_and_by_whom",
+   "label": "Cylinder contents checked, and by whom",
+   "cat": "VALUE",
+   "type": "text",
+   "default": "",
+   "src": "inline"
+  },
+  {
+   "line": 137,
+   "id": "adult_and_where_relevant_paediatric",
+   "label": "Adult and, where relevant, paediatric",
+   "cat": "VALUE",
+   "type": "text",
+   "default": "",
+   "src": "inline"
+  },
+  {
+   "line": 138,
+   "id": "held_or_not",
+   "label": "Held or not",
+   "cat": "VALUE",
+   "type": "text",
+   "default": "",
+   "src": "inline"
+  },
+  {
+   "line": 139,
+   "id": "and_that_staff_are_trained_to_use_anything_held",
+   "label": "And that staff are trained to use anything held",
+   "cat": "VALUE",
+   "type": "text",
+   "default": "",
+   "src": "inline"
+  },
+  {
+   "line": 147,
+   "id": "emergency_medicines_list_against_the_clinic_s_ac",
+   "label": "Emergency medicines list, against the clinic's actual risk profile and age range",
+   "cat": "VALUE",
+   "type": "list",
+   "default": "",
+   "src": "inline"
+  },
+  {
+   "line": 150,
+   "id": "paediatric_strengths",
+   "label": "Paediatric strengths",
+   "cat": "VALUE",
+   "type": "text",
+   "default": "",
+   "src": "inline"
+  },
+  {
+   "line": 152,
+   "id": "default_weekly",
+   "label": "Default weekly",
+   "cat": "VALUE",
+   "type": "duration",
+   "default": "weekly",
+   "src": "inline"
+  },
+  {
+   "line": 156,
+   "id": "clinic_s_position",
+   "label": "Clinic's position",
+   "cat": "VALUE",
+   "type": "text",
+   "default": "",
+   "src": "inline"
+  },
+  {
+   "line": 162,
+   "id": "does_the_clinic_make_dnacpr_decisions_itself_or_",
+   "label": "Does the clinic make DNACPR decisions itself, or only recognise decisions made elsewhere? For most outpatient clinics the answer is only to recognise them, and saying so is clearer than implying a capability the service does not have",
+   "cat": "DECISION",
+   "type": "yes/no",
+   "default": "",
+   "src": "inline"
+  },
+  {
+   "line": 170,
+   "id": "who_leads_it_and_when",
+   "label": "Who leads it and when",
+   "cat": "CLAUSE",
+   "type": "role",
+   "default": "the same day, and separately from the incident investigation \u2014 a debrief is for the people, not for the paperwork",
+   "src": "inline"
+  },
+  {
+   "line": 184,
+   "id": "default_annually",
+   "label": "Default annually",
+   "cat": "VALUE",
+   "type": "duration",
+   "default": "annually",
+   "src": "inline"
+  },
+  {
+   "line": 186,
+   "id": "training_is_practical_with_a_manikin_and_the_cli",
+   "label": "Training is practical, with a manikin and the clinic's own AED",
+   "cat": "DECISION",
+   "type": "yes/no",
+   "default": "",
+   "src": "inline"
+  },
+  {
+   "line": 188,
+   "id": "the_clinic_runs_a_simulated_emergency_drill",
+   "label": "The clinic runs a simulated emergency drill",
+   "cat": "DECISION",
+   "type": "yes/no",
+   "default": "",
+   "src": "inline"
+  },
+  {
+   "line": 194,
+   "id": "audit_owner_and_frequency",
+   "label": "Audit owner and frequency",
+   "cat": "VALUE",
+   "type": "role",
+   "default": "clinical lead, six-monthly",
+   "src": "inline"
+  }
+ ],
+ "C038": [
+  {
+   "line": 3,
+   "id": "clinic_name",
+   "label": "Clinic name",
+   "cat": "VALUE",
+   "type": "clinic-name",
+   "default": "",
+   "src": "global"
+  },
+  {
+   "line": 13,
+   "id": "named_responsible_person",
+   "label": "Named responsible person",
+   "cat": "VALUE",
+   "type": "role",
+   "default": "",
+   "src": "inline"
+  },
+  {
+   "line": 14,
+   "id": "authorised_by",
+   "label": "Authorised by",
+   "cat": "VALUE",
+   "type": "text",
+   "default": "",
+   "src": "table-row"
+  },
+  {
+   "line": 15,
+   "id": "issue_date",
+   "label": "Issue Date",
+   "cat": "VALUE",
+   "type": "date",
+   "default": "",
+   "src": "table-row"
+  },
+  {
+   "line": 54,
+   "id": "role",
+   "label": "Role",
+   "cat": "VALUE",
+   "type": "role",
+   "default": "",
+   "src": "inline"
+  },
+  {
+   "line": 66,
+   "id": "location",
+   "label": "Location",
+   "cat": "VALUE",
+   "type": "text",
+   "default": "",
+   "src": "inline"
+  },
+  {
+   "line": 74,
+   "id": "every_row",
+   "label": "Every row",
+   "cat": "VALUE",
+   "type": "role",
+   "default": "",
+   "src": "inline"
+  },
+  {
+   "line": 78,
+   "id": "overall_responsibility_for_health_and_safety",
+   "label": "Overall responsibility for health and safety",
+   "cat": "VALUE",
+   "type": "text",
+   "default": "",
+   "src": "table-row"
+  },
+  {
+   "line": 79,
+   "id": "fire_warden",
+   "label": "Fire warden",
+   "cat": "VALUE",
+   "type": "text",
+   "default": "",
+   "src": "table-row"
+  },
+  {
+   "line": 80,
+   "id": "first_aider",
+   "label": "First aider",
+   "cat": "VALUE",
+   "type": "text",
+   "default": "",
+   "src": "table-row"
+  },
+  {
+   "line": 81,
+   "id": "this_was_left_as_insert_name_in_v01",
+   "label": "This was left as `<INSERT NAME>` in v01",
+   "cat": "VALUE",
+   "type": "text",
+   "default": "",
+   "src": "inline"
+  },
+  {
+   "line": 82,
+   "id": "who_makes_riddor_reports",
+   "label": "Who makes RIDDOR reports",
+   "cat": "VALUE",
+   "type": "role",
+   "default": "",
+   "src": "table-row"
+  },
+  {
+   "line": 84,
+   "id": "where_the_clinic_is_genuinely_too_small_to_have_",
+   "label": "Where the clinic is genuinely too small to have separate people, state what happens when the single post-holder is absent",
+   "cat": "VALUE",
+   "type": "role",
+   "default": "",
+   "src": "inline"
+  },
+  {
+   "line": 92,
+   "id": "who_carries_out_risk_assessments_where_they_are_",
+   "label": "Who carries out risk assessments, where they are held, and how often they are reviewed",
+   "cat": "CLAUSE",
+   "type": "role",
+   "default": "reviewed annually, and after any incident, change of premises, change of equipment or change of process",
+   "src": "inline"
+  },
+  {
+   "line": 99,
+   "id": "who_carried_it_out_when_and_whether_the_clinic_o",
+   "label": "Who carried it out, when, and whether the clinic or the landlord holds it",
+   "cat": "VALUE",
+   "type": "role",
+   "default": "",
+   "src": "inline"
+  },
+  {
+   "line": 100,
+   "id": "who_holds_the_coshh_register_and_the_safety_data",
+   "label": "Who holds the COSHH register and the safety data sheets",
+   "cat": "VALUE",
+   "type": "role",
+   "default": "",
+   "src": "inline"
+  },
+  {
+   "line": 103,
+   "id": "does_anyone_work_alone",
+   "label": "Does anyone work alone",
+   "cat": "DECISION",
+   "type": "yes/no",
+   "default": "",
+   "src": "inline"
+  },
+  {
+   "line": 104,
+   "id": "absent_from_v01",
+   "label": "Absent from v01",
+   "cat": "VALUE",
+   "type": "text",
+   "default": "",
+   "src": "inline"
+  },
+  {
+   "line": 112,
+   "id": "arrangements_and_who_is_responsible_for_each",
+   "label": "Arrangements, and who is responsible for each",
+   "cat": "VALUE",
+   "type": "role",
+   "default": "",
+   "src": "inline"
+  },
+  {
+   "line": 116,
+   "id": "default_annually",
+   "label": "Default annually",
+   "cat": "VALUE",
+   "type": "duration",
+   "default": "annually",
+   "src": "inline"
+  },
+  {
+   "line": 117,
+   "id": "default_weekly_recorded",
+   "label": "Default weekly, recorded",
+   "cat": "VALUE",
+   "type": "duration",
+   "default": "weekly, recorded",
+   "src": "inline"
+  },
+  {
+   "line": 120,
+   "id": "default_annually_recorded",
+   "label": "Default annually, recorded",
+   "cat": "VALUE",
+   "type": "duration",
+   "default": "annually, recorded",
+   "src": "inline"
+  },
+  {
+   "line": 122,
+   "id": "default_weekly",
+   "label": "Default weekly",
+   "cat": "VALUE",
+   "type": "duration",
+   "default": "weekly",
+   "src": "inline"
+  },
+  {
+   "line": 124,
+   "id": "evacuation_arrangements_for_patients_with_limite",
+   "label": "Evacuation arrangements for patients with limited mobility",
+   "cat": "VALUE",
+   "type": "role",
+   "default": "",
+   "src": "inline"
+  },
+  {
+   "line": 130,
+   "id": "complete_following_a_first_aid_needs_assessment",
+   "label": "Complete following a first aid needs assessment",
+   "cat": "VALUE",
+   "type": "text",
+   "default": "",
+   "src": "inline"
+  },
+  {
+   "line": 133,
+   "id": "where_the_first_aid_kit_is_who_checks_it_and_how",
+   "label": "Where the first aid kit is, who checks it and how often",
+   "cat": "VALUE",
+   "type": "role",
+   "default": "monthly, recorded",
+   "src": "inline"
+  },
+  {
+   "line": 134,
+   "id": "where_it_is_kept",
+   "label": "Where it is kept",
+   "cat": "VALUE",
+   "type": "text",
+   "default": "",
+   "src": "inline"
+  },
+  {
+   "line": 135,
+   "id": "the_clinic_s_clinical_emergency_equipment_is_sep",
+   "label": "The clinic's clinical emergency equipment is separate from its workplace first aid kit",
+   "cat": "DECISION",
+   "type": "yes/no",
+   "default": "",
+   "src": "inline"
+  },
+  {
+   "line": 148,
+   "id": "named_person_and_deputy",
+   "label": "Named person and deputy",
+   "cat": "VALUE",
+   "type": "role",
+   "default": "",
+   "src": "inline"
+  },
+  {
+   "line": 155,
+   "id": "portable_appliance_testing",
+   "label": "Portable appliance testing",
+   "cat": "VALUE",
+   "type": "role",
+   "default": "",
+   "src": "inline"
+  },
+  {
+   "line": 156,
+   "id": "servicing_and_calibration_of_clinical_equipment",
+   "label": "Servicing and calibration of clinical equipment",
+   "cat": "VALUE",
+   "type": "text",
+   "default": "",
+   "src": "inline"
+  },
+  {
+   "line": 157,
+   "id": "water_safety_and_legionella",
+   "label": "Water safety and legionella",
+   "cat": "VALUE",
+   "type": "role",
+   "default": "",
+   "src": "inline"
+  },
+  {
+   "line": 164,
+   "id": "this_section",
+   "label": "This section",
+   "cat": "VALUE",
+   "type": "text",
+   "default": "",
+   "src": "inline"
+  },
+  {
+   "line": 171,
+   "id": "who_decides_whether_the_clinic_continues_to_trea",
+   "label": "Who decides whether the clinic continues to treat that patient, and how the decision is communicated",
+   "cat": "VALUE",
+   "type": "role",
+   "default": "",
+   "src": "inline"
+  },
+  {
+   "line": 184,
+   "id": "typically_3_years_with_annual_refresher",
+   "label": "Typically 3 years with annual refresher",
+   "cat": "VALUE",
+   "type": "duration",
+   "default": "",
+   "src": "inline"
+  },
+  {
+   "line": 185,
+   "id": "default_3_years",
+   "label": "Default 3 years",
+   "cat": "VALUE",
+   "type": "duration",
+   "default": "3 years",
+   "src": "inline"
+  },
+  {
+   "line": 193,
+   "id": "audit_owner_and_frequency",
+   "label": "Audit owner and frequency",
+   "cat": "VALUE",
+   "type": "role",
+   "default": "Registered Manager, annually",
+   "src": "inline"
+  }
+ ],
+ "C039": [
+  {
+   "line": 3,
+   "id": "clinic_name",
+   "label": "Clinic name",
+   "cat": "VALUE",
+   "type": "clinic-name",
+   "default": "",
+   "src": "global"
+  },
+  {
+   "line": 11,
+   "id": "named_responsible_person",
+   "label": "Named responsible person",
+   "cat": "VALUE",
+   "type": "role",
+   "default": "",
+   "src": "inline"
+  },
+  {
+   "line": 12,
+   "id": "authorised_by",
+   "label": "Authorised by",
+   "cat": "VALUE",
+   "type": "text",
+   "default": "",
+   "src": "table-row"
+  },
+  {
+   "line": 13,
+   "id": "issue_date",
+   "label": "Issue Date",
+   "cat": "VALUE",
+   "type": "date",
+   "default": "",
+   "src": "table-row"
+  },
+  {
+   "line": 25,
+   "id": "who_receives_them",
+   "label": "Who receives them",
+   "cat": "VALUE",
+   "type": "role",
+   "default": "",
+   "src": "inline"
+  },
+  {
+   "line": 75,
+   "id": "which_treatments_require_verified_photographic_i",
+   "label": "Which treatments require verified photographic ID before they may be provided",
+   "cat": "CLAUSE",
+   "type": "list",
+   "default": "any controlled drug, any long-term or high-risk medicine, and any treatment requiring monitoring. Where identity cannot be verified, those are not provided",
+   "src": "inline"
+  },
+  {
+   "line": 95,
+   "id": "how_parental_responsibility_is_established",
+   "label": "How parental responsibility is established",
+   "cat": "VALUE",
+   "type": "text",
+   "default": "",
+   "src": "inline"
+  },
+  {
+   "line": 115,
+   "id": "this_section_in_full",
+   "label": "This section in full",
+   "cat": "VALUE",
+   "type": "text",
+   "default": "",
+   "src": "inline"
+  },
+  {
+   "line": 121,
+   "id": "method",
+   "label": "Method",
+   "cat": "VALUE",
+   "type": "text",
+   "default": "",
+   "src": "inline"
+  },
+  {
+   "line": 126,
+   "id": "how_the_clinic_detects_the_same_person_registeri",
+   "label": "How the clinic detects the same person registering more than once under different details, and how it detects one person obtaining supplies from multiple services",
+   "cat": "VALUE",
+   "type": "role",
+   "default": "",
+   "src": "inline"
+  },
+  {
+   "line": 130,
+   "id": "clinic_s_approach_where_there_are_indicators_of_",
+   "label": "Clinic's approach where there are indicators of misuse",
+   "cat": "CLAUSE",
+   "type": "role",
+   "default": "escalate to the clinical lead, record, and consider whether a safeguarding referral is required",
+   "src": "inline"
+  },
+  {
+   "line": 137,
+   "id": "which_treatments_are_withheld_where_identity_is_",
+   "label": "Which treatments are withheld where identity is unverified",
+   "cat": "VALUE",
+   "type": "list",
+   "default": "",
+   "src": "inline"
+  },
+  {
+   "line": 143,
+   "id": "audit_owner_and_frequency",
+   "label": "Audit owner and frequency",
+   "cat": "VALUE",
+   "type": "role",
+   "default": "Registered Manager, annually",
+   "src": "inline"
+  },
+  {
+   "line": 146,
+   "id": "checked_by_observation",
+   "label": "Checked by observation",
+   "cat": "VALUE",
+   "type": "text",
+   "default": "",
+   "src": "inline"
+  }
+ ],
+ "C04": [
+  {
+   "line": 3,
+   "id": "clinic_name",
+   "label": "Clinic name",
+   "cat": "VALUE",
+   "type": "clinic-name",
+   "default": "",
+   "src": "global"
+  },
+  {
+   "line": 13,
+   "id": "named_responsible_person",
+   "label": "Named responsible person",
+   "cat": "VALUE",
+   "type": "role",
+   "default": "",
+   "src": "inline"
+  },
+  {
+   "line": 14,
+   "id": "authorised_by",
+   "label": "Authorised by",
+   "cat": "VALUE",
+   "type": "text",
+   "default": "",
+   "src": "table-row"
+  },
+  {
+   "line": 15,
+   "id": "issue_date",
+   "label": "Issue Date",
+   "cat": "VALUE",
+   "type": "date",
+   "default": "",
+   "src": "table-row"
+  },
+  {
+   "line": 28,
+   "id": "independent_adjudication_scheme_the_clinic_subsc",
+   "label": "Independent adjudication scheme the clinic subscribes to",
+   "cat": "VALUE",
+   "type": "text",
+   "default": "",
+   "src": "inline"
+  },
+  {
+   "line": 63,
+   "id": "check_the_clinic_s_indemnity_terms",
+   "label": "Check the clinic's indemnity terms",
+   "cat": "VALUE",
+   "type": "text",
+   "default": "",
+   "src": "inline"
+  },
+  {
+   "line": 73,
+   "id": "these_are_the_figures_the_clinic_commits_to",
+   "label": "These are the figures the clinic commits to",
+   "cat": "VALUE",
+   "type": "text",
+   "default": "",
+   "src": "inline"
+  },
+  {
+   "line": 81,
+   "id": "default_40_working_days",
+   "label": "Default 40 working days",
+   "cat": "VALUE",
+   "type": "duration",
+   "default": "40 working days",
+   "src": "inline"
+  },
+  {
+   "line": 98,
+   "id": "role",
+   "label": "Role",
+   "cat": "VALUE",
+   "type": "role",
+   "default": "",
+   "src": "inline"
+  },
+  {
+   "line": 104,
+   "id": "named_complaints_manager",
+   "label": "Named complaints manager",
+   "cat": "VALUE",
+   "type": "role",
+   "default": "",
+   "src": "inline"
+  },
+  {
+   "line": 109,
+   "id": "who_investigates_where_the_complaint_concerns_th",
+   "label": "Who investigates where the complaint concerns the Registered Manager",
+   "cat": "VALUE",
+   "type": "role",
+   "default": "",
+   "src": "inline"
+  },
+  {
+   "line": 119,
+   "id": "clinical_lead",
+   "label": "Clinical lead",
+   "cat": "VALUE",
+   "type": "role",
+   "default": "",
+   "src": "inline"
+  },
+  {
+   "line": 119,
+   "id": "mdu_mps_mddus_other",
+   "label": "MDU / MPS / MDDUS / other",
+   "cat": "VALUE",
+   "type": "text",
+   "default": "",
+   "src": "inline"
+  },
+  {
+   "line": 121,
+   "id": "named_alternative_clinician",
+   "label": "Named alternative clinician",
+   "cat": "VALUE",
+   "type": "role",
+   "default": "",
+   "src": "inline"
+  },
+  {
+   "line": 160,
+   "id": "actual_escalation_route_offered",
+   "label": "Actual escalation route offered",
+   "cat": "VALUE",
+   "type": "text",
+   "default": "",
+   "src": "inline"
+  },
+  {
+   "line": 164,
+   "id": "are_we_a_member_if_no_this_cannot_be_offered",
+   "label": "Are we a member? If NO, this cannot be offered",
+   "cat": "DECISION",
+   "type": "yes/no",
+   "default": "",
+   "src": "inline"
+  },
+  {
+   "line": 168,
+   "id": "offered_and_who_pays",
+   "label": "Offered, and who pays",
+   "cat": "DECISION",
+   "type": "yes/no",
+   "default": "",
+   "src": "inline"
+  },
+  {
+   "line": 171,
+   "id": "where_the_clinic_subscribes_to_no_independent_sc",
+   "label": "Where the clinic subscribes to no independent scheme, decide and record what is offered instead",
+   "cat": "VALUE",
+   "type": "text",
+   "default": "",
+   "src": "inline"
+  },
+  {
+   "line": 184,
+   "id": "named_decision_maker",
+   "label": "Named decision-maker",
+   "cat": "VALUE",
+   "type": "role",
+   "default": "",
+   "src": "inline"
+  },
+  {
+   "line": 187,
+   "id": "default_6_months",
+   "label": "Default 6 months",
+   "cat": "VALUE",
+   "type": "duration",
+   "default": "6 months",
+   "src": "inline"
+  },
+  {
+   "line": 189,
+   "id": "governance_meeting",
+   "label": "Governance meeting",
+   "cat": "VALUE",
+   "type": "text",
+   "default": "",
+   "src": "inline"
+  },
+  {
+   "line": 205,
+   "id": "default_annually",
+   "label": "Default annually",
+   "cat": "VALUE",
+   "type": "duration",
+   "default": "annually",
+   "src": "inline"
+  },
+  {
+   "line": 210,
+   "id": "accessible_formats_and_languages_available",
+   "label": "Accessible formats and languages available",
+   "cat": "VALUE",
+   "type": "text",
+   "default": "",
+   "src": "inline"
+  },
+  {
+   "line": 217,
+   "id": "audit_owner_and_frequency",
+   "label": "Audit owner and frequency",
+   "cat": "VALUE",
+   "type": "role",
+   "default": "Registered Manager, annually",
+   "src": "inline"
+  }
+ ],
+ "C040": [
+  {
+   "line": 3,
+   "id": "clinic_name",
+   "label": "Clinic name",
+   "cat": "VALUE",
+   "type": "clinic-name",
+   "default": "",
+   "src": "global"
+  },
+  {
+   "line": 11,
+   "id": "named_responsible_person",
+   "label": "Named responsible person",
+   "cat": "VALUE",
+   "type": "role",
+   "default": "",
+   "src": "inline"
+  },
+  {
+   "line": 12,
+   "id": "authorised_by",
+   "label": "Authorised by",
+   "cat": "VALUE",
+   "type": "text",
+   "default": "",
+   "src": "table-row"
+  },
+  {
+   "line": 13,
+   "id": "issue_date",
+   "label": "Issue Date",
+   "cat": "VALUE",
+   "type": "date",
+   "default": "",
+   "src": "table-row"
+  },
+  {
+   "line": 62,
+   "id": "verified_not_assumed",
+   "label": "Verified, not assumed",
+   "cat": "VALUE",
+   "type": "text",
+   "default": "",
+   "src": "inline"
+  },
+  {
+   "line": 72,
+   "id": "which_services_and_conditions_may_be_delivered_r",
+   "label": "Which services and conditions may be delivered remotely, and which may not",
+   "cat": "CLAUSE",
+   "type": "text",
+   "default": "exclusions: any consultation requiring physical examination; first prescription of a controlled drug; anything requiring an intimate examination",
+   "src": "inline"
+  },
+  {
+   "line": 80,
+   "id": "approved_platform_s",
+   "label": "Approved platform(s)",
+   "cat": "VALUE",
+   "type": "role",
+   "default": "",
+   "src": "inline"
+  },
+  {
+   "line": 87,
+   "id": "a_dpia_has_been_completed_for_the_platform",
+   "label": "A DPIA has been completed for the platform",
+   "cat": "DECISION",
+   "type": "yes/no",
+   "default": "",
+   "src": "inline"
+  },
+  {
+   "line": 91,
+   "id": "what_to_do_when_the_connection_is_inadequate",
+   "label": "What to do when the connection is inadequate",
+   "cat": "CLAUSE",
+   "type": "text",
+   "default": "stop, and either restart, switch to telephone, or convert to a face-to-face appointment \u2014 and record that this happened",
+   "src": "inline"
+  },
+  {
+   "line": 97,
+   "id": "clinician_must_be_alone_and_unable_to_be_overhea",
+   "label": "Clinician must be alone and unable to be overheard",
+   "cat": "VALUE",
+   "type": "text",
+   "default": "",
+   "src": "inline"
+  },
+  {
+   "line": 111,
+   "id": "acceptable_documents",
+   "label": "Acceptable documents",
+   "cat": "VALUE",
+   "type": "text",
+   "default": "",
+   "src": "inline"
+  },
+  {
+   "line": 117,
+   "id": "where_identity_cannot_be_verified_which_treatmen",
+   "label": "Where identity cannot be verified, which treatments are not provided",
+   "cat": "VALUE",
+   "type": "list",
+   "default": "",
+   "src": "inline"
+  },
+  {
+   "line": 133,
+   "id": "how_a_patient_can_signal_they_are_not_safe_to_sp",
+   "label": "How a patient can signal they are not safe to speak",
+   "cat": "CLAUSE",
+   "type": "role",
+   "default": "the clinician offers a closed-question route \u2014 \"is it convenient to talk about this now?\" \u2014 and a named way to make contact later",
+   "src": "inline"
+  },
+  {
+   "line": 155,
+   "id": "consultations_are_recorded",
+   "label": "Consultations are recorded",
+   "cat": "DECISION",
+   "type": "yes/no",
+   "default": "NO. Where YES: separate explicit consent is required (C05), the patient is told who will have access and for how long it is kept, the recording is stored secure",
+   "src": "inline"
+  },
+  {
+   "line": 166,
+   "id": "medicines_not_prescribed_remotely",
+   "label": "Medicines not prescribed remotely",
+   "cat": "CLAUSE",
+   "type": "text",
+   "default": "controlled drugs on first prescription; any medicine requiring physical examination or baseline observations that have not been obtained",
+   "src": "inline"
+  },
+  {
+   "line": 174,
+   "id": "who_delivers_training_and_how_often",
+   "label": "Who delivers training and how often",
+   "cat": "VALUE",
+   "type": "role",
+   "default": "",
+   "src": "inline"
+  },
+  {
+   "line": 180,
+   "id": "audit_owner_and_frequency",
+   "label": "Audit owner and frequency",
+   "cat": "VALUE",
+   "type": "role",
+   "default": "clinical lead, six-monthly",
+   "src": "inline"
+  }
+ ],
+ "C05": [
+  {
+   "line": 3,
+   "id": "clinic_name",
+   "label": "Clinic name",
+   "cat": "VALUE",
+   "type": "clinic-name",
+   "default": "",
+   "src": "global"
+  },
+  {
+   "line": 13,
+   "id": "named_responsible_person",
+   "label": "Named responsible person",
+   "cat": "VALUE",
+   "type": "role",
+   "default": "",
+   "src": "inline"
+  },
+  {
+   "line": 14,
+   "id": "authorised_by",
+   "label": "Authorised by",
+   "cat": "VALUE",
+   "type": "text",
+   "default": "",
+   "src": "table-row"
+  },
+  {
+   "line": 15,
+   "id": "issue_date",
+   "label": "Issue Date",
+   "cat": "VALUE",
+   "type": "date",
+   "default": "",
+   "src": "table-row"
+  },
+  {
+   "line": 30,
+   "id": "check_current_status_this_is",
+   "label": "[reviewer note]",
+   "cat": "NOTE",
+   "type": "note",
+   "default": "",
+   "note": "check current status \u2014 this is an archived DH publication; the GMC 2020 guidance is the operative source",
+   "src": "note"
+  },
+  {
+   "line": 119,
+   "id": "the_service_offers_any_treatment_warranting_a_fo",
+   "label": "The service offers any treatment warranting a formal cooling-off period between decision and procedure",
+   "cat": "DECISION",
+   "type": "yes/no",
+   "default": "yes for any elective cosmetic or non-surgical aesthetic treatment \u2014 minimum 14 days between consultation and treatment, and never treat at the first appointment",
+   "src": "inline"
+  },
+  {
+   "line": 125,
+   "id": "maximum_interval_after_which_written_consent_is_",
+   "label": "Maximum interval after which written consent is re-taken rather than reconfirmed",
+   "cat": "VALUE",
+   "type": "duration",
+   "default": "3 months",
+   "src": "inline"
+  },
+  {
+   "line": 135,
+   "id": "list_of_procedures_at_this_clinic_requiring_writ",
+   "label": "List of procedures at this clinic requiring written consent",
+   "cat": "VALUE",
+   "type": "list",
+   "default": "",
+   "src": "inline"
+  },
+  {
+   "line": 156,
+   "id": "any_consent_is_delegated_at_this_clinic",
+   "label": "Any consent is delegated at this clinic",
+   "cat": "DECISION",
+   "type": "yes/no",
+   "default": "for a small clinic: NO \u2014 the treating clinician takes their own consent. Only complete the section below if delegation genuinely happens",
+   "src": "inline"
+  },
+  {
+   "line": 158,
+   "id": "role",
+   "label": "Role",
+   "cat": "VALUE",
+   "type": "role",
+   "default": "",
+   "src": "inline"
+  },
+  {
+   "line": 166,
+   "id": "interpreting_service_and_how_to_book_it",
+   "label": "Interpreting service and how to book it",
+   "cat": "VALUE",
+   "type": "text",
+   "default": "",
+   "src": "inline"
+  },
+  {
+   "line": 167,
+   "id": "arrangements",
+   "label": "Arrangements",
+   "cat": "VALUE",
+   "type": "text",
+   "default": "",
+   "src": "inline"
+  },
+  {
+   "line": 169,
+   "id": "route",
+   "label": "Route",
+   "cat": "VALUE",
+   "type": "text",
+   "default": "",
+   "src": "inline"
+  },
+  {
+   "line": 235,
+   "id": "local_imca_service_and_how_to_instruct",
+   "label": "Local IMCA service and how to instruct",
+   "cat": "VALUE",
+   "type": "text",
+   "default": "",
+   "src": "inline"
+  },
+  {
+   "line": 246,
+   "id": "complete_this_section_only_where_the_clinic_sees",
+   "label": "Complete this section only where the clinic sees under-18s",
+   "cat": "VALUE",
+   "type": "text",
+   "default": "",
+   "src": "inline"
+  },
+  {
+   "line": 252,
+   "id": "clinic_s_position",
+   "label": "Clinic's position",
+   "cat": "CLAUSE",
+   "type": "role",
+   "default": "any refusal by a competent young person of a treatment considered necessary is escalated to the clinical lead and, where the matter is serious, legal advice is ",
+   "src": "inline"
+  },
+  {
+   "line": 266,
+   "id": "any_recordings_are_used_for_marketing_including_",
+   "label": "Any recordings are used for marketing, including before-and-after images",
+   "cat": "DECISION",
+   "type": "yes/no",
+   "default": "",
+   "src": "inline"
+  },
+  {
+   "line": 302,
+   "id": "default_every_3_years",
+   "label": "Default every 3 years",
+   "cat": "VALUE",
+   "type": "duration",
+   "default": "every 3 years",
+   "src": "inline"
+  },
+  {
+   "line": 306,
+   "id": "who_holds_it",
+   "label": "Who holds it",
+   "cat": "VALUE",
+   "type": "role",
+   "default": "",
+   "src": "inline"
+  },
+  {
+   "line": 312,
+   "id": "audit_owner_and_frequency",
+   "label": "Audit owner and frequency",
+   "cat": "VALUE",
+   "type": "role",
+   "default": "Clinical Lead, annually",
+   "src": "inline"
+  },
+  {
+   "line": 323,
+   "id": "governance_meeting",
+   "label": "Governance meeting",
+   "cat": "VALUE",
+   "type": "text",
+   "default": "",
+   "src": "inline"
+  }
+ ],
+ "C07": [
+  {
+   "line": 3,
+   "id": "clinic_name",
+   "label": "Clinic name",
+   "cat": "VALUE",
+   "type": "clinic-name",
+   "default": "",
+   "src": "global"
+  },
+  {
+   "line": 11,
+   "id": "named_responsible_person",
+   "label": "Named responsible person",
+   "cat": "VALUE",
+   "type": "role",
+   "default": "",
+   "src": "inline"
+  },
+  {
+   "line": 12,
+   "id": "authorised_by",
+   "label": "Authorised by",
+   "cat": "VALUE",
+   "type": "text",
+   "default": "",
+   "src": "table-row"
+  },
+  {
+   "line": 13,
+   "id": "issue_date",
+   "label": "Issue Date",
+   "cat": "VALUE",
+   "type": "date",
+   "default": "",
+   "src": "table-row"
+  },
+  {
+   "line": 26,
+   "id": "applicable_where_the_clinic_operates_from_gphc_r",
+   "label": "Applicable where the clinic operates from GPhC-registered premises",
+   "cat": "VALUE",
+   "type": "text",
+   "default": "",
+   "src": "inline"
+  },
+  {
+   "line": 46,
+   "id": "the_clinic_holds_and_supplies_stock_medicines_or",
+   "label": "The clinic holds and supplies stock medicines, or prescribes only",
+   "cat": "DECISION",
+   "type": "yes/no",
+   "default": "for a prescribing-only service: sections on stock, storage and disposal are marked not applicable, and that is stated explicitly rather than left ambiguous",
+   "src": "inline"
+  },
+  {
+   "line": 68,
+   "id": "named_individual",
+   "label": "NAMED individual",
+   "cat": "VALUE",
+   "type": "role",
+   "default": "",
+   "src": "inline"
+  },
+  {
+   "line": 81,
+   "id": "where_emergency_medicines_oxygen_and_the_defibri",
+   "label": "Where emergency medicines, oxygen and the defibrillator are held",
+   "cat": "VALUE",
+   "type": "duration",
+   "default": "",
+   "src": "inline"
+  },
+  {
+   "line": 84,
+   "id": "default_weekly",
+   "label": "Default weekly",
+   "cat": "VALUE",
+   "type": "duration",
+   "default": "weekly",
+   "src": "inline"
+  },
+  {
+   "line": 87,
+   "id": "emergency_medicines_held_against_the_clinic_s_ac",
+   "label": "Emergency medicines held, against the clinic's actual risk profile and the age range seen",
+   "cat": "VALUE",
+   "type": "text",
+   "default": "",
+   "src": "inline"
+  },
+  {
+   "line": 116,
+   "id": "which_of_these_routes_the_clinic_actually_uses",
+   "label": "Which of these routes the clinic actually uses",
+   "cat": "VALUE",
+   "type": "text",
+   "default": "",
+   "src": "inline"
+  },
+  {
+   "line": 121,
+   "id": "where_held",
+   "label": "Where held",
+   "cat": "VALUE",
+   "type": "text",
+   "default": "",
+   "src": "inline"
+  },
+  {
+   "line": 122,
+   "id": "the_clinic_uses_pgds_at_all",
+   "label": "The clinic uses PGDs at all",
+   "cat": "DECISION",
+   "type": "yes/no",
+   "default": "NO",
+   "src": "inline"
+  },
+  {
+   "line": 125,
+   "id": "where_pgds_are_used",
+   "label": "Where PGDs are used",
+   "cat": "VALUE",
+   "type": "role",
+   "default": "",
+   "src": "inline"
+  },
+  {
+   "line": 135,
+   "id": "how_licence_status_is_verified",
+   "label": "How licence status is verified",
+   "cat": "VALUE",
+   "type": "text",
+   "default": "",
+   "src": "inline"
+  },
+  {
+   "line": 137,
+   "id": "role",
+   "label": "Role",
+   "cat": "VALUE",
+   "type": "role",
+   "default": "",
+   "src": "inline"
+  },
+  {
+   "line": 141,
+   "id": "the_clinic_verifies_pack_authenticity_on_receipt",
+   "label": "The clinic verifies pack authenticity on receipt, and how",
+   "cat": "DECISION",
+   "type": "yes/no",
+   "default": "",
+   "src": "inline"
+  },
+  {
+   "line": 149,
+   "id": "excursion_procedure",
+   "label": "Excursion procedure",
+   "cat": "VALUE",
+   "type": "text",
+   "default": "",
+   "src": "inline"
+  },
+  {
+   "line": 151,
+   "id": "who_checks_storage_conditions_and_how_often",
+   "label": "Who checks storage conditions, and how often",
+   "cat": "VALUE",
+   "type": "role",
+   "default": "",
+   "src": "inline"
+  },
+  {
+   "line": 160,
+   "id": "waste_contractor_and_where_consignment_notes_are",
+   "label": "Waste contractor and where consignment notes are held",
+   "cat": "VALUE",
+   "type": "text",
+   "default": "",
+   "src": "inline"
+  },
+  {
+   "line": 164,
+   "id": "the_clinic_accepts_medicines_returned_by_patient",
+   "label": "The clinic accepts medicines returned by patients",
+   "cat": "DECISION",
+   "type": "yes/no",
+   "default": "NO \u2014 patients are directed to a community pharmacy. Where YES: returned medicines are never returned to stock or reissued to another patient under any circumsta",
+   "src": "inline"
+  },
+  {
+   "line": 177,
+   "id": "who_is_responsible_for_yellow_card_reporting",
+   "label": "Who is responsible for Yellow Card reporting",
+   "cat": "VALUE",
+   "type": "role",
+   "default": "",
+   "src": "inline"
+  },
+  {
+   "line": 181,
+   "id": "who_receives_national_patient_safety_alerts_and_",
+   "label": "Who receives National Patient Safety Alerts and MHRA Drug Safety Update, how they are actioned, and where the record of action is kept",
+   "cat": "CLAUSE",
+   "type": "role",
+   "default": "medicines lead, checked monthly, actions recorded and reported to the governance meeting",
+   "src": "inline"
+  },
+  {
+   "line": 187,
+   "id": "audit_owner_and_frequency",
+   "label": "Audit owner and frequency",
+   "cat": "VALUE",
+   "type": "role",
+   "default": "medicines lead, six-monthly",
+   "src": "inline"
+  }
+ ],
+ "C07F": [
+  {
+   "line": 3,
+   "id": "clinic_name",
+   "label": "Clinic name",
+   "cat": "VALUE",
+   "type": "clinic-name",
+   "default": "",
+   "src": "global"
+  },
+  {
+   "line": 12,
+   "id": "named_responsible_person",
+   "label": "Named responsible person",
+   "cat": "VALUE",
+   "type": "role",
+   "default": "",
+   "src": "inline"
+  },
+  {
+   "line": 14,
+   "id": "who_signs_this_off",
+   "label": "Who signs this off",
+   "cat": "VALUE",
+   "type": "role",
+   "default": "",
+   "src": "inline"
+  },
+  {
+   "line": 44,
+   "id": "does_your_clinic_prescribe_controlled_drugs_and_",
+   "label": "Does your clinic prescribe controlled drugs, and if so which schedules?",
+   "cat": "DECISION",
+   "type": "yes/no",
+   "default": "NO \u2014 this clinic does not prescribe controlled drugs of any schedule",
+   "src": "inline"
+  },
+  {
+   "line": 45,
+   "id": "does_your_clinic_restrict_prescribing_to_a_defin",
+   "label": "Does your clinic restrict prescribing to a defined formulary or exclude particular drug classes",
+   "cat": "DECISION",
+   "type": "yes/no",
+   "default": "NO formal formulary \u2014 prescribing follows BNF/NICE and local antimicrobial guidance",
+   "src": "inline"
+  },
+  {
+   "line": 47,
+   "id": "does_your_clinic_issue_any_prescription_without_",
+   "label": "Does your clinic issue any prescription without a same-day consultation?",
+   "cat": "DECISION",
+   "type": "yes/no",
+   "default": "NO",
+   "src": "inline"
+  },
+  {
+   "line": 59,
+   "id": "does_your_clinic_provide_written_medicine_inform",
+   "label": "Does your clinic provide written medicine information",
+   "cat": "DECISION",
+   "type": "yes/no",
+   "default": "verbal plus the manufacturer's patient information leaflet",
+   "src": "inline"
+  },
+  {
+   "line": 63,
+   "id": "is_notifying_the_patient_s_nhs_gp_the",
+   "label": "Is notifying the patient's NHS GP the",
+   "cat": "DECISION",
+   "type": "yes/no",
+   "default": "with patient consent?",
+   "src": "inline"
+  },
+  {
+   "line": 70,
+   "id": "does_your_clinic_prescribe_medicines_requiring_o",
+   "label": "Does your clinic prescribe medicines requiring ongoing monitoring or a risk-management programme",
+   "cat": "DECISION",
+   "type": "yes/no",
+   "default": "NO",
+   "src": "inline"
+  },
+  {
+   "line": 73,
+   "id": "does_your_clinic_initiate_or_continue_medicines_",
+   "label": "Does your clinic initiate or continue medicines for long-term conditions?",
+   "cat": "DECISION",
+   "type": "yes/no",
+   "default": "NO \u2014 acute and episodic care only; long-term-condition management remains with the patient's own GP",
+   "src": "inline"
+  },
+  {
+   "line": 80,
+   "id": "what_is_your_clinic_s_disposal_route",
+   "label": "What is your clinic's disposal route?",
+   "cat": "CLAUSE",
+   "type": "text",
+   "default": "returned to a registered pharmacy for destruction; the return is recorded",
+   "src": "inline"
+  },
+  {
+   "line": 95,
+   "id": "disposal_route",
+   "label": "Disposal route",
+   "cat": "VALUE",
+   "type": "text",
+   "default": "",
+   "src": "inline"
+  }
+ ],
+ "C08": [
+  {
+   "line": 3,
+   "id": "clinic_name",
+   "label": "Clinic name",
+   "cat": "VALUE",
+   "type": "clinic-name",
+   "default": "",
+   "src": "global"
+  },
+  {
+   "line": 13,
+   "id": "named_responsible_person",
+   "label": "Named responsible person",
+   "cat": "VALUE",
+   "type": "role",
+   "default": "",
+   "src": "inline"
+  },
+  {
+   "line": 14,
+   "id": "authorised_by",
+   "label": "Authorised by",
+   "cat": "VALUE",
+   "type": "text",
+   "default": "",
+   "src": "table-row"
+  },
+  {
+   "line": 15,
+   "id": "issue_date",
+   "label": "Issue Date",
+   "cat": "VALUE",
+   "type": "date",
+   "default": "",
+   "src": "table-row"
+  },
+  {
+   "line": 31,
+   "id": "cite_the_edition_the_clinic_ho",
+   "label": "[reviewer note]",
+   "cat": "NOTE",
+   "type": "note",
+   "default": "",
+   "note": "cite the edition the clinic holds. The 2018 first edition was superseded in 2024 \u2014 check for the current edition before adopting.",
+   "src": "note"
+  },
+  {
+   "line": 143,
+   "id": "named_individual",
+   "label": "NAMED individual",
+   "cat": "VALUE",
+   "type": "role",
+   "default": "",
+   "src": "inline"
+  },
+  {
+   "line": 143,
+   "id": "3_or_above",
+   "label": "3 or above",
+   "cat": "VALUE",
+   "type": "text",
+   "default": "",
+   "src": "inline"
+  },
+  {
+   "line": 148,
+   "id": "where_the_safeguarding_lead_and_registered_manag",
+   "label": "Where the Safeguarding Lead and Registered Manager are the same person",
+   "cat": "VALUE",
+   "type": "role",
+   "default": "",
+   "src": "inline"
+  },
+  {
+   "line": 164,
+   "id": "refresher_frequency",
+   "label": "Refresher frequency",
+   "cat": "CLAUSE",
+   "type": "duration",
+   "default": "Level 1 every 3 years; Levels 2 and 3 every 3 years with annual updates, per the Intercollegiate Document",
+   "src": "inline"
+  },
+  {
+   "line": 166,
+   "id": "who_holds_the_matrix_and_reviews_completion",
+   "label": "Who holds the matrix and reviews completion",
+   "cat": "VALUE",
+   "type": "role",
+   "default": "",
+   "src": "inline"
+  },
+  {
+   "line": 203,
+   "id": "default_1_working_day",
+   "label": "Default 1 working day",
+   "cat": "VALUE",
+   "type": "text",
+   "default": "1 working day",
+   "src": "inline"
+  },
+  {
+   "line": 207,
+   "id": "default_5_working_days",
+   "label": "Default 5 working days",
+   "cat": "VALUE",
+   "type": "duration",
+   "default": "5 working days",
+   "src": "inline"
+  },
+  {
+   "line": 235,
+   "id": "who_makes_cqc_statutory_notifications",
+   "label": "Who makes CQC statutory notifications",
+   "cat": "VALUE",
+   "type": "role",
+   "default": "",
+   "src": "inline"
+  },
+  {
+   "line": 277,
+   "id": "default_every_3_months_or_sooner_on_any_change",
+   "label": "Default every 3 months, or sooner on any change",
+   "cat": "VALUE",
+   "type": "duration",
+   "default": "every 3 months, or sooner on any change",
+   "src": "inline"
+  },
+  {
+   "line": 289,
+   "id": "local_marac_referral_route",
+   "label": "Local MARAC referral route",
+   "cat": "VALUE",
+   "type": "text",
+   "default": "",
+   "src": "inline"
+  },
+  {
+   "line": 294,
+   "id": "local_prevent_channel_referral_contact",
+   "label": "Local Prevent/Channel referral contact",
+   "cat": "VALUE",
+   "type": "text",
+   "default": "",
+   "src": "inline"
+  },
+  {
+   "line": 322,
+   "id": "role",
+   "label": "Role",
+   "cat": "VALUE",
+   "type": "role",
+   "default": "",
+   "src": "inline"
+  },
+  {
+   "line": 332,
+   "id": "access_to_occupational_health_or_an_employee_ass",
+   "label": "Access to occupational health or an employee assistance programme",
+   "cat": "VALUE",
+   "type": "text",
+   "default": "",
+   "src": "inline"
+  },
+  {
+   "line": 342,
+   "id": "governance_meeting",
+   "label": "Governance meeting",
+   "cat": "VALUE",
+   "type": "text",
+   "default": "",
+   "src": "inline"
+  },
+  {
+   "line": 347,
+   "id": "audit_owner_and_frequency",
+   "label": "Audit owner and frequency",
+   "cat": "VALUE",
+   "type": "role",
+   "default": "Safeguarding Lead, annually",
+   "src": "inline"
+  },
+  {
+   "line": 354,
+   "id": "checked_annually",
+   "label": "Checked annually",
+   "cat": "VALUE",
+   "type": "duration",
+   "default": "",
+   "src": "inline"
+  },
+  {
+   "line": 378,
+   "id": "name",
+   "label": "Name",
+   "cat": "VALUE",
+   "type": "text",
+   "default": "",
+   "src": "inline"
+  },
+  {
+   "line": 378,
+   "id": "contact",
+   "label": "Contact",
+   "cat": "VALUE",
+   "type": "text",
+   "default": "",
+   "src": "inline"
+  },
+  {
+   "line": 381,
+   "id": "name_of_authority",
+   "label": "Name of authority",
+   "cat": "VALUE",
+   "type": "text",
+   "default": "",
+   "src": "inline"
+  },
+  {
+   "line": 381,
+   "id": "phone",
+   "label": "Phone",
+   "cat": "VALUE",
+   "type": "text",
+   "default": "",
+   "src": "inline"
+  },
+  {
+   "line": 381,
+   "id": "out_of_hours",
+   "label": "Out of hours",
+   "cat": "VALUE",
+   "type": "text",
+   "default": "",
+   "src": "inline"
+  }
+ ],
+ "C09": [
+  {
+   "line": 3,
+   "id": "clinic_name",
+   "label": "Clinic name",
+   "cat": "VALUE",
+   "type": "clinic-name",
+   "default": "",
+   "src": "global"
+  },
+  {
+   "line": 13,
+   "id": "named_responsible_person",
+   "label": "Named responsible person",
+   "cat": "VALUE",
+   "type": "role",
+   "default": "",
+   "src": "inline"
+  },
+  {
+   "line": 14,
+   "id": "authorised_by",
+   "label": "Authorised by",
+   "cat": "VALUE",
+   "type": "text",
+   "default": "",
+   "src": "table-row"
+  },
+  {
+   "line": 15,
+   "id": "issue_date",
+   "label": "Issue Date",
+   "cat": "VALUE",
+   "type": "date",
+   "default": "",
+   "src": "table-row"
+  },
+  {
+   "line": 25,
+   "id": "cite_the_current_edition",
+   "label": "Cite the current edition",
+   "cat": "VALUE",
+   "type": "text",
+   "default": "",
+   "src": "inline"
+  },
+  {
+   "line": 58,
+   "id": "who_maintains_the_approved_abbreviation_list",
+   "label": "Who maintains the approved abbreviation list",
+   "cat": "VALUE",
+   "type": "role",
+   "default": "",
+   "src": "inline"
+  },
+  {
+   "line": 112,
+   "id": "role",
+   "label": "Role",
+   "cat": "VALUE",
+   "type": "role",
+   "default": "",
+   "src": "inline"
+  },
+  {
+   "line": 114,
+   "id": "who_may_amend_a_record_and_who_may_not",
+   "label": "Who may amend a record, and who may not",
+   "cat": "CLAUSE",
+   "type": "role",
+   "default": "a clinician may add an addendum to their own entry at any time; nobody may amend another person's entry \u2014 they add their own, cross-referenced",
+   "src": "inline"
+  },
+  {
+   "line": 129,
+   "id": "where_paper_records_are_held_and_what_protects_t",
+   "label": "Where paper records are held, and what protects them",
+   "cat": "VALUE",
+   "type": "text",
+   "default": "",
+   "src": "inline"
+  },
+  {
+   "line": 130,
+   "id": "electronic_system_where_data_is_hosted_and_wheth",
+   "label": "Electronic system, where data is hosted, and whether it is UK/EEA hosted",
+   "cat": "VALUE",
+   "type": "text",
+   "default": "",
+   "src": "inline"
+  },
+  {
+   "line": 131,
+   "id": "backup_arrangements_and_how_restoration_is_teste",
+   "label": "Backup arrangements and how restoration is tested",
+   "cat": "CLAUSE",
+   "type": "duration",
+   "default": "daily backup, restoration tested at least annually \u2014 an untested backup is an assumption, not a control",
+   "src": "inline"
+  },
+  {
+   "line": 138,
+   "id": "verify_every_period_below_agai",
+   "label": "[reviewer note]",
+   "cat": "NOTE",
+   "type": "note",
+   "default": "",
+   "note": "verify every period below against the current **Records Management Code of Practice** before adopting. The schedule in v01 was drawn from a ",
+   "src": "note"
+  },
+  {
+   "line": 147,
+   "id": "against_the_current_code",
+   "label": "Against the current Code",
+   "cat": "VALUE",
+   "type": "text",
+   "default": "",
+   "src": "inline"
+  },
+  {
+   "line": 149,
+   "id": "who_places_and_lifts_a_retention_hold",
+   "label": "Who places and lifts a retention hold",
+   "cat": "VALUE",
+   "type": "role",
+   "default": "",
+   "src": "inline"
+  },
+  {
+   "line": 151,
+   "id": "destruction_schedule",
+   "label": "Destruction schedule",
+   "cat": "VALUE",
+   "type": "role",
+   "default": "annual review by the Registered Manager",
+   "src": "inline"
+  },
+  {
+   "line": 158,
+   "id": "who_holds_the_destruction_log",
+   "label": "Who holds the destruction log",
+   "cat": "VALUE",
+   "type": "role",
+   "default": "",
+   "src": "inline"
+  },
+  {
+   "line": 164,
+   "id": "audit_owner_and_frequency",
+   "label": "Audit owner and frequency",
+   "cat": "VALUE",
+   "type": "role",
+   "default": "Clinical Lead, six-monthly",
+   "src": "inline"
+  },
+  {
+   "line": 178,
+   "id": "governance_meeting",
+   "label": "Governance meeting",
+   "cat": "VALUE",
+   "type": "text",
+   "default": "",
+   "src": "inline"
+  },
+  {
+   "line": 178,
+   "id": "record_keeping_audit_results_feed_individual_app",
+   "label": "Record keeping audit results feed individual appraisal",
+   "cat": "DECISION",
+   "type": "yes/no",
+   "default": "",
+   "src": "inline"
+  }
+ ],
+ "C41": [
+  {
+   "line": 3,
+   "id": "clinic_name",
+   "label": "Clinic name",
+   "cat": "VALUE",
+   "type": "clinic-name",
+   "default": "",
+   "src": "global"
+  },
+  {
+   "line": 11,
+   "id": "named_responsible_person",
+   "label": "Named responsible person",
+   "cat": "VALUE",
+   "type": "role",
+   "default": "",
+   "src": "inline"
+  },
+  {
+   "line": 12,
+   "id": "authorised_by",
+   "label": "Authorised by",
+   "cat": "VALUE",
+   "type": "text",
+   "default": "",
+   "src": "table-row"
+  },
+  {
+   "line": 13,
+   "id": "issue_date",
+   "label": "Issue Date",
+   "cat": "VALUE",
+   "type": "date",
+   "default": "",
+   "src": "table-row"
+  },
+  {
+   "line": 60,
+   "id": "additional_service_specific_trigger",
+   "label": "Additional service-specific trigger",
+   "cat": "VALUE",
+   "type": "text",
+   "default": "",
+   "src": "inline"
+  },
+  {
+   "line": 69,
+   "id": "services_where_gp_notification_is_a_non_negotiab",
+   "label": "Services where GP notification is a non-negotiable condition of treatment",
+   "cat": "CLAUSE",
+   "type": "text",
+   "default": "controlled drugs, any long-term or high-risk medicine, and any treatment requiring blood monitoring. For these, \"no GP letter\" means \"no treatment.\"",
+   "src": "inline"
+  },
+  {
+   "line": 73,
+   "id": "route_used",
+   "label": "Route used",
+   "cat": "CLAUSE",
+   "type": "address",
+   "default": "NHSmail (@nhs.net) to the practice's shared clinical inbox where both parties hold NHSmail; otherwise password-protected attachment or postal letter marked priv",
+   "src": "inline"
+  },
+  {
+   "line": 75,
+   "id": "who_reviews_incoming_clinical_correspondence_and",
+   "label": "Who reviews incoming clinical correspondence and within what timescale",
+   "cat": "VALUE",
+   "type": "role",
+   "default": "the treating clinician, within 3 working days",
+   "src": "inline"
+  },
+  {
+   "line": 105,
+   "id": "default_2_working_days",
+   "label": "Default 2 working days",
+   "cat": "VALUE",
+   "type": "duration",
+   "default": "2 working days",
+   "src": "inline"
+  },
+  {
+   "line": 106,
+   "id": "default_5_working_days",
+   "label": "Default 5 working days",
+   "cat": "VALUE",
+   "type": "duration",
+   "default": "5 working days",
+   "src": "inline"
+  },
+  {
+   "line": 114,
+   "id": "services_that_require_a_registered_gp",
+   "label": "Services that require a registered GP",
+   "cat": "VALUE",
+   "type": "text",
+   "default": "any treatment requiring monitoring or repeat prescribing",
+   "src": "inline"
+  },
+  {
+   "line": 132,
+   "id": "audit_owner_and_frequency",
+   "label": "Audit owner and frequency",
+   "cat": "VALUE",
+   "type": "role",
+   "default": "Clinical Lead, six-monthly",
+   "src": "inline"
+  },
+  {
+   "line": 140,
+   "id": "governance_meeting",
+   "label": "Governance meeting",
+   "cat": "VALUE",
+   "type": "text",
+   "default": "",
+   "src": "inline"
+  }
+ ],
+ "S01": [
+  {
+   "line": 3,
+   "id": "clinic_name",
+   "label": "Clinic name",
+   "cat": "VALUE",
+   "type": "clinic-name",
+   "default": "",
+   "src": "global"
+  },
+  {
+   "line": 11,
+   "id": "named_responsible_person",
+   "label": "Named responsible person",
+   "cat": "VALUE",
+   "type": "role",
+   "default": "",
+   "src": "inline"
+  },
+  {
+   "line": 12,
+   "id": "authorised_by",
+   "label": "Authorised by",
+   "cat": "VALUE",
+   "type": "text",
+   "default": "",
+   "src": "table-row"
+  },
+  {
+   "line": 13,
+   "id": "issue_date",
+   "label": "Issue Date",
+   "cat": "VALUE",
+   "type": "date",
+   "default": "",
+   "src": "table-row"
+  },
+  {
+   "line": 24,
+   "id": "applicability",
+   "label": "Applicability",
+   "cat": "VALUE",
+   "type": "text",
+   "default": "",
+   "src": "inline"
+  },
+  {
+   "line": 84,
+   "id": "what_adjustments_the_clinic_can_make_and_what_it",
+   "label": "What adjustments the clinic can make and what it cannot",
+   "cat": "VALUE",
+   "type": "date",
+   "default": "",
+   "src": "inline"
+  },
+  {
+   "line": 86,
+   "id": "what_is_available",
+   "label": "What is available",
+   "cat": "VALUE",
+   "type": "duration",
+   "default": "",
+   "src": "inline"
+  },
+  {
+   "line": 117,
+   "id": "what_the_clinic_does_where_a_patient_harasses_a_",
+   "label": "What the clinic does where a patient harasses a member of staff",
+   "cat": "CLAUSE",
+   "type": "text",
+   "default": "the member of staff may withdraw from the situation immediately without needing permission; the incident is reported under C017; and the clinic decides whether ",
+   "src": "inline"
+  },
+  {
+   "line": 148,
+   "id": "edi_training",
+   "label": "EDI training",
+   "cat": "VALUE",
+   "type": "role",
+   "default": "all staff at induction, then every 3 years",
+   "src": "inline"
+  },
+  {
+   "line": 149,
+   "id": "the_clinic_monitors_the_diversity_of_its_workfor",
+   "label": "The clinic monitors the diversity of its workforce and of the patients it sees, and what it does with that information",
+   "cat": "DECISION",
+   "type": "yes/no",
+   "default": "",
+   "src": "inline"
+  },
+  {
+   "line": 159,
+   "id": "audit_owner_and_frequency",
+   "label": "Audit owner and frequency",
+   "cat": "VALUE",
+   "type": "role",
+   "default": "Registered Manager, annually",
+   "src": "inline"
+  }
+ ],
+ "S03": [
+  {
+   "line": 3,
+   "id": "clinic_name",
+   "label": "Clinic name",
+   "cat": "VALUE",
+   "type": "clinic-name",
+   "default": "",
+   "src": "global"
+  },
+  {
+   "line": 11,
+   "id": "named_responsible_person",
+   "label": "Named responsible person",
+   "cat": "VALUE",
+   "type": "role",
+   "default": "",
+   "src": "inline"
+  },
+  {
+   "line": 12,
+   "id": "authorised_by",
+   "label": "Authorised by",
+   "cat": "VALUE",
+   "type": "text",
+   "default": "",
+   "src": "table-row"
+  },
+  {
+   "line": 13,
+   "id": "issue_date",
+   "label": "Issue Date",
+   "cat": "VALUE",
+   "type": "date",
+   "default": "",
+   "src": "table-row"
+  },
+  {
+   "line": 58,
+   "id": "role",
+   "label": "Role",
+   "cat": "VALUE",
+   "type": "role",
+   "default": "",
+   "src": "inline"
+  },
+  {
+   "line": 95,
+   "id": "governance_meeting",
+   "label": "Governance meeting",
+   "cat": "VALUE",
+   "type": "text",
+   "default": "",
+   "src": "inline"
+  },
+  {
+   "line": 106,
+   "id": "named_registered_manager",
+   "label": "Named Registered Manager",
+   "cat": "VALUE",
+   "type": "role",
+   "default": "",
+   "src": "inline"
+  },
+  {
+   "line": 107,
+   "id": "named_clinical_lead",
+   "label": "Named Clinical Lead",
+   "cat": "VALUE",
+   "type": "role",
+   "default": "",
+   "src": "inline"
+  },
+  {
+   "line": 108,
+   "id": "named_safeguarding_lead",
+   "label": "Named Safeguarding Lead",
+   "cat": "VALUE",
+   "type": "role",
+   "default": "",
+   "src": "inline"
+  },
+  {
+   "line": 109,
+   "id": "named_speaking_up_guardian_or_an_independent_nam",
+   "label": "Named Speaking Up Guardian, or an independent named person such as a non-executive director or external adviser",
+   "cat": "CLAUSE",
+   "type": "role",
+   "default": "for a small clinic: a named person outside the direct management line \u2014 this must be a real named individual, not a role that does not exist",
+   "src": "inline"
+  },
+  {
+   "line": 111,
+   "id": "an_anonymous_route_exists",
+   "label": "An anonymous route exists",
+   "cat": "DECISION",
+   "type": "yes/no",
+   "default": "a monitored email address checked by two named people",
+   "src": "inline"
+  },
+  {
+   "line": 123,
+   "id": "default_2_working_days",
+   "label": "Default 2 working days",
+   "cat": "VALUE",
+   "type": "duration",
+   "default": "2 working days",
+   "src": "inline"
+  },
+  {
+   "line": 124,
+   "id": "default_5_working_days",
+   "label": "Default 5 working days",
+   "cat": "VALUE",
+   "type": "duration",
+   "default": "5 working days",
+   "src": "inline"
+  },
+  {
+   "line": 126,
+   "id": "default_20_working_days_where_longer_the_person_",
+   "label": "Default 20 working days; where longer, the person is told wh",
+   "cat": "CLAUSE",
+   "type": "role",
+   "default": "20 working days; where longer, the person is told why and given a revised date",
+   "src": "inline"
+  },
+  {
+   "line": 152,
+   "id": "local_contact",
+   "label": "Local contact",
+   "cat": "VALUE",
+   "type": "text",
+   "default": "",
+   "src": "inline"
+  },
+  {
+   "line": 158,
+   "id": "occupational_health_eap_arrangements_if_any",
+   "label": "Occupational health / EAP arrangements, if any",
+   "cat": "VALUE",
+   "type": "text",
+   "default": "",
+   "src": "inline"
+  },
+  {
+   "line": 167,
+   "id": "default_annual",
+   "label": "Default annual",
+   "cat": "VALUE",
+   "type": "text",
+   "default": "annual",
+   "src": "inline"
+  },
+  {
+   "line": 168,
+   "id": "where",
+   "label": "Where",
+   "cat": "VALUE",
+   "type": "text",
+   "default": "staff room and staff intranet",
+   "src": "inline"
+  },
+  {
+   "line": 170,
+   "id": "default_six_monthly",
+   "label": "Default six-monthly",
+   "cat": "VALUE",
+   "type": "duration",
+   "default": "six-monthly",
+   "src": "inline"
+  },
+  {
+   "line": 174,
+   "id": "audit_owner_and_frequency",
+   "label": "Audit owner and frequency",
+   "cat": "VALUE",
+   "type": "role",
+   "default": "Registered Manager, annually",
+   "src": "inline"
+  }
+ ],
+ "S12": [
+  {
+   "line": 3,
+   "id": "clinic_name",
+   "label": "Clinic name",
+   "cat": "VALUE",
+   "type": "clinic-name",
+   "default": "",
+   "src": "global"
+  },
+  {
+   "line": 11,
+   "id": "named_responsible_person",
+   "label": "Named responsible person",
+   "cat": "VALUE",
+   "type": "role",
+   "default": "",
+   "src": "inline"
+  },
+  {
+   "line": 12,
+   "id": "authorised_by",
+   "label": "Authorised by",
+   "cat": "VALUE",
+   "type": "text",
+   "default": "",
+   "src": "table-row"
+  },
+  {
+   "line": 13,
+   "id": "issue_date",
+   "label": "Issue Date",
+   "cat": "VALUE",
+   "type": "date",
+   "default": "",
+   "src": "table-row"
+  },
+  {
+   "line": 51,
+   "id": "where",
+   "label": "Where",
+   "cat": "VALUE",
+   "type": "text",
+   "default": "on the website, in the waiting area, and provided on request",
+   "src": "inline"
+  },
+  {
+   "line": 63,
+   "id": "an_assessment_fee_is_refundable_where_no_treatme",
+   "label": "An assessment fee is refundable where no treatment is offered",
+   "cat": "DECISION",
+   "type": "yes/no",
+   "default": "the assessment fee is retained, because the assessment was delivered \u2014 but this must be stated before the appointment, not after",
+   "src": "inline"
+  },
+  {
+   "line": 65,
+   "id": "mechanism",
+   "label": "Mechanism",
+   "cat": "CLAUSE",
+   "type": "text",
+   "default": "the patient confirms the quoted fee in writing (booking confirmation, signed consent form, or e-form) and a copy is retained",
+   "src": "inline"
+  },
+  {
+   "line": 75,
+   "id": "known_financial_interests_to_be_declared_as_stan",
+   "label": "Known financial interests to be declared as standard",
+   "cat": "VALUE",
+   "type": "text",
+   "default": "",
+   "src": "inline"
+  },
+  {
+   "line": 79,
+   "id": "charges_for_non_routine_administrative_work",
+   "label": "Charges for non-routine administrative work",
+   "cat": "VALUE",
+   "type": "list",
+   "default": "",
+   "src": "inline"
+  },
+  {
+   "line": 102,
+   "id": "default_48_hours",
+   "label": "Default 48 hours",
+   "cat": "VALUE",
+   "type": "text",
+   "default": "48 hours",
+   "src": "inline"
+  },
+  {
+   "line": 102,
+   "id": "default_full_refund_or_free_reschedule",
+   "label": "Default \u2014 full refund or free reschedule",
+   "cat": "VALUE",
+   "type": "text",
+   "default": "\u2014 full refund or free reschedule",
+   "src": "inline"
+  },
+  {
+   "line": 103,
+   "id": "default_fee_retained_discretion_applied_for_illn",
+   "label": "Default \u2014 fee retained, discretion applied for illness, bere",
+   "cat": "CLAUSE",
+   "type": "text",
+   "default": "\u2014 fee retained, discretion applied for illness, bereavement or emergency",
+   "src": "inline"
+  },
+  {
+   "line": 104,
+   "id": "default_fee_retained",
+   "label": "Default \u2014 fee retained",
+   "cat": "VALUE",
+   "type": "text",
+   "default": "\u2014 fee retained",
+   "src": "inline"
+  },
+  {
+   "line": 107,
+   "id": "default_refund_of_unused_sessions_less_any_non_r",
+   "label": "Default \u2014 refund of unused sessions less any non-recoverable",
+   "cat": "CLAUSE",
+   "type": "text",
+   "default": "\u2014 refund of unused sessions less any non-recoverable costs already incurred, itemised",
+   "src": "inline"
+  },
+  {
+   "line": 114,
+   "id": "named_role",
+   "label": "Named role",
+   "cat": "VALUE",
+   "type": "role",
+   "default": "",
+   "src": "inline"
+  },
+  {
+   "line": 115,
+   "id": "default_3_working_days",
+   "label": "Default 3 working days",
+   "cat": "VALUE",
+   "type": "duration",
+   "default": "3 working days",
+   "src": "inline"
+  },
+  {
+   "line": 116,
+   "id": "default_20_working_days",
+   "label": "Default 20 working days",
+   "cat": "VALUE",
+   "type": "duration",
+   "default": "20 working days",
+   "src": "inline"
+  },
+  {
+   "line": 117,
+   "id": "e_g",
+   "label": "E.g",
+   "cat": "VALUE",
+   "type": "text",
+   "default": "",
+   "src": "inline"
+  },
+  {
+   "line": 118,
+   "id": "governance_meeting",
+   "label": "Governance meeting",
+   "cat": "VALUE",
+   "type": "text",
+   "default": "",
+   "src": "inline"
+  },
+  {
+   "line": 126,
+   "id": "default_annually",
+   "label": "Default annually",
+   "cat": "VALUE",
+   "type": "duration",
+   "default": "annually",
+   "src": "inline"
+  },
+  {
+   "line": 126,
+   "id": "role",
+   "label": "Role",
+   "cat": "VALUE",
+   "type": "role",
+   "default": "",
+   "src": "inline"
+  },
+  {
+   "line": 129,
+   "id": "default_30_days",
+   "label": "Default 30 days",
+   "cat": "VALUE",
+   "type": "duration",
+   "default": "30 days",
+   "src": "inline"
+  },
+  {
+   "line": 133,
+   "id": "audit_owner_and_frequency",
+   "label": "Audit owner and frequency",
+   "cat": "VALUE",
+   "type": "role",
+   "default": "Registered Manager, annually",
+   "src": "inline"
+  }
+ ],
+ "S13": [
+  {
+   "line": 3,
+   "id": "clinic_name",
+   "label": "Clinic name",
+   "cat": "VALUE",
+   "type": "clinic-name",
+   "default": "",
+   "src": "global"
+  },
+  {
+   "line": 11,
+   "id": "named_responsible_person",
+   "label": "Named responsible person",
+   "cat": "VALUE",
+   "type": "role",
+   "default": "",
+   "src": "inline"
+  },
+  {
+   "line": 12,
+   "id": "authorised_by",
+   "label": "Authorised by",
+   "cat": "VALUE",
+   "type": "text",
+   "default": "",
+   "src": "table-row"
+  },
+  {
+   "line": 13,
+   "id": "issue_date",
+   "label": "Issue Date",
+   "cat": "VALUE",
+   "type": "date",
+   "default": "",
+   "src": "table-row"
+  },
+  {
+   "line": 53,
+   "id": "default_21_calendar_days_of_publication_cqc_s_gu",
+   "label": "Default 21 calendar days of publication \u2014 CQC's guidance exp",
+   "cat": "CLAUSE",
+   "type": "duration",
+   "default": "21 calendar days of publication \u2014 CQC's guidance expects display \"as soon as reasonably practicable\"; 21 days is the outside limit, not the target",
+   "src": "inline"
+  },
+  {
+   "line": 64,
+   "id": "where_the_service_operates_from_gphc_registered_",
+   "label": "Where the service operates from GPhC-registered pharmacy premises",
+   "cat": "VALUE",
+   "type": "text",
+   "default": "",
+   "src": "inline"
+  },
+  {
+   "line": 65,
+   "id": "registration_numbers_of_the_professionals_provid",
+   "label": "Registration numbers of the professionals providing care, if displayed",
+   "cat": "VALUE",
+   "type": "text",
+   "default": "",
+   "src": "inline"
+  },
+  {
+   "line": 69,
+   "id": "default_checked_quarterly_and_recorded",
+   "label": "Default \u2014 checked quarterly and recorded.",
+   "cat": "VALUE",
+   "type": "duration",
+   "default": "\u2014 checked quarterly and recorded",
+   "src": "inline"
+  },
+  {
+   "line": 85,
+   "id": "gphc_premises_registration_number_if_applicable",
+   "label": "GPhC premises registration number, if applicable",
+   "cat": "VALUE",
+   "type": "text",
+   "default": "",
+   "src": "inline"
+  },
+  {
+   "line": 86,
+   "id": "responsible_pharmacist_notice_if_applicable",
+   "label": "Responsible Pharmacist notice, if applicable",
+   "cat": "VALUE",
+   "type": "text",
+   "default": "",
+   "src": "inline"
+  },
+  {
+   "line": 87,
+   "id": "professional_registration_numbers_of_clinicians",
+   "label": "Professional registration numbers of clinicians",
+   "cat": "VALUE",
+   "type": "text",
+   "default": "",
+   "src": "inline"
+  },
+  {
+   "line": 90,
+   "id": "additional_premises",
+   "label": "Additional premises",
+   "cat": "VALUE",
+   "type": "duration",
+   "default": "",
+   "src": "inline"
+  },
+  {
+   "line": 94,
+   "id": "role",
+   "label": "Role",
+   "cat": "VALUE",
+   "type": "role",
+   "default": "",
+   "src": "inline"
+  },
+  {
+   "line": 95,
+   "id": "default_5_working_days",
+   "label": "Default 5 working days",
+   "cat": "VALUE",
+   "type": "duration",
+   "default": "5 working days",
+   "src": "inline"
+  },
+  {
+   "line": 100,
+   "id": "governance_meeting",
+   "label": "Governance meeting",
+   "cat": "VALUE",
+   "type": "text",
+   "default": "",
+   "src": "inline"
+  },
+  {
+   "line": 119,
+   "id": "others",
+   "label": "Others",
+   "cat": "VALUE",
+   "type": "text",
+   "default": "",
+   "src": "inline"
+  },
+  {
+   "line": 125,
+   "id": "default_quarterly",
+   "label": "Default quarterly",
+   "cat": "VALUE",
+   "type": "duration",
+   "default": "quarterly",
+   "src": "inline"
+  },
+  {
+   "line": 138,
+   "id": "audit_owner_and_frequency",
+   "label": "Audit owner and frequency",
+   "cat": "VALUE",
+   "type": "role",
+   "default": "Registered Manager, annually",
+   "src": "inline"
+  }
+ ]
+}
