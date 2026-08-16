@@ -179,3 +179,18 @@ Near-complete implementation of the round-4 CPD fix spec. Every headline P0 addr
 - **Regulator rendering (T9).** This is the **GMC** view (appraisal supporting information, domains, cycle). Spec = capture-once / render-per-regulator. **Is there a GPhC view** rendering the 6-record model (4 CPD ≥2 planned · 1 peer discussion · 1 reflective account) and the named-peer consent flow? No toggle visible — check a GPhC profile re-renders it.
 - **Peer-discussion + named-peer consent flow (T3/T5)** — not visible on this screen (needs an MDT-case-derived record). Confirm MDT case → peer discussion, with the panel-consent-to-be-named model (default off, group=name-one).
 - Test-data purge (T10) — page is clean/empty here.
+
+
+---
+
+## §7 — MDT overview ✅ (round-4 P0 regressions fixed)
+
+The Tier 1 purge + schedule fix landed.
+- **M1 fixed** — test members Dr P. Word and Ep Och removed. Clinical MDT: Kaur (Derm), Mehta (GP), Bright (Psych).
+- **M2 fixed** — date now 25 Aug 2026 (Tuesday, last Tuesday of Aug), **matching the dashboard** → schedule single-sourced across surfaces.
+- **M3 fixed** — one chair (Okafor); J. Hale duplicate-chair gone.
+- **M4 fixed** — specialties shown on every member (needed for routing + peer-discussion record).
+
+**Verify:**
+- **Is pharmacy still represented?** Round 4 had Dr N. Newman (Pharmacy & prescribing) in the clinical list; only Derm/GP/Psych shown here. Removing Word/Och was right — confirm Newman wasn't removed too, or a pharmacist-led product has no pharmacy voice on its clinical panel.
+- **M6 not fixed** — banner still reads "Live session" for a future date (25 Aug); should be "Next session." P2.
