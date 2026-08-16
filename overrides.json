@@ -60,5 +60,9 @@
  "C021:166": "Written follow-up timescale",
  "C021:176": "Near-miss disclosure position",
  "C08:277": "Decision-not-to-refer review interval",
- "S03:126": "Investigation timescale"
+ "S03:126": "Investigation timescale",
+ "S12:103": "Cancellation fee position (under 48h notice)",
+ "S12:107": "Part-course cancellation refund position",
+ "S13:53": "Rating-display update deadline",
+ "S13:69": "Display-accuracy check frequency"
 }

@@ -695,9 +695,9 @@ Machine-readable version: `fields.json`.
 | 79 | Charges for non-routine administrative work | VALUE | list |  |
 | 102 | Cancellation notice period (full refund) | VALUE | text | 48 hours |
 | 102 | Cancellation notice period (full refund) | VALUE | text | — full refund or free reschedule |
-| 103 | Default — fee retained, discretion applied for illness, bere | CLAUSE | text | — fee retained, discretion applied for illness, bereavement or emergency |
+| 103 | Cancellation fee position (under 48h notice) | CLAUSE | text | — fee retained, discretion applied for illness, bereavement or emergency |
 | 104 | Did-not-attend fee position | VALUE | text | — fee retained |
-| 107 | Default — refund of unused sessions less any non-recoverable | CLAUSE | text | — refund of unused sessions less any non-recoverable costs already incurred, itemised |
+| 107 | Part-course cancellation refund position | CLAUSE | text | — refund of unused sessions less any non-recoverable costs already incurred, itemised |
 | 114 | Named role | VALUE | role |  |
 | 115 | Refund acknowledgement timescale | VALUE | duration | 3 working days |
 | 116 | Refund decision timescale | VALUE | duration | 20 working days |
@@ -716,10 +716,10 @@ Machine-readable version: `fields.json`.
 | 11 | Named responsible person | VALUE | role |  |
 | 12 | Authorised by | VALUE | text |  |
 | 13 | Issue Date | VALUE | date |  |
-| 53 | Default 21 calendar days of publication — CQC's guidance exp | CLAUSE | duration | 21 calendar days of publication — CQC's guidance expects display "as soon as reasonably practicable"; 21 days is the outside limit, not the target |
+| 53 | Rating-display update deadline | CLAUSE | duration | 21 calendar days of publication — CQC's guidance expects display "as soon as reasonably practicable"; 21 days is the outside limit, not the target |
 | 64 | Where the service operates from GPhC-registered pharmacy premises | VALUE | text |  |
 | 65 | Registration numbers of the professionals providing care, if displayed | VALUE | text |  |
-| 69 | Default — checked quarterly and recorded. | VALUE | duration | — checked quarterly and recorded |
+| 69 | Display-accuracy check frequency | VALUE | duration | — checked quarterly and recorded |
 | 85 | GPhC premises registration number, if applicable | VALUE | text |  |
 | 86 | Responsible Pharmacist notice, if applicable | VALUE | text |  |
 | 87 | Professional registration numbers of clinicians | VALUE | text |  |

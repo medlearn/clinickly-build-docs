@@ -5067,7 +5067,7 @@
   {
    "line": 103,
    "id": "default_fee_retained_discretion_applied_for_illn",
-   "label": "Default \u2014 fee retained, discretion applied for illness, bere",
+   "label": "Cancellation fee position (under 48h notice)",
    "cat": "CLAUSE",
    "type": "text",
    "default": "\u2014 fee retained, discretion applied for illness, bereavement or emergency",
@@ -5085,7 +5085,7 @@
   {
    "line": 107,
    "id": "default_refund_of_unused_sessions_less_any_non_r",
-   "label": "Default \u2014 refund of unused sessions less any non-recoverable",
+   "label": "Part-course cancellation refund position",
    "cat": "CLAUSE",
    "type": "text",
    "default": "\u2014 refund of unused sessions less any non-recoverable costs already incurred, itemised",
@@ -5213,7 +5213,7 @@
   {
    "line": 53,
    "id": "default_21_calendar_days_of_publication_cqc_s_gu",
-   "label": "Default 21 calendar days of publication \u2014 CQC's guidance exp",
+   "label": "Rating-display update deadline",
    "cat": "CLAUSE",
    "type": "duration",
    "default": "21 calendar days of publication \u2014 CQC's guidance expects display \"as soon as reasonably practicable\"; 21 days is the outside limit, not the target",
@@ -5240,7 +5240,7 @@
   {
    "line": 69,
    "id": "default_checked_quarterly_and_recorded",
-   "label": "Default \u2014 checked quarterly and recorded.",
+   "label": "Display-accuracy check frequency",
    "cat": "VALUE",
    "type": "duration",
    "default": "\u2014 checked quarterly and recorded",
