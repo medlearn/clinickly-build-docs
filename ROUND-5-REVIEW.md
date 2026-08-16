@@ -76,3 +76,21 @@
 **The one thing still unseen:** a successful live AI draft. Until the connected-AI path executes, the final device question — what the model writes as an Assessment — cannot be closed. Everything observable is on the safe side; the unobservable bit is the one that matters most.
 
 **Sections still to review:** Clinical notes · Guidelines · Templates & SOPs · Training · MDT overview · My cases · Session library (clinician side), then the panel + admin re-review.
+
+
+---
+
+## §2 UPDATE — AI draft confirmed NOT executing (3/3 fallback)
+
+Three drafting attempts, all **FALLBACK DRAFT / "AI drafting unavailable."** The connected-AI path does not run in this build. The "AI DRAFT" badge shows only in the empty state; on draft it flips to FALLBACK every time.
+
+**Confirmed robust (the safe floor):** fed a textbook ADHD transcript, the fallback still did **not** write "ADHD" — Assessment handed to the clinician, transcript preserved, nothing fabricated. The system does not manufacture a diagnosis even when it is obvious.
+
+**🔴 The critical open question — developer must answer:**
+
+> Is the note falling back because **(a)** the AI call errors (a bug), or **(b)** the governed database has no ADHD assessment content, so it correctly declines to draft an impression it cannot ground (the design working)?
+
+- If **(a)** — build defect; the live Assessment cannot be reviewed until fixed, and the device question stays open.
+- If **(b)** — reassuring: the system refuses to write a clinical impression without governed grounding and defaults to clinician-completes. Reframes the device question to: *when governed content exists, does it write an impression, or only surface cited support?* (Latter = safe.)
+
+**Nothing observable is over the device line. The unobservable part — a successful AI Assessment — is the one thing still blocking device-line sign-off, and it is now the top diagnostic for the developer.**
