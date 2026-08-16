@@ -255,7 +255,7 @@
   {
    "line": 201,
    "id": "default_quarterly",
-   "label": "Default quarterly",
+   "label": "Contact-details check frequency",
    "cat": "VALUE",
    "type": "duration",
    "default": "quarterly",
@@ -264,7 +264,7 @@
   {
    "line": 202,
    "id": "default_annually",
-   "label": "Default annually",
+   "label": "Desktop exercise frequency",
    "cat": "VALUE",
    "type": "duration",
    "default": "annually",
@@ -383,7 +383,7 @@
   {
    "line": 129,
    "id": "default_every_3_years",
-   "label": "Default every 3 years",
+   "label": "Chaperone training refresh interval",
    "cat": "VALUE",
    "type": "duration",
    "default": "every 3 years",
@@ -466,7 +466,7 @@
   {
    "line": 70,
    "id": "default_3_years_with_annual_updates_for_level_3",
-   "label": "Default 3 years, with annual updates for Level 3",
+   "label": "Safeguarding-adults training frequency",
    "cat": "VALUE",
    "type": "duration",
    "default": "3 years, with annual updates for Level 3",
@@ -475,7 +475,7 @@
   {
    "line": 71,
    "id": "default_3_years",
-   "label": "Default 3 years",
+   "label": "Safeguarding-children training frequency",
    "cat": "VALUE",
    "type": "duration",
    "default": "3 years",
@@ -484,7 +484,7 @@
   {
    "line": 74,
    "id": "default_annually",
-   "label": "Default annually",
+   "label": "IPC training frequency",
    "cat": "VALUE",
    "type": "duration",
    "default": "annually",
@@ -493,7 +493,7 @@
   {
    "line": 78,
    "id": "default_annually_for_fire",
-   "label": "Default annually for fire",
+   "label": "Health & safety / fire training frequency",
    "cat": "VALUE",
    "type": "duration",
    "default": "annually for fire",
@@ -819,7 +819,7 @@
   {
    "line": 114,
    "id": "where_minutes_are_held",
-   "label": "Where minutes are held",
+   "label": "Where governance minutes are held",
    "cat": "VALUE",
    "type": "text",
    "default": "",
@@ -929,7 +929,7 @@
   {
    "line": 130,
    "id": "named_person",
-   "label": "Named person",
+   "label": "RIDDOR reporting timescales",
    "cat": "VALUE",
    "type": "role",
    "default": "",
@@ -938,7 +938,7 @@
   {
    "line": 130,
    "id": "default_timescales_specified_injuries_and_danger",
-   "label": "Default timescales \u2014 specified injuries and dangerous occurr",
+   "label": "RIDDOR reporting timescales",
    "cat": "CLAUSE",
    "type": "duration",
    "default": "timescales \u2014 specified injuries and dangerous occurrences within 10 days; over-seven-day injuries within 15 days",
@@ -1028,7 +1028,7 @@
   {
    "line": 238,
    "id": "default_annually",
-   "label": "Default annually",
+   "label": "Incident-reporting training frequency",
    "cat": "VALUE",
    "type": "duration",
    "default": "annually",
@@ -1138,7 +1138,7 @@
   {
    "line": 85,
    "id": "default_annually",
-   "label": "Default annually",
+   "label": "Hand-hygiene training frequency",
    "cat": "VALUE",
    "type": "duration",
    "default": "annually",
@@ -1273,7 +1273,7 @@
   {
    "line": 178,
    "id": "where_it_is_kept_and_who_checks_it",
-   "label": "Where it is kept and who checks it",
+   "label": "Where the spillage kit is kept and who checks it",
    "cat": "VALUE",
    "type": "role",
    "default": "",
@@ -1345,7 +1345,7 @@
   {
    "line": 249,
    "id": "default_six_monthly",
-   "label": "Default six-monthly",
+   "label": "Hand-hygiene audit frequency",
    "cat": "VALUE",
    "type": "duration",
    "default": "six-monthly",
@@ -1354,7 +1354,7 @@
   {
    "line": 250,
    "id": "default_quarterly",
-   "label": "Default quarterly",
+   "label": "Environment / cleanliness audit frequency",
    "cat": "VALUE",
    "type": "duration",
    "default": "quarterly",
@@ -1411,7 +1411,7 @@
   {
    "line": 119,
    "id": "who_decides_and_who_is_the",
-   "label": "Who decides, and who is the",
+   "label": "Who decides who apologises, and the default apologiser",
    "cat": "VALUE",
    "type": "role",
    "default": "",
@@ -1438,7 +1438,7 @@
   {
    "line": 166,
    "id": "default_within_10_working_days_of_the_notificati",
-   "label": "Default within 10 working days of the notification",
+   "label": "Written follow-up timescale",
    "cat": "VALUE",
    "type": "duration",
    "default": "within 10 working days of the notification",
@@ -1447,7 +1447,7 @@
   {
    "line": 176,
    "id": "default_near_misses_the_patient_did_not_notice_a",
-   "label": "Default \u2014 near misses the patient did not notice are not rou",
+   "label": "Near-miss disclosure position",
    "cat": "CLAUSE",
    "type": "text",
    "default": "\u2014 near misses the patient did not notice are not routinely disclosed, but are always recorded and reviewed",
@@ -1465,7 +1465,7 @@
   {
    "line": 215,
    "id": "default_annually",
-   "label": "Default annually",
+   "label": "Duty-of-candour training frequency",
    "cat": "VALUE",
    "type": "duration",
    "default": "annually",
@@ -1557,7 +1557,7 @@
   {
    "line": 81,
    "id": "default_quarterly_minimum",
-   "label": "Default quarterly, minimum",
+   "label": "Governance meeting frequency",
    "cat": "VALUE",
    "type": "duration",
    "default": "quarterly, minimum",
@@ -1584,7 +1584,7 @@
   {
    "line": 84,
    "id": "where_and_for_how_long",
-   "label": "Where, and for how long",
+   "label": "Where governance minutes are held, and for how long",
    "cat": "VALUE",
    "type": "text",
    "default": "",
@@ -1766,7 +1766,7 @@
   {
    "line": 139,
    "id": "default_annually",
-   "label": "Default annually",
+   "label": "Registration re-verification interval",
    "cat": "VALUE",
    "type": "duration",
    "default": "annually",
@@ -1775,7 +1775,7 @@
   {
    "line": 141,
    "id": "renewal_interval",
-   "label": "Renewal interval,",
+   "label": "DBS renewal interval",
    "cat": "VALUE",
    "type": "duration",
    "default": "every 3 years, or subscription to the DBS Update Service",
@@ -2024,7 +2024,7 @@
   {
    "line": 90,
    "id": "default_annually",
-   "label": "Default annually",
+   "label": "Confidentiality / IG training frequency",
    "cat": "VALUE",
    "type": "duration",
    "default": "annually",
@@ -2217,7 +2217,7 @@
   {
    "line": 179,
    "id": "default_5_working_days",
-   "label": "Default 5 working days",
+   "label": "Referral-confirmation timescale",
    "cat": "VALUE",
    "type": "duration",
    "default": "5 working days",
@@ -2444,7 +2444,7 @@
   {
    "line": 104,
    "id": "default_re_audit_interval_6_months_or_3_months_w",
-   "label": "Default re-audit interval \u2014 6 months, or 3 months where the ",
+   "label": "Re-audit interval",
    "cat": "CLAUSE",
    "type": "duration",
    "default": "re-audit interval \u2014 6 months, or 3 months where the finding was significant",
@@ -2545,7 +2545,7 @@
   {
    "line": 71,
    "id": "default_weekly_see_c07",
-   "label": "Default weekly \u2014 see C07",
+   "label": "Emergency equipment & medicines check frequency",
    "cat": "VALUE",
    "type": "duration",
    "default": "weekly \u2014 see C07",
@@ -2725,7 +2725,7 @@
   {
    "line": 152,
    "id": "default_weekly",
-   "label": "Default weekly",
+   "label": "Emergency medicines check frequency",
    "cat": "VALUE",
    "type": "duration",
    "default": "weekly",
@@ -2761,7 +2761,7 @@
   {
    "line": 184,
    "id": "default_annually",
-   "label": "Default annually",
+   "label": "Emergency-recognition training frequency",
    "cat": "VALUE",
    "type": "duration",
    "default": "annually",
@@ -2970,7 +2970,7 @@
   {
    "line": 116,
    "id": "default_annually",
-   "label": "Default annually",
+   "label": "Fire risk assessment review frequency",
    "cat": "VALUE",
    "type": "duration",
    "default": "annually",
@@ -2979,7 +2979,7 @@
   {
    "line": 117,
    "id": "default_weekly_recorded",
-   "label": "Default weekly, recorded",
+   "label": "Fire alarm test frequency",
    "cat": "VALUE",
    "type": "duration",
    "default": "weekly, recorded",
@@ -2988,7 +2988,7 @@
   {
    "line": 120,
    "id": "default_annually_recorded",
-   "label": "Default annually, recorded",
+   "label": "Fire drill frequency",
    "cat": "VALUE",
    "type": "duration",
    "default": "annually, recorded",
@@ -2997,7 +2997,7 @@
   {
    "line": 122,
    "id": "default_weekly",
-   "label": "Default weekly",
+   "label": "Escape-route check frequency",
    "cat": "VALUE",
    "type": "duration",
    "default": "weekly",
@@ -3033,7 +3033,7 @@
   {
    "line": 134,
    "id": "where_it_is_kept",
-   "label": "Where it is kept",
+   "label": "Where the accident book is kept",
    "cat": "VALUE",
    "type": "text",
    "default": "",
@@ -3114,7 +3114,7 @@
   {
    "line": 185,
    "id": "default_3_years",
-   "label": "Default 3 years",
+   "label": "Manual-handling training frequency",
    "cat": "VALUE",
    "type": "duration",
    "default": "3 years",
@@ -3325,7 +3325,7 @@
   {
    "line": 81,
    "id": "default_40_working_days",
-   "label": "Default 40 working days",
+   "label": "Maximum extension before escalation is offered",
    "cat": "VALUE",
    "type": "duration",
    "default": "40 working days",
@@ -3433,7 +3433,7 @@
   {
    "line": 187,
    "id": "default_6_months",
-   "label": "Default 6 months",
+   "label": "Persistent-contact restriction review interval",
    "cat": "VALUE",
    "type": "duration",
    "default": "6 months",
@@ -3451,7 +3451,7 @@
   {
    "line": 205,
    "id": "default_annually",
-   "label": "Default annually",
+   "label": "Complaints training frequency",
    "cat": "VALUE",
    "type": "duration",
    "default": "annually",
@@ -3789,7 +3789,7 @@
   {
    "line": 302,
    "id": "default_every_3_years",
-   "label": "Default every 3 years",
+   "label": "Consent training refresh interval",
    "cat": "VALUE",
    "type": "duration",
    "default": "every 3 years",
@@ -3899,7 +3899,7 @@
   {
    "line": 84,
    "id": "default_weekly",
-   "label": "Default weekly",
+   "label": "Emergency medicines & equipment check frequency",
    "cat": "VALUE",
    "type": "duration",
    "default": "weekly",
@@ -3926,7 +3926,7 @@
   {
    "line": 121,
    "id": "where_held",
-   "label": "Where held",
+   "label": "Where PSD templates are held",
    "cat": "VALUE",
    "type": "text",
    "default": "",
@@ -3944,7 +3944,7 @@
   {
    "line": 125,
    "id": "where_pgds_are_used",
-   "label": "Where PGDs are used",
+   "label": "PGD authorisation \u2014 signatories & authorised practitioners",
    "cat": "VALUE",
    "type": "role",
    "default": "",
@@ -4108,10 +4108,10 @@
   {
    "line": 63,
    "id": "is_notifying_the_patient_s_nhs_gp_the",
-   "label": "Is notifying the patient's NHS GP the",
+   "label": "Is GP notification the default (with patient consent)?",
    "cat": "DECISION",
    "type": "yes/no",
-   "default": "with patient consent?",
+   "default": "YES \u2014 offered at every prescribing encounter and the decision recorded",
    "src": "inline"
   },
   {
@@ -4246,7 +4246,7 @@
   {
    "line": 203,
    "id": "default_1_working_day",
-   "label": "Default 1 working day",
+   "label": "Referral-decision timescale",
    "cat": "VALUE",
    "type": "text",
    "default": "1 working day",
@@ -4255,7 +4255,7 @@
   {
    "line": 207,
    "id": "default_5_working_days",
-   "label": "Default 5 working days",
+   "label": "Referral follow-up timescale",
    "cat": "VALUE",
    "type": "duration",
    "default": "5 working days",
@@ -4273,7 +4273,7 @@
   {
    "line": 277,
    "id": "default_every_3_months_or_sooner_on_any_change",
-   "label": "Default every 3 months, or sooner on any change",
+   "label": "Decision-not-to-refer review interval",
    "cat": "VALUE",
    "type": "duration",
    "default": "every 3 months, or sooner on any change",
@@ -4638,7 +4638,7 @@
   {
    "line": 105,
    "id": "default_2_working_days",
-   "label": "Default 2 working days",
+   "label": "GP-letter timescale \u2014 new long-term / high-risk prescription",
    "cat": "VALUE",
    "type": "duration",
    "default": "2 working days",
@@ -4647,7 +4647,7 @@
   {
    "line": 106,
    "id": "default_5_working_days",
-   "label": "Default 5 working days",
+   "label": "GP-letter timescale \u2014 routine",
    "cat": "VALUE",
    "type": "duration",
    "default": "5 working days",
@@ -4885,7 +4885,7 @@
   {
    "line": 123,
    "id": "default_2_working_days",
-   "label": "Default 2 working days",
+   "label": "Concern acknowledgement timescale",
    "cat": "VALUE",
    "type": "duration",
    "default": "2 working days",
@@ -4894,7 +4894,7 @@
   {
    "line": 124,
    "id": "default_5_working_days",
-   "label": "Default 5 working days",
+   "label": "Concern initial-assessment timescale",
    "cat": "VALUE",
    "type": "duration",
    "default": "5 working days",
@@ -4903,7 +4903,7 @@
   {
    "line": 126,
    "id": "default_20_working_days_where_longer_the_person_",
-   "label": "Default 20 working days; where longer, the person is told wh",
+   "label": "Investigation timescale",
    "cat": "CLAUSE",
    "type": "role",
    "default": "20 working days; where longer, the person is told why and given a revised date",
@@ -4930,7 +4930,7 @@
   {
    "line": 167,
    "id": "default_annual",
-   "label": "Default annual",
+   "label": "Speaking-up training frequency",
    "cat": "VALUE",
    "type": "text",
    "default": "annual",
@@ -4939,7 +4939,7 @@
   {
    "line": 168,
    "id": "where",
-   "label": "Where",
+   "label": "Where speaking-up routes are displayed",
    "cat": "VALUE",
    "type": "text",
    "default": "staff room and staff intranet",
@@ -4948,7 +4948,7 @@
   {
    "line": 170,
    "id": "default_six_monthly",
-   "label": "Default six-monthly",
+   "label": "Speaking-up governance-report frequency",
    "cat": "VALUE",
    "type": "duration",
    "default": "six-monthly",
@@ -5004,7 +5004,7 @@
   {
    "line": 51,
    "id": "where",
-   "label": "Where",
+   "label": "Where the price list is displayed",
    "cat": "VALUE",
    "type": "text",
    "default": "on the website, in the waiting area, and provided on request",
@@ -5049,7 +5049,7 @@
   {
    "line": 102,
    "id": "default_48_hours",
-   "label": "Default 48 hours",
+   "label": "Cancellation notice period (full refund)",
    "cat": "VALUE",
    "type": "text",
    "default": "48 hours",
@@ -5058,7 +5058,7 @@
   {
    "line": 102,
    "id": "default_full_refund_or_free_reschedule",
-   "label": "Default \u2014 full refund or free reschedule",
+   "label": "Cancellation notice period (full refund)",
    "cat": "VALUE",
    "type": "text",
    "default": "\u2014 full refund or free reschedule",
@@ -5076,7 +5076,7 @@
   {
    "line": 104,
    "id": "default_fee_retained",
-   "label": "Default \u2014 fee retained",
+   "label": "Did-not-attend fee position",
    "cat": "VALUE",
    "type": "text",
    "default": "\u2014 fee retained",
@@ -5103,7 +5103,7 @@
   {
    "line": 115,
    "id": "default_3_working_days",
-   "label": "Default 3 working days",
+   "label": "Refund acknowledgement timescale",
    "cat": "VALUE",
    "type": "duration",
    "default": "3 working days",
@@ -5112,7 +5112,7 @@
   {
    "line": 116,
    "id": "default_20_working_days",
-   "label": "Default 20 working days",
+   "label": "Refund decision timescale",
    "cat": "VALUE",
    "type": "duration",
    "default": "20 working days",
@@ -5139,7 +5139,7 @@
   {
    "line": 126,
    "id": "default_annually",
-   "label": "Default annually",
+   "label": "Fee-list review frequency",
    "cat": "VALUE",
    "type": "duration",
    "default": "annually",
@@ -5148,7 +5148,7 @@
   {
    "line": 126,
    "id": "role",
-   "label": "Role",
+   "label": "Fee-list review frequency",
    "cat": "VALUE",
    "type": "role",
    "default": "",
@@ -5157,7 +5157,7 @@
   {
    "line": 129,
    "id": "default_30_days",
-   "label": "Default 30 days",
+   "label": "New-price effective delay",
    "cat": "VALUE",
    "type": "duration",
    "default": "30 days",
@@ -5294,7 +5294,7 @@
   {
    "line": 95,
    "id": "default_5_working_days",
-   "label": "Default 5 working days",
+   "label": "Rating-update timescale after publication",
    "cat": "VALUE",
    "type": "duration",
    "default": "5 working days",
@@ -5321,7 +5321,7 @@
   {
    "line": 125,
    "id": "default_quarterly",
-   "label": "Default quarterly",
+   "label": "Display check frequency",
    "cat": "VALUE",
    "type": "duration",
    "default": "quarterly",

@@ -1,7 +1,3 @@
-> **How to use this.** `fields.json` is the machine-readable version the developer consumes. Each field carries: clean `label`, `cat` (VALUE / DECISION / CLAUSE / NOTE), `type`, `default`, source `line`. Rules: `clinic_name` is one field applied throughout · `NOTE` = reviewer-only, never shown to the clinic · DECISION fields gate their conditional fields · CLAUSE fields render their default paragraph with keep/edit (never a blank box). Worked example with full reasoning: `C05-FIELD-SCHEMA.md`. Marker/UI convention in that file applies here too.
->
-> Auto-extracted from the source documents and spot-checked. ~578 fields across 28 policies. The bulk are clean; a handful where a `[CONFIRM]` interleaved its label and default in prose (e.g. C07f GP-notification) need a one-line human label tweak — flagged for the polish pass, not blocking.
-
 # Field schemas — all 28 policies (auto-extracted, verified against source)
 
 Generated from the starter documents. Each field: clean label, category (VALUE / DECISION / CLAUSE / NOTE), type, default, source line. `NOTE` = reviewer-only, never shown to the clinic. `clinic_name` de-duplicated to one field.
@@ -41,8 +37,8 @@ Machine-readable version: `fields.json`.
 | 174 | Paper contingency | VALUE | text |  |
 | 176 | Backup arrangements | VALUE | duration |  |
 | 182 | Clinic's critical suppliers and the alternative for each | VALUE | text |  |
-| 201 | Default quarterly | VALUE | duration | quarterly |
-| 202 | Default annually | VALUE | duration | annually |
+| 201 | Contact-details check frequency | VALUE | duration | quarterly |
+| 202 | Desktop exercise frequency | VALUE | duration | annually |
 | 206 | Governance meeting | VALUE | text |  |
 | 208 | Who is trained on the plan, and how new staff learn about it | VALUE | role |  |
 | 214 | Audit owner | VALUE | role | Registered Manager, annually |
@@ -60,7 +56,7 @@ Machine-readable version: `fields.json`.
 | 104 | Clinic's position | VALUE | text |  |
 | 118 | What the training covers and who delivers it | VALUE | role |  |
 | 127 | Chaperones require a DBS check | DECISION | yes/no |  |
-| 129 | Default every 3 years | VALUE | duration | every 3 years |
+| 129 | Chaperone training refresh interval | VALUE | duration | every 3 years |
 | 141 | Audit owner and frequency | VALUE | role | clinical lead, annually |
 
 ## C010 — 20 fields (16 value · 1 decision · 3 clause)
@@ -74,10 +70,10 @@ Machine-readable version: `fields.json`.
 | 50 | What happens where mandatory training lapses | CLAUSE | text | the individual is removed from the relevant duties until it is completed |
 | 58 | Who holds and maintains the matrix | VALUE | role |  |
 | 66 | Clinic's mandatory list and frequencies | VALUE | list |  |
-| 70 | Default 3 years, with annual updates for Level 3 | VALUE | duration | 3 years, with annual updates for Level 3 |
-| 71 | Default 3 years | VALUE | duration | 3 years |
-| 74 | Default annually | VALUE | duration | annually |
-| 78 | Default annually for fire | VALUE | duration | annually for fire |
+| 70 | Safeguarding-adults training frequency | VALUE | duration | 3 years, with annual updates for Level 3 |
+| 71 | Safeguarding-children training frequency | VALUE | duration | 3 years |
+| 74 | IPC training frequency | VALUE | duration | annually |
+| 78 | Health & safety / fire training frequency | VALUE | duration | annually for fire |
 | 94 | Service-specific training | VALUE | text |  |
 | 100 | Who delivers it and over what period | VALUE | role |  |
 | 108 | How competence is assessed for each clinical role before independent practice, and who signs it off | VALUE | role |  |
@@ -118,7 +114,7 @@ Machine-readable version: `fields.json`.
 | 96 | Information Governance / Caldicott Lead | VALUE | role |  |
 | 98 | Where one person holds several of these roles | VALUE | role |  |
 | 108 | What meetings exist, who attends, how often, and who takes minutes | VALUE | role |  |
-| 114 | Where minutes are held | VALUE | text |  |
+| 114 | Where governance minutes are held | VALUE | text |  |
 | 120 | How this is recorded and who checks it | VALUE | role |  |
 | 130 | Who makes the suitability decision for each service, and against what criteria | VALUE | role |  |
 | 138 | Audit owner and frequency | VALUE | role | Registered Manager, annually |
@@ -135,8 +131,8 @@ Machine-readable version: `fields.json`.
 | 73 | NAMED individual | VALUE | role |  |
 | 80 | Who receives an incident report concerning the Risk Management Lead or Registered Manager | VALUE | role |  |
 | 91 | Role | VALUE | role |  |
-| 130 | Named person | VALUE | role |  |
-| 130 | Default timescales — specified injuries and dangerous occurr | CLAUSE | duration | timescales — specified injuries and dangerous occurrences within 10 days; over-seven-day injuries within 15 days |
+| 130 | RIDDOR reporting timescales | VALUE | role |  |
+| 130 | RIDDOR reporting timescales | CLAUSE | duration | timescales — specified injuries and dangerous occurrences within 10 days; over-seven-day injuries within 15 days |
 | 141 | Who is responsible for Yellow Card reporting, and how the clinic satisfies itself it is happening | VALUE | role |  |
 | 145 | Named person, and their deputy | VALUE | role |  |
 | 147 | The clinic reports patient safety events to the national patient safety system | DECISION | yes/no |  |
@@ -146,7 +142,7 @@ Machine-readable version: `fields.json`.
 | 173 | This section | VALUE | text |  |
 | 177 | Who holds the register and how often it is reviewed | VALUE | role | Risk Management Lead, reviewed at every governance meeting |
 | 192 | What support is available | VALUE | text |  |
-| 238 | Default annually | VALUE | duration | annually |
+| 238 | Incident-reporting training frequency | VALUE | duration | annually |
 | 244 | Audit owner and frequency | VALUE | role | Risk Management Lead, annually |
 
 ## C02 — 35 fields (33 value · 1 decision · 1 clause)
@@ -163,7 +159,7 @@ Machine-readable version: `fields.json`.
 | 59 | NAMED individual | VALUE | role |  |
 | 62 | Governance meeting | VALUE | text |  |
 | 75 | See the assurance requirements below | VALUE | text |  |
-| 85 | Default annually | VALUE | duration | annually |
+| 85 | Hand-hygiene training frequency | VALUE | duration | annually |
 | 98 | Bare below the elbows policy in clinical areas | VALUE | text |  |
 | 109 | What is held, and when it is used | VALUE | text |  |
 | 113 | Who checks PPE stock levels and how often | CLAUSE | role | IPC Lead, monthly — a policy requiring PPE that is not in the cupboard is not a control |
@@ -178,7 +174,7 @@ Machine-readable version: `fields.json`.
 | 163 | Other immunisations required by role, against the Green Book | VALUE | role |  |
 | 165 | Which roles have clinical contact with patients | VALUE | role |  |
 | 172 | Waste contractor, collection frequency, and where consignment notes are held | VALUE | duration |  |
-| 178 | Where it is kept and who checks it | VALUE | role |  |
+| 178 | Where the spillage kit is kept and who checks it | VALUE | role |  |
 | 182 | Applicable only where the clinic uses reusable linen | VALUE | duration |  |
 | 188 | Who tracks this and where it is recorded | VALUE | role |  |
 | 196 | Any reusable instruments are decontaminated on the premises | DECISION | yes/no | NO. Where YES, a full decontamination procedure, validated equipment, and HTM-compliant records are required, and that is a substantially larger undertaking tha |
@@ -186,8 +182,8 @@ Machine-readable version: `fields.json`.
 | 217 | Named contact at the landlord/contractor, and the frequency of joint review | VALUE | role | quarterly, recorded |
 | 219 | Water safety | VALUE | role |  |
 | 245 | Audit owner | VALUE | role | IPC Lead |
-| 249 | Default six-monthly | VALUE | duration | six-monthly |
-| 250 | Default quarterly | VALUE | duration | quarterly |
+| 249 | Hand-hygiene audit frequency | VALUE | duration | six-monthly |
+| 250 | Environment / cleanliness audit frequency | VALUE | duration | quarterly |
 
 ## C021 — 12 fields (11 value · 0 decision · 1 clause) · 1 note
 
@@ -198,13 +194,13 @@ Machine-readable version: `fields.json`.
 | 12 | Authorised by | VALUE | text |  |
 | 13 | Issue Date | VALUE | date |  |
 | 93 | [reviewer note] | NOTE | note | verify against the current text of Regulation 20(9) and CQC's guidance before adopting. |
-| 119 | Who decides, and who is the | VALUE | role |  |
+| 119 | Who decides who apologises, and the default apologiser | VALUE | role |  |
 | 123 | What support is available | VALUE | text |  |
 | 141 | Role | VALUE | role |  |
-| 166 | Default within 10 working days of the notification | VALUE | duration | within 10 working days of the notification |
-| 176 | Default — near misses the patient did not notice are not rou | CLAUSE | text | — near misses the patient did not notice are not routinely disclosed, but are always recorded and reviewed |
+| 166 | Written follow-up timescale | VALUE | duration | within 10 working days of the notification |
+| 176 | Near-miss disclosure position | CLAUSE | text | — near misses the patient did not notice are not routinely disclosed, but are always recorded and reviewed |
 | 195 | Governance meeting | VALUE | text |  |
-| 215 | Default annually | VALUE | duration | annually |
+| 215 | Duty-of-candour training frequency | VALUE | duration | annually |
 | 221 | Audit owner and frequency | VALUE | role | Clinical Lead, six-monthly |
 
 ## C024 — 16 fields (15 value · 1 decision · 0 clause)
@@ -219,10 +215,10 @@ Machine-readable version: `fields.json`.
 | 78 | E.g | VALUE | text |  |
 | 79 | Named individual | VALUE | role |  |
 | 80 | Who attends | VALUE | role |  |
-| 81 | Default quarterly, minimum | VALUE | duration | quarterly, minimum |
+| 81 | Governance meeting frequency | VALUE | duration | quarterly, minimum |
 | 82 | Minimum attendance for decisions to be valid | VALUE | text |  |
 | 83 | Minutes taken by | VALUE | text |  |
-| 84 | Where, and for how long | VALUE | text |  |
+| 84 | Where governance minutes are held, and for how long | VALUE | text |  |
 | 117 | Adjust to the clinic's own year | VALUE | duration |  |
 | 125 | Who owns the governance calendar and ensures each item happens | VALUE | role |  |
 | 141 | The clinic maintains an assurance framework or dashboard bringing these together | DECISION | yes/no |  |
@@ -247,8 +243,8 @@ Machine-readable version: `fields.json`.
 | 118 | Minimum 6 months | VALUE | duration |  |
 | 126 | How | VALUE | role |  |
 | 131 | The clinic holds a sponsor licence, and who manages sponsor duties | DECISION | yes/no |  |
-| 139 | Default annually | VALUE | duration | annually |
-| 141 | Renewal interval, | VALUE | duration | every 3 years, or subscription to the DBS Update Service |
+| 139 | Registration re-verification interval | VALUE | duration | annually |
+| 141 | DBS renewal interval | VALUE | duration | every 3 years, or subscription to the DBS Update Service |
 | 142 | This duty must be in the contract and the staff handbook, not only in this policy | VALUE | text |  |
 | 149 | Audit owner and frequency | VALUE | role | Registered Manager, annually |
 | 188 | Has any appointment decision been made in reliance on this paragraph? If so, take employment law advice | VALUE | text |  |
@@ -285,7 +281,7 @@ Machine-readable version: `fields.json`.
 | 12 | Authorised by | VALUE | text |  |
 | 13 | Issue Date | VALUE | date |  |
 | 69 | How patient preferences about who may be told what are recorded at registration | VALUE | role |  |
-| 90 | Default annually | VALUE | duration | annually |
+| 90 | Confidentiality / IG training frequency | VALUE | duration | annually |
 | 101 | The clinical system logs access and who reviews the log | DECISION | yes/no |  |
 | 117 | Approved text templates | VALUE | text |  |
 | 118 | Route | CLAUSE | text | NHSmail to NHSmail, or password-protected attachment. Standard unencrypted email is not acceptable for identifiable clinical information |
@@ -311,7 +307,7 @@ Machine-readable version: `fields.json`.
 | 139 | NAMED individual | VALUE | role |  |
 | 139 | 3 minimum | VALUE | text |  |
 | 144 | Where the Safeguarding Lead and Registered Manager are the same person, name an external safeguarding contact for concerns involving that person | VALUE | role |  |
-| 179 | Default 5 working days | VALUE | duration | 5 working days |
+| 179 | Referral-confirmation timescale | VALUE | duration | 5 working days |
 | 186 | Name of local authority | VALUE | text |  |
 | 186 | Daytime phone | VALUE | text |  |
 | 186 | Out-of-hours / emergency duty team | VALUE | text |  |
@@ -341,7 +337,7 @@ Machine-readable version: `fields.json`.
 | 73 | Other regulators | VALUE | text |  |
 | 78 | Minimum annual audit set | VALUE | text |  |
 | 89 | And to GPhC standards where the clinic is dual-regulated | VALUE | text |  |
-| 104 | Default re-audit interval — 6 months, or 3 months where the  | CLAUSE | duration | re-audit interval — 6 months, or 3 months where the finding was significant |
+| 104 | Re-audit interval | CLAUSE | duration | re-audit interval — 6 months, or 3 months where the finding was significant |
 | 117 | Retention period for audit data | VALUE | text |  |
 | 125 | How patient feedback is gathered and how it feeds the audit programme | VALUE | text |  |
 | 131 | Audit owner and frequency | VALUE | role | clinical lead, annually |
@@ -357,7 +353,7 @@ Machine-readable version: `fields.json`.
 | 24 | Cite the current edition of each | VALUE | duration |  |
 | 30 | The clinic uses ReSPECT forms or recognises them | DECISION | yes/no |  |
 | 65 | Location, and the internal emergency call procedure | VALUE | text |  |
-| 71 | Default weekly — see C07 | VALUE | duration | weekly — see C07 |
+| 71 | Emergency equipment & medicines check frequency | VALUE | duration | weekly — see C07 |
 | 73 | Governance meeting | VALUE | text |  |
 | 81 | Clinic's own emergency call procedure | VALUE | role |  |
 | 91 | Compression rate, depth and ratio against the current Resuscitation Council UK guidelines rather than reproducing figures from a template | VALUE | text |  |
@@ -377,11 +373,11 @@ Machine-readable version: `fields.json`.
 | 139 | And that staff are trained to use anything held | VALUE | text |  |
 | 147 | Emergency medicines list, against the clinic's actual risk profile and age range | VALUE | list |  |
 | 150 | Paediatric strengths | VALUE | text |  |
-| 152 | Default weekly | VALUE | duration | weekly |
+| 152 | Emergency medicines check frequency | VALUE | duration | weekly |
 | 156 | Clinic's position | VALUE | text |  |
 | 162 | Does the clinic make DNACPR decisions itself, or only recognise decisions made elsewhere? For most outpatient clinics the answer is only to recognise them, and saying so is clearer than implying a capability the service does not have | DECISION | yes/no |  |
 | 170 | Who leads it and when | CLAUSE | role | the same day, and separately from the incident investigation — a debrief is for the people, not for the paperwork |
-| 184 | Default annually | VALUE | duration | annually |
+| 184 | Emergency-recognition training frequency | VALUE | duration | annually |
 | 186 | Training is practical, with a manikin and the clinic's own AED | DECISION | yes/no |  |
 | 188 | The clinic runs a simulated emergency drill | DECISION | yes/no |  |
 | 194 | Audit owner and frequency | VALUE | role | clinical lead, six-monthly |
@@ -409,14 +405,14 @@ Machine-readable version: `fields.json`.
 | 103 | Does anyone work alone | DECISION | yes/no |  |
 | 104 | Absent from v01 | VALUE | text |  |
 | 112 | Arrangements, and who is responsible for each | VALUE | role |  |
-| 116 | Default annually | VALUE | duration | annually |
-| 117 | Default weekly, recorded | VALUE | duration | weekly, recorded |
-| 120 | Default annually, recorded | VALUE | duration | annually, recorded |
-| 122 | Default weekly | VALUE | duration | weekly |
+| 116 | Fire risk assessment review frequency | VALUE | duration | annually |
+| 117 | Fire alarm test frequency | VALUE | duration | weekly, recorded |
+| 120 | Fire drill frequency | VALUE | duration | annually, recorded |
+| 122 | Escape-route check frequency | VALUE | duration | weekly |
 | 124 | Evacuation arrangements for patients with limited mobility | VALUE | role |  |
 | 130 | Complete following a first aid needs assessment | VALUE | text |  |
 | 133 | Where the first aid kit is, who checks it and how often | VALUE | role | monthly, recorded |
-| 134 | Where it is kept | VALUE | text |  |
+| 134 | Where the accident book is kept | VALUE | text |  |
 | 135 | The clinic's clinical emergency equipment is separate from its workplace first aid kit | DECISION | yes/no |  |
 | 148 | Named person and deputy | VALUE | role |  |
 | 155 | Portable appliance testing | VALUE | role |  |
@@ -425,7 +421,7 @@ Machine-readable version: `fields.json`.
 | 164 | This section | VALUE | text |  |
 | 171 | Who decides whether the clinic continues to treat that patient, and how the decision is communicated | VALUE | role |  |
 | 184 | Typically 3 years with annual refresher | VALUE | duration |  |
-| 185 | Default 3 years | VALUE | duration | 3 years |
+| 185 | Manual-handling training frequency | VALUE | duration | 3 years |
 | 193 | Audit owner and frequency | VALUE | role | Registered Manager, annually |
 
 ## C039 — 14 fields (12 value · 0 decision · 2 clause)
@@ -458,7 +454,7 @@ Machine-readable version: `fields.json`.
 | 28 | Independent adjudication scheme the clinic subscribes to | VALUE | text |  |
 | 63 | Check the clinic's indemnity terms | VALUE | text |  |
 | 73 | These are the figures the clinic commits to | VALUE | text |  |
-| 81 | Default 40 working days | VALUE | duration | 40 working days |
+| 81 | Maximum extension before escalation is offered | VALUE | duration | 40 working days |
 | 98 | Role | VALUE | role |  |
 | 104 | Named complaints manager | VALUE | role |  |
 | 109 | Who investigates where the complaint concerns the Registered Manager | VALUE | role |  |
@@ -470,9 +466,9 @@ Machine-readable version: `fields.json`.
 | 168 | Offered, and who pays | DECISION | yes/no |  |
 | 171 | Where the clinic subscribes to no independent scheme, decide and record what is offered instead | VALUE | text |  |
 | 184 | Named decision-maker | VALUE | role |  |
-| 187 | Default 6 months | VALUE | duration | 6 months |
+| 187 | Persistent-contact restriction review interval | VALUE | duration | 6 months |
 | 189 | Governance meeting | VALUE | text |  |
-| 205 | Default annually | VALUE | duration | annually |
+| 205 | Complaints training frequency | VALUE | duration | annually |
 | 210 | Accessible formats and languages available | VALUE | text |  |
 | 217 | Audit owner and frequency | VALUE | role | Registered Manager, annually |
 
@@ -519,7 +515,7 @@ Machine-readable version: `fields.json`.
 | 246 | Complete this section only where the clinic sees under-18s | VALUE | text |  |
 | 252 | Clinic's position | CLAUSE | role | any refusal by a competent young person of a treatment considered necessary is escalated to the clinical lead and, where the matter is serious, legal advice is  |
 | 266 | Any recordings are used for marketing, including before-and-after images | DECISION | yes/no |  |
-| 302 | Default every 3 years | VALUE | duration | every 3 years |
+| 302 | Consent training refresh interval | VALUE | duration | every 3 years |
 | 306 | Who holds it | VALUE | role |  |
 | 312 | Audit owner and frequency | VALUE | role | Clinical Lead, annually |
 | 323 | Governance meeting | VALUE | text |  |
@@ -536,12 +532,12 @@ Machine-readable version: `fields.json`.
 | 46 | The clinic holds and supplies stock medicines, or prescribes only | DECISION | yes/no | for a prescribing-only service: sections on stock, storage and disposal are marked not applicable, and that is stated explicitly rather than left ambiguous |
 | 68 | NAMED individual | VALUE | role |  |
 | 81 | Where emergency medicines, oxygen and the defibrillator are held | VALUE | duration |  |
-| 84 | Default weekly | VALUE | duration | weekly |
+| 84 | Emergency medicines & equipment check frequency | VALUE | duration | weekly |
 | 87 | Emergency medicines held, against the clinic's actual risk profile and the age range seen | VALUE | text |  |
 | 116 | Which of these routes the clinic actually uses | VALUE | text |  |
-| 121 | Where held | VALUE | text |  |
+| 121 | Where PSD templates are held | VALUE | text |  |
 | 122 | The clinic uses PGDs at all | DECISION | yes/no | NO |
-| 125 | Where PGDs are used | VALUE | role |  |
+| 125 | PGD authorisation — signatories & authorised practitioners | VALUE | role |  |
 | 135 | How licence status is verified | VALUE | text |  |
 | 137 | Role | VALUE | role |  |
 | 141 | The clinic verifies pack authenticity on receipt, and how | DECISION | yes/no |  |
@@ -564,7 +560,7 @@ Machine-readable version: `fields.json`.
 | 45 | Does your clinic restrict prescribing to a defined formulary or exclude particular drug classes | DECISION | yes/no | NO formal formulary — prescribing follows BNF/NICE and local antimicrobial guidance |
 | 47 | Does your clinic issue any prescription without a same-day consultation? | DECISION | yes/no | NO |
 | 59 | Does your clinic provide written medicine information | DECISION | yes/no | verbal plus the manufacturer's patient information leaflet |
-| 63 | Is notifying the patient's NHS GP the | DECISION | yes/no | with patient consent? |
+| 63 | Is GP notification the default (with patient consent)? | DECISION | yes/no | YES — offered at every prescribing encounter and the decision recorded |
 | 70 | Does your clinic prescribe medicines requiring ongoing monitoring or a risk-management programme | DECISION | yes/no | NO |
 | 73 | Does your clinic initiate or continue medicines for long-term conditions? | DECISION | yes/no | NO — acute and episodic care only; long-term-condition management remains with the patient's own GP |
 | 80 | What is your clinic's disposal route? | CLAUSE | text | returned to a registered pharmacy for destruction; the return is recorded |
@@ -584,10 +580,10 @@ Machine-readable version: `fields.json`.
 | 148 | Where the Safeguarding Lead and Registered Manager are the same person | VALUE | role |  |
 | 164 | Refresher frequency | CLAUSE | duration | Level 1 every 3 years; Levels 2 and 3 every 3 years with annual updates, per the Intercollegiate Document |
 | 166 | Who holds the matrix and reviews completion | VALUE | role |  |
-| 203 | Default 1 working day | VALUE | text | 1 working day |
-| 207 | Default 5 working days | VALUE | duration | 5 working days |
+| 203 | Referral-decision timescale | VALUE | text | 1 working day |
+| 207 | Referral follow-up timescale | VALUE | duration | 5 working days |
 | 235 | Who makes CQC statutory notifications | VALUE | role |  |
-| 277 | Default every 3 months, or sooner on any change | VALUE | duration | every 3 months, or sooner on any change |
+| 277 | Decision-not-to-refer review interval | VALUE | duration | every 3 months, or sooner on any change |
 | 289 | Local MARAC referral route | VALUE | text |  |
 | 294 | Local Prevent/Channel referral contact | VALUE | text |  |
 | 322 | Role | VALUE | role |  |
@@ -637,8 +633,8 @@ Machine-readable version: `fields.json`.
 | 69 | Services where GP notification is a non-negotiable condition of treatment | CLAUSE | text | controlled drugs, any long-term or high-risk medicine, and any treatment requiring blood monitoring. For these, "no GP letter" means "no treatment." |
 | 73 | Route used | CLAUSE | address | NHSmail (@nhs.net) to the practice's shared clinical inbox where both parties hold NHSmail; otherwise password-protected attachment or postal letter marked priv |
 | 75 | Who reviews incoming clinical correspondence and within what timescale | VALUE | role | the treating clinician, within 3 working days |
-| 105 | Default 2 working days | VALUE | duration | 2 working days |
-| 106 | Default 5 working days | VALUE | duration | 5 working days |
+| 105 | GP-letter timescale — new long-term / high-risk prescription | VALUE | duration | 2 working days |
+| 106 | GP-letter timescale — routine | VALUE | duration | 5 working days |
 | 114 | Services that require a registered GP | VALUE | text | any treatment requiring monitoring or repeat prescribing |
 | 132 | Audit owner and frequency | VALUE | role | Clinical Lead, six-monthly |
 | 140 | Governance meeting | VALUE | text |  |
@@ -674,14 +670,14 @@ Machine-readable version: `fields.json`.
 | 108 | Named Safeguarding Lead | VALUE | role |  |
 | 109 | Named Speaking Up Guardian, or an independent named person such as a non-executive director or external adviser | CLAUSE | role | for a small clinic: a named person outside the direct management line — this must be a real named individual, not a role that does not exist |
 | 111 | An anonymous route exists | DECISION | yes/no | a monitored email address checked by two named people |
-| 123 | Default 2 working days | VALUE | duration | 2 working days |
-| 124 | Default 5 working days | VALUE | duration | 5 working days |
-| 126 | Default 20 working days; where longer, the person is told wh | CLAUSE | role | 20 working days; where longer, the person is told why and given a revised date |
+| 123 | Concern acknowledgement timescale | VALUE | duration | 2 working days |
+| 124 | Concern initial-assessment timescale | VALUE | duration | 5 working days |
+| 126 | Investigation timescale | CLAUSE | role | 20 working days; where longer, the person is told why and given a revised date |
 | 152 | Local contact | VALUE | text |  |
 | 158 | Occupational health / EAP arrangements, if any | VALUE | text |  |
-| 167 | Default annual | VALUE | text | annual |
-| 168 | Where | VALUE | text | staff room and staff intranet |
-| 170 | Default six-monthly | VALUE | duration | six-monthly |
+| 167 | Speaking-up training frequency | VALUE | text | annual |
+| 168 | Where speaking-up routes are displayed | VALUE | text | staff room and staff intranet |
+| 170 | Speaking-up governance-report frequency | VALUE | duration | six-monthly |
 | 174 | Audit owner and frequency | VALUE | role | Registered Manager, annually |
 
 ## S12 — 23 fields (19 value · 1 decision · 3 clause)
@@ -692,24 +688,24 @@ Machine-readable version: `fields.json`.
 | 11 | Named responsible person | VALUE | role |  |
 | 12 | Authorised by | VALUE | text |  |
 | 13 | Issue Date | VALUE | date |  |
-| 51 | Where | VALUE | text | on the website, in the waiting area, and provided on request |
+| 51 | Where the price list is displayed | VALUE | text | on the website, in the waiting area, and provided on request |
 | 63 | An assessment fee is refundable where no treatment is offered | DECISION | yes/no | the assessment fee is retained, because the assessment was delivered — but this must be stated before the appointment, not after |
 | 65 | Mechanism | CLAUSE | text | the patient confirms the quoted fee in writing (booking confirmation, signed consent form, or e-form) and a copy is retained |
 | 75 | Known financial interests to be declared as standard | VALUE | text |  |
 | 79 | Charges for non-routine administrative work | VALUE | list |  |
-| 102 | Default 48 hours | VALUE | text | 48 hours |
-| 102 | Default — full refund or free reschedule | VALUE | text | — full refund or free reschedule |
+| 102 | Cancellation notice period (full refund) | VALUE | text | 48 hours |
+| 102 | Cancellation notice period (full refund) | VALUE | text | — full refund or free reschedule |
 | 103 | Default — fee retained, discretion applied for illness, bere | CLAUSE | text | — fee retained, discretion applied for illness, bereavement or emergency |
-| 104 | Default — fee retained | VALUE | text | — fee retained |
+| 104 | Did-not-attend fee position | VALUE | text | — fee retained |
 | 107 | Default — refund of unused sessions less any non-recoverable | CLAUSE | text | — refund of unused sessions less any non-recoverable costs already incurred, itemised |
 | 114 | Named role | VALUE | role |  |
-| 115 | Default 3 working days | VALUE | duration | 3 working days |
-| 116 | Default 20 working days | VALUE | duration | 20 working days |
+| 115 | Refund acknowledgement timescale | VALUE | duration | 3 working days |
+| 116 | Refund decision timescale | VALUE | duration | 20 working days |
 | 117 | E.g | VALUE | text |  |
 | 118 | Governance meeting | VALUE | text |  |
-| 126 | Default annually | VALUE | duration | annually |
-| 126 | Role | VALUE | role |  |
-| 129 | Default 30 days | VALUE | duration | 30 days |
+| 126 | Fee-list review frequency | VALUE | duration | annually |
+| 126 | Fee-list review frequency | VALUE | role |  |
+| 129 | New-price effective delay | VALUE | duration | 30 days |
 | 133 | Audit owner and frequency | VALUE | role | Registered Manager, annually |
 
 ## S13 — 18 fields (17 value · 0 decision · 1 clause)
@@ -729,8 +725,8 @@ Machine-readable version: `fields.json`.
 | 87 | Professional registration numbers of clinicians | VALUE | text |  |
 | 90 | Additional premises | VALUE | duration |  |
 | 94 | Role | VALUE | role |  |
-| 95 | Default 5 working days | VALUE | duration | 5 working days |
+| 95 | Rating-update timescale after publication | VALUE | duration | 5 working days |
 | 100 | Governance meeting | VALUE | text |  |
 | 119 | Others | VALUE | text |  |
-| 125 | Default quarterly | VALUE | duration | quarterly |
+| 125 | Display check frequency | VALUE | duration | quarterly |
 | 138 | Audit owner and frequency | VALUE | role | Registered Manager, annually |

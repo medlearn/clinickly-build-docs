@@ -84,6 +84,17 @@ for path in sorted(glob.glob('starters/*.md')):
     code=os.path.basename(path).split('-')[0].upper()
     allp[code]=rows_for(path)
 
+
+import json as _j
+_OV=_j.load(open('overrides.json'))
+for _c,_fs in allp.items():
+    for _f in _fs:
+        _k=f"{_c}:{_f['line']}"
+        if _k in _OV:
+            _f['label']=_OV[_k]
+        if _k=='C07F:63':
+            _f['default']='YES — offered at every prescribing encounter and the decision recorded'
+
 json.dump(allp, open('fields.json','w'), indent=1)
 
 # summary + markdown
