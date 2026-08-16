@@ -219,14 +219,12 @@ The X1 breach (*"Is this rosacea?" → "Consistent with rosacea"*) is fixed at t
 
 ---
 
-## §8b — Structured clerking: structure ✅ / population 🔴
+## §8b — Structured clerking ✅ (CORRECTED)
 
-**Structure fully built (MDT-CASE-FORMAT complete):** core clerking (PC·HPC·PMH·DH·allergies·FH·surgical·occupation·social·ROS pos+neg·obs·exam·investigations, with honest "Not Recorded" states) · **differential reasoning table (Differential · Supporting · Opposing evidence)** · working decision **with Confidence: Uncertain** · completed management (actions·rationale·safety-netting·follow-up) · ADHD specialty block. The proforma is real and complete.
+**Structure fully built (MDT-CASE-FORMAT complete):** core clerking (PC·HPC·PMH·DH·allergies·FH·surgical·occupation·social·ROS pos+neg·obs·exam·investigations, honest "Not Recorded" states) · **differential reasoning table (Differential · Supporting · Opposing evidence)** · working decision **with Confidence: Uncertain** · completed management (actions·rationale·safety-netting·follow-up) · ADHD specialty block. Complete and correct.
 
-**🔴 Field population broken — every long field holds the identical full-transcript dump** (PC, HPC, social, ROS pos, ROS neg, both differential-evidence columns, working diagnosis, rationale, management, safety-netting, follow-up all = the same paragraph). Stray artefacts (`xvReports…`, `,,,,Reports…`); a differential labelled `headche` on an ADHD case. **Same fallback as the consultation co-pilot** — no approved governed content → no intelligent field extraction → raw transcript dumped into every slot.
+**CORRECTION to an earlier read:** the identical-transcript content in every field was **Faheem's own test input** (he pasted the transcript into each field to fill it quickly) — **NOT an AI-extraction fallback bug.** This actually confirms the correct design: **the reasoning fields are clinician-entered, not auto-populated** — which is the load-bearing requirement for the retrospective-teaching / device boundary. No extraction bug on this screen.
 
-**🔴 Worse than cosmetic here — it defeats the boundary the structure enforces.** The reasoning fields exist so the *clinician* produces the differential/reasoning — that is what makes it retrospective teaching, not live advice. Auto-stuffing them means no reasoning is elicited and a panel member sees the same wall of text 15×.
+*(The transcript-dump fallback IS real on the Consultation co-pilot — that one is machine-generated with a FALLBACK DRAFT badge. Don't conflate the two.)*
 
-**Design rule for the developer:** reasoning fields (differential · supporting/opposing · working diagnosis · rationale) are **clinician-entered, never auto-filled.** AI may pre-fill *descriptive* clerking (PC/HPC) as a convenience only. The fallback must be **empty fields + prompts**, not transcript-dumping.
-
-**Net: structure is a major win; the AI field-extraction is the same unresolved fallback, and here it must be gated so the reasoning stays human.**
+**Optional quality guard (not a bug):** because a clinician can paste the same text into every field, the completeness/quality check could flag low-quality cases — e.g. "differential duplicates the HPC" or "differential is not a distinct differential" — to nudge quality without blocking. Nice-to-have.
