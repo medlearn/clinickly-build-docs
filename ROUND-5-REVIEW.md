@@ -6,6 +6,39 @@
 
 ---
 
+## ✅ ROUND 5 COMPLETE — every screen reviewed (clinician + panel + all 10 admin screens)
+
+Admin nav is 10 screens: Overview · Governance sign-off · Panel management · Credentialing · Safety operations · Image operations · MDT schedule · Content libraries · Regulatory standards · Users & clinics. **All covered.** (There is no separate "Reports & audit" screen.)
+
+**The big wins this round — structural, not cosmetic:**
+- Both device-boundary P0s fixed (Ask Clinickly rescoped + cited; consultation reframed to documentation prompts, AI draft confirmed not executing).
+- **MDT device breach fixed structurally** (closed-episode gate; reasoning fields clinician-entered).
+- **Credentialing root cause CLOSED** — activation controlled in Credentialing, not via "add a name"; re-verified on Panel management, My credentials, and Users & clinics ("Managed in Credentialing").
+- Governance model is genuinely well-built: governed library + citations, gap-check references excluded from retrieval, recordings/images private-until-every-gate-passes, delete = recoverable archive, safety escalation route, adoption model.
+
+**Outstanding actions — consolidated, by priority:**
+
+| P | ID | Action |
+|---|----|--------|
+| **P1** | AO-R1 | Close/archive test & legacy cases still assignable in the admin queue (ddd C-245, E2E C-238, rosacea C-241) |
+| **P1** | AO-R2 | Coverage gap: submit form offers specialties with no vetted panel member — add members or stop offering those specialties |
+| **P1** | GS-R1 | 28 policies "signed 21 Jul 01:00" in one minute — spread to real times OR relabel as bulk *source approval*, not clinical sign-off |
+| **P1** | GS-R2 | "signed by" is blank — must name the signer |
+| **P1** | SO-R1 | Assign real named Primary + Deputy for the 3 safety routes (currently "Action required") |
+| **P1** | IMG-R2 | Confirm DPIA covers image storage, retention clock, consent-withdrawal deletion |
+| **P1** | CL-R2 | Ingest licensed reference sources — unblocks empty Guidelines + grounded content (shared root cause) |
+| **P1** | UC-R1 | Purge test-data pollution in user list; **confirm no real personal Gmail (drfiza33@gmail.com) is sitting in demo data** — DP risk |
+| **P2** | PM-R1 | Remove duplicate Newman record |
+| **P2** | PM-R2 | Hide "SYNTHETIC Expired Panel" test fixture from live panel list |
+| **P2** | IMG-R1 | Wire/approve the 5 image production components (setup) |
+| **P2** | UC-R2 | Ensure a synthetic ADMIN/countersigner account can never exist in a production tenant |
+| **P3** | MDT-R1 | Prefill create-session date from the recurring rule, not today |
+| **P3** | CL-R1 | Relabel "published" dual meaning (central library vs adopted-live-in-clinic) |
+
+**Cross-cutting theme:** almost every remaining P1 is **test/legacy data or a setup step the screen already flags honestly** — not a broken mechanism. The engine is sound; what's left is (a) scrub demo/test data before launch, (b) complete named-owner/DPIA/licence setup, (c) tidy two evidential labels (GS sign-off, CL published). No new device-boundary breaches found.
+
+---
+
 ## §1 — Ask Clinickly ✅ (the round-2 P0, fixed)
 
 **Keep:**
