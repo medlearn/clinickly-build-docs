@@ -312,3 +312,23 @@ Dr Kaur — the round-4 poster child for "unvetted but ACTIVE" — now shows a *
 | PM-R3 | **Legacy routing mismatch** — C-244 *ADHD* routes to *Pharmacy & prescribing* (should be Psychiatry). New structured C-250 routes correctly; only legacy cases mis-tagged. Resolves when legacy cases are closed (AO-R1) | **P2** |
 
 **Net: the credentialing/activation root cause — the single most important fix — is closed. Remaining panel items are data cleanup, not risk.**
+
+
+---
+
+## §13b — Member identity split across three screens (UX / data-integrity)
+
+Opening Dr Kaur's "Edit identity" reveals only a SPECIALTY dropdown (*"display/routing context only"*). A single member's details are spread across three modules with no single source of truth:
+
+| Attribute | Lives in |
+|---|---|
+| Specialty label (routing) | Panel management → Edit identity |
+| Name / login / clinic scope | Users & clinics (account) |
+| Panel domain · verified capability · active status | Credentialing |
+
+| # | Issue | Severity |
+|---|---|---|
+| PM-R4 | **Kaur's specialty and capability disagree.** Header shows *"Pharmacy & prescribing"* (from Credentialing capability/domain); Edit-identity dropdown shows *"Dermatology"* (correct — she's a dermatologist). **Routing could use the wrong one.** Fix her capability in Credentialing to Dermatology. The credentialed capability is authoritative, so that's the error | **P1 — affects routing** |
+| PM-R5 | **No single source of truth for a member.** Identity is scattered across Panel management (specialty), Credentialing (capability/status), Users & clinics (name); specialty and capability can drift apart (see PM-R4). **The admin cannot correct one person in one place**, and there's no guard that routing-specialty == credentialed-capability. Either consolidate the member editor, or (a) make Credentialing capability the single source that display-specialty derives from, and (b) validate they can't disagree | **P1 — UX + data integrity** |
+
+**This surfaced from Faheem trying to fix Kaur's specialty and being unable to find where — a real usability failure, not a cosmetic one.**
