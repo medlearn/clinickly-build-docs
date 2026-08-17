@@ -8,7 +8,7 @@
 
 ## ✅ ROUND 5 COMPLETE — every screen reviewed (clinician + panel + all 10 admin screens)
 
-Admin nav is 10 screens: Overview · Governance sign-off · Panel management · Credentialing · Safety operations · Image operations · MDT schedule · Content libraries · Regulatory standards · Users & clinics. **All covered.** (There is no separate "Reports & audit" screen.)
+Admin nav is 10 screens: Overview · Governance sign-off · Panel management · Credentialing · Safety operations · Image operations · MDT schedule · Content libraries · Regulatory standards · Users & clinics — **plus a Reports & audit screen** (reviewed as §20; my earlier note that it did not exist was wrong). **All covered.**
 
 **The big wins this round — structural, not cosmetic:**
 - Both device-boundary P0s fixed (Ask Clinickly rescoped + cited; consultation reframed to documentation prompts, AI draft confirmed not executing).
@@ -498,3 +498,25 @@ Scrolled-up view of §17 revealed the collapsed sections:
 **Authoring — "Draft from governed sources":**
 - New governed item: Type (Guideline/…), Title, clinical specialty → drafts **from a governed source with every statement carrying its source + line** (citation trail). Governance/risk rating visible ("Medium — remove a required human sign-off"). Create draft.
 - This is §8's governed pipeline live: AI-drafted → cited → human-signed. Correct.
+
+
+---
+
+## §20 — Admin Reports & audit ⭐⭐ (the evidence layer — strong; 3 timestamp/test-data artefacts)
+
+Read-only usage + governance intelligence + append-only audit trail. One of the strongest screens.
+
+**Verified good — privacy-by-design throughout:**
+- Every section stamped **AGGREGATE · PII-SCRUBBED · "counts and names only, never note content or patient data"**, and **SMALL COUNTS SUPPRESSED (<3)** so individuals can't be re-identified. Credential operations = RESTRICTED AGGREGATE, no verifier notes.
+- **"Top missed searches → Add to authoring backlog"** — turns unanswered PII-scrubbed searches into a content-authoring to-do ("author by data"). Smart demand-intelligence loop.
+- Learning funnel correctly labelled **0 LIVE · 6 SYNTHETIC PREVIEW**.
+- **Audit trail is append-only and load-bearing:** logs the **rosacea disposition** ("C-241 — Dispositioned legacy MDT response … reason: retained-as-evidence"), provision/deactivate account events, governed-adoption starts, sign-offs. This is the evidence that makes the device-boundary story defensible.
+
+**Action items (all timestamp/test-data artefacts, not logic bugs):**
+| # | Issue | Severity |
+|---|---|---|
+| RA-R1 | **"−8.1 d avg days draft → published"** — a *negative* lead time (published before drafted). Same root cause as GS-R1 (bulk "signed 21 Jul 01:00" stamp precedes draft dates). Fix the timestamp model | **P1 — evidential** |
+| RA-R2 | **MDT service levels "avg time to first response 0 h / median 0 h"** — implausible; test cases were submitted + answered in the same minute (24 Jul 17:15 batch). SLA metric is currently meaningless; resolves with real/clean data | **P2 — data artefact** |
+| RA-R3 | **"Adoption by clinician: No clinician accounts in the database yet"** contradicts an audit trail full of "Dr A. Demo (clinician)" activity (the only clinician is deactivated/synthetic). Wording vs history mismatch; ties to UC-R1 test-data scrub | **P3 — clarity/test-data** |
+
+**Note:** RA-R1 + GS-R1 are the *same* underlying defect (bulk-load timestamps). Fixing the timestamp model closes both and makes governance-health + audit lead-time metrics trustworthy.
