@@ -278,3 +278,16 @@ Dr Kaur — the round-4 poster child for "unvetted but ACTIVE" — now shows a *
 | AO-R3 | **Count mismatch.** Admin shows *"SOPs & templates: 8 published"*; clinician library shows *28 policies*. The two views count different things — reconcile | **P2** |
 
 **One-liner:** the system now correctly *detects* cases nobody can answer, but nothing *resolves* them — junk should be closed; genuine ones expose that the panel doesn't cover every submittable specialty.
+
+
+---
+
+## §12 — Admin Governance sign-off
+
+**Good:** sign-off *queue* empty and honest (*"pipeline is clear"*). *Recently published* is a correct read-only audit list of the 28 governed policies, labelled *"no action needed here."* Round-4 GS1 (test content published) and GS3 (uncredentialed reviewer in queue) both gone.
+
+**Issues (same class as round-4 GS2 — audit trail undermining the governance claim):**
+| # | Issue | Severity |
+|---|---|---|
+| GS-R1 | **All 28 policies signed at the identical minute — "21 Jul 2026, 01:00."** The rubber-stamp pattern, now across 28 docs (round-4 GS2 was 3 at 02:50). The audit trail is the artefact that proves governance is real; "all signed at 1am in one minute" reads as the opposite. **Fix:** either spread timestamps to real review times, OR **relabel** — these are *approved starter sources* (a legitimate bulk approval), not clinic-adopted clinical sign-offs; calling it "signed … 01:00" misrepresents a bulk source-load as individual clinical sign-off | **P1 — evidential** |
+| GS-R2 | **"signed by" is blank** — every row reads *"v1 · signed by · 21 Jul 2026"* with no name. An audit trail exists to record *who* signed. Should show *"signed by Faheem Ahmed."* | **P1** |
