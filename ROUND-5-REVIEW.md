@@ -392,3 +392,24 @@ Two parts: the recurring MDT schedule + recording/media governance.
 | # | Issue | Severity |
 |---|---|---|
 | MDT-R1 | Create-session Starts/Ends default to **today (17/08/2026 13:00–14:00)** rather than the next session date (25 Aug 19:00). Cosmetic default — prefill from the recurring rule | **P3 — cosmetic** |
+
+
+---
+
+## §17 — Admin Content libraries (master corpus) ✅ mostly · 1 counter bug to reconcile
+
+The governance heart: every policy/form/guideline/training module, reviewed and published from here.
+
+**Verified good:**
+- Package = **28 policies · 5 forms · 33 immutable sources · 737 governed fields** — the full corpus + the fill-in-the-blank fields we schema'd. Matches fields.json.
+- Pipeline list shows all 28 policies + F01–F05 at **PUBLISHED · v1 · high risk · Governed library.** Corpus is versioned and live.
+- Four shelves: Guidelines / SOPs & templates / Training (10 modules) / Regulatory standards (GPhC·CQC·MHRA·NHS).
+- **Two setup gates flagged honestly, not bugs:**
+  - Clinic has **no policy/SOP needs assessment** yet → "Open setup questions" (scoping questionnaire must precede adoption). Correct gate.
+  - **Licensed source workspace = 0 ingested → live content is Preview only.** SAME root cause as the empty Guidelines library — one dependency (ingest licensed reference sources), not a new fault.
+
+**Action items:**
+| # | Issue | Severity |
+|---|---|---|
+| CL-R1 | **Counter mismatch:** SOPs & templates card = "0 published · 0 in pipeline" and top badge = "0 current published", but the list below shows ~35 items all "PUBLISHED · v1". Either counters aren't wired to the list, or "published" means library-published vs published-live-into-clinic in two places. Reconcile the wording/counts — a clinic admin sees "0 published" above a wall of PUBLISHED rows | **P2 — correctness/clarity** |
+| CL-R2 | Ingest licensed reference sources so Guidelines + grounded content leave Preview (shared root cause with the empty Guidelines library) | **P1 — dependency** |
