@@ -332,3 +332,24 @@ Opening Dr Kaur's "Edit identity" reveals only a SPECIALTY dropdown (*"display/r
 | PM-R5 | **No single source of truth for a member.** Identity is scattered across Panel management (specialty), Credentialing (capability/status), Users & clinics (name); specialty and capability can drift apart (see PM-R4). **The admin cannot correct one person in one place**, and there's no guard that routing-specialty == credentialed-capability. Either consolidate the member editor, or (a) make Credentialing capability the single source that display-specialty derives from, and (b) validate they can't disagree | **P1 — UX + data integrity** |
 
 **This surfaced from Faheem trying to fix Kaur's specialty and being unable to find where — a real usability failure, not a cosmetic one.**
+
+
+---
+
+## §14 — Admin Safety operations ✅ (well-built, proportionate — implements MDT-PANEL-RESPONSE-FORM §7)
+
+Five functions, all sensible for the risk level (unlike Credentialing, this one is *not* over-built):
+1. **Named lead + deputy routes** — where a panel safety concern goes, per category (clinical safety / governance / safeguarding), primary + deputy (must differ). The §7 escalation route.
+2. **Restricted concern queue** — locked inbox; only the named lead/deputy can open confidential concern detail. Need-to-know.
+3. **Response quality controls** — deterministic sampling of panel answers (open/overdue/pending/complete) to catch "I agree" non-answers.
+4. **Governed response snippets** — approved reusable teaching phrases; insertion still passes full response validation (no backdoor).
+5. **Legacy response disposition** — quarantine / restore / dispose old responses; **never deletes or rewrites the original evidence; audited and reversible.**
+
+**Win:** the **rosacea breach (C-241 "Consistent with rosacea") is QUARANTINED, reason "diagnostic-claim"** — hidden from ordinary view, retained as evidence, reversible. Correct disposition of the X1 device breach. Old "Agree with the plan" responses available for the same treatment.
+
+**Action item:**
+| # | Issue | Severity |
+|---|---|---|
+| SO-R1 | **The three safety routes are unconfigured ("Action required").** Until a real named Primary + Deputy is assigned per category, a raised concern has nowhere to land and can't be opened. Setup task — the screen flags it honestly | **P1 — setup** |
+
+**Design principle for the golden rule:** *the panel flags, the clinician acts* — panel members never contact the patient (they only saw an anonymised case); the named lead informs the treating clinician who holds the relationship. Built correctly.
