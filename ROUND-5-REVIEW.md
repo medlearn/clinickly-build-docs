@@ -353,3 +353,22 @@ Five functions, all sensible for the risk level (unlike Credentialing, this one 
 | SO-R1 | **The three safety routes are unconfigured ("Action required").** Until a real named Primary + Deputy is assigned per category, a raised concern has nowhere to land and can't be opened. Setup task — the screen flags it honestly | **P1 — setup** |
 
 **Design principle for the golden rule:** *the panel flags, the clinician acts* — panel members never contact the patient (they only saw an anonymised case); the named lead informs the treating clinician who holds the relationship. Built correctly.
+
+
+---
+
+## §15 — Admin Clinical image operations ✅ (privacy-by-design, correctly gated off)
+
+Aggregate lifecycle dashboard for clinical photos (e.g. dermatology images attached to a case).
+
+**Win — the whole screen is built the safe way:**
+- Explicitly **never retrieves or renders clinical pixels, object keys, filenames, digests, or patient details** — shows counts and health only. Correct.
+- **Readiness = "Blocked" is a deliberate safety interlock, not a bug.** Production stays disabled until approved external components are present: private storage adapter, privacy detector, view-grant keyring, alert seam, production activation. Only Database is "ready". Mode: disabled · accepted view-grant keys: 0.
+- Aggregate queues track the real image lifecycle when live: processing (pending/dead-letter), deletion (pending/dead-letter), retention (due/overdue), **withdrawal (pending/failed) — the consent-withdrawal pull**. All zero pre-launch.
+
+**Nothing to fix.** The "blocked until approved" default is the correct posture for a prototype handling patient images. Action is a *setup/launch* task only: wire and approve the five external components before enabling real image handling — and get a fresh MHRA view is NOT needed here (this is storage/lifecycle, not SaMD), but a DPIA covering image storage + consent-withdrawal IS.
+
+| # | Issue | Severity |
+|---|---|---|
+| IMG-R1 | Five production components unconfigured ("blocked") — private storage, privacy detector, view-grant keyring, alert seam, activation approval. Setup task; the screen gates itself honestly | **P2 — setup** |
+| IMG-R2 | Confirm a **DPIA** covers clinical-image storage, retention clock, and the consent-withdrawal deletion path before go-live | **P1 — governance** |
