@@ -262,3 +262,19 @@ Dr Kaur — the round-4 poster child for "unvetted but ACTIVE" — now shows a *
 
 **Verify (needs admin Panel management):**
 - **PM8/PM1 close-out:** is a *new* member **PENDING (not ACTIVE)** until all 14 are verified, and **blocked from holding/answering cases** meanwhile? This member-view shows a fully-vetted member; the admin add-flow is where "add with a name → ACTIVE" lived, so that's the screen that proves the gate.
+
+
+---
+
+## §11 — Admin Overview
+
+**Good (fixed):** new admin sections — Credentialing · Safety operations · Image operations (dedicated homes for the specced features). Panel = **5 real members across 5 specialties, pharmacy (Newman) retained** (answers the §7 question). **Clinic scope locked** (tenancy working). Governance sign-off pipeline **empty and honest** (round-4 test-published content + uncredentialed reviewer both gone). **Training = 10 modules** (AD4 fixed). The "no active panel member — assign someone" alerts are the routing-coverage check working (detects unanswerable cases).
+
+**Issues to fix:**
+| # | Issue | Severity |
+|---|---|---|
+| AO-R1 | **Test/legacy cases still in the admin action queue.** `ddd` (C-245), `Case-loop E2E two` (C-238), `Rash photo case` (C-241 legacy rosacea) show as *"assign someone."* The clinician-side legacy quarantine has NOT been applied to the admin case list — they should be **closed/archived, not assignable** | **P1** |
+| AO-R2 | **Real cases have no eligible panel member — coverage gap.** 11 open, most flagged unanswerable. Panel is 5; specialties a clinician can submit to (e.g. *General & acute prescribing, Other*) have no vetted member. **Either add members for those specialties or stop the submit form offering them.** The detection is correct; the gap is real (round-4 M5a) | **P1** |
+| AO-R3 | **Count mismatch.** Admin shows *"SOPs & templates: 8 published"*; clinician library shows *28 policies*. The two views count different things — reconcile | **P2** |
+
+**One-liner:** the system now correctly *detects* cases nobody can answer, but nothing *resolves* them — junk should be closed; genuine ones expose that the panel doesn't cover every submittable specialty.
