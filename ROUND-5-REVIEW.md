@@ -28,12 +28,15 @@ Admin nav is 10 screens: Overview · Governance sign-off · Panel management · 
 | **P1** | IMG-R2 | Confirm DPIA covers image storage, retention clock, consent-withdrawal deletion |
 | **P1** | CL-R2 | Ingest licensed reference sources — unblocks empty Guidelines + grounded content (shared root cause) |
 | **P1** | UC-R1 | Purge test-data pollution in user list; **confirm no real personal Gmail (drfiza33@gmail.com) is sitting in demo data** — DP risk |
+| **P1** | RA-R1 | Fix negative "−8.1 d draft → published" lead time — same timestamp defect as GS-R1 (one fix closes both) |
 | **P2** | PM-R1 | Remove duplicate Newman record |
 | **P2** | PM-R2 | Hide "SYNTHETIC Expired Panel" test fixture from live panel list |
 | **P2** | IMG-R1 | Wire/approve the 5 image production components (setup) |
 | **P2** | UC-R2 | Ensure a synthetic ADMIN/countersigner account can never exist in a production tenant |
+| **P2** | RA-R2 | MDT service-level "0 h first response" is a same-minute test-data artefact — meaningless until real/clean data |
 | **P3** | MDT-R1 | Prefill create-session date from the recurring rule, not today |
 | **P3** | CL-R1 | Relabel "published" dual meaning (central library vs adopted-live-in-clinic) |
+| **P3** | RA-R3 | "No clinician accounts yet" contradicts audit history — resolves with UC-R1 test-data scrub |
 
 **Cross-cutting theme:** almost every remaining P1 is **test/legacy data or a setup step the screen already flags honestly** — not a broken mechanism. The engine is sound; what's left is (a) scrub demo/test data before launch, (b) complete named-owner/DPIA/licence setup, (c) tidy two evidential labels (GS sign-off, CL published). No new device-boundary breaches found.
 
