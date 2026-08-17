@@ -372,3 +372,23 @@ Aggregate lifecycle dashboard for clinical photos (e.g. dermatology images attac
 |---|---|---|
 | IMG-R1 | Five production components unconfigured ("blocked") — private storage, privacy detector, view-grant keyring, alert seam, activation approval. Setup task; the screen gates itself honestly | **P2 — setup** |
 | IMG-R2 | Confirm a **DPIA** covers clinical-image storage, retention clock, and the consent-withdrawal deletion path before go-live | **P1 — governance** |
+
+
+---
+
+## §16 — Admin MDT session & session-media governance ✅ (well-built)
+
+Two parts: the recurring MDT schedule + recording/media governance.
+
+**Recurring MDT ("Monthly MDT — auto-advancing"):**
+- Standing rule (last Tuesday monthly · 19:00–20:30 · virtual) that **auto-advances** the date; next = 25 Aug 2026. Single-sourced, consistent with the CPD schedule date fixed earlier in R5.
+- **Agenda auto-builds:** teaching slot (Chair-set) + case discussion (**auto-pulls submitted open cases — 11**) + open reflection. No manual list-building.
+- **Override applies to the next session only and is audit-logged** (Edit schedule / Set teaching slot / Revert to rule). Correct — one-off changes don't silently mutate the standing pattern.
+
+**Persisted session media governance:**
+- Badge **"PRIVATE UNTIL EVERY GATE PASSES"** — recordings stay locked until all governance gates clear (consent / anonymisation / sign-off) before any teaching reuse. Correct interlock.
+- Local Preview creates an **explicitly synthetic** media asset; production uses the configured private provider. Demo ≠ real, clearly labelled.
+
+| # | Issue | Severity |
+|---|---|---|
+| MDT-R1 | Create-session Starts/Ends default to **today (17/08/2026 13:00–14:00)** rather than the next session date (25 Aug 19:00). Cosmetic default — prefill from the recurring rule | **P3 — cosmetic** |
