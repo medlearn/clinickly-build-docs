@@ -411,7 +411,7 @@ The governance heart: every policy/form/guideline/training module, reviewed and 
 **Action items:**
 | # | Issue | Severity |
 |---|---|---|
-| CL-R1 | **Counter mismatch:** SOPs & templates card = "0 published · 0 in pipeline" and top badge = "0 current published", but the list below shows ~35 items all "PUBLISHED · v1". Either counters aren't wired to the list, or "published" means library-published vs published-live-into-clinic in two places. Reconcile the wording/counts — a clinic admin sees "0 published" above a wall of PUBLISHED rows | **P2 — correctness/clarity** |
+| CL-R1 | **Confusing dual meaning of "published" (downgraded from bug after seeing the adoption view).** Pipeline rows "PUBLISHED" = published in the *central master library*; card/badge "0 current published / Not adopted" = nothing published *live into this clinic* yet. Not a wiring bug — but a clinic admin sees "0 published" above ~35 "PUBLISHED" rows. **Relabel** to distinguish central-published vs clinic-adopted (e.g. "In library" vs "Adopted / Live here") | **P3 — clarity/relabel** |
 | CL-R2 | Ingest licensed reference sources so Guidelines + grounded content leave Preview (shared root cause with the empty Guidelines library) | **P1 — dependency** |
 
 
@@ -448,3 +448,20 @@ Accounts, roles, permissions.
 |---|---|---|
 | UC-R1 | **Test-data pollution in the user list:** garbled machine names (bksLQkfUfNDDhqBEmGMxn, IfLDHKraqPRxXeBJW, Ep Och) paired with real-looking personal Gmail addresses (i.ber.af.i.r.ura.761@gmail.com, d.ot.og.oxira.0.3@gmail.com, **drfiza33@gmail.com on an account named "Faheem"**), NOT labelled synthetic like the SYNTHETIC* accounts are. Purge/quarantine before launch AND **confirm none is a real personal email** (data-protection risk if real) | **P1 — data hygiene / DP** |
 | UC-R2 | **Synthetic account holds ADMIN:** "SYNTHETIC Credential Countersigner" = Admin · Clinical lead. Labelled test account is fine in demo, but a test admin with countersign rights must be structurally impossible in a production tenant — confirm test accounts cannot survive into a live clinic | **P2 — safety** |
+
+
+---
+
+## §17b — Content libraries: adoption model + authoring (fuller view)
+
+Scrolled-up view of §17 revealed the collapsed sections:
+
+**Adoption model — "Recommended for Clinickly Demo Clinic":**
+- **Policies (30)** central shared · **Supporting forms (5)** F01–F05 · **Clinic SOP builders (3)** (Cold-chain SOP, Consent & confidentiality SOP, Safeguarding & escalation SOP).
+- Every item = **"Not adopted" → Adopt.** Key distinction: **central policies** written once and shared; **clinic SOP builders** are procedures each clinic completes for its own premises.
+- Flow: master library → clinic **adopts** what it needs → fills in the governed fields.
+- **This resolves CL-R1:** "PUBLISHED" (central library) vs "0 current published / Not adopted" (live in this clinic) are two different meanings, not a broken counter. Downgraded to a relabel.
+
+**Authoring — "Draft from governed sources":**
+- New governed item: Type (Guideline/…), Title, clinical specialty → drafts **from a governed source with every statement carrying its source + line** (citation trail). Governance/risk rating visible ("Medium — remove a required human sign-off"). Create draft.
+- This is §8's governed pipeline live: AI-drafted → cited → human-signed. Correct.
