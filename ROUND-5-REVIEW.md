@@ -428,3 +428,23 @@ Shelf of regulator rulebooks the AI uses to **gap-check the clinic's SOPs** (not
 - Upload restricted to central admin/governance.
 
 **No fix required.** Same standing dependency as elsewhere: **Licensed source workspace = 0 ingested → grounded clinical content stays Preview** (CL-R2 / Guidelines root cause). Regulatory-standards references being loaded is independent of that and is working as intended.
+
+
+---
+
+## §19 — Admin Users & clinics ✅ design correct · 2 test-data items
+
+Accounts, roles, permissions.
+
+**Verified good:**
+- Clinic setup = 3 controlled steps (create tenancy → Policy/SOP needs questions → review & sign governed docs). Demo Clinic honestly shows "Policy/SOP assessment not completed".
+- **Delete clinic = recoverable archive:** logins revoked immediately, clinical records + audit evidence retained, restoring never auto-reactivates staff. Correct reversible/audit-preserving pattern.
+- Roles clear: ADMIN / MDT / CLINICIAN.
+- **Panel/clinician rows show "Managed in Credentialing"** — activation not editable here; controlled in Credentialing. This is the credentialing root-cause fix, verified again.
+- Deactivated users show "deactivated — login revoked" — deactivation kills login immediately.
+
+**Action items:**
+| # | Issue | Severity |
+|---|---|---|
+| UC-R1 | **Test-data pollution in the user list:** garbled machine names (bksLQkfUfNDDhqBEmGMxn, IfLDHKraqPRxXeBJW, Ep Och) paired with real-looking personal Gmail addresses (i.ber.af.i.r.ura.761@gmail.com, d.ot.og.oxira.0.3@gmail.com, **drfiza33@gmail.com on an account named "Faheem"**), NOT labelled synthetic like the SYNTHETIC* accounts are. Purge/quarantine before launch AND **confirm none is a real personal email** (data-protection risk if real) | **P1 — data hygiene / DP** |
+| UC-R2 | **Synthetic account holds ADMIN:** "SYNTHETIC Credential Countersigner" = Admin · Clinical lead. Labelled test account is fine in demo, but a test admin with countersign rights must be structurally impossible in a production tenant — confirm test accounts cannot survive into a live clinic | **P2 — safety** |
