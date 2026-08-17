@@ -413,3 +413,18 @@ The governance heart: every policy/form/guideline/training module, reviewed and 
 |---|---|---|
 | CL-R1 | **Counter mismatch:** SOPs & templates card = "0 published · 0 in pipeline" and top badge = "0 current published", but the list below shows ~35 items all "PUBLISHED · v1". Either counters aren't wired to the list, or "published" means library-published vs published-live-into-clinic in two places. Reconcile the wording/counts — a clinic admin sees "0 published" above a wall of PUBLISHED rows | **P2 — correctness/clarity** |
 | CL-R2 | Ingest licensed reference sources so Guidelines + grounded content leave Preview (shared root cause with the empty Guidelines library) | **P1 — dependency** |
+
+
+---
+
+## §18 — Admin Regulatory standards ✅ (well-built, licence-safe)
+
+Shelf of regulator rulebooks the AI uses to **gap-check the clinic's SOPs** (not to answer clinical questions).
+
+**Verified good:**
+- Four references LOADED: **GPhC** (Standards for pharmacy professionals), **CQC** (Fundamental standards), **MHRA** (Drug safety updates), **NHS** (Information governance). Each: currency owner = Governance lead, review due ~3-monthly — named ownership + refresh cadence.
+- **Key design win — "REFERENCE ONLY — EXCLUDED FROM RETRIEVAL":** regulator docs are used to check the clinic's policies for gaps but are **never fed into Ask Clinickly answers.** Correct on two counts: (1) copyright/licence — they're the regulators' documents; (2) boundary — a compliance yardstick, not a clinical knowledge source.
+- Footer states the interlock plainly: **"Loaded" = recorded only; it cannot enter retrieval from this screen.** Licensed sources appear in the workspace only after immutable ingestion + licence validation + human approval. Loading ≠ switching on. Correct.
+- Upload restricted to central admin/governance.
+
+**No fix required.** Same standing dependency as elsewhere: **Licensed source workspace = 0 ingested → grounded clinical content stays Preview** (CL-R2 / Guidelines root cause). Regulatory-standards references being loaded is independent of that and is working as intended.
