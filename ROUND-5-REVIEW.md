@@ -291,3 +291,24 @@ Dr Kaur — the round-4 poster child for "unvetted but ACTIVE" — now shows a *
 |---|---|---|
 | GS-R1 | **All 28 policies signed at the identical minute — "21 Jul 2026, 01:00."** The rubber-stamp pattern, now across 28 docs (round-4 GS2 was 3 at 02:50). The audit trail is the artefact that proves governance is real; "all signed at 1am in one minute" reads as the opposite. **Fix:** either spread timestamps to real review times, OR **relabel** — these are *approved starter sources* (a legitimate bulk approval), not clinic-adopted clinical sign-offs; calling it "signed … 01:00" misrepresents a bulk source-load as individual clinical sign-off | **P1 — evidential** |
 | GS-R2 | **"signed by" is blank** — every row reads *"v1 · signed by · 21 Jul 2026"* with no name. An audit trail exists to record *who* signed. Should show *"signed by Faheem Ahmed."* | **P1** |
+
+
+---
+
+## §13 — Admin Panel management ⭐⭐⭐ (PM8/PM1 root cause CLOSED)
+
+**The biggest root cause in the review is fixed.** Every member row: *"Activation and suspension are controlled in Credentialing."* The "Edit identity" button cannot flip active — activation flows from the 14-check credentialing record. **You can no longer activate a member with just a name.** This closes the four P0s that traced to it: A1, G1, AD1, GS3 (round 4) and PM1/PM8.
+
+**Also fixed:**
+- **Test/duplicate members deactivated** (struck through, quarantined not deleted): J. Hale, Dr P. Word, Ep Och, SYNTHETIC Expired Panel.
+- **Capability-gating works:** new structured case C-250 (ADHD→Psychiatry) has an eligible member (Bright, no warning); active ≠ eligible-for-everything.
+- Fee bands present (Guideline/High £175).
+
+**Cleanup items:**
+| # | Issue | Severity |
+|---|---|---|
+| PM-R1 | **Duplicate Newman** — *"Dr N. Newman"* (inactive) + *"N. Newman"* (active), same pharmacy member. Remove the stale record. Pharmacy IS represented (active Newman) | **P2** |
+| PM-R2 | **"SYNTHETIC Expired Panel"** test fixture visible in the live member list (inactive, labelled). Hide test fixtures or move out of the live panel view | **P2** |
+| PM-R3 | **Legacy routing mismatch** — C-244 *ADHD* routes to *Pharmacy & prescribing* (should be Psychiatry). New structured C-250 routes correctly; only legacy cases mis-tagged. Resolves when legacy cases are closed (AO-R1) | **P2** |
+
+**Net: the credentialing/activation root cause — the single most important fix — is closed. Remaining panel items are data cleanup, not risk.**
